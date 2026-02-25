@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Quote Details - ProtoWorks</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="icon" type="image/png" href="../assets/111.png">
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="nav-logo" style="margin-bottom: 2rem;">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+              stroke-linejoin="round" />
+            <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5" stroke-linejoin="round"
+              opacity="0.5" />
+          </svg>
+        </div>
+        <span>ProtoWorks</span>
+      </div>
+
+      <nav>
+        <ul class="dashboard-nav">
+          <li class="dashboard-nav-item">
+            <a href="dashboard.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-upload.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              New Order
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-orders.html" class="dashboard-nav-link active">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Order History
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-profile.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              Profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+        <button class="dashboard-nav-link logout-btn"
+          style="background: none; border: none; cursor: pointer; width: 100%; text-align: left; padding: 0.75rem 1rem;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div>
+          <a href="dashboard-orders.html"
+            style="color: var(--color-primary); text-decoration: none; font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Orders
+          </a>
+          <h1 style="margin-bottom: 0.25rem;">Order #PW-2024-001</h1>
+          <p style="color: var(--color-text-secondary); margin: 0;">Placed on March 15, 2024</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+          <button id="sidebar-toggle" class="btn btn-icon" aria-label="Toggle sidebar">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap: 2rem; align-items: start;">
+        <!-- Order Details -->
+        <div>
+          <!-- Status Timeline -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1.5rem;">Order Status</h3>
+
+            <div style="position: relative;">
+              <!-- Vertical line -->
+              <div
+                style="position: absolute; left: 12px; top: 24px; bottom: 24px; width: 2px; background-color: var(--color-border);">
+              </div>
+
+              <!-- Timeline items -->
+              <div style="position: relative; z-index: 1;">
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                  <div
+                    style="width: 24px; height: 24px; background-color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="14" height="14" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Order Received</strong>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Mar 15, 2024 10:30 AM</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                  <div
+                    style="width: 24px; height: 24px; background-color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="14" height="14" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>File Analysis Complete</strong>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Mar 15, 2024 11:45 AM</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                  <div
+                    style="width: 24px; height: 24px; background-color: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; animation: pulse 2s infinite;">
+                    <div style="width: 8px; height: 8px; background-color: white; border-radius: 50%;"></div>
+                  </div>
+                  <div>
+                    <strong>Printing in Progress</strong>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Started Mar 15, 2024 2:00 PM
+                    </div>
+                    <div style="margin-top: 0.5rem;">
+                      <div
+                        style="width: 100%; height: 8px; background-color: var(--color-border); border-radius: 4px; overflow: hidden;">
+                        <div style="width: 65%; height: 100%; background-color: var(--color-primary);"></div>
+                      </div>
+                      <div style="font-size: 0.75rem; color: var(--color-text-secondary); margin-top: 0.25rem;">65%
+                        complete</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                  <div
+                    style="width: 24px; height: 24px; background-color: var(--color-border); border-radius: 50%; flex-shrink: 0;">
+                  </div>
+                  <div>
+                    <strong style="color: var(--color-text-secondary);">Quality Check</strong>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Pending</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                  <div
+                    style="width: 24px; height: 24px; background-color: var(--color-border); border-radius: 50%; flex-shrink: 0;">
+                  </div>
+                  <div>
+                    <strong style="color: var(--color-text-secondary);">Shipped</strong>
+                    <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Estimated Mar 18, 2024</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Part Details -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1.5rem;">Part Details</h3>
+
+            <div class="table-container">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td><strong>File Name</strong></td>
+                    <td>prototype_v3.stl</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Technology</strong></td>
+                    <td>FDM - Fused Deposition Modeling</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Material</strong></td>
+                    <td>PLA - Black</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Infill Density</strong></td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Layer Height</strong></td>
+                    <td>0.2mm</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dimensions</strong></td>
+                    <td>150 x 80 x 45 mm</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Volume</strong></td>
+                    <td>325 cm³</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Weight</strong></td>
+                    <td>~98g</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Print Time</strong></td>
+                    <td>12 hours 35 minutes</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quantity</strong></td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 3D Model Viewer Placeholder -->
+          <div class="card">
+            <h3 style="margin-bottom: 1.5rem;">3D Model Preview</h3>
+            <div
+              style="height: 400px; background-color: var(--color-background); display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--color-text-secondary);">
+              <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p style="margin-top: 1rem;">3D Model Viewer</p>
+              <p style="font-size: 0.875rem;">Interactive model viewer would load here</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div>
+          <div class="card" style="position: sticky; top: 1rem; margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1.5rem;">Cost Breakdown</h3>
+
+            <div style="margin-bottom: 2rem;">
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Base Print Cost</span>
+                <strong>$180.00</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Material (PLA, 98g)</span>
+                <strong>$4.90</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Setup Fee</span>
+                <strong>$25.00</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Standard Shipping</span>
+                <strong>$15.00</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Tax (8%)</span>
+                <strong>$18.00</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 2px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Discount (First Order)</span>
+                <strong style="color: var(--color-accent);">-$15.90</strong>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 1.5rem;">
+                <strong>Total</strong>
+                <strong style="color: var(--color-primary);">$245.00</strong>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+              <button class="btn btn-primary" style="flex: 1;">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                  style="margin-right: 0.5rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Invoice
+              </button>
+              <button class="btn btn-icon" title="Print Invoice">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              style="background-color: var(--color-background); padding: 1rem; font-size: 0.875rem; color: var(--color-text-secondary);">
+              <p style="margin: 0;">Payment method: Visa ending in 4242</p>
+              <p style="margin: 0.5rem 0 0 0;">Transaction ID: TXN-2024-001-ABC</p>
+            </div>
+          </div>
+
+          <!-- Shipping Info -->
+          <div class="card">
+            <h3 style="margin-bottom: 1.5rem;">Shipping Information</h3>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">Delivery
+                Address</div>
+              <div>
+                <strong>Alex Johnson</strong><br>
+                123 Innovation Street<br>
+                Tech Valley, CA 94025<br>
+                United States
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">Shipping
+                Method</div>
+              <div><strong>Standard Shipping (3-5 business days)</strong></div>
+            </div>
+
+            <div>
+              <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 0.5rem;">Estimated
+                Delivery</div>
+              <div><strong>March 18-20, 2024</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <style>
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+</body>
+
+</html>

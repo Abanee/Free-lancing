@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProtoWorks - Version 2.0. Advanced 3D printing and rapid prototyping interface.">
+    <title>ProtoWorks 2.0 - Next-Gen Engineering</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="assets/111.png">
+
+    <style>
+        .hero-v2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0;
+            background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-v2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .hero-v2-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .visual-stack {
+            position: relative;
+            height: 500px;
+        }
+
+        .stack-card {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-1 {
+            z-index: 3;
+            top: 0;
+            left: 0;
+            transform: rotate(-5deg);
+        }
+
+        .card-2 {
+            z-index: 2;
+            top: 40px;
+            left: 60px;
+            transform: rotate(2deg);
+            opacity: 0.8;
+        }
+
+        .card-3 {
+            z-index: 1;
+            top: 80px;
+            left: 120px;
+            transform: rotate(8deg);
+            opacity: 0.6;
+        }
+
+        .visual-stack:hover .card-1 {
+            transform: translate(-20px, -20px) rotate(-8deg);
+        }
+
+        .visual-stack:hover .card-2 {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 1;
+        }
+
+        .visual-stack:hover .card-3 {
+            transform: translate(20px, 20px) rotate(8deg);
+            opacity: 0.8;
+        }
+
+        .feature-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--color-primary);
+            border-radius: 100px;
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5"
+                            stroke-linejoin="round" opacity="0.5" />
+                    </svg>
+                </div>
+                <span>ProtoWorks</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
+                <li><a href="pages/services.html" class="nav-link">Services</a></li>
+                <li><a href="pages/materials.html" class="nav-link">Materials</a></li>
+                <li><a href="pages/blog.html" class="nav-link">Blog</a></li>
+                <li><a href="pages/about.html" class="nav-link">About</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                <li class="mobile-nav-actions">
+                    <a href="pages/dashboard.html" class="btn btn-outline" style="width: 100%;">Dashboard</a>
+                    <a href="pages/login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+                <a href="pages/dashboard.html" class="btn btn-outline">Dashboard</a>
+                <a href="pages/login.html" class="btn btn-primary">Login</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero-v2">
+        <div class="hero-background">
+            <div class="hero-grid-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-v2-grid">
+                <div class="hero-content animate-on-scroll">
+                    <div class="feature-tag">System Version 2.0</div>
+                    <h1 class="hero-title" style="font-size: clamp(3rem, 8vw, 5rem);">Evolution of<br><span
+                            style="color: var(--color-primary);">Prototyping</span></h1>
+                    <p class="hero-subtitle" style="font-size: 1.25rem; max-width: 500px;">Experience the next dimension
+                        of manufacturing with our upgraded ProtoWorks 2.0 interface. Faster, smarter, and more precise
+                        than ever.</p>
+                    <div class="hero-actions" style="margin-top: 3rem;">
+                        <a href="pages/get-quote.html" class="btn btn-primary">Start New Project</a>
+                        <a href="pages/portfolio.html" class="btn btn-outline">View Showcase</a>
+                    </div>
+                </div>
+                <div class="hero-visual animate-on-scroll">
+                    <div class="visual-stack">
+                        <div class="stack-card card-1">
+                            <img src="assets/3d/1.jpg" alt="Visual 1"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="stack-card card-2">
+                            <img src="assets/3d/2.jpg" alt="Visual 2"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="stack-card card-3">
+                            <img src="assets/3d/3.jpg" alt="Visual 3"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: rgba(var(--color-primary-rgb), 0.02);">
+        <div class="container">
+            <div class="section-header">
+                <div class="text-mono" style="color: var(--color-primary); margin-bottom: 1rem;">The Process</div>
+                <h2 style="font-size: 3rem;">From Pixel to Physical</h2>
+                <p class="section-subtitle">Our streamlined workflow integrates cutting-edge AI with robotic precision
+                    to
+                    deliver parts faster than ever.</p>
+            </div>
+
+            <div class="grid grid-4" style="margin-top: 4rem;">
+                <div class="text-center animate-on-scroll">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <span
+                            style="font-family: var(--font-mono); font-weight: 700; color: var(--color-primary);">01</span>
+                    </div>
+                    <h4>Digital Setup</h4>
+                    <p style="font-size: 0.875rem;">AI-assisted geometry analysis and orientation optimization for
+                        structural integrity.</p>
+                </div>
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <span
+                            style="font-family: var(--font-mono); font-weight: 700; color: var(--color-primary);">02</span>
+                    </div>
+                    <h4>Material Selection</h4>
+                    <p style="font-size: 0.875rem;">Choose from over 50+ high-performance polymers and aerospace-grade
+                        metals.</p>
+                </div>
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <span
+                            style="font-family: var(--font-mono); font-weight: 700; color: var(--color-primary);">03</span>
+                    </div>
+                    <h4>Rapid Build</h4>
+                    <h4
+                        style="font-size: 0.875rem; color: var(--color-text-secondary); margin-top: -0.5rem; text-transform: uppercase;">
+                        Build Phase</h4>
+                    <p style="font-size: 0.875rem;">Sync-print technology enables concurrent manufacturing of
+                        large-scale
+                        assemblies.</p>
+                </div>
+                <div class="text-center animate-on-scroll" style="transition-delay: 0.3s;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <span
+                            style="font-family: var(--font-mono); font-weight: 700; color: var(--color-primary);">04</span>
+                    </div>
+                    <h4>Quality Control</h4>
+                    <p style="font-size: 0.875rem;">Automated x-ray scanning and dimensional verification within micron
+                        tolerances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="glass-card"
+                style="padding: 4rem; border-radius: var(--border-radius-lg); overflow: hidden; position: relative;">
+                <div
+                    style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%); filter: blur(40px);">
+                </div>
+
+                <div class="grid grid-2" style="align-items: center;">
+                    <div class="animate-on-scroll">
+                        <div class="text-mono" style="color: var(--color-primary); margin-bottom: 1rem;">Technological
+                            Edge</div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Generative Design &<br>Topology
+                            Optimization</h2>
+                        <p style="margin-bottom: 2rem;">ProtoWorks 2.0 leverages advanced algorithms to reduce weight
+                            while maximizing strength. Our software automatically identifies stress points and
+                            reinforces them with organic, biocentric structures that are impossible to manufacture with
+                            traditional methods.</p>
+                        <ul style="list-style: none; padding: 0; display: grid; gap: 1rem;">
+                            <li style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div
+                                    style="width: 6px; height: 6px; background: var(--color-primary); border-radius: 50%;">
+                                </div>
+                                <span>30% Average Weight Reduction</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div
+                                    style="width: 6px; height: 6px; background: var(--color-primary); border-radius: 50%;">
+                                </div>
+                                <span>Enhanced Thermal Dissipation</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div
+                                    style="width: 6px; height: 6px; background: var(--color-primary); border-radius: 50%;">
+                                </div>
+                                <span>Lattice Structure Integration</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="animate-on-scroll" style="display: flex; justify-content: flex-end;">
+                        <div
+                            style="width: 100%; max-width: 400px; aspect-ratio: 1; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); position: relative; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                            <img src="assets/3d/2.jpg" alt="Topology Optimization"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius-sm); filter: grayscale(1) brightness(1.2);">
+                            <div
+                                style="position: absolute; bottom: 1rem; right: 1rem; background: var(--color-primary); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem;">
+                                OPTIMIZED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 8rem;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 2.5rem;">Industry Solutions</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="card animate-on-scroll"
+                    style="padding: 2.5rem; border: 1px solid var(--color-border); background: var(--color-surface);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🚀</div>
+                    <h4>Aerospace</h4>
+                    <p style="font-size: 0.9375rem;">Lightweight engine components and durable cabin interiors certified
+                        for flight operations.</p>
+                </div>
+                <div class="card animate-on-scroll"
+                    style="padding: 2.5rem; border: 1px solid var(--color-border); background: var(--color-surface); transition-delay: 0.1s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🏎️</div>
+                    <h4>Automotive</h4>
+                    <p style="font-size: 0.9375rem;">Functional prototypes for aerodynamic testing and custom low-volume
+                        production parts.</p>
+                </div>
+                <div class="card animate-on-scroll"
+                    style="padding: 2.5rem; border: 1px solid var(--color-border); background: var(--color-surface); transition-delay: 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1.5rem;">🏥</div>
+                    <h4>Medical</h4>
+                    <p style="font-size: 0.9375rem;">Bicompatible implants and patient-specific surgical guides printed
+                        with clinical precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo" style="margin-bottom: 1.5rem; text-decoration: none;">
+                        <div class="nav-logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+                                    stroke-linejoin="round" />
+                                <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5"
+                                    stroke-linejoin="round" opacity="0.5" />
+                            </svg>
+                        </div>
+                        <span>ProtoWorks</span>
+                    </a>
+                    <p style="color: var(--color-text-secondary);">Industrial-grade 3D printing and high-precision
+                        prototyping for
+                        engineers and innovators.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon youtube" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/services.html#fdm">FDM Printing</a></li>
+                        <li><a href="pages/services.html#sla">SLA Printing</a></li>
+                        <li><a href="pages/services.html#sls">SLS Printing</a></li>
+                        <li><a href="pages/materials.html">Materials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/materials.html">Materials</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProtoWorks. All rights reserved. Built with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

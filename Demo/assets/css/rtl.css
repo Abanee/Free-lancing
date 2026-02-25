@@ -1,0 +1,113 @@
+/* ============================================
+   RTL (Right-to-Left) Support
+   For Arabic, Hebrew, and other RTL languages
+   ============================================ */
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Flip margins and padding */
+[dir="rtl"] .nav-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .card-footer {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--color-border);
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 280px;
+}
+
+[dir="rtl"] .dashboard-nav-link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dashboard-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .stat-card {
+  text-align: right;
+}
+
+[dir="rtl"] .table th,
+[dir="rtl"] .table td {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-section {
+  text-align: right;
+}
+
+/* Flip animations and transitions */
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .btn-primary {
+  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+[dir="rtl"] .btn-primary:hover {
+  box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 1);
+  transform: translate(-2px, 2px);
+}
+
+[dir="rtl"] .btn-primary:active {
+  transform: translate(-4px, 4px);
+}
+
+[dir="rtl"][data-theme="dark"] .btn-primary {
+  box-shadow: -4px 4px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+[dir="rtl"][data-theme="dark"] .btn-primary:hover {
+  box-shadow: -2px 2px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+/* Flip icons and arrows */
+[dir="rtl"] .theme-toggle::before {
+  left: auto;
+  right: 2px;
+}
+
+[dir="rtl"][data-theme="dark"] .theme-toggle::before {
+  transform: translateX(-26px);
+}
+
+@media (max-width: 767px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+  
+  [dir="rtl"] .dashboard-sidebar.active {
+    transform: translateX(0);
+  }
+}

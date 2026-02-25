@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Submit Request - ProtoWorks</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="icon" type="image/png" href="../assets/111.png">
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="nav-logo" style="margin-bottom: 2rem;">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+              stroke-linejoin="round" />
+            <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5" stroke-linejoin="round"
+              opacity="0.5" />
+          </svg>
+        </div>
+        <span>ProtoWorks</span>
+      </div>
+
+      <nav>
+        <ul class="dashboard-nav">
+          <li class="dashboard-nav-item">
+            <a href="dashboard.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-upload.html" class="dashboard-nav-link active">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              New Order
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-orders.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Order History
+            </a>
+          </li>
+          <li class="dashboard-nav-item">
+            <a href="dashboard-profile.html" class="dashboard-nav-link">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              Profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+        <button class="dashboard-nav-link logout-btn"
+          style="background: none; border: none; cursor: pointer; width: 100%; text-align: left; padding: 0.75rem 1rem;">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <div>
+          <h1 style="margin-bottom: 0.25rem;">Submit New Request</h1>
+          <p style="color: var(--color-text-secondary); margin: 0;">Upload your 3D model and configure print settings
+          </p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+          <button id="sidebar-toggle" class="btn btn-icon" aria-label="Toggle sidebar">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="gap: 2rem; align-items: start;">
+        <!-- Upload Form -->
+        <div>
+          <!-- File Upload Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1.5rem;">Upload 3D Model</h3>
+
+            <div class="file-upload-zone" id="file-upload-zone">
+              <div class="file-upload-icon">
+                <svg width="64" height="64" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+              </div>
+              <div class="file-upload-text">Drag & Drop your files here</div>
+              <div class="file-upload-hint">or click to browse</div>
+              <div class="file-upload-hint" style="margin-top: 0.5rem;">Supported: .STL, .OBJ, .STEP, .3MF (Max 100MB)
+              </div>
+              <input type="file" id="file-input" accept=".stl,.obj,.step,.3mf" multiple style="display: none;">
+            </div>
+
+            <div id="file-list" style="margin-top: 1rem;"></div>
+          </div>
+
+          <!-- Print Configuration -->
+          <div class="card">
+            <h3 style="margin-bottom: 1.5rem;">Print Configuration</h3>
+
+            <form data-validate>
+              <div class="form-group">
+                <label class="form-label" for="technology">Technology *</label>
+                <select id="technology" class="form-select" required>
+                  <option value="">Select printing technology</option>
+                  <option value="fdm">FDM - Fused Deposition Modeling</option>
+                  <option value="sla">SLA - Stereolithography</option>
+                  <option value="sls">SLS - Selective Laser Sintering</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="material-select">Material *</label>
+                <select id="material-select" class="form-select" required>
+                  <option value="">Select material</option>
+                  <optgroup label="FDM Materials">
+                    <option value="pla">PLA - Standard</option>
+                    <option value="abs">ABS - High Strength</option>
+                    <option value="petg">PETG - Durable</option>
+                    <option value="tpu">TPU - Flexible</option>
+                  </optgroup>
+                  <optgroup label="SLA Resins">
+                    <option value="resin">Standard Resin</option>
+                    <option value="tough-resin">Tough Resin</option>
+                    <option value="flexible-resin">Flexible Resin</option>
+                  </optgroup>
+                  <optgroup label="SLS Materials">
+                    <option value="nylon">PA12 Nylon</option>
+                    <option value="tpu-sls">TPU (SLS)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="color">Color</label>
+                <select id="color" class="form-select">
+                  <option value="natural">Natural/White</option>
+                  <option value="black">Black</option>
+                  <option value="gray">Gray</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="green">Green</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="infill">Infill Density</label>
+                <input type="range" id="infill" min="10" max="100" value="20" step="5" style="width: 100%;">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--color-text-secondary); margin-top: 0.5rem;">
+                  <span>10%</span>
+                  <span id="infill-value">20%</span>
+                  <span>100%</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="quantity-input">Quantity *</label>
+                <input type="number" id="quantity-input" class="form-input" value="1" min="1" max="1000" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="finish">Surface Finish</label>
+                <select id="finish" class="form-select">
+                  <option value="standard">Standard (As printed)</option>
+                  <option value="sanded">Sanded</option>
+                  <option value="polished">Polished</option>
+                  <option value="painted">Painted</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="notes">Special Instructions</label>
+                <textarea id="notes" class="form-textarea"
+                  placeholder="Any special requirements or notes about your print..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Get Quote</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Quote Summary -->
+        <div>
+          <div class="card" style="position: sticky; top: 1rem;">
+            <h3 style="margin-bottom: 1.5rem;">Quote Summary</h3>
+
+            <div style="margin-bottom: 2rem;">
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Technology</span>
+                <strong>Not selected</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Material</span>
+                <strong>Not selected</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Quantity</span>
+                <strong>1</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Estimated Weight</span>
+                <strong>~100g</strong>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+                <span style="color: var(--color-text-secondary);">Production Time</span>
+                <strong>3-5 days</strong>
+              </div>
+            </div>
+
+            <div style="background-color: rgba(249, 115, 22, 0.05); padding: 1.5rem; margin-bottom: 1.5rem;">
+              <div
+                style="font-family: var(--font-mono); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); margin-bottom: 0.5rem;">
+                Estimated Cost</div>
+              <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary);" id="estimated-cost">$0.00
+              </div>
+              <div style="font-size: 0.875rem; color: var(--color-text-secondary); margin-top: 0.5rem;">Final price
+                calculated after file analysis</div>
+            </div>
+
+            <div style="background-color: var(--color-background); padding: 1rem; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <svg width="16" height="16" fill="none" stroke="var(--color-accent)" viewBox="0 0 24 24"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <strong style="font-size: 0.875rem;">Quality Guarantee</strong>
+              </div>
+              <p style="font-size: 0.875rem; color: var(--color-text-secondary); margin: 0;">100% satisfaction or free
+                reprint</p>
+            </div>
+
+            <div style="font-size: 0.875rem; color: var(--color-text-secondary);">
+              <p style="margin-bottom: 0.5rem;">✓ Free design analysis</p>
+              <p style="margin-bottom: 0.5rem;">✓ No hidden fees</p>
+              <p style="margin: 0;">✓ Secure file storage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    // Infill slider
+    document.getElementById('infill').addEventListener('input', function () {
+      document.getElementById('infill-value').textContent = this.value + '%';
+    });
+  </script>
+</body>
+
+</html>

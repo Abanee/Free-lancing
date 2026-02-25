@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Explore our 3D printing services: FDM, SLA, SLS printing with 25+ materials. Professional rapid prototyping for all industries.">
+  <title>Our Services - ProtoWorks 3D Printing</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <link rel="icon" type="image/png" href="../assets/111.png">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+              stroke-linejoin="round" />
+            <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5" stroke-linejoin="round"
+              opacity="0.5" />
+          </svg>
+        </div>
+        <span>ProtoWorks</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../home-2.html" class="nav-link">Home 2</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="materials.html" class="nav-link">Materials</a></li>
+        <!-- <li><a href="case-studies.html" class="nav-link">Case Studies</a></li> -->
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        <!-- Mobile-only actions -->
+        <li class="mobile-nav-actions">
+          <a href="dashboard.html" class="btn btn-outline" style="width: 100%;">Dashboard</a>
+          <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+        <a href="dashboard.html" class="btn btn-outline">Dashboard</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-centered" style="min-height: 45vh;">
+    <div class="hero-background">
+      <div class="hero-grid-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content animate-on-scroll">
+        <p class="text-mono" style="color: var(--color-primary); margin-bottom: 1rem;">SERVICES</p>
+        <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3.5rem);">Professional 3D Printing Technologies</h1>
+        <p class="hero-subtitle" style="max-width: 600px; margin: 0 auto 2rem;">From functional prototypes to end-use
+          parts, we have the right technology for your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FDM Section -->
+  <section class="section" id="fdm">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: 2rem;">
+        <div class="animate-on-scroll">
+          <p class="text-mono" style="color: var(--color-primary); margin-bottom: 0.5rem;">FDM PRINTING</p>
+          <h2 style="margin-bottom: 1rem;">Fused Deposition Modeling</h2>
+          <p style="margin-bottom: 0.75rem;">FDM is the most widely used 3D printing technology, perfect for functional
+            prototypes and mechanical testing. Layer-by-layer extrusion creates strong, durable parts with excellent
+            structural integrity.</p>
+
+          <div style="margin: 1.5rem 0;">
+            <h4 style="margin-bottom: 0.75rem;">Available Materials:</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge badge-info">PLA</span>
+              <span class="badge badge-info">ABS</span>
+              <span class="badge badge-info">PETG</span>
+              <span class="badge badge-info">TPU</span>
+              <span class="badge badge-info">Nylon</span>
+              <span class="badge badge-info">ASA</span>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: rgba(6, 182, 212, 0.05); padding: 1.25rem;">
+            <h4 style="margin-bottom: 0.5rem;">Best For:</h4>
+            <ul style="margin-left: 1.5rem; margin-bottom: 0;">
+              <li>Functional prototypes</li>
+              <li>Mechanical parts</li>
+              <li>Large-format printing</li>
+              <li>Cost-effective production</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <p class="text-mono" style="font-size: 0.875rem; color: var(--color-text-secondary);">STARTING PRICE</p>
+            <p style="font-size: 1.75rem; font-weight: 700; color: var(--color-primary); margin: 0.25rem 0 1rem;">
+              $0.05/gram</p>
+            <a href="get-quote.html" class="btn btn-primary">Request Quote</a>
+          </div>
+        </div>
+
+        <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1707286972301-a0b06f3f4870?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
+            alt="FDM 3D Printer" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SLA Section -->
+  <section class="section" id="sla" style="background-color: var(--color-surface);">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: 2rem;">
+        <div class="card animate-on-scroll" style="padding: 0; overflow: hidden; order: 2;">
+          <img src="https://images.unsplash.com/photo-1733602860281-741b0608f00f?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
+            alt="SLA Resin Printing" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+        </div>
+
+        <div class="animate-on-scroll" style="order: 1;">
+          <p class="text-mono" style="color: var(--color-secondary); margin-bottom: 0.5rem;">SLA PRINTING</p>
+          <h2 style="margin-bottom: 1.5rem;">Stereolithography</h2>
+          <p style="margin-bottom: 1rem;">SLA produces the highest resolution prints with incredibly smooth surface
+            finishes. Perfect for detailed models, jewelry, dental applications, and parts requiring fine features.</p>
+
+          <div style="margin: 2rem 0;">
+            <h4 style="margin-bottom: 1rem;">Available Resins:</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge badge-info">Standard Resin</span>
+              <span class="badge badge-info">Tough Resin</span>
+              <span class="badge badge-info">Flexible Resin</span>
+              <span class="badge badge-info">Castable Resin</span>
+              <span class="badge badge-info">Dental Resin</span>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: rgba(59, 130, 246, 0.05);">
+            <h4 style="margin-bottom: 0.5rem;">Best For:</h4>
+            <ul style="margin-left: 1.5rem;">
+              <li>High-detail models</li>
+              <li>Smooth surface finish</li>
+              <li>Complex geometries</li>
+              <li>Jewelry & dental</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <p class="text-mono" style="font-size: 0.875rem; color: var(--color-text-secondary);">STARTING PRICE</p>
+            <p style="font-size: 2rem; font-weight: 700; color: var(--color-secondary); margin: 0.5rem 0;">$0.15/gram
+            </p>
+            <a href="submit-request.html" class="btn btn-secondary">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLS Section -->
+  <section class="section" id="sls">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: 2rem;">
+        <div class="animate-on-scroll">
+          <p class="text-mono" style="color: var(--color-accent); margin-bottom: 0.5rem;">SLS PRINTING</p>
+          <h2 style="margin-bottom: 1rem;">Selective Laser Sintering</h2>
+          <p style="margin-bottom: 0.75rem;">SLS uses powerful lasers to fuse powder materials. No support structures
+            needed, making it ideal for complex geometries and functional end-use parts with excellent mechanical
+            properties.</p>
+
+          <div style="margin: 1.5rem 0;">
+            <h4 style="margin-bottom: 0.75rem;">Available Materials:</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge badge-info">PA12 Nylon</span>
+              <span class="badge badge-info">PA11 Nylon</span>
+              <span class="badge badge-info">TPU</span>
+              <span class="badge badge-info">Glass-filled Nylon</span>
+              <span class="badge badge-info">Alumide</span>
+            </div>
+          </div>
+
+          <div class="card" style="background-color: rgba(244, 63, 94, 0.05); padding: 1.25rem;">
+            <h4 style="margin-bottom: 0.5rem;">Best For:</h4>
+            <ul style="margin-left: 1.5rem; margin-bottom: 0;">
+              <li>Production parts</li>
+              <li>Complex assemblies</li>
+              <li>High strength applications</li>
+              <li>No support structures</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <p class="text-mono" style="font-size: 0.875rem; color: var(--color-text-secondary);">STARTING PRICE</p>
+            <p style="font-size: 1.75rem; font-weight: 700; color: var(--color-accent); margin: 0.25rem 0 1rem;">
+              $0.12/gram</p>
+            <a href="get-quote.html" class="btn" style="background-color: var(--color-accent); color: white;">Request
+              Quote</a>
+          </div>
+        </div>
+
+        <div class="card animate-on-scroll" style="padding: 0; overflow: hidden;">
+          <img src="https://images.unsplash.com/photo-1661338148421-b18059ee420a?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
+            alt="SLS Industrial Parts" style="width: 100%; height: 350px; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Table -->
+  <section class="section" id="materials" style="background-color: var(--color-surface);">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <p class="text-mono" style="color: var(--color-primary); margin-bottom: 0.5rem;">MATERIALS</p>
+        <h2 class="section-title">Material Comparison</h2>
+        <p class="section-subtitle">Choose the right material for your application</p>
+      </div>
+
+      <div class="table-container animate-on-scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Technology</th>
+              <th>Strength</th>
+              <th>Detail</th>
+              <th>Flexibility</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>PLA</strong></td>
+              <td><span class="badge badge-info">FDM</span></td>
+              <td>???</td>
+              <td>???</td>
+              <td>?</td>
+              <td><strong>$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>ABS</strong></td>
+              <td><span class="badge badge-info">FDM</span></td>
+              <td>????</td>
+              <td>???</td>
+              <td>??</td>
+              <td><strong>$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>PETG</strong></td>
+              <td><span class="badge badge-info">FDM</span></td>
+              <td>????</td>
+              <td>???</td>
+              <td>??</td>
+              <td><strong>$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Standard Resin</strong></td>
+              <td><span class="badge badge-info">SLA</span></td>
+              <td>???</td>
+              <td>?????</td>
+              <td>?</td>
+              <td><strong>$$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Tough Resin</strong></td>
+              <td><span class="badge badge-info">SLA</span></td>
+              <td>????</td>
+              <td>?????</td>
+              <td>??</td>
+              <td><strong>$$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>PA12 Nylon</strong></td>
+              <td><span class="badge badge-info">SLS</span></td>
+              <td>?????</td>
+              <td>????</td>
+              <td>???</td>
+              <td><strong>$$</strong></td>
+            </tr>
+            <tr>
+              <td><strong>TPU (Flexible)</strong></td>
+              <td><span class="badge badge-info">FDM/SLS</span></td>
+              <td>???</td>
+              <td>???</td>
+              <td>?????</td>
+              <td><strong>$$</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section"
+    style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); color: white;">
+    <div class="container" style="text-align: center;">
+      <div class="animate-on-scroll">
+        <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Upload your 3D model and
+          receive an instant quote</p>
+        <a href="submit-request.html" class="btn" style="background-color: white; color: var(--color-primary);">Start
+          Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div class="nav-logo" style="margin-bottom: 1rem;">
+            <div class="nav-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4.5 6.5V17.5L12 22L19.5 17.5V6.5L12 2Z" stroke="white" stroke-width="2"
+                  stroke-linejoin="round" />
+                <path d="M12 12L19.5 7.5M12 12V22M12 12L4.5 7.5" stroke="white" stroke-width="1.5"
+                  stroke-linejoin="round" opacity="0.5" />
+              </svg>
+            </div>
+            <span>ProtoWorks</span>
+          </div>
+          <p style="color: var(--color-text-secondary);">Industrial-grade 3D printing and high-precision prototyping for
+            engineers and innovators.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon twitter" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon youtube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#fdm">FDM Printing</a></li>
+            <li><a href="services.html#sla">SLA Printing</a></li>
+            <li><a href="services.html#sls">SLS Printing</a></li>
+            <li><a href="materials.html">Materials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="materials.html">Materials</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 ProtoWorks. All rights reserved. Built with precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
