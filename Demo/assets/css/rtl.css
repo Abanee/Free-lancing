@@ -40,26 +40,7 @@
   right: 0;
 }
 
-[dir="rtl"] .btn-primary {
-  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 1);
-}
 
-[dir="rtl"] .btn-primary:hover {
-  box-shadow: -2px 2px 0px 0px rgba(0, 0, 0, 1);
-  transform: translate(-2px, 2px);
-}
-
-[dir="rtl"] .btn-primary:active {
-  transform: translate(-4px, 4px);
-}
-
-[dir="rtl"][data-theme="dark"] .btn-primary {
-  box-shadow: -4px 4px 0px 0px rgba(255, 255, 255, 0.2);
-}
-
-[dir="rtl"][data-theme="dark"] .btn-primary:hover {
-  box-shadow: -2px 2px 0px 0px rgba(255, 255, 255, 0.2);
-}
 
 /* Flip icons and arrows */
 [dir="rtl"] .theme-toggle::after {
