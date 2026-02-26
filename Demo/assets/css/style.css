@@ -391,6 +391,11 @@ p {
     pointer-events: all;
   }
 
+  .nav-actions {
+    margin-inline-start: auto;
+    margin-inline-end: 1rem;
+  }
+
   .nav-actions .btn-outline,
   .nav-actions .btn-primary {
     display: none;

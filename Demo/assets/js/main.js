@@ -89,10 +89,10 @@ function initDirToggle() {
 
   dirToggle.addEventListener('click', function () {
     const newDir = document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
-    
+
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('dir', newDir);
-    
+
     document.querySelectorAll('.dir-toggle').forEach(btn => {
       btn.textContent = newDir === 'rtl' ? 'LTR' : 'RTL';
     });
@@ -104,6 +104,8 @@ function detectSavedDir() {
   const savedDir = localStorage.getItem('dir');
   if (savedDir) {
     document.documentElement.setAttribute('dir', savedDir);
+  } else {
+    document.documentElement.setAttribute('dir', 'rtl');
   }
 }
 detectSavedDir();
