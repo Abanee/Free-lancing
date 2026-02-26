@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initEliteCarousel();
   initGlassNavbar();
   initLogout();
+  initFooterYear();
 });
 
 // ============================================
@@ -389,6 +390,15 @@ function showToast(message, type = 'info') {
     toast.style.animation = 'slideOut 0.3s ease';
     setTimeout(() => toast.remove(), 300);
   }, 3000);
+}
+
+// Dynamic Footer Year
+function initFooterYear() {
+  const yearElement = document.querySelector('.footer-bottom p');
+  if (yearElement) {
+    const currentYear = new Date().getFullYear();
+    yearElement.innerHTML = yearElement.innerHTML.replace('2024', currentYear).replace('2026', currentYear);
+  }
 }
 
 // Add CSS animations
