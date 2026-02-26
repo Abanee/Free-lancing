@@ -346,6 +346,24 @@ p {
   display: none;
 }
 
+@media (max-width: 1280px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-menu {
+    gap: 1.25rem;
+  }
+
+  .nav-actions {
+    gap: 1rem;
+  }
+
+  .nav-actions .btn {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-menu {
     display: none;
@@ -476,6 +494,30 @@ p {
   align-items: center;
   gap: 1.5rem;
   flex-shrink: 0;
+}
+
+/* Direction Toggle Button */
+.dir-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed);
+}
+
+.dir-toggle:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 /* Theme Toggle Slider Style */

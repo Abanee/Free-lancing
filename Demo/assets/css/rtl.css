@@ -7,30 +7,7 @@
   direction: rtl;
 }
 
-/* Flip margins and padding */
-[dir="rtl"] .nav-container {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .nav-menu {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .nav-actions {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .hero-actions {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .card-footer {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .dashboard {
-  flex-direction: row-reverse;
-}
+/* Specific margin and border flips */
 
 [dir="rtl"] .dashboard-sidebar {
   border-right: none;
@@ -42,14 +19,6 @@
 [dir="rtl"] .dashboard-main {
   margin-left: 0;
   margin-right: 280px;
-}
-
-[dir="rtl"] .dashboard-nav-link {
-  flex-direction: row-reverse;
-}
-
-[dir="rtl"] .dashboard-header {
-  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .stat-card {
@@ -93,20 +62,21 @@
 }
 
 /* Flip icons and arrows */
-[dir="rtl"] .theme-toggle::before {
+[dir="rtl"] .theme-toggle::after {
   left: auto;
-  right: 2px;
+  right: 3px;
 }
 
-[dir="rtl"][data-theme="dark"] .theme-toggle::before {
-  transform: translateX(-26px);
+[dir="rtl"][data-theme="dark"] .theme-toggle::after {
+  left: auto;
+  right: calc(100% - 21px);
 }
 
 @media (max-width: 767px) {
   [dir="rtl"] .dashboard-sidebar {
     transform: translateX(100%);
   }
-  
+
   [dir="rtl"] .dashboard-sidebar.active {
     transform: translateX(0);
   }

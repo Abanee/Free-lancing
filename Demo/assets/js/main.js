@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initPreloader();
   initThemeToggle();
+  initDirToggle();
   initMobileMenu();
   initScrollAnimations();
   initFormValidation();
@@ -75,6 +76,37 @@ function initThemeToggle() {
     localStorage.setItem('theme', newTheme);
   });
 }
+
+// ============================================
+// Direction Toggle (LTR/RTL)
+// ============================================
+function initDirToggle() {
+  const dirToggle = document.getElementById('dir-toggle');
+  if (!dirToggle) return;
+
+  const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+  dirToggle.textContent = currentDir === 'rtl' ? 'LTR' : 'RTL';
+
+  dirToggle.addEventListener('click', function () {
+    const newDir = document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
+    
+    document.documentElement.setAttribute('dir', newDir);
+    localStorage.setItem('dir', newDir);
+    
+    document.querySelectorAll('.dir-toggle').forEach(btn => {
+      btn.textContent = newDir === 'rtl' ? 'LTR' : 'RTL';
+    });
+  });
+}
+
+// Detect saved direction preference
+function detectSavedDir() {
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    document.documentElement.setAttribute('dir', savedDir);
+  }
+}
+detectSavedDir();
 
 // Detect system theme preference
 function detectSystemTheme() {
