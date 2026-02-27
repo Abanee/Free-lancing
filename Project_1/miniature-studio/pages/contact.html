@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miniature Figurine Painting Studio | Contact</title>
+  <meta name="description" content="Request pricing and timeline estimates for your miniature figurine painting commission.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { display: ["Bebas Neue", "sans-serif"], body: ["Space Grotesk", "sans-serif"] } } }
+    };
+  </script>
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("studio-theme");
+        const direction = localStorage.getItem("studio-dir");
+        if (theme) document.documentElement.setAttribute("data-theme", theme);
+        if (direction) document.documentElement.setAttribute("dir", direction);
+      } catch (_) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="font-body text-[var(--color-text)]">
+  <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between gap-4">
+        <a href="index.html" class="font-display text-3xl text-[var(--color-primary)] sm:text-4xl">Miniature Studio</a>
+        <nav aria-label="Primary" class="hidden lg:block">
+          <ul class="flex items-center gap-6 text-sm font-medium">
+            <li><a class="hover:text-[var(--color-primary)]" href="index.html">Home</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
+            <li><a class="text-[var(--color-primary)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-4" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button type="button" data-theme-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">Light</button>
+          <button type="button" data-dir-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">LTR</button>
+          <button type="button" data-menu-toggle aria-expanded="false" class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
+            <svg class="h-6 w-6 rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div data-mobile-menu class="hidden border-t border-black/10 py-4 lg:hidden">
+        <nav aria-label="Mobile">
+          <ul class="space-y-3 text-base font-medium">
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="index.html">Home</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="tools.html">Tools or Techs</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block rounded-lg px-3 py-2 bg-black/5" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrap">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section class="grid gap-8 lg:grid-cols-[1fr_1.1fr]" aria-labelledby="contact-title">
+        <div data-reveal class="opacity-0 translate-y-3 transition duration-700">
+          <h1 id="contact-title" class="font-display text-5xl leading-none text-[var(--color-primary)] sm:text-6xl">Contact & Pricing Inquiry</h1>
+          <p class="mt-4 text-[var(--color-muted)]">Share project size, preferred style, and deadlines. You will receive a clear estimate with scope checkpoints.</p>
+          <div class="mt-6 space-y-3 text-sm">
+            <p><strong>Email:</strong> studio@miniaturefigurine.art</p>
+            <p><strong>Location:</strong> Remote commissions, US-based shipping hub</p>
+            <p><strong>Turnaround:</strong> 2-6 weeks by complexity</p>
+          </div>
+          <h2 class="mt-8 text-2xl font-semibold text-[var(--color-primary)]">Social Links</h2>
+          <ul class="mt-3 flex gap-3 text-sm">
+            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="ArtStation">ArtStation</a></li>
+            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="Behance">Behance</a></li>
+          </ul>
+        </div>
+
+        <section data-reveal class="rounded-2xl border border-black/10 bg-white/85 p-5 card-shadow opacity-0 translate-y-3 transition duration-700 delay-150" aria-labelledby="form-title">
+          <h2 id="form-title" class="text-2xl font-semibold text-[var(--color-primary)]">Commission Request Form</h2>
+          <form data-validate-form class="mt-4 space-y-4" novalidate>
+            <p data-form-success class="hidden rounded-lg bg-emerald-100 px-4 py-3 text-sm text-emerald-900">Form submitted successfully. We will reply with pricing details shortly.</p>
+
+            <div class="relative">
+              <label for="full_name" class="mb-1 block text-sm font-medium">Full Name</label>
+              <input id="full_name" data-validate type="text" autocomplete="name" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-full_name">
+              <small id="error-full_name" data-error-for="full_name" class="field-error"></small>
+              <span data-tooltip-for="full_name" class="error-tooltip hidden"></span>
+            </div>
+
+            <div class="relative">
+              <label for="email" class="mb-1 block text-sm font-medium">Email</label>
+              <input id="email" data-validate type="email" autocomplete="email" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-email">
+              <small id="error-email" data-error-for="email" class="field-error"></small>
+              <span data-tooltip-for="email" class="error-tooltip hidden"></span>
+            </div>
+
+            <div class="relative">
+              <label for="service" class="mb-1 block text-sm font-medium">Service Type</label>
+              <select id="service" data-validate class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-service">
+                <option value="">Select service</option>
+                <option value="assembly">Assembly</option>
+                <option value="painting">Painting</option>
+                <option value="full commission">Full Commission</option>
+              </select>
+              <small id="error-service" data-error-for="service" class="field-error"></small>
+              <span data-tooltip-for="service" class="error-tooltip hidden"></span>
+            </div>
+
+            <div class="relative">
+              <label for="budget" class="mb-1 block text-sm font-medium">Estimated Budget (Optional)</label>
+              <input id="budget" data-validate type="text" inputmode="numeric" placeholder="Example: 1,200+" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)] ltr-only" aria-describedby="error-budget">
+              <small id="error-budget" data-error-for="budget" class="field-error"></small>
+              <span data-tooltip-for="budget" class="error-tooltip hidden"></span>
+            </div>
+
+            <div class="relative">
+              <label for="message" class="mb-1 block text-sm font-medium">Project Details</label>
+              <textarea id="message" data-validate rows="5" class="w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-message"></textarea>
+              <small id="error-message" data-error-for="message" class="field-error"></small>
+              <span data-tooltip-for="message" class="error-tooltip hidden"></span>
+            </div>
+
+            <button type="submit" class="btn-primary w-full justify-center">Send Inquiry</button>
+          </form>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-black/10 py-8">
+    <div class="mx-auto max-w-7xl px-4 text-sm text-[var(--color-muted)] sm:px-6 lg:px-8">
+      © <span data-current-year></span> Miniature Figurine Painting Studio
+    </div>
+  </footer>
+</body>
+</html>

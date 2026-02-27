@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miniature Figurine Painting Studio | Portfolio</title>
+  <meta name="description" content="High-resolution gallery of miniature painting commissions with genre and service filters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("studio-theme");
+        const savedDir = localStorage.getItem("studio-dir");
+        if (savedDir) document.documentElement.setAttribute("dir", savedDir);
+        if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+      } catch (_) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { display: ["Bebas Neue", "sans-serif"], body: ["Space Grotesk", "sans-serif"] } } }
+    };
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="font-body text-[var(--color-text)]">
+  <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between gap-4">
+        <a href="index.html" class="font-display text-3xl text-[var(--color-primary)] sm:text-4xl">Miniature Studio</a>
+        <nav aria-label="Primary" class="hidden lg:block">
+          <ul class="flex items-center gap-6 text-sm font-medium">
+            <li><a class="hover:text-[var(--color-primary)]" href="index.html">Home</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button type="button" data-theme-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">Light</button>
+          <button type="button" data-dir-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">LTR</button>
+          <button type="button" data-menu-toggle aria-expanded="false" class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
+            <svg class="h-6 w-6 rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div data-mobile-menu class="hidden border-t border-black/10 py-4 lg:hidden">
+        <nav aria-label="Mobile">
+          <ul class="space-y-3 text-base font-medium">
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="index.html">Home</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="tools.html">Tools or Techs</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrap">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section aria-labelledby="portfolio-title">
+        <h1 id="portfolio-title" class="font-display text-5xl leading-none text-[var(--color-primary)] sm:text-6xl">Portfolio Grid</h1>
+        <p class="mt-3 max-w-3xl text-[var(--color-muted)]">Filter high-resolution pieces by genre and service type. Transitions are GPU-friendly for smooth browsing on all modern devices.</p>
+
+        <div class="mt-8 grid gap-4 rounded-2xl border border-black/10 bg-white/80 p-4 sm:p-6 card-shadow">
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-[var(--color-primary)]">Filter by Genre</h2>
+            <div data-filter-group="genre" class="mt-3 flex flex-wrap gap-2">
+              <button type="button" data-filter-value="all" aria-pressed="true" class="filter-chip">All</button>
+              <button type="button" data-filter-value="sci-fi" aria-pressed="false" class="filter-chip">Sci-Fi</button>
+              <button type="button" data-filter-value="fantasy" aria-pressed="false" class="filter-chip">Fantasy</button>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-[var(--color-primary)]">Filter by Service Type</h2>
+            <div data-filter-group="service" class="mt-3 flex flex-wrap gap-2">
+              <button type="button" data-filter-value="all" aria-pressed="true" class="filter-chip">All</button>
+              <button type="button" data-filter-value="assembly" aria-pressed="false" class="filter-chip">Assembly</button>
+              <button type="button" data-filter-value="painting" aria-pressed="false" class="filter-chip">Painting</button>
+              <button type="button" data-filter-value="full commission" aria-pressed="false" class="filter-chip">Full Commission</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-8" aria-label="Filtered portfolio results">
+          <h2 class="sr-only">Gallery Results</h2>
+          <div id="portfolioGrid" class="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article data-item data-genre="sci-fi" data-service="full commission" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Sci-Fi squad lead with neon edge highlights">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Neon Vanguard</h3>
+              <p class="text-sm text-[var(--color-muted)]">Sci-Fi | Full Commission</p>
+            </article>
+
+            <article data-item data-genre="fantasy" data-service="painting" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Fantasy ranger miniature with green cloak">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Emerald Ranger</h3>
+              <p class="text-sm text-[var(--color-muted)]">Fantasy | Painting</p>
+            </article>
+
+            <article data-item data-genre="sci-fi" data-service="assembly" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Sci-Fi mech frame assembly stage">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Ironclad Frame</h3>
+              <p class="text-sm text-[var(--color-muted)]">Sci-Fi | Assembly</p>
+            </article>
+
+            <article data-item data-genre="fantasy" data-service="full commission" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Fantasy paladin with gold trim and weathering">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Lioncrest Paladin</h3>
+              <p class="text-sm text-[var(--color-muted)]">Fantasy | Full Commission</p>
+            </article>
+
+            <article data-item data-genre="sci-fi" data-service="painting" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Sci-Fi heavy trooper with hazard stripes">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Hazard Breacher</h3>
+              <p class="text-sm text-[var(--color-muted)]">Sci-Fi | Painting</p>
+            </article>
+
+            <article data-item data-genre="fantasy" data-service="assembly" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Fantasy dragon rider miniature in sub-assembly">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Drakebound Rider</h3>
+              <p class="text-sm text-[var(--color-muted)]">Fantasy | Assembly</p>
+            </article>
+
+            <article data-item data-genre="sci-fi" data-service="full commission" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Elite sci-fi assassin with glowing visor">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Wraith Operative</h3>
+              <p class="text-sm text-[var(--color-muted)]">Sci-Fi | Full Commission</p>
+            </article>
+
+            <article data-item data-genre="fantasy" data-service="painting" class="gallery-item rounded-2xl border border-black/10 bg-white/90 p-3 card-shadow">
+              <div data-image-wrap class="relative overflow-hidden rounded-xl">
+                <div data-skeleton class="skeleton transition-opacity duration-300"></div>
+                <img class="h-56 w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1533055640609-24b498dfd74c?auto=format&fit=crop&w=1100&q=80&fm=webp" alt="Fantasy warlock with magical blue effects">
+              </div>
+              <h3 class="mt-3 text-base font-semibold text-[var(--color-primary)]">Astral Warlock</h3>
+              <p class="text-sm text-[var(--color-muted)]">Fantasy | Painting</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="mt-10 rounded-2xl border border-black/10 bg-white/80 p-6 card-shadow">
+        <h2 class="text-2xl font-semibold text-[var(--color-primary)]">Project Deep Dive</h2>
+        <p class="mt-2 text-sm text-[var(--color-muted)]">Open the detail page to review material stack, palette architecture, and timeline milestones for a featured commission.</p>
+        <a href="project-details.html" class="btn-primary mt-4 inline-flex items-center">View Project Details</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-black/10 py-8">
+    <div class="mx-auto max-w-7xl px-4 text-sm text-[var(--color-muted)] sm:px-6 lg:px-8">
+      © <span data-current-year></span> Miniature Figurine Painting Studio
+    </div>
+  </footer>
+</body>
+</html>

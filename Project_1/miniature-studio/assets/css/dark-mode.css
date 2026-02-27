@@ -1,0 +1,44 @@
+html[data-theme="dark"] {
+  --color-primary: #74a5ad;
+  --color-secondary: #0d1417;
+  --color-accent: #d8a261;
+  --color-surface: #111c22;
+  --color-text: #e9f2f4;
+  --color-muted: #a4b5b9;
+}
+
+html[data-theme="dark"] body {
+  background: linear-gradient(160deg, #081014 0%, #0f1b21 45%, #1a2228 100%);
+}
+
+html[data-theme="dark"] .surface-glass {
+  background: color-mix(in oklab, var(--color-surface) 78%, transparent);
+}
+
+html[data-theme="dark"] .card-shadow {
+  box-shadow: 0 14px 42px -18px rgba(0, 0, 0, 0.6);
+}
+
+html[data-theme="dark"] .btn-outline {
+  border-color: color-mix(in oklab, var(--color-primary) 45%, #ffffff12);
+  color: var(--color-text);
+}
+
+html[data-theme="dark"] .btn-outline:hover {
+  background: color-mix(in oklab, var(--color-primary) 14%, #111);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --color-primary: #74a5ad;
+    --color-secondary: #0d1417;
+    --color-accent: #d8a261;
+    --color-surface: #111c22;
+    --color-text: #e9f2f4;
+    --color-muted: #a4b5b9;
+  }
+
+  html:not([data-theme="light"]) body {
+    background: linear-gradient(160deg, #081014 0%, #0f1b21 45%, #1a2228 100%);
+  }
+}

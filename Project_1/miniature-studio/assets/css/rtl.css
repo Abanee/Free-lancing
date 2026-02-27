@@ -1,0 +1,22 @@
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .timeline-step::before {
+  right: 11px;
+  left: auto;
+}
+
+html[dir="rtl"] .error-tooltip {
+  right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .ltr-only {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
