@@ -1,13 +1,17 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miniature Figurine Painting Studio | Contact</title>
-  <meta name="description" content="Request pricing and timeline estimates for your miniature figurine painting commission.">
+  <meta name="description"
+    content="Request pricing and timeline estimates for your miniature figurine painting commission.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -21,7 +25,7 @@
         const direction = localStorage.getItem("studio-dir");
         if (theme) document.documentElement.setAttribute("data-theme", theme);
         if (direction) document.documentElement.setAttribute("dir", direction);
-      } catch (_) {}
+      } catch (_) { }
     })();
   </script>
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -29,6 +33,7 @@
   <link rel="stylesheet" href="../assets/css/rtl.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
+
 <body class="font-body text-[var(--color-text)]">
   <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,15 +45,24 @@
             <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
             <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
             <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
-            <li><a class="text-[var(--color-primary)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-4" href="contact.html">Contact</a></li>
+            <li><a
+                class="text-[var(--color-primary)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-4"
+                href="contact.html">Contact</a></li>
           </ul>
         </nav>
-        <div class="flex items-center gap-2">
-          <button type="button" data-theme-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">Light</button>
-          <button type="button" data-dir-toggle aria-pressed="false" class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">LTR</button>
-          <button type="button" data-menu-toggle aria-expanded="false" class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
+                <div class="flex items-center gap-2">
+          <button type="button" data-theme-toggle aria-pressed="false"
+            class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold flex items-center justify-center">☀️</button>
+          <button type="button" data-dir-toggle aria-pressed="false"
+            class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold hover:rotate-[360deg] transition-transform duration-500 flex items-center justify-center">LTR</button>
+          <a href="pages/dashboard.html"
+            class="hidden rounded-lg border border-black/15 px-5 py-2 text-sm font-semibold hover:bg-black/5 lg:block">Dashboard</a>
+          <a href="pages/login.html"
+            class="hidden rounded-lg bg-[var(--color-primary)] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 lg:block">Login</a>
+          <button type="button" data-menu-toggle aria-expanded="false"
+            class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
             <svg class="h-6 w-6 rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
             </svg>
           </button>
         </div>
@@ -71,43 +85,81 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <section class="grid gap-8 lg:grid-cols-[1fr_1.1fr]" aria-labelledby="contact-title">
         <div data-reveal class="opacity-0 translate-y-3 transition duration-700">
-          <h1 id="contact-title" class="font-display text-5xl leading-none text-[var(--color-primary)] sm:text-6xl">Contact & Pricing Inquiry</h1>
-          <p class="mt-4 text-[var(--color-muted)]">Share project size, preferred style, and deadlines. You will receive a clear estimate with scope checkpoints.</p>
+          <h1 id="contact-title" class="font-display text-5xl leading-none text-[var(--color-primary)] sm:text-6xl">
+            Contact & Pricing Inquiry</h1>
+          <p class="mt-4 text-[var(--color-muted)]">Share project size, preferred style, and deadlines. You will receive
+            a clear estimate with scope checkpoints.</p>
           <div class="mt-6 space-y-3 text-sm">
             <p><strong>Email:</strong> studio@miniaturefigurine.art</p>
             <p><strong>Location:</strong> Remote commissions, US-based shipping hub</p>
             <p><strong>Turnaround:</strong> 2-6 weeks by complexity</p>
           </div>
-          <h2 class="mt-8 text-2xl font-semibold text-[var(--color-primary)]">Social Links</h2>
-          <ul class="mt-3 flex gap-3 text-sm">
-            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="Instagram">Instagram</a></li>
-            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="ArtStation">ArtStation</a></li>
-            <li><a class="btn-outline inline-flex items-center" href="#" aria-label="Behance">Behance</a></li>
-          </ul>
+          <div class="mt-8 overflow-hidden rounded-2xl border border-black/10 card-shadow h-64">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215707164101!2d-73.98784408459375!3d40.75797877932688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480293%3A0x510671607693cf65!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1647413444000!5m2!1sen!2sus"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h2 class="mt-8 text-2xl font-display text-[var(--color-primary)]">Connect With Us</h2>
+          <div class="mt-4 flex gap-4">
+            <a href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/80 border border-black/10 card-shadow hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300"
+              aria-label="Instagram">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/80 border border-black/10 card-shadow hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300"
+              aria-label="ArtStation">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M.03 18.736l9.366-16.155 3.99 6.892-5.462 9.406H.014c.005-.054.01-.093.016-.143zm11.233-5.32l2.365-4.086 5.165 8.932h-5.01l-2.52-4.846zm12.722 4.414c-.01.373-.133.682-.365.928-.232.246-.53.37-.893.37h-5.59l8.604-14.862c.31.545.454 1.15.244 1.812l-2.004 11.752zm-12.062 0l2.55-4.38 2.535 4.38h-5.085z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/80 border border-black/10 card-shadow hover:text-[var(--color-accent)] hover:-translate-y-1 transition-all duration-300"
+              aria-label="Behance">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 7h-7v-2h7v2zm.451 4.54c-.112-.662-.358-1.229-.738-1.701-.38-.471-.85-.824-1.41-1.059-.558-.234-1.18-.352-1.865-.352-1.03 0-1.895.234-2.595.703-.7.469-1.218 1.114-1.554 1.933-.336.82-.504 1.761-.504 2.823 0 1.052.179 1.979.537 2.781.358.803.882 1.419 1.573 1.848.691.43 1.517.644 2.479.644 1.103 0 2.016-.251 2.738-.752.722-.501 1.229-1.206 1.522-2.114l-2.721-.497c-.092.427-.279.742-.562.946-.283.203-.666.306-1.15.306-.543 0-.964-.166-1.264-.497-.3-.331-.484-.877-.552-1.64h6.39c.005-.125.008-.266.008-.423 0-1.077-.123-1.993-.369-2.748zm-1.865 1.171h-3.83c.063-.594.238-1.031.524-1.312.286-.281.65-.422 1.093-.422.427 0 .785.127 1.072.38.287.253.479.64.577 1.159l.564.195zm-15.011 2.923c.691 0 1.258-.129 1.701-.386.443-.257.755-.589.936-.995.18-.406.271-.849.271-1.328 0-.649-.15-1.175-.448-1.579s-.758-.69-1.38-.857v-.105c.441-.125.799-.348 1.072-.669.273-.321.41-.755.41-1.303 0-.583-.122-1.078-.367-1.485s-.596-.713-1.052-.917c-.456-.204-1.002-.306-1.637-.306h-5.081v10.931l5.575-.001zm-3.56-9.15h1.564c.594 0 1.026.111 1.296.33.27.221.406.551.406.993 0 .432-.142.748-.428.948-.286.201-.734.301-1.345.301h-1.493v-2.572zm0 3.864h1.831c.677 0 1.157.142 1.442.427.285.285.428.694.428 1.229 0 .584-.131 1.018-.393 1.3-.262.283-.715.424-1.359.424h-1.949v-3.38z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <section data-reveal class="rounded-2xl border border-black/10 bg-white/85 p-5 card-shadow opacity-0 translate-y-3 transition duration-700 delay-150" aria-labelledby="form-title">
+        <section data-reveal
+          class="rounded-2xl border border-black/10 bg-white/85 p-5 card-shadow opacity-0 translate-y-3 transition duration-700 delay-150"
+          aria-labelledby="form-title">
           <h2 id="form-title" class="text-2xl font-semibold text-[var(--color-primary)]">Commission Request Form</h2>
           <form data-validate-form class="mt-4 space-y-4" novalidate>
-            <p data-form-success class="hidden rounded-lg bg-emerald-100 px-4 py-3 text-sm text-emerald-900">Form submitted successfully. We will reply with pricing details shortly.</p>
+            <p data-form-success class="hidden rounded-lg bg-emerald-100 px-4 py-3 text-sm text-emerald-900">Form
+              submitted successfully. We will reply with pricing details shortly.</p>
 
             <div class="relative">
               <label for="full_name" class="mb-1 block text-sm font-medium">Full Name</label>
-              <input id="full_name" data-validate type="text" autocomplete="name" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-full_name">
+              <input id="full_name" data-validate type="text" autocomplete="name"
+                class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]"
+                aria-describedby="error-full_name">
               <small id="error-full_name" data-error-for="full_name" class="field-error"></small>
               <span data-tooltip-for="full_name" class="error-tooltip hidden"></span>
             </div>
 
             <div class="relative">
               <label for="email" class="mb-1 block text-sm font-medium">Email</label>
-              <input id="email" data-validate type="email" autocomplete="email" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-email">
+              <input id="email" data-validate type="email" autocomplete="email"
+                class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]"
+                aria-describedby="error-email">
               <small id="error-email" data-error-for="email" class="field-error"></small>
               <span data-tooltip-for="email" class="error-tooltip hidden"></span>
             </div>
 
             <div class="relative">
               <label for="service" class="mb-1 block text-sm font-medium">Service Type</label>
-              <select id="service" data-validate class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-service">
+              <select id="service" data-validate
+                class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]"
+                aria-describedby="error-service">
                 <option value="">Select service</option>
                 <option value="assembly">Assembly</option>
                 <option value="painting">Painting</option>
@@ -119,14 +171,18 @@
 
             <div class="relative">
               <label for="budget" class="mb-1 block text-sm font-medium">Estimated Budget (Optional)</label>
-              <input id="budget" data-validate type="text" inputmode="numeric" placeholder="Example: 1,200+" class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)] ltr-only" aria-describedby="error-budget">
+              <input id="budget" data-validate type="text" inputmode="numeric" placeholder="Example: 1,200+"
+                class="min-touch w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)] ltr-only"
+                aria-describedby="error-budget">
               <small id="error-budget" data-error-for="budget" class="field-error"></small>
               <span data-tooltip-for="budget" class="error-tooltip hidden"></span>
             </div>
 
             <div class="relative">
               <label for="message" class="mb-1 block text-sm font-medium">Project Details</label>
-              <textarea id="message" data-validate rows="5" class="w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]" aria-describedby="error-message"></textarea>
+              <textarea id="message" data-validate rows="5"
+                class="w-full rounded-lg border border-black/15 bg-white px-3 py-2 outline-none focus:border-[var(--color-primary)]"
+                aria-describedby="error-message"></textarea>
               <small id="error-message" data-error-for="message" class="field-error"></small>
               <span data-tooltip-for="message" class="error-tooltip hidden"></span>
             </div>
@@ -138,10 +194,127 @@
     </div>
   </main>
 
-  <footer class="border-t border-black/10 py-8">
-    <div class="mx-auto max-w-7xl px-4 text-sm text-[var(--color-muted)] sm:px-6 lg:px-8">
-      © <span data-current-year></span> Miniature Figurine Painting Studio
+
+  <!-- Custom Visual Footer: Ride The Wind -->
+  <footer
+    style="background-color: #0f4c5c; color: white; padding: 4rem 0 2rem 0; font-family: sans-serif; margin-top: 4rem;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
+
+        <!-- Column 1: Brand Info -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.5rem;">🏄</span>
+            <h3 style="font-size: 1.25rem; font-weight: bold; margin: 0;">Ride The Wind</h3>
+          </div>
+          <p style="font-size: 0.875rem; line-height: 1.5; color: #e2e8f0; margin: 0;">
+            Your premier kitesurfing and windsurfing school.<br>
+            Learn from the best, ride with confidence.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <p style="font-size: 0.875rem; margin-bottom: 0.75rem;">Follow Us:</p>
+            <div style="display: flex; gap: 0.75rem;">
+              <!-- Facebook -->
+              <a href="#"
+                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-2.221c0-.822.112-1.117.73-1.117h1.628v-4.662c-.455-.06-1.155-.06-1.155-.06-3.84 0-5.145 1.701-5.145 4.148v4.045z" />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#"
+                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <!-- YouTube -->
+              <a href="#"
+                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z" />
+                </svg>
+              </a>
+              <!-- Twitter -->
+              <a href="#"
+                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Quick Links</h4>
+          <ul
+            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+            <li><a href="index.html" style="color: #e2e8f0; text-decoration: none;">Home</a></li>
+            <li><a href="about.html" style="color: #e2e8f0; text-decoration: none;">About Us</a></li>
+            <li><a href="programs.html" style="color: #e2e8f0; text-decoration: none;">Programs</a></li>
+            <li style="margin: 0.25rem 0;">
+              <a href="contact.html"
+                style="display: inline-block; background-color: #26a8ff; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 0.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Book
+                Now</a>
+            </li>
+            <li><a href="instructors.html" style="color: #e2e8f0; text-decoration: none;">Instructors</a></li>
+            <li><a href="portfolio.html" style="color: #e2e8f0; text-decoration: none;">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Support -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Support</h4>
+          <ul
+            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+            <li><a href="contact.html" style="color: #e2e8f0; text-decoration: none;">Contact</a></li>
+            <li><a href="blog.html" style="color: #e2e8f0; text-decoration: none;">Blog</a></li>
+            <li><a href="coming-soon.html" style="color: #e2e8f0; text-decoration: none;">Coming Soon</a></li>
+            <li><a href="faq.html" style="color: #e2e8f0; text-decoration: none;">FAQ</a></li>
+            <li><a href="privacy.html" style="color: #e2e8f0; text-decoration: none;">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Contact Info</h4>
+          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem; color: #e2e8f0;">
+            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+              <span style="color: #f75c7e;">📍</span>
+              <span>123 Beach Road, Surf Paradise</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span
+                style="color: #e0e7ff; background-color: rgba(255,255,255,0.2); border-radius: 2px; padding: 0 2px; font-size: 0.7rem;">✉</span>
+              <a href="mailto:info@ridethewind.com"
+                style="color: #e2e8f0; text-decoration: none;">info@ridethewind.com</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: #f75c7e;">📞</span>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div style="margin-top: 0.5rem;">
+              <p style="margin: 0 0 0.25rem 0; font-weight: bold; color: white;">Hours:</p>
+              <p style="margin: 0;">Daily: 8:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: #cbd5e1;">
+        <p style="margin: 0;">© 2026 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
+      </div>
     </div>
   </footer>
+
 </body>
+
 </html>

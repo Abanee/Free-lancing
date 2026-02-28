@@ -13,7 +13,7 @@ const ThemeModule = (() => {
     }
     document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
       button.setAttribute("aria-pressed", String(theme === "dark"));
-      button.textContent = theme === "dark" ? "Dark" : "Light";
+      button.textContent = theme === "dark" ? "🌙" : "☀️";
     });
   };
 

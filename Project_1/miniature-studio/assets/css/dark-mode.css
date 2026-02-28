@@ -4,7 +4,7 @@ html[data-theme="dark"] {
   --color-accent: #d8a261;
   --color-surface: #111c22;
   --color-text: #e9f2f4;
-  --color-muted: #a4b5b9;
+  --color-muted: #4591a2;
 }
 
 html[data-theme="dark"] body {
@@ -16,7 +16,27 @@ html[data-theme="dark"] .surface-glass {
 }
 
 html[data-theme="dark"] .card-shadow {
-  box-shadow: 0 14px 42px -18px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 14px 42px -18px rgba(0, 0, 0, 0.7);
+}
+
+/* Enhanced Dark Mode Card Backgrounds */
+html[data-theme="dark"] .bg-white\/70,
+html[data-theme="dark"] .bg-white\/80,
+html[data-theme="dark"] .bg-white\/85,
+html[data-theme="dark"] .bg-white\/90,
+html[data-theme="dark"] .bg-white {
+  background-color: rgba(22, 32, 38, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="dark"] .bg-slate-50,
+html[data-theme="dark"] .bg-slate-100 {
+  background-color: rgba(15, 23, 28, 0.95) !important;
+}
+
+html[data-theme="dark"] .text-\[var\(--color-muted\)\] {
+  color: #8da9af !important;
+  /* Slightly brighter muted text for dark mode */
 }
 
 html[data-theme="dark"] .btn-outline {
@@ -35,10 +55,19 @@ html[data-theme="dark"] .btn-outline:hover {
     --color-accent: #d8a261;
     --color-surface: #111c22;
     --color-text: #e9f2f4;
-    --color-muted: #a4b5b9;
+    --color-muted: #4591a2;
   }
 
   html:not([data-theme="light"]) body {
     background: linear-gradient(160deg, #081014 0%, #0f1b21 45%, #1a2228 100%);
+  }
+
+  html:not([data-theme="light"]) .bg-white\/70,
+  html:not([data-theme="light"]) .bg-white\/80,
+  html:not([data-theme="light"]) .bg-white\/85,
+  html:not([data-theme="light"]) .bg-white\/90,
+  html:not([data-theme="light"]) .bg-white {
+    background-color: rgba(22, 32, 38, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
   }
 }
