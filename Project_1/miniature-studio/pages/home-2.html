@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniature Studio | Home 2 - Premium Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ["Bebas Neue", "sans-serif"],
+                        body: ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <script src="../assets/js/main.js" defer></script>
+    <style>
+        .hero-split {
+            min-height: calc(100vh - 80px);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+
+        .glass-nav-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body text-[var(--color-text)] bg-[#fffaf3]">
+    <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-20 items-center justify-between gap-4">
+                <a href="index.html" class="font-display text-3xl text-[var(--color-primary)] sm:text-4xl">Miniature
+                    Studio</a>
+                <nav aria-label="Primary" class="hidden lg:block">
+                    <ul class="flex items-center gap-6 text-sm font-medium">
+                        <li><a class="hover:text-[var(--color-primary)]" href="index.html">Home</a></li>
+                        <li><a class="text-[var(--color-primary)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-4"
+                                href="home-2.html">Home 2</a></li>
+                        <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
+                        <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
+                        <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
+                        <li><a class="hover:text-[var(--color-primary)]" href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex items-center gap-2">
+                        <a href="dashboard.html" class="btn-outline !min-h-[36px] !px-4 !py-1 text-xs">Dashboard</a>
+                        <a href="login.html" class="btn-primary !min-h-[36px] !px-4 !py-1 text-xs">Login</a>
+                    </div>
+                    <div class="flex items-center gap-2 border-l border-black/10 pl-4">
+                        <button type="button" data-theme-toggle
+                            class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold">☀️</button>
+                        <button type="button" data-menu-toggle
+                            class="min-touch rounded-full border border-black/15 p-2 lg:hidden">
+                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="hero-split">
+                <div data-reveal>
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-bold tracking-widest uppercase mb-6">Established
+                        in 2026</span>
+                    <h1
+                        class="font-display text-6xl sm:text-7xl lg:text-8xl text-[var(--color-primary)] leading-[0.9] mb-6">
+                        BRING YOUR <br> <span class="text-[var(--color-accent)]">LEGACY</span> TO LIFE
+                    </h1>
+                    <p class="text-lg text-[var(--color-muted)] max-w-xl mb-10 leading-relaxed">
+                        Premium miniature painting service for collectors who demand perfection. From character-focused
+                        OSL to weathered grime, we paint your vision with museum-grade quality.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html" class="btn-primary !px-8 !py-4 text-lg">Start Commission</a>
+                        <a href="portfolio.html" class="btn-outline !px-8 !py-4 text-lg">View Showcase</a>
+                    </div>
+                    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-black/5 pt-8">
+                        <div>
+                            <span class="block text-3xl font-display text-[var(--color-primary)]">500+</span>
+                            <span
+                                class="text-xs text-[var(--color-muted)] font-bold uppercase tracking-wider">Models</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-display text-[var(--color-primary)]">12+</span>
+                            <span
+                                class="text-xs text-[var(--color-muted)] font-bold uppercase tracking-wider">Awards</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-display text-[var(--color-primary)]">100%</span>
+                            <span
+                                class="text-xs text-[var(--color-muted)] font-bold uppercase tracking-wider">Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="animate-float">
+                        <img src="https://images.unsplash.com/photo-1620421680010-0766ff230392?auto=format&fit=crop&w=1400&q=80"
+                            alt="Miniature" class="rounded-3xl shadow-2xl border-8 border-white">
+                        <div class="absolute -bottom-10 -left-10 glass-nav-card p-6 rounded-2xl shadow-xl w-64 animate-float"
+                            style="animation-delay: -3s">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-xs font-bold uppercase">Now Painting</span>
+                            </div>
+                            <p class="text-sm font-semibold mb-1">Dreadnought Captain</p>
+                            <div class="w-full bg-black/5 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-[var(--color-accent)] h-full w-3/4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-5 w-40 h-40 bg-[var(--color-accent)]/10 rounded-full blur-3xl">
+                    </div>
+                    <div
+                        class="absolute bottom-1/2 -right-10 w-60 h-60 bg-[var(--color-primary)]/5 rounded-full blur-3xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-wrap bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="font-display text-4xl sm:text-5xl text-[var(--color-primary)] mb-4">Why Choose Our
+                        Studio?</h2>
+                    <div class="w-20 h-1 bg-[var(--color-accent)] mx-auto"></div>
+                </div>
+                <div class="grid gap-8 md:grid-cols-3">
+                    <div
+                        class="p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-colors group">
+                        <div
+                            class="w-14 h-14 bg-[var(--color-primary)] rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                            🎨</div>
+                        <h3 class="text-xl font-bold mb-4">Hyper-Detailing</h3>
+                        <p class="text-[var(--color-muted)] text-sm leading-relaxed">We push the boundaries of 28mm-75mm
+                            scale, using extreme highlights and glazing for maximum depth.</p>
+                    </div>
+                    <div
+                        class="p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-colors group">
+                        <div
+                            class="w-14 h-14 bg-[var(--color-accent)] rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                            ⚔️</div>
+                        <h3 class="text-xl font-bold mb-4">Lore Accuracy</h3>
+                        <p class="text-[var(--color-muted)] text-sm leading-relaxed">Factions and colors respected. We
+                            study the lore of your miniatures to provide the perfect color palette.</p>
+                    </div>
+                    <div
+                        class="p-8 rounded-3xl border border-black/5 hover:border-[var(--color-accent)]/50 transition-colors group">
+                        <div
+                            class="w-14 h-14 bg-[var(--color-primary)] rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+                            📦</div>
+                        <h3 class="text-xl font-bold mb-4">Secure Shipping</h3>
+                        <p class="text-[var(--color-muted)] text-sm leading-relaxed">Custom foam packing for every
+                            commission. We ship globally with guaranteed safe arrival.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-black/10 py-12 bg-[#fffaf3]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="font-display text-4xl text-[var(--color-primary)]">Miniature Studio</span>
+            <p class="text-sm text-[var(--color-muted)] mt-4">© 2026 Miniature Figurine Painting Studio. All rights
+                reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

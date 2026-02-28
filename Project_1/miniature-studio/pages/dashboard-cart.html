@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Studio Cart | Miniature Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { display: ["Bebas Neue", "sans-serif"], body: ["Space Grotesk", "sans-serif"] } } }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .sidebar-link.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-body text-[var(--color-text)] bg-slate-50">
+    <div class="dashboard-layout">
+        <aside class="sidebar bg-white border-r border-black/5 p-6 flex flex-col">
+            <div class="mb-10"><a href="index.html" class="font-display text-4xl text-[var(--color-primary)]">MS</a>
+            </div>
+            <nav class="space-y-2 flex-1">
+                <a href="dashboard.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>📊</span>
+                    Dashboard</a>
+                <a href="dashboard-orders.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>📦</span>
+                    Orders</a>
+                <a href="dashboard-cart.html"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold transition-all"><span>🛒</span>
+                    Cart</a>
+                <a href="dashboard-payment.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>💳</span>
+                    Payments</a>
+                <a href="dashboard-profile.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>👤</span>
+                    Profile</a>
+            </nav>
+            <div class="pt-6 border-t border-black/5">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-all"><span>🚪</span>
+                    Logout</a>
+            </div>
+        </aside>
+
+        <main class="p-4 sm:p-8">
+            <header class="mb-10 text-center lg:text-left">
+                <h1 class="text-3xl font-bold text-[var(--color-primary)]">Shopping Cart</h1>
+                <p class="text-[var(--color-muted)]">Review your pending commissions before checkout.</p>
+            </header>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                <!-- Cart Items -->
+                <div class="xl:col-span-2 space-y-6">
+                    <div data-animate
+                        class="bg-white rounded-3xl border border-black/5 p-6 shadow-sm flex flex-col sm:flex-row gap-6 relative">
+                        <button
+                            class="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors">✕</button>
+                        <div
+                            class="w-24 h-24 rounded-2xl bg-slate-100 overflow-hidden flex-shrink-0 border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200"
+                                alt="Item" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold">Chaos Sorcerer Lord</h3>
+                            <p class="text-xs text-[var(--color-muted)] mb-4">Tier: Showcase Elite | Base: Occult Ritual
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center border border-black/5 rounded-full overflow-hidden">
+                                    <button class="px-3 py-1 hover:bg-slate-50 border-r border-black/5">-</button>
+                                    <span class="px-4 py-1 text-sm font-bold">1</span>
+                                    <button class="px-3 py-1 hover:bg-slate-50 border-l border-black/5">+</button>
+                                </div>
+                                <span class="font-bold text-[var(--color-primary)]">$120.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-animate style="transition-delay: 0.1s"
+                        class="bg-white rounded-3xl border border-black/5 p-6 shadow-sm flex flex-col sm:flex-row gap-6 relative">
+                        <button
+                            class="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors">✕</button>
+                        <div
+                            class="w-24 h-24 rounded-2xl bg-slate-100 overflow-hidden flex-shrink-0 border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=200"
+                                alt="Item" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold">Knight Errant (Set of 5)</h3>
+                            <p class="text-xs text-[var(--color-muted)] mb-4">Tier: Tabletop+ | Base: Muddy Battlefield
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div class="flex items-center border border-black/5 rounded-full overflow-hidden">
+                                    <button class="px-3 py-1 hover:bg-slate-50 border-r border-black/5">-</button>
+                                    <span class="px-4 py-1 text-sm font-bold">1</span>
+                                    <button class="px-3 py-1 hover:bg-slate-50 border-l border-black/5">+</button>
+                                </div>
+                                <span class="font-bold text-[var(--color-primary)]">$240.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div data-animate
+                    class="bg-[var(--color-primary)] text-white rounded-3xl p-8 shadow-xl h-fit sticky top-28">
+                    <h2 class="text-2xl font-display mb-8">Order Summary</h2>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between text-white/70 text-sm">
+                            <span>Subtotal</span>
+                            <span class="font-bold text-white">$360.00</span>
+                        </div>
+                        <div class="flex justify-between text-white/70 text-sm">
+                            <span>Shipping (Express)</span>
+                            <span class="font-bold text-white">$15.00</span>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex justify-between">
+                            <span class="font-bold">Total</span>
+                            <span class="text-2xl font-display text-[var(--color-accent)]">$375.00</span>
+                        </div>
+                    </div>
+                    <a href="dashboard-payment.html"
+                        class="block w-full py-4 bg-[var(--color-accent)] text-white text-center rounded-2xl font-bold hover:scale-[1.02] transition-transform shadow-lg">Proceed
+                        to Checkout</a>
+                    <p class="text-[10px] text-center mt-4 text-white/50 tracking-widest uppercase">Secured by Studio
+                        Shield</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniature Studio | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ["Bebas Neue", "sans-serif"],
+                        body: ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .sidebar-link.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-body text-[var(--color-text)] bg-slate-50">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar bg-white border-r border-black/5 p-6 flex flex-col">
+            <div class="mb-10">
+                <a href="index.html" class="font-display text-4xl text-[var(--color-primary)]">MS</a>
+            </div>
+            <nav class="space-y-2 flex-1">
+                <a href="dashboard.html"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold transition-all">
+                    <span>📊</span> Dashboard
+                </a>
+                <a href="dashboard-orders.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]">
+                    <span>📦</span> Orders
+                </a>
+                <a href="dashboard-cart.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]">
+                    <span>🛒</span> Cart
+                </a>
+                <a href="dashboard-payment.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]">
+                    <span>💳</span> Payments
+                </a>
+                <a href="dashboard-profile.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]">
+                    <span>👤</span> Profile
+                </a>
+            </nav>
+            <div class="pt-6 border-t border-black/5">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-all">
+                    <span>🚪</span> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="p-4 sm:p-8 overflow-y-auto">
+            <header class="flex items-center justify-between mb-10">
+                <div>
+                    <h1 class="text-3xl font-bold text-[var(--color-primary)]">Welcome, Collector</h1>
+                    <p class="text-[var(--color-muted)]">Here's what's happening with your miniatures.</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="w-10 h-10 border border-black/10 rounded-full flex items-center justify-center bg-white shadow-sm">🔔</button>
+                    <div class="w-10 h-10 bg-[var(--color-accent)] rounded-full border-2 border-white shadow-md"></div>
+                </div>
+            </header>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div data-animate class="stat-card bg-white p-6 rounded-3xl border border-black/5 shadow-sm">
+                    <span class="block text-[var(--color-muted)] text-sm font-bold uppercase tracking-wider mb-2">Active
+                        Orders</span>
+                    <div class="flex items-end gap-3">
+                        <span class="text-4xl font-display text-[var(--color-primary)]">03</span>
+                        <span class="text-xs font-bold text-green-500 bg-green-50 px-2 py-1 rounded-lg mb-1">+1
+                            New</span>
+                    </div>
+                </div>
+                <div data-animate style="transition-delay: 0.1s"
+                    class="stat-card bg-white p-6 rounded-3xl border border-black/5 shadow-sm">
+                    <span
+                        class="block text-[var(--color-muted)] text-sm font-bold uppercase tracking-wider mb-2">Completion
+                        Rate</span>
+                    <div class="flex items-end gap-3">
+                        <span class="text-4xl font-display text-[var(--color-primary)]">98%</span>
+                        <span
+                            class="text-xs font-bold text-[var(--color-accent)] bg-[var(--color-accent)]/5 px-2 py-1 rounded-lg mb-1">Elite</span>
+                    </div>
+                </div>
+                <div data-animate style="transition-delay: 0.2s"
+                    class="stat-card bg-[var(--color-primary)] p-6 rounded-3xl border border-white/10 shadow-xl">
+                    <span class="block text-white/60 text-sm font-bold uppercase tracking-wider mb-2">Total
+                        Points</span>
+                    <div class="flex items-end gap-3">
+                        <span class="text-4xl font-display text-white">4,250</span>
+                    </div>
+                </div>
+                <div data-animate style="transition-delay: 0.3s"
+                    class="stat-card bg-white p-6 rounded-3xl border border-black/5 shadow-sm">
+                    <span class="block text-[var(--color-muted)] text-sm font-bold uppercase tracking-wider mb-2">Next
+                        Milestone</span>
+                    <div class="flex items-end gap-3">
+                        <span class="text-4xl font-display text-[var(--color-primary)]">5k</span>
+                        <div class="flex-1 h-3 bg-black/5 rounded-full mb-2 overflow-hidden">
+                            <div class="h-full bg-[var(--color-accent)] w-[85%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Recent Orders -->
+                <div data-animate class="lg:col-span-2 bg-white rounded-3xl border border-black/5 p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold">Recent Commissions</h2>
+                        <a href="dashboard-orders.html"
+                            class="text-sm font-bold text-[var(--color-accent)] hover:underline">View All</a>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-black/5">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm bg-slate-100 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=200"
+                                    alt="Min" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">Space Marine Captain</h4>
+                                <p class="text-xs text-[var(--color-muted)] uppercase tracking-wider mt-1">Status: <span
+                                        class="text-[var(--color-accent)] font-bold">In Progress</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-sm">$145.00</span>
+                                <span class="text-[10px] text-[var(--color-muted)]">Feb 24, 2026</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-black/5">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm bg-slate-100 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=200"
+                                    alt="Min" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-sm">Elven Archer Squad</h4>
+                                <p class="text-xs text-[var(--color-muted)] uppercase tracking-wider mt-1">Status: <span
+                                        class="text-green-500 font-bold">Shipped</span></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-sm">$320.00</span>
+                                <span class="text-[10px] text-[var(--color-muted)]">Feb 20, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palette Inspiration -->
+                <div data-animate style="transition-delay: 0.1s"
+                    class="bg-[var(--color-primary)] rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-xl font-bold mb-4">Palette of the Day</h2>
+                        <div class="flex gap-2 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-[#12343b] border-2 border-white/20"></div>
+                            <div class="w-10 h-10 rounded-full bg-[#c08a4e] border-2 border-white/20"></div>
+                            <div class="w-10 h-10 rounded-full bg-[#8b4513] border-2 border-white/20"></div>
+                            <div class="w-10 h-10 rounded-full bg-[#f8f5f0] border-2 border-white/20"></div>
+                        </div>
+                        <p class="text-sm text-white/70 mb-6">"Imperial Desert" - Perfect for wasteland bases and
+                            weathered leather textures.</p>
+                        <button
+                            class="w-full py-3 bg-white text-[var(--color-primary)] rounded-2xl font-bold text-sm hover:scale-[1.02] transition-transform">Download
+                            Recipe</button>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 w-40 h-40 bg-[var(--color-accent)] opacity-20 filter blur-3xl">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

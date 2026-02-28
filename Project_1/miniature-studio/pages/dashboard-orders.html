@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Commissions | Miniature Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { display: ["Bebas Neue", "sans-serif"], body: ["Space Grotesk", "sans-serif"] } } }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .sidebar-link.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .status-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+
+<body class="font-body text-[var(--color-text)] bg-slate-50">
+    <div class="dashboard-layout">
+        <aside class="sidebar bg-white border-r border-black/5 p-6 flex flex-col">
+            <div class="mb-10"><a href="index.html" class="font-display text-4xl text-[var(--color-primary)]">MS</a>
+            </div>
+            <nav class="space-y-2 flex-1">
+                <a href="dashboard.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>📊</span>
+                    Dashboard</a>
+                <a href="dashboard-orders.html"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold transition-all"><span>📦</span>
+                    Orders</a>
+                <a href="dashboard-cart.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>🛒</span>
+                    Cart</a>
+                <a href="dashboard-payment.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>💳</span>
+                    Payments</a>
+                <a href="dashboard-profile.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>👤</span>
+                    Profile</a>
+            </nav>
+            <div class="pt-6 border-t border-black/5">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-all"><span>🚪</span>
+                    Logout</a>
+            </div>
+        </aside>
+
+        <main class="p-4 sm:p-8">
+            <header class="flex items-center justify-between mb-10">
+                <div>
+                    <h1 class="text-3xl font-bold text-[var(--color-primary)]">Commission History</h1>
+                    <p class="text-[var(--color-muted)]">Track your miniatures from assembly to delivery.</p>
+                </div>
+            </header>
+
+            <div class="space-y-6">
+                <!-- Order 1 -->
+                <div data-animate
+                    class="bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="p-6 sm:p-8 flex flex-col md:flex-row gap-8">
+                        <div
+                            class="w-full md:w-48 h-48 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0 border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1620421680010-0766ff230392?auto=format&fit=crop&w=400"
+                                alt="Min" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="status-badge bg-orange-100 text-orange-600">In Progress</span>
+                                <span class="text-xs text-[var(--color-muted)] font-bold">#COM-0942</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Space Marine Dreadnought</h3>
+                            <p class="text-[var(--color-muted)] text-sm mb-6">Commission details: Elite painting tier,
+                                custom lava base, OSL lighting on plasma cannons.</p>
+
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    <span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Tier</span>
+                                    <span class="text-sm font-bold">Elite Showcase</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Due
+                                        Date</span>
+                                    <span class="text-sm font-bold">Mar 12, 2026</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Price</span>
+                                    <span class="text-sm font-bold">$185.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border-t border-black/5 p-4 flex justify-end gap-3">
+                        <button class="btn-outline !min-h-[36px] !px-4 text-xs font-bold">View Photos</button>
+                        <button class="btn-primary !min-h-[36px] !px-4 text-xs font-bold">Contact Studio</button>
+                    </div>
+                </div>
+
+                <!-- Order 2 -->
+                <div data-animate
+                    class="bg-white rounded-3xl border border-black/5 overflow-hidden shadow-sm hover:shadow-md transition-shadow opacity-50">
+                    <div class="p-6 sm:p-8 flex flex-col md:flex-row gap-8">
+                        <div
+                            class="w-full md:w-48 h-48 rounded-2xl overflow-hidden bg-slate-100 flex-shrink-0 border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=400"
+                                alt="Min" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="status-badge bg-green-100 text-green-600">Delivered</span>
+                                <span class="text-xs text-[var(--color-muted)] font-bold">#COM-0811</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Elven Archer Squad (x10)</h3>
+                            <p class="text-[var(--color-muted)] text-sm mb-6">Commission details: Tabletop+ tier, forest
+                                themed bases, consistent heraldry.</p>
+
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div><span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Tier</span><span
+                                        class="text-sm font-bold">Tabletop+</span></div>
+                                <div><span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Completed</span><span
+                                        class="text-sm font-bold">Feb 20, 2026</span></div>
+                                <div><span
+                                        class="block text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest mb-1">Price</span><span
+                                        class="text-sm font-bold">$320.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

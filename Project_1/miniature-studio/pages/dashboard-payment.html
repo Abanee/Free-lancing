@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment & Billing | Miniature Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { display: ["Bebas Neue", "sans-serif"], body: ["Space Grotesk", "sans-serif"] } } }
+        };
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .sidebar-link.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .payment-method.active {
+            border-color: var(--color-accent);
+            background: rgba(192, 138, 78, 0.05);
+        }
+
+        .payment-method.active .check-icon {
+            display: flex;
+        }
+
+        .glass-card-premium {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="font-body text-[var(--color-text)] bg-slate-50">
+    <div class="dashboard-layout">
+        <aside class="sidebar bg-white border-r border-black/5 p-6 flex flex-col">
+            <div class="mb-10"><a href="index.html" class="font-display text-4xl text-[var(--color-primary)]">MS</a>
+            </div>
+            <nav class="space-y-2 flex-1">
+                <a href="dashboard.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>📊</span>
+                    Dashboard</a>
+                <a href="dashboard-orders.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>📦</span>
+                    Orders</a>
+                <a href="dashboard-cart.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>🛒</span>
+                    Cart</a>
+                <a href="dashboard-payment.html"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold transition-all"><span>💳</span>
+                    Payments</a>
+                <a href="dashboard-profile.html"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold hover:bg-black/5 transition-all text-[var(--color-muted)]"><span>👤</span>
+                    Profile</a>
+            </nav>
+            <div class="pt-6 border-t border-black/5">
+                <a href="index.html"
+                    class="flex items-center gap-3 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-50 rounded-xl transition-all"><span>🚪</span>
+                    Logout</a>
+            </div>
+        </aside>
+
+        <main class="p-4 sm:p-8">
+            <header class="mb-10">
+                <h1 class="text-3xl font-bold text-[var(--color-primary)]">Billing & Payment</h1>
+                <p class="text-[var(--color-muted)]">Securely manage your studio credits and payment methods.</p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Payment Methods -->
+                <div class="space-y-6">
+                    <h2 data-animate class="text-xl font-bold mb-4">Choose Payment Method</h2>
+
+                    <div data-animate
+                        class="payment-method active cursor-pointer p-6 rounded-3xl border border-black/5 bg-white shadow-sm flex items-center gap-4 transition-all relative">
+                        <div
+                            class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl">
+                            💳</div>
+                        <div class="flex-1">
+                            <span class="block font-bold">Credit/Debit Card</span>
+                            <span class="text-xs text-[var(--color-muted)]">Visa, Mastercard, Amex</span>
+                        </div>
+                        <div
+                            class="check-icon hidden w-6 h-6 bg-[var(--color-accent)] text-white rounded-full flex items-center justify-center text-[10px]">
+                            ✓</div>
+                    </div>
+
+                    <div data-animate style="transition-delay: 0.1s"
+                        class="payment-method cursor-pointer p-6 rounded-3xl border border-black/5 shadow-sm bg-white flex items-center gap-4 transition-all relative">
+                        <div
+                            class="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-xl">
+                            📲</div>
+                        <div class="flex-1">
+                            <span class="block font-bold">UPI Payment</span>
+                            <span class="text-xs text-[var(--color-muted)]">Google Pay, PhonePe, PayTM</span>
+                        </div>
+                        <div
+                            class="check-icon hidden w-6 h-6 bg-[var(--color-accent)] text-white rounded-full flex items-center justify-center text-[10px]">
+                            ✓</div>
+                    </div>
+
+                    <div data-animate style="transition-delay: 0.2s"
+                        class="payment-method cursor-pointer p-6 rounded-3xl border border-black/5 shadow-sm bg-white flex items-center gap-4 transition-all relative">
+                        <div
+                            class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-xl">
+                            🏦</div>
+                        <div class="flex-1">
+                            <span class="block font-bold">Net Banking</span>
+                            <span class="text-xs text-[var(--color-muted)]">Instant transfer from your bank</span>
+                        </div>
+                        <div
+                            class="check-icon hidden w-6 h-6 bg-[var(--color-accent)] text-white rounded-full flex items-center justify-center text-[10px]">
+                            ✓</div>
+                    </div>
+                </div>
+
+                <!-- Saved Cards Card -->
+                <div class="space-y-6">
+                    <h2 data-animate class="text-xl font-bold mb-4">Saved Cards</h2>
+                    <div data-animate style="transition-delay: 0.1s"
+                        class="bg-gradient-to-br from-[var(--color-primary)] to-[#2a4d55] p-8 rounded-[2rem] text-white shadow-xl aspect-[1.6/1] flex flex-col justify-between relative overflow-hidden group">
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="text-lg font-display tracking-widest text-[#c08a4e]">ELITE COLLECTOR</span>
+                            <span class="text-2xl italic font-bold">VISA</span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="block text-2xl font-mono tracking-[0.2em] mb-4">**** **** **** 4251</span>
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <span class="block text-[10px] text-white/50 uppercase tracking-widest">Card
+                                        Holder</span>
+                                    <span class="text-sm font-bold">Alex Thompson</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-[10px] text-white/50 uppercase tracking-widest">Expires</span>
+                                    <span class="text-sm font-bold">12/28</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Decor -->
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-[var(--color-accent)] opacity-20 blur-3xl rounded-full group-hover:scale-125 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <div data-animate style="transition-delay: 0.2s"
+                        class="glass-card-premium p-8 rounded-3xl border border-black/5 shadow-sm">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="font-bold">Summary</span>
+                            <span class="text-2xl font-display text-[var(--color-primary)]">$375.00</span>
+                        </div>
+                        <button
+                            class="w-full py-4 bg-[var(--color-primary)] text-white rounded-2xl font-bold hover:scale-[1.02] transition-transform shadow-lg">Pay
+                            Now with Studio Shield</button>
+                        <div class="flex items-center justify-center gap-2 mt-4 opacity-50">
+                            <span class="text-[10px] font-bold uppercase tracking-widest">End-to-End Encrypted</span>
+                            <div class="w-1 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
