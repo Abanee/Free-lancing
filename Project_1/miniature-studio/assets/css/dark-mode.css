@@ -71,3 +71,18 @@ html[data-theme="dark"] .btn-outline:hover {
     border-color: rgba(255, 255, 255, 0.1) !important;
   }
 }
+
+/* Dashboard Specific Dark Mode Fixes */
+html[data-theme="dark"] .hover\:bg-black\/5:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+html[data-theme="dark"] .profile-input {
+  background-color: rgba(22, 32, 38, 0.9) !important;
+  color: var(--color-text) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] .payment-method {
+  background-color: rgba(22, 32, 38, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
