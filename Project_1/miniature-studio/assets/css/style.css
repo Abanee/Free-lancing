@@ -5,6 +5,13 @@
   --color-surface: #ffffff;
   --color-text: #101820;
   --color-muted: #5f6d72;
+  --page-hero-bg: radial-gradient(circle at 10% 18%, rgba(192, 138, 78, 0.16), transparent 44%), radial-gradient(circle at 82% 12%, rgba(18, 52, 59, 0.14), transparent 36%);
+  --page-hero-text: var(--color-text);
+  --page-hero-heading: var(--color-primary);
+  --page-hero-desc: var(--color-muted);
+  --page-hero-badge-bg: rgba(192, 138, 78, 0.15);
+  --page-hero-badge-border: transparent;
+  --page-hero-badge-text: var(--color-primary);
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
