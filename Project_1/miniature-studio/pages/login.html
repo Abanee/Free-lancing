@@ -34,19 +34,65 @@
 
 <body class="font-body text-[var(--color-text)] min-h-screen flex flex-col bg-[#fffaf3]">
     <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-20 items-center justify-between gap-4">
-                <a href="index.html" class="font-display text-3xl text-[var(--color-primary)] sm:text-4xl">Miniature
-                    Studio</a>
-                <div class="flex items-center gap-4">
-                    <button type="button" data-theme-toggle
-                        class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold flex items-center justify-center">☀️</button>
-                    <button type="button" data-dir-toggle
-                        class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold hover:rotate-[360deg] transition-transform duration-500 flex items-center justify-center">LTR</button>
-                </div>
-            </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 relative group">
+          <img src="../assets/images/logo.png" alt="Miniature Studio Logo" class="h-12 sm:h-16 w-auto object-contain drop-shadow-[0_0_6px_rgba(252,211,77,0.9)] group-hover:drop-shadow-[0_0_15px_rgba(252,211,77,1)] transition-all duration-300">
+          <span class="font-display text-3xl sm:text-4xl text-[var(--color-primary)] leading-none pt-1 hidden sm:block">Miniature Studio</span>
+        </a>
+        <nav aria-label="Primary" class="hidden lg:block">
+          <ul class="flex items-center gap-6 text-sm font-medium">
+            <li><a
+                class="hover:text-[var(--color-primary)]" href="index.html">Home</a></li>
+            <li><a class="hover:text-[var(--color-primary)] whitespace-nowrap" href="home-2.html">Home 2</a></li>
+
+
+            <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
+            <li><a class="hover:text-[var(--color-primary)]" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-4">
+          <div class="hidden sm:flex items-center gap-2">
+            <a href="dashboard.html"
+              class="btn-outline flex items-center justify-center !min-h-[36px] !px-4 !py-1 text-xs">Dashboard</a>
+            <a href="login.html"
+              class="btn-primary flex items-center justify-center !min-h-[36px] !px-4 !py-1 text-xs">Login</a>
+          </div>
+          <div class="flex items-center gap-2 border-l border-black/10 pl-4">
+            <button type="button" data-theme-toggle aria-pressed="false"
+              class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold flex items-center justify-center">☀️</button>
+            <button type="button" data-dir-toggle aria-pressed="false"
+              class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold hover:rotate-[360deg] transition-transform duration-500 flex items-center justify-center">LTR</button>
+            <button type="button" data-menu-toggle aria-expanded="false"
+              class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
+              <svg class="h-6 w-6 rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
         </div>
-    </header>
+      </div>
+      <div data-mobile-menu class="hidden border-t border-black/10 py-4 lg:hidden">
+        <nav aria-label="Mobile">
+          <ul class="space-y-3 text-base font-medium">
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="index.html">Home</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5 whitespace-nowrap" href="home-2.html">Home 2</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="tools.html">Tools or Techs</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="mt-6 grid grid-cols-2 gap-3 border-t border-black/10 pt-6">
+            <a href="dashboard.html"
+              class="btn-outline flex items-center justify-center text-sm font-semibold">Dashboard</a>
+            <a href="login.html" class="btn-primary flex items-center justify-center text-sm font-semibold">Login</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
 
     <main class="flex-1 flex items-center justify-center p-4">
         <div class="w-full max-w-md bg-white/70 backdrop-blur-xl border border-black/10 rounded-3xl p-8 card-shadow"
@@ -89,37 +135,29 @@
     </main>
 
     
-  <!-- Custom Visual Footer: Ride The Wind -->
+  <!-- Custom Footer -->
   <footer style="background-color: #0f4c5c; color: white; padding: 4rem 0 2rem 0; font-family: sans-serif; margin-top: 4rem;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
         
         <!-- Column 1: Brand Info -->
         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span style="font-size: 1.5rem;">🏄</span>
-            <h3 style="font-size: 1.25rem; font-weight: bold; margin: 0;">Ride The Wind</h3>
-          </div>
+          <a href="index.html" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none;">
+            <img src="../assets/images/logo.png" alt="Miniature Studio Logo" style="height: 64px; width: auto; object-fit: contain; filter: drop-shadow(0 0 6px rgba(255,215,0,0.9)); transition: filter 0.3s;" onmouseover="this.style.filter='drop-shadow(0 0 15px rgba(255,215,0,1))'" onmouseout="this.style.filter='drop-shadow(0 0 6px rgba(255,215,0,0.9))'">
+            <h3 style="font-size: 2rem; font-family: 'Bebas Neue', sans-serif; margin: 0; color: white; padding-top: 5px;">Miniature Studio</h3>
+          </a>
           <p style="font-size: 0.875rem; line-height: 1.5; color: #e2e8f0; margin: 0;">
-            Your premier kitesurfing and windsurfing school.<br>
-            Learn from the best, ride with confidence.
+            Professional miniature figurine painting studio for high-end commissions, showcase pieces, and collector-grade projects.
           </p>
           <div style="margin-top: 0.5rem;">
             <p style="font-size: 0.875rem; margin-bottom: 0.75rem;">Follow Us:</p>
             <div style="display: flex; gap: 0.75rem;">
-              <!-- Facebook -->
               <a href="#" style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-2.221c0-.822.112-1.117.73-1.117h1.628v-4.662c-.455-.06-1.155-.06-1.155-.06-3.84 0-5.145 1.701-5.145 4.148v4.045z"/></svg>
               </a>
-              <!-- Instagram -->
               <a href="#" style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
               </a>
-              <!-- YouTube -->
-              <a href="#" style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"/></svg>
-              </a>
-              <!-- Twitter -->
               <a href="#" style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
               </a>
@@ -132,47 +170,30 @@
           <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Quick Links</h4>
           <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
             <li><a href="index.html" style="color: #e2e8f0; text-decoration: none;">Home</a></li>
-            <li><a href="about.html" style="color: #e2e8f0; text-decoration: none;">About Us</a></li>
-            <li><a href="programs.html" style="color: #e2e8f0; text-decoration: none;">Programs</a></li>
+            <li><a href="about.html" style="color: #e2e8f0; text-decoration: none;">About</a></li>
+            <li><a href="services.html" style="color: #e2e8f0; text-decoration: none;">Services</a></li>
+            <li><a href="portfolio.html" style="color: #e2e8f0; text-decoration: none;">Portfolio</a></li>
             <li style="margin: 0.25rem 0;">
-              <a href="contact.html" style="display: inline-block; background-color: #26a8ff; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 0.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Book Now</a>
+              <a href="contact.html" style="display: inline-block; background-color: #26a8ff; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 0.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Contact Us</a>
             </li>
-            <li><a href="instructors.html" style="color: #e2e8f0; text-decoration: none;">Instructors</a></li>
-            <li><a href="portfolio.html" style="color: #e2e8f0; text-decoration: none;">Gallery</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Support -->
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Support</h4>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
-            <li><a href="contact.html" style="color: #e2e8f0; text-decoration: none;">Contact</a></li>
-            <li><a href="blog.html" style="color: #e2e8f0; text-decoration: none;">Blog</a></li>
-            <li><a href="coming-soon.html" style="color: #e2e8f0; text-decoration: none;">Coming Soon</a></li>
-            <li><a href="faq.html" style="color: #e2e8f0; text-decoration: none;">FAQ</a></li>
-            <li><a href="privacy.html" style="color: #e2e8f0; text-decoration: none;">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Contact Info -->
+        <!-- Column 3: Contact Info -->
         <div style="display: flex; flex-direction: column; gap: 1rem;">
           <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Contact Info</h4>
           <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem; color: #e2e8f0;">
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <span style="color: #f75c7e;">📍</span>
-              <span>123 Beach Road, Surf Paradise</span>
+              <span>123 Art Street, Creative District</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.5rem;">
               <span style="color: #e0e7ff; background-color: rgba(255,255,255,0.2); border-radius: 2px; padding: 0 2px; font-size: 0.7rem;">✉</span>
-              <a href="mailto:info@ridethewind.com" style="color: #e2e8f0; text-decoration: none;">info@ridethewind.com</a>
+              <a href="mailto:contact@miniaturestudio.com" style="color: #e2e8f0; text-decoration: none;">contact@miniaturestudio.com</a>
             </div>
             <div style="display: flex; align-items: center; gap: 0.5rem;">
               <span style="color: #f75c7e;">📞</span>
-              <span>+1 (555) 123-4567</span>
-            </div>
-            <div style="margin-top: 0.5rem;">
-              <p style="margin: 0 0 0.25rem 0; font-weight: bold; color: white;">Hours:</p>
-              <p style="margin: 0;">Daily: 8:00 AM - 6:00 PM</p>
+              <span>+1 (555) 987-6543</span>
             </div>
           </div>
         </div>
@@ -180,7 +201,7 @@
 
       <!-- Bottom Bar -->
       <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: #cbd5e1;">
-        <p style="margin: 0;">© 2026 Ride The Wind. All rights reserved. Built with passion for wind sports.</p>
+        <p style="margin: 0;">© 2026 Miniature Studio. All rights reserved.</p>
       </div>
     </div>
   </footer>
