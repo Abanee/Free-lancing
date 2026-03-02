@@ -1,0 +1,512 @@
+/* =============================================
+   Off-Grid Cabin Rentals — Custom CSS
+   Tailwind is the primary styling system.
+   This file handles: fonts, animations,
+   custom components, BEM overrides.
+   ============================================= */
+
+/* FONTS */
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+.font-sans { font-family: 'DM Sans', system-ui, sans-serif; }
+
+/* =====================
+   CSS VARIABLES
+   ===================== */
+:root {
+  --color-amber: #F59E0B;
+  --color-bg: #0C0A09;
+  --color-surface: #1C1917;
+  --color-border: #292524;
+  --transition: 200ms ease;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero-bg {
+  background-image:
+    url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1800&q=90');
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.05);
+  animation: heroZoom 12s ease-out forwards;
+}
+
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+.scroll-line {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* =====================
+   FADE IN ANIMATION
+   ===================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   NAVBAR
+   ===================== */
+#navbar {
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: rgba(12, 10, 9, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #292524;
+}
+
+/* =====================
+   CABIN CARDS
+   ===================== */
+.cabin-card {
+  background: #1C1917;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid #292524;
+  transition: transform 300ms ease, border-color 300ms ease;
+  cursor: pointer;
+}
+
+.cabin-card:hover {
+  transform: translateY(-4px);
+  border-color: #78350F;
+}
+
+.cabin-card__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-size: cover;
+  background-position: center;
+  transition: transform 400ms ease;
+}
+
+.cabin-card:hover .cabin-card__image {
+  transform: scale(1.05);
+}
+
+.cabin-card__image-wrap {
+  overflow: hidden;
+}
+
+.cabin-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #F59E0B;
+  color: #1C1917;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.cabin-card__save {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  background: rgba(12,10,9,0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  color: #d6d3d1;
+  transition: color 200ms, background 200ms;
+}
+
+.cabin-card__save:hover { color: #F59E0B; background: rgba(12,10,9,0.9); }
+
+/* =====================
+   GALLERY
+   ===================== */
+.gallery-thumb {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: zoom-in;
+  transition: filter 200ms ease;
+}
+
+.gallery-thumb:hover { filter: brightness(1.1); }
+
+/* =====================
+   AMENITY ITEMS
+   ===================== */
+.amenity-item {
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.amenity-item:hover {
+  border-color: #78350F;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   BOOKING SIDEBAR
+   ===================== */
+.booking-sidebar {
+  transition: box-shadow 300ms ease;
+}
+
+/* =====================
+   FLATPICKR CUSTOM THEME
+   ===================== */
+.flatpickr-calendar {
+  background: #1C1917 !important;
+  border: 1px solid #292524 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5) !important;
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
+.flatpickr-day {
+  color: #d6d3d1 !important;
+  border-radius: 8px !important;
+}
+
+.flatpickr-day:hover,
+.flatpickr-day.inRange {
+  background: #78350F !important;
+  border-color: #78350F !important;
+  color: #fef3c7 !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #F59E0B !important;
+  border-color: #F59E0B !important;
+  color: #1C1917 !important;
+  font-weight: 700 !important;
+}
+
+.flatpickr-day.flatpickr-disabled {
+  color: #44403c !important;
+}
+
+.flatpickr-months,
+.flatpickr-weekdays {
+  background: #1C1917 !important;
+}
+
+.flatpickr-month {
+  color: #f5f5f4 !important;
+  fill: #f5f5f4 !important;
+}
+
+.flatpickr-weekday {
+  color: #78716c !important;
+}
+
+.flatpickr-current-month {
+  color: #f5f5f4 !important;
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  color: #a8a29e !important;
+  fill: #a8a29e !important;
+}
+
+/* =====================
+   DASHBOARD SIDEBAR
+   ===================== */
+.sidebar-link {
+  color: #a8a29e;
+  transition: background 200ms, color 200ms;
+}
+
+.sidebar-link:hover {
+  background: #292524;
+  color: #f5f5f4;
+}
+
+.sidebar-link.active {
+  background: #292524;
+  color: #F59E0B;
+}
+
+/* =====================
+   TAB PANELS
+   ===================== */
+.tab-panel {
+  animation: panelIn 250ms ease;
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   CHECKLIST
+   ===================== */
+.checklist-item {
+  user-select: none;
+}
+
+.checklist-item:hover .check-box {
+  border-color: #F59E0B;
+}
+
+.checklist-item[data-done="true"] .check-box {
+  background: #F59E0B;
+  border-color: #F59E0B;
+}
+
+/* =====================
+   TOGGLE SWITCH
+   ===================== */
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  background: #44403c;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 200ms;
+  flex-shrink: 0;
+}
+
+.toggle-switch.on {
+  background: #F59E0B;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 200ms;
+}
+
+.toggle-switch.on .toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* =====================
+   BOOKING CARD
+   ===================== */
+.booking-card {
+  transition: border-color 200ms ease;
+}
+.booking-card:hover {
+  border-color: #78350F;
+}
+
+/* =====================
+   TESTIMONIAL CARD
+   ===================== */
+.testimonial-card {
+  transition: transform 300ms ease, border-color 300ms ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: #78350F;
+}
+
+/* =====================
+   MOBILE TAB BAR
+   ===================== */
+.mobile-tab-btn {
+  transition: color 200ms;
+}
+.mobile-tab-btn.active {
+  color: #F59E0B;
+}
+
+/* =====================
+   FEATURE IMAGES
+   ===================== */
+.feature-img {
+  transition: filter 300ms ease;
+}
+.feature-img:hover {
+  filter: brightness(1.1);
+}
+
+/* =====================
+   SCROLLBAR
+   ===================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0A09;
+}
+::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #78716c;
+}
+
+/* =====================
+   FOCUS STYLES
+   ===================== */
+:focus-visible {
+  outline: 2px solid #F59E0B;
+  outline-offset: 2px;
+}
+
+/* =====================
+   RESPONSIVE FIXES
+   ===================== */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-position: 60% 30%;
+  }
+}
+
+/* =====================
+   LIGHT MODE OVERRIDES
+   ===================== */
+body.light-mode {
+  background-color: #f5f5f4 !important; /* stone-100 */
+  color: #1c1917 !important; /* stone-900 */
+}
+
+/* Base tailwind color flips */
+.light-mode .bg-stone-950,
+.light-mode .bg-stone-900 {
+  background-color: #ffffff !important;
+}
+
+.light-mode .bg-stone-800,
+.light-mode .bg-stone-700 {
+  background-color: #f5f5f4 !important;
+}
+
+.light-mode .text-stone-100,
+.light-mode .text-stone-200,
+.light-mode .text-stone-300 {
+  color: #1c1917 !important;
+}
+
+.light-mode .text-stone-400,
+.light-mode .text-stone-500 {
+  color: #44403c !important;
+}
+
+.light-mode .border-stone-800,
+.light-mode .border-stone-700 {
+  border-color: #e7e5e4 !important;
+}
+
+/* Specific Component Overrides */
+.light-mode #navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.light-mode .cabin-card {
+  background: #ffffff;
+  border: 1px solid #e7e5e4;
+}
+
+.light-mode .cabin-card:hover {
+  border-color: #d97706; /* amber-600 */
+}
+
+.light-mode .amenity-item,
+.light-mode .testimonial-card,
+.light-mode .booking-sidebar,
+.light-mode .booking-card {
+  background: #ffffff;
+  border-color: #e7e5e4;
+}
+
+.light-mode .flatpickr-calendar {
+  background: #ffffff !important;
+  border-color: #e7e5e4 !important;
+}
+
+.light-mode .flatpickr-day {
+  color: #1c1917 !important;
+}
+
+.light-mode .flatpickr-day.inRange {
+  background: #fcd34d !important;
+  color: #1c1917 !important;
+  border-color: #fcd34d !important;
+}
+
+.light-mode .flatpickr-months,
+.light-mode .flatpickr-weekdays,
+.light-mode .flatpickr-month {
+  background: #ffffff !important;
+  color: #1c1917 !important;
+  fill: #1c1917 !important;
+}
+
+.light-mode .sidebar-link:hover,
+.light-mode .sidebar-link.active {
+  background: #f5f5f4;
+}
+
+.light-mode .toggle-switch {
+  background-color: #d6d3d1;
+}
+
+/* =====================
+   RTL OVERRIDES
+   ===================== */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .pl-4 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+
+[dir="rtl"] .pr-4 {
+  padding-right: 0 !important;
+  padding-left: 1rem !important;
+}
+
+[dir="rtl"] .border-l {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+}
+
+[dir="rtl"] .toggle-switch.on .toggle-thumb {
+  transform: translateX(-20px);
+}

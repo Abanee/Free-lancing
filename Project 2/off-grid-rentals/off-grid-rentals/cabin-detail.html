@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pine Ridge Cabin — Off-Grid Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-stone-950 text-stone-100 font-sans">
+
+  <!-- NAV -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-stone-950/90 backdrop-blur border-b border-stone-800 transition-all duration-500"
+    aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="logo text-2xl font-display font-bold tracking-tight text-amber-400">
+        OffGrid<span class="text-stone-100">.</span>
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition"
+        aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
+        <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
+        <li><a href="home-2.html" class="nav-link hover:text-amber-400 transition">Home 2</a></li>
+        <li><a href="cabins.html" class="nav-link text-amber-400 transition">Cabin</a></li>
+        <li><a href="about.html" class="nav-link hover:text-amber-400 transition">About</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-amber-400 transition">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link hover:text-amber-400 transition">Dashboard</a></li>
+        <li><a href="#" class="nav-link hover:text-amber-400 transition">Login</a></li>
+
+        <!-- Theme & Direction Toggles -->
+        <li class="flex items-center gap-2 border-l border-stone-600 pl-4 ml-2">
+          <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2"
+            aria-label="Toggle Light/Dark Theme">☀️</button>
+          <button id="direction-toggle" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle LTR/RTL Direction">➡️</button>
+        </li>
+
+        <li><a href="cabin-detail.html"
+            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm ml-2">Book
+            Now</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-6 py-4">
+      <ul class="flex flex-col gap-4 text-stone-300" role="list">
+        <li><a href="index.html" class="hover:text-amber-400 transition block py-1">Home</a></li>
+        <li><a href="home-2.html" class="hover:text-amber-400 transition block py-1">Home 2</a></li>
+        <li><a href="cabins.html" class="text-amber-400 transition block py-1">Cabin</a></li>
+        <li><a href="about.html" class="hover:text-amber-400 transition block py-1">About</a></li>
+        <li><a href="contact.html" class="hover:text-amber-400 transition block py-1">Contact</a></li>
+        <li><a href="dashboard.html" class="hover:text-amber-400 transition block py-1">Dashboard</a></li>
+        <li><a href="#" class="hover:text-amber-400 transition block py-1">Login</a></li>
+        <li class="flex items-center gap-4 py-2 border-t border-stone-700 mt-2">
+          <button id="theme-toggle-mobile" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle Light/Dark Theme">☀️ Theme</button>
+          <button id="direction-toggle-mobile" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle LTR/RTL Direction">➡️ Direction</button>
+        </li>
+        <li><a href="cabin-detail.html"
+            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm inline-block mt-2">Book
+            Now</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="pt-20">
+
+    <!-- GALLERY GRID -->
+    <section class="gallery-grid max-w-7xl mx-auto px-4 pt-8 pb-4" aria-label="Cabin photo gallery">
+      <div class="grid grid-cols-4 grid-rows-2 gap-2 h-[480px] rounded-2xl overflow-hidden">
+        <div class="col-span-2 row-span-2 gallery-thumb"
+          style="background-image:url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=900&q=80')">
+          <button
+            class="gallery-overlay opacity-0 hover:opacity-100 transition absolute inset-0 bg-stone-950/40 flex items-end p-4"
+            aria-label="View photo 1">
+            <span class="text-white text-xs uppercase tracking-wider">Main View</span>
+          </button>
+        </div>
+        <div class="gallery-thumb"
+          style="background-image:url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&q=80')"></div>
+        <div class="gallery-thumb"
+          style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80')"></div>
+        <div class="gallery-thumb"
+          style="background-image:url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80')"></div>
+        <div class="gallery-thumb relative"
+          style="background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80')">
+          <button
+            class="absolute inset-0 bg-stone-950/60 flex items-center justify-center text-sm font-medium text-white hover:bg-stone-950/40 transition"
+            aria-label="View all photos">
+            +8 Photos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT + SIDEBAR LAYOUT -->
+    <div class="max-w-7xl mx-auto px-4 pb-20 grid lg:grid-cols-3 gap-10 pt-8">
+
+      <!-- LEFT: MAIN CONTENT -->
+      <div class="lg:col-span-2 space-y-12">
+
+        <!-- TITLE BLOCK -->
+        <div>
+          <div class="flex items-start justify-between flex-wrap gap-4">
+            <div>
+              <p class="text-amber-400 text-sm uppercase tracking-widest mb-1">Pacific Northwest · Oregon</p>
+              <h1 class="font-display text-4xl md:text-5xl font-bold mb-3">Pine Ridge Cabin</h1>
+              <div class="flex items-center gap-4 text-stone-400 text-sm flex-wrap">
+                <span class="flex items-center gap-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                  4.97 (83 reviews)
+                </span>
+                <span>· 4 guests</span>
+                <span>· 2 bedrooms</span>
+                <span>· 1 bath</span>
+              </div>
+            </div>
+            <button
+              class="flex items-center gap-2 px-4 py-2 border border-stone-700 rounded-full text-stone-400 hover:border-amber-400 hover:text-amber-400 transition text-sm"
+              aria-label="Save to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              Save
+            </button>
+          </div>
+        </div>
+
+        <!-- HOST BADGE -->
+        <div class="flex items-center gap-4 py-6 border-y border-stone-800">
+          <div
+            class="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center font-display font-bold text-stone-950 text-lg">
+            M</div>
+          <div>
+            <p class="font-medium text-stone-200">Hosted by Marcus</p>
+            <p class="text-stone-500 text-sm">Superhost · 6 years hosting</p>
+          </div>
+          <div class="ml-auto flex gap-6 text-center text-sm">
+            <div>
+              <p class="font-bold text-stone-100">247</p>
+              <p class="text-stone-500 text-xs">Stays</p>
+            </div>
+            <div>
+              <p class="font-bold text-stone-100">100%</p>
+              <p class="text-stone-500 text-xs">Response</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <section aria-labelledby="desc-heading">
+          <h2 id="desc-heading" class="font-display text-2xl font-bold mb-4">About this cabin</h2>
+          <div class="text-stone-300 leading-relaxed space-y-4" id="description-text">
+            <p>Perched at 3,400ft elevation in the Willamette National Forest, Pine Ridge Cabin is a fully solar-powered
+              retreat designed for those who want genuine disconnection without giving up comfort.</p>
+            <p>The cabin sleeps four across two bedrooms, each with handcrafted cedar beds and premium linen. The main
+              living area features a wood-burning stove, reading nooks, and panoramic forest views from floor-to-ceiling
+              windows.</p>
+            <p id="desc-more" class="hidden">Outside, you'll find a covered fire pit, a wood-fired hot tub, and a
+              composting system that keeps the site perfectly clean. An outdoor solar shower completes the wild
+              experience. Access requires a 0.4 mile forest walk from the designated parking area — all gear transport
+              is by you.</p>
+          </div>
+          <button id="read-more-btn" onclick="toggleDescription()"
+            class="mt-3 text-amber-400 text-sm font-medium hover:underline">Show more ↓</button>
+        </section>
+
+        <!-- AMENITIES -->
+        <section aria-labelledby="amenities-heading">
+          <h2 id="amenities-heading" class="font-display text-2xl font-bold mb-6">What this place offers</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4" role="list">
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Solar Power</p>
+                <p class="text-xs text-stone-500">48hr battery backup</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Fire Pit</p>
+                <p class="text-xs text-stone-500">Covered outdoor pit</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">2 Bedrooms</p>
+                <p class="text-xs text-stone-500">Cedar frame beds</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Hot Tub</p>
+                <p class="text-xs text-stone-500">Wood-fired outdoor</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Leave No Trace</p>
+                <p class="text-xs text-stone-500">LNT certified</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Stargazing Deck</p>
+                <p class="text-xs text-stone-500">No light pollution</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Welcome Basket</p>
+                <p class="text-xs text-stone-500">Local provisions</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Outdoor Shower</p>
+                <p class="text-xs text-stone-500">Solar-heated water</p>
+              </div>
+            </div>
+
+            <div class="amenity-item flex items-center gap-3 p-4 bg-stone-900 rounded-xl border border-stone-800"
+              role="listitem">
+              <span class="text-amber-400 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </span>
+              <div>
+                <p class="text-sm font-medium text-stone-200">Trail Guides</p>
+                <p class="text-xs text-stone-500">4 nearby trails</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- MAP / LOCATION -->
+        <section aria-labelledby="location-heading">
+          <h2 id="location-heading" class="font-display text-2xl font-bold mb-4">Location</h2>
+          <div
+            class="bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 h-64 flex items-center justify-center relative">
+            <div class="absolute inset-0"
+              style="background: radial-gradient(ellipse at center, #292524 0%, #1c1917 100%);"></div>
+            <div class="relative z-10 text-center">
+              <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-stone-950" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <p class="font-medium text-stone-200">Willamette National Forest, OR</p>
+              <p class="text-stone-500 text-sm mt-1">Exact GPS coordinates shared after booking</p>
+            </div>
+          </div>
+          <p class="text-stone-500 text-sm mt-3">🚗 2h 15min from Portland · 4WD recommended in winter</p>
+        </section>
+
+        <!-- REVIEWS -->
+        <section aria-labelledby="reviews-heading">
+          <h2 id="reviews-heading" class="font-display text-2xl font-bold mb-2">Reviews</h2>
+          <div class="flex items-center gap-3 mb-8">
+            <span class="text-5xl font-display font-bold text-amber-400">4.97</span>
+            <div>
+              <div class="flex text-amber-400">★★★★★</div>
+              <p class="text-stone-400 text-sm">83 reviews</p>
+            </div>
+          </div>
+          <div class="space-y-8" id="reviews-list">
+            <article class="border-b border-stone-800 pb-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-9 h-9 bg-stone-700 rounded-full flex items-center justify-center text-sm font-bold text-stone-300">
+                  S</div>
+                <div>
+                  <p class="text-sm font-medium text-stone-200">Sarah M.</p>
+                  <p class="text-xs text-stone-500">September 2024</p>
+                </div>
+                <div class="ml-auto text-amber-400 text-sm">★★★★★</div>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed">Three nights here completely reset my nervous system. No
+                WiFi, no stress — just owls and the smell of pine. The hot tub at midnight under the stars was
+                otherworldly.</p>
+            </article>
+            <article class="border-b border-stone-800 pb-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-9 h-9 bg-stone-700 rounded-full flex items-center justify-center text-sm font-bold text-stone-300">
+                  J</div>
+                <div>
+                  <p class="text-sm font-medium text-stone-200">James K.</p>
+                  <p class="text-xs text-stone-500">August 2024</p>
+                </div>
+                <div class="ml-auto text-amber-400 text-sm">★★★★★</div>
+              </div>
+              <p class="text-stone-300 text-sm leading-relaxed">The solar power system is genuinely impressive — we
+                never even thought about power. The welcome basket was a beautiful touch. Will be back every year.</p>
+            </article>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT: BOOKING SIDEBAR -->
+      <aside class="lg:col-span-1" aria-label="Booking panel">
+        <div
+          class="booking-sidebar sticky top-28 bg-stone-900 border border-stone-700 rounded-2xl p-6 shadow-xl shadow-stone-950/50"
+          role="complementary">
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display text-3xl font-bold text-stone-100">$189</span>
+            <span class="text-stone-400 text-sm">/ night</span>
+          </div>
+
+          <form id="booking-form" aria-label="Book this cabin">
+            <!-- Date Picker -->
+            <div class="mb-4">
+              <label class="block text-xs text-stone-400 uppercase tracking-wider mb-2" for="dates-input">Dates</label>
+              <div class="relative">
+                <input type="text" id="dates-input" placeholder="Select your dates" readonly
+                  class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-stone-200 text-sm cursor-pointer focus:outline-none focus:border-amber-500 placeholder-stone-500" />
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="mb-6">
+              <label class="block text-xs text-stone-400 uppercase tracking-wider mb-2"
+                for="guests-select">Guests</label>
+              <select id="guests-select"
+                class="w-full bg-stone-800 border border-stone-700 rounded-xl px-4 py-3 text-stone-200 text-sm focus:outline-none focus:border-amber-500">
+                <option value="1">1 guest</option>
+                <option value="2" selected>2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+              </select>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div id="price-breakdown" class="hidden space-y-3 mb-5 border-t border-stone-700 pt-5">
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-400" id="nightly-label">$189 × 0 nights</span>
+                <span class="text-stone-200" id="nightly-total">$0</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-400">Cleaning fee</span>
+                <span class="text-stone-200">$45</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-400">Service fee</span>
+                <span class="text-stone-200" id="service-fee">$0</span>
+              </div>
+              <div class="flex justify-between font-semibold text-stone-100 border-t border-stone-700 pt-3">
+                <span>Total</span>
+                <span id="total-price">$0</span>
+              </div>
+            </div>
+
+            <div id="no-dates-msg" class="text-center text-stone-500 text-sm py-4 mb-4">
+              Select dates to see pricing
+            </div>
+
+            <button type="submit"
+              class="w-full py-4 bg-amber-500 text-stone-950 rounded-xl font-semibold hover:bg-amber-400 transition text-base">
+              Reserve Now
+            </button>
+            <p class="text-center text-stone-500 text-xs mt-3">You won't be charged yet</p>
+          </form>
+
+          <!-- Badges -->
+          <div class="mt-6 pt-6 border-t border-stone-800 grid grid-cols-3 gap-2 text-center">
+            <div class="text-xs text-stone-400">
+              <p class="text-amber-400 text-lg">🌟</p>Superhost
+            </div>
+            <div class="text-xs text-stone-400">
+              <p class="text-amber-400 text-lg">⚡</p>Fast reply
+            </div>
+            <div class="text-xs text-stone-400">
+              <p class="text-amber-400 text-lg">🏆</p>Top rated
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-950 border-t border-stone-800 py-10 px-6 text-center text-stone-600 text-sm">
+    <p>© 2025 OffGrid Cabin Rentals. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+
+</html>

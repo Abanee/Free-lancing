@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Off-Grid Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-stone-950 text-stone-100 font-sans">
+  <!-- NAV -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-stone-950/90 backdrop-blur border-b border-stone-800 transition-all duration-500"
+    aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="index.html" class="logo text-2xl font-display font-bold tracking-tight text-amber-400">
+        OffGrid<span class="text-stone-100">.</span>
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition"
+        aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
+        <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
+        <li><a href="home-2.html" class="nav-link hover:text-amber-400 transition">Home 2</a></li>
+        <li><a href="cabins.html" class="nav-link hover:text-amber-400 transition">Cabin</a></li>
+        <li><a href="about.html" class="nav-link text-amber-400 transition">About</a></li>
+        <li><a href="contact.html" class="nav-link hover:text-amber-400 transition">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link hover:text-amber-400 transition">Dashboard</a></li>
+        <li><a href="#" class="nav-link hover:text-amber-400 transition">Login</a></li>
+
+        <!-- Theme & Direction Toggles -->
+        <li class="flex items-center gap-2 border-l border-stone-600 pl-4 ml-2">
+          <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2"
+            aria-label="Toggle Light/Dark Theme">☀️</button>
+          <button id="direction-toggle" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle LTR/RTL Direction">➡️</button>
+        </li>
+
+        <li><a href="cabin-detail.html"
+            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm ml-2">Book
+            Now</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-6 py-4">
+      <ul class="flex flex-col gap-4 text-stone-300" role="list">
+        <li><a href="index.html" class="hover:text-amber-400 transition block py-1">Home</a></li>
+        <li><a href="home-2.html" class="hover:text-amber-400 transition block py-1">Home 2</a></li>
+        <li><a href="cabins.html" class="hover:text-amber-400 transition block py-1">Cabin</a></li>
+        <li><a href="about.html" class="text-amber-400 transition block py-1">About</a></li>
+        <li><a href="contact.html" class="hover:text-amber-400 transition block py-1">Contact</a></li>
+        <li><a href="dashboard.html" class="hover:text-amber-400 transition block py-1">Dashboard</a></li>
+        <li><a href="#" class="hover:text-amber-400 transition block py-1">Login</a></li>
+        <li class="flex items-center gap-4 py-2 border-t border-stone-700 mt-2">
+          <button id="theme-toggle-mobile" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle Light/Dark Theme">☀️ Theme</button>
+          <button id="direction-toggle-mobile" class="text-xl hover:scale-110 transition"
+            aria-label="Toggle LTR/RTL Direction">➡️ Direction</button>
+        </li>
+        <li><a href="cabin-detail.html"
+            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm inline-block mt-2">Book
+            Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="relative pt-40 pb-28 px-6 overflow-hidden" role="banner">
+      <div class="absolute inset-0"
+        style="background:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80') center/cover no-repeat;">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/50 to-stone-950"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <p class="text-amber-400 uppercase tracking-[0.3em] text-xs font-medium mb-5">Our Story</p>
+        <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Built for those who<br /><em class="italic text-amber-400">need to escape.</em>
+        </h1>
+        <p class="text-stone-300 text-lg max-w-xl mx-auto leading-relaxed">
+          We believe the best reset happens far from a signal bar. OffGrid was born to make that possible without
+          sacrificing a warm bed or a hot shower.
+        </p>
+      </div>
+    </header>
+
+    <section class="py-24 px-6" aria-labelledby="mission-heading">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-amber-400 uppercase tracking-widest text-xs mb-4">Why We Exist</p>
+          <h2 id="mission-heading" class="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">Sustainable
+            stays.<br />No compromise.</h2>
+          <p class="text-stone-400 leading-relaxed mb-6">We started OffGrid after noticing a gap: people desperately
+            wanted to unplug, but most "remote" rentals were still tethered to noisy generators, poor construction, or
+            overly precious rules.</p>
+          <p class="text-stone-400 leading-relaxed mb-8">Every cabin in our collection is powered entirely by solar,
+            built with care for the surrounding environment, and stocked thoughtfully so you can focus on the silence,
+            not logistics.</p>
+          <div class="flex items-center gap-4 flex-wrap">
+            <a href="cabins.html"
+              class="px-7 py-3.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm">Explore
+              Cabins</a>
+            <a href="contact.html"
+              class="px-7 py-3.5 border border-stone-600 text-stone-300 rounded-full hover:border-amber-400 hover:text-amber-400 transition text-sm">Get
+              in Touch</a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl aspect-square overflow-hidden feature-img"
+            style="background:url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80') center/cover no-repeat;">
+          </div>
+          <div class="rounded-2xl aspect-[3/4] overflow-hidden mt-8 feature-img"
+            style="background:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80') center/cover no-repeat;">
+          </div>
+          <div class="rounded-2xl aspect-[3/4] overflow-hidden -mt-8 feature-img"
+            style="background:url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&q=80') center/cover no-repeat;">
+          </div>
+          <div class="rounded-2xl aspect-square overflow-hidden feature-img"
+            style="background:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80') center/cover no-repeat;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-stone-900 px-6" aria-labelledby="values-heading">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-amber-400 uppercase tracking-widest text-xs mb-3">What Drives Us</p>
+          <h2 id="values-heading" class="font-display text-4xl font-bold">Our Values</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="bg-stone-950 rounded-2xl p-8 border border-stone-800 hover:border-amber-900 transition">
+            <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M12 3v1m0 16v1M4.22 4.22l.71.71m12.02 12.02.71.71M1 12h2m18 0h2M4.22 19.78l.71-.71M18.95 5.05l.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Solar First</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">Every property runs entirely on renewable solar energy
+              with battery backup. No generators, no carbon guilt. Systems are audited and upgraded annually.</p>
+          </article>
+          <article class="bg-stone-950 rounded-2xl p-8 border border-stone-800 hover:border-amber-900 transition">
+            <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Leave No Trace</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">We are certified Leave No Trace educators. All cabins use
+              composting systems and we partner with local conservation groups to restore surrounding land.</p>
+          </article>
+          <article class="bg-stone-950 rounded-2xl p-8 border border-stone-800 hover:border-amber-900 transition">
+            <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Guest First</h3>
+            <p class="text-stone-400 text-sm leading-relaxed">Detailed pre-arrival guides, GPS coordinates, emergency
+              contacts, and a 24/7 support line mean you are never truly alone — unless you want to be.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6" aria-labelledby="team-heading">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-amber-400 uppercase tracking-widest text-xs mb-3">The Humans</p>
+          <h2 id="team-heading" class="font-display text-4xl font-bold">Who We Are</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto">
+          <div class="text-center">
+            <div class="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden"
+              style="background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80') center/cover no-repeat;">
+            </div>
+            <h3 class="font-display text-lg font-bold mb-1">Marcus Hale</h3>
+            <p class="text-amber-400 text-sm mb-3">Founder & Head of Properties</p>
+            <p class="text-stone-500 text-sm">Former wilderness guide. 12 years spent scouting the most remote corners
+              of North America.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden"
+              style="background:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80') center/cover no-repeat;">
+            </div>
+            <h3 class="font-display text-lg font-bold mb-1">Lena Voigt</h3>
+            <p class="text-amber-400 text-sm mb-3">Solar & Sustainability Lead</p>
+            <p class="text-stone-500 text-sm">Electrical engineer turned off-grid advocate. Designs and installs every
+              solar system personally.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden"
+              style="background:url('https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&q=80') center/cover no-repeat;">
+            </div>
+            <h3 class="font-display text-lg font-bold mb-1">Dani Reyes</h3>
+            <p class="text-amber-400 text-sm mb-3">Guest Experience Director</p>
+            <p class="text-stone-500 text-sm">Writes every location guide by hand. Believes the pre-trip experience is
+              as important as the trip itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-amber-500 py-16 px-6" aria-label="Company statistics">
+      <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-stone-950">
+        <div>
+          <p class="font-display text-5xl font-bold">24</p>
+          <p class="text-stone-800 text-sm mt-2 font-medium">Remote Cabins</p>
+        </div>
+        <div>
+          <p class="font-display text-5xl font-bold">7</p>
+          <p class="text-stone-800 text-sm mt-2 font-medium">Years Operating</p>
+        </div>
+        <div>
+          <p class="font-display text-5xl font-bold">4.9★</p>
+          <p class="text-stone-800 text-sm mt-2 font-medium">Average Rating</p>
+        </div>
+        <div>
+          <p class="font-display text-5xl font-bold">3.2k</p>
+          <p class="text-stone-800 text-sm mt-2 font-medium">Happy Guests</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-stone-950 border-t border-stone-800 py-16 px-6" role="contentinfo">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <p class="font-display text-2xl font-bold text-amber-400 mb-4">OffGrid.</p>
+        <p class="text-stone-400 max-w-sm leading-relaxed">Solar-powered, off-grid cabin rentals in some of the most
+          remote wilderness locations on earth.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-stone-200 mb-4 text-sm uppercase tracking-wider">Explore</h3>
+        <ul class="space-y-3 text-stone-400" role="list">
+          <li><a href="cabins.html" class="hover:text-amber-400 transition text-sm">All Cabins</a></li>
+          <li><a href="about.html" class="hover:text-amber-400 transition text-sm">About Us</a></li>
+          <li><a href="contact.html" class="hover:text-amber-400 transition text-sm">Contact</a></li>
+          <li><a href="dashboard.html" class="hover:text-amber-400 transition text-sm">Guest Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-stone-200 mb-4 text-sm uppercase tracking-wider">Policy</h3>
+        <ul class="space-y-3 text-stone-400" role="list">
+          <li><a href="#" class="hover:text-amber-400 transition text-sm">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-amber-400 transition text-sm">Booking Terms</a></li>
+          <li><a href="#" class="hover:text-amber-400 transition text-sm">Cancellation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-800 text-center text-stone-600 text-sm">
+      <p>2025 OffGrid Cabin Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
