@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Miniature Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -32,75 +33,17 @@
   <script src="../assets/js/main.js" defer></script>
 </head>
 
-<body class="font-body text-[var(--color-text)] min-h-screen flex flex-col bg-[#fffaf3]">
-  <header class="sticky top-0 z-50 border-b border-black/10 surface-glass">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-20 items-center justify-between gap-4">
-        <a href="../index.html" class="flex items-center gap-3 relative group">
-          <img src="../assets/images/logo.png" alt="Miniature Studio Logo"
-            class="h-10 sm:h-12 xl:h-14 w-auto object-contain drop-shadow-[0_0_6px_rgba(252,211,77,0.9)] group-hover:drop-shadow-[0_0_15px_rgba(252,211,77,1)] transition-all duration-300">
-          <span
-            class="font-display text-3xl sm:text-4xl text-[var(--color-primary)] leading-none pt-1 hidden sm:block">Miniature
-            Studio</span>
-        </a>
-        <nav aria-label="Primary" class="hidden lg:block">
-          <ul class="flex items-center gap-2 lg:gap-4 xl:gap-6 text-[13px] xl:text-sm font-medium">
-            <li><a class="hover:text-[var(--color-primary)]" href="../index.html">Home</a></li>
-            <li><a class="hover:text-[var(--color-primary)] whitespace-nowrap" href="home-2.html">Home 2</a></li>
-
-
-            <li><a class="hover:text-[var(--color-primary)]" href="about.html">About</a></li>
-            <li><a class="hover:text-[var(--color-primary)]" href="tools.html">Tools or Techs</a></li>
-            <li><a class="hover:text-[var(--color-primary)]" href="services.html">Services</a></li>
-            <li><a class="hover:text-[var(--color-primary)]" href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="flex items-center gap-4">
-          <div class="hidden sm:flex items-center gap-2">
-            <a href="dashboard.html"
-              class="btn-outline flex items-center justify-center !min-h-[36px] !px-4 !py-1 text-xs">Dashboard</a>
-            <a href="login.html"
-              class="btn-primary flex items-center justify-center !min-h-[36px] !px-4 !py-1 text-xs">Login</a>
-          </div>
-          <div class="flex items-center gap-2 border-l border-black/10 pl-4">
-            <button type="button" data-theme-toggle aria-pressed="false"
-              class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold flex items-center justify-center">☀️</button>
-            <button type="button" data-dir-toggle aria-pressed="false"
-              class="min-touch rounded-full border border-black/15 px-3 text-sm font-semibold hover:rotate-[360deg] transition-transform duration-500 flex items-center justify-center">LTR</button>
-            <button type="button" data-menu-toggle aria-expanded="false"
-              class="min-touch rounded-full border border-black/15 p-2 lg:hidden" aria-label="Open menu">
-              <svg class="h-6 w-6 rtl-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div data-mobile-menu class="hidden border-t border-black/10 py-4 lg:hidden">
-        <nav aria-label="Mobile">
-          <ul class="space-y-3 text-base font-medium">
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="../index.html">Home</a></li>
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5 whitespace-nowrap" href="home-2.html">Home 2</a>
-            </li>
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="about.html">About</a></li>
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="tools.html">Tools or Techs</a></li>
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="services.html">Services</a></li>
-            <li><a class="block rounded-lg px-3 py-2 hover:bg-black/5" href="contact.html">Contact</a></li>
-          </ul>
-          <div class="mt-6 grid grid-cols-2 gap-3 border-t border-black/10 pt-6">
-            <a href="dashboard.html"
-              class="btn-outline flex items-center justify-center text-sm font-semibold">Dashboard</a>
-            <a href="login.html" class="btn-primary flex items-center justify-center text-sm font-semibold">Login</a>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main class="flex-1 flex items-center justify-center p-4">
-    <div class="w-full max-w-md bg-white/70 backdrop-blur-xl border border-black/10 rounded-3xl p-8 card-shadow"
+<body
+  class="font-body text-[var(--color-text)] min-h-screen flex flex-col bg-[#fffaf3] bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center">
+  <div class="absolute inset-0 bg-[#fffaf3]/80 backdrop-blur-sm"></div>
+  <main class="flex-1 flex items-center justify-center p-4 relative z-10">
+    <div class="w-full max-w-md bg-white/90 backdrop-blur-xl border border-black/10 rounded-3xl p-8 card-shadow"
       data-reveal>
       <div class="text-center mb-8">
+        <a href="../index.html" class="inline-block mb-4 group">
+          <img src="../assets/images/logo.png" alt="Miniature Studio Logo"
+            class="h-16 w-auto mx-auto object-contain drop-shadow-[0_0_6px_rgba(252,211,77,0.9)] group-hover:drop-shadow-[0_0_15px_rgba(252,211,77,1)] transition-all duration-300">
+        </a>
         <h1 class="font-display text-4xl text-[var(--color-primary)] mb-2">Welcome Back</h1>
         <p class="text-[var(--color-muted)] text-sm">Enter your details to access your studio profile</p>
       </div>
@@ -130,6 +73,38 @@
         <button type="submit" class="w-full btn-primary py-4 mt-4">Login to Studio</button>
       </form>
 
+      <div class="mt-6 flex items-center justify-center gap-4">
+        <div class="h-px bg-black/10 flex-1"></div>
+        <span class="text-xs text-[var(--color-muted)] uppercase tracking-wider font-bold">Or continue with</span>
+        <div class="h-px bg-black/10 flex-1"></div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <button
+          class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border border-black/10 hover:bg-black/5 transition-colors text-sm font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853"
+              d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05"
+              d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+            <path fill="#EA4335"
+              d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+          </svg>
+          Google
+        </button>
+        <button
+          class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl border border-black/10 hover:bg-black/5 transition-colors text-sm font-semibold">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+          GitHub
+        </button>
+      </div>
+
       <div class="mt-8 pt-8 border-t border-black/5 text-center">
         <p class="text-sm text-[var(--color-muted)]">Don't have an account?
           <a href="register.html" class="text-[var(--color-accent)] font-bold hover:underline">Register now</a>
@@ -137,104 +112,6 @@
       </div>
     </div>
   </main>
-
-
-  <!-- Custom Footer -->
-  <footer
-    style="background-color: #0f4c5c; color: white; padding: 4rem 0 2rem 0; font-family: sans-serif; margin-top: 4rem;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
-
-        <!-- Column 1: Brand Info -->
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <a href="../index.html" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none;">
-            <img src="../assets/images/logo.png" alt="Miniature Studio Logo"
-              style="height: 64px; width: auto; object-fit: contain; filter: drop-shadow(0 0 6px rgba(255,215,0,0.9)); transition: filter 0.3s;"
-              onmouseover="this.style.filter='drop-shadow(0 0 15px rgba(255,215,0,1))'"
-              onmouseout="this.style.filter='drop-shadow(0 0 6px rgba(255,215,0,0.9))'">
-            <h3
-              style="font-size: 2rem; font-family: 'Bebas Neue', sans-serif; margin: 0; color: white; padding-top: 5px;">
-              Miniature Studio</h3>
-          </a>
-          <p style="font-size: 0.875rem; line-height: 1.5; color: #e2e8f0; margin: 0;">
-            Professional miniature figurine painting studio for high-end commissions, showcase pieces, and
-            collector-grade projects.
-          </p>
-          <div style="margin-top: 0.5rem;">
-            <p style="font-size: 0.875rem; margin-bottom: 0.75rem;">Follow Us:</p>
-            <div style="display: flex; gap: 0.75rem;">
-              <a href="#"
-                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-2.221c0-.822.112-1.117.73-1.117h1.628v-4.662c-.455-.06-1.155-.06-1.155-.06-3.84 0-5.145 1.701-5.145 4.148v4.045z" />
-                </svg>
-              </a>
-              <a href="#"
-                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-              <a href="#"
-                style="width: 32px; height: 32px; border-radius: 50%; background-color: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; transition: background 0.3s;">
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2: Quick Links -->
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Quick Links</h4>
-          <ul
-            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
-            <li><a href="../index.html" style="color: #e2e8f0; text-decoration: none;">Home</a></li>
-            <li><a href="about.html" style="color: #e2e8f0; text-decoration: none;">About</a></li>
-            <li><a href="services.html" style="color: #e2e8f0; text-decoration: none;">Services</a></li>
-            <li><a href="portfolio.html" style="color: #e2e8f0; text-decoration: none;">Portfolio</a></li>
-            <li style="margin: 0.25rem 0;">
-              <a href="contact.html"
-                style="display: inline-block; background-color: #26a8ff; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 0.75rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Contact
-                Us</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Contact Info -->
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <h4 style="font-size: 1rem; margin: 0; font-weight: normal; color: white;">Contact Info</h4>
-          <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.875rem; color: #e2e8f0;">
-            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-              <span style="color: #f75c7e;">📍</span>
-              <span>123 Art Street, Creative District</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span
-                style="color: #e0e7ff; background-color: rgba(255,255,255,0.2); border-radius: 2px; padding: 0 2px; font-size: 0.7rem;">✉</span>
-              <a href="mailto:contact@miniaturestudio.com"
-                style="color: #e2e8f0; text-decoration: none;">contact@miniaturestudio.com</a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span style="color: #f75c7e;">📞</span>
-              <span>+1 (555) 987-6543</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div
-        style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.75rem; color: #cbd5e1;">
-        <p style="margin: 0;">© 2026 Miniature Studio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
 </body>
 
 </html>
