@@ -98,18 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (savedDir === 'rtl') {
     document.documentElement.setAttribute('dir', 'rtl');
-    if (directionToggle) directionToggle.textContent = '⬅️';
-    if (directionToggleMobile) directionToggleMobile.textContent = '⬅️ Direction';
+    if (directionToggle) directionToggle.textContent = 'LTR';
+    if (directionToggleMobile) directionToggleMobile.textContent = 'LTR Direction';
   }
 
   // Handle Theme Toggle
   const toggleTheme = () => {
     const isLight = document.body.classList.toggle('light-mode');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    
-    const emoji = isLight ? '🌙' : '☀️';
-    if (themeToggle) themeToggle.textContent = emoji;
-    if (themeToggleMobile) themeToggleMobile.textContent = emoji + ' Theme';
+
+    const text = isLight ? '🌙' : '☀️';
+    if (themeToggle) themeToggle.textContent = text;
+    if (themeToggleMobile) themeToggleMobile.textContent = text + ' Theme';
   };
 
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
@@ -119,13 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleDirection = () => {
     const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
     const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-    
+
     document.documentElement.setAttribute('dir', newDir);
     localStorage.setItem('direction', newDir);
-    
-    const emoji = newDir === 'rtl' ? '⬅️' : '➡️';
-    if (directionToggle) directionToggle.textContent = emoji;
-    if (directionToggleMobile) directionToggleMobile.textContent = emoji + ' Direction';
+
+    const text = newDir === 'rtl' ? 'LTR' : 'RTL';
+    if (directionToggle) directionToggle.textContent = text;
+    if (directionToggleMobile) directionToggleMobile.textContent = text + ' Direction';
   };
 
   if (directionToggle) directionToggle.addEventListener('click', toggleDirection);
