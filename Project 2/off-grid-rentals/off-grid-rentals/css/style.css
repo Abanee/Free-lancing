@@ -647,6 +647,12 @@ body.light-mode {
   color: #a8a29e !important;
 }
 
+/* Social Buttons Hover Fix for Light Mode */
+.light-mode .social-btn:hover,
+.light-mode .social-btn:hover svg {
+  color: #ffffff !important;
+}
+
 /* =====================
    RTL OVERRIDES
    ===================== */
