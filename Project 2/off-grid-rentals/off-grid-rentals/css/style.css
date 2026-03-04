@@ -18,11 +18,34 @@
    CSS VARIABLES
    ===================== */
 :root {
-  --color-amber: #F59E0B;
-  --color-bg: #0C0A09;
-  --color-surface: #1C1917;
+  --color-amber: #f59e0b;
+  --color-bg: #0c0a09;
+  --color-surface: #1c1917;
   --color-border: #292524;
   --transition: 200ms ease;
+}
+
+/* Ensure Tailwind amber utility uses our brand color */
+.text-amber-400 {
+  color: #f59e0b !important;
+}
+
+.bg-amber-500 {
+  background-color: #f59e0b !important;
+}
+
+/* Glassy Utility */
+.glassy-card {
+  background: rgba(12, 10, 9, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.light-mode .glassy-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* =====================
@@ -139,7 +162,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #F59E0B;
+  background: #f59e0b;
   color: #1C1917;
   font-size: 0.65rem;
   font-weight: 700;
@@ -443,6 +466,15 @@ body.light-mode {
   /* stone-900 */
 }
 
+/* Fix: Branding and Sign Out visibility in light mode */
+
+/* Hero badge text color in light mode */
+.light-mode .bg-amber-500\/10.text-amber-400 {
+  color: #d97706 !important;
+  background-color: rgba(217, 119, 6, 0.1) !important;
+  border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
 /* Base tailwind color flips */
 .light-mode .bg-stone-950,
 .light-mode .bg-stone-900 {
@@ -463,6 +495,42 @@ body.light-mode {
 .light-mode .text-stone-400,
 .light-mode .text-stone-500 {
   color: #44403c !important;
+}
+
+/* Light Mode Branding */
+.light-mode .logo span,
+.light-mode .text-amber-400 {
+  color: #f59e0b !important;
+  /* Restored original brand amber */
+}
+
+.light-mode .logo span .text-stone-100,
+.light-mode .text-stone-100 {
+  color: #1c1917 !important;
+  /* Dark stone for contrast */
+}
+
+.light-mode .logo span .text-amber-400 {
+  color: #f59e0b !important;
+}
+
+/* Amber dot for contrast */
+
+.light-mode article.bg-stone-900 {
+  background: #fdfcfb !important;
+  border-color: #e7e5e4 !important;
+}
+
+.light-mode article.bg-stone-900 p.text-stone-300 {
+  color: #44403c !important;
+}
+
+.light-mode article.bg-stone-900 p.text-stone-100 {
+  color: #1c1917 !important;
+}
+
+.light-mode article.bg-stone-900 p.text-stone-500 {
+  color: #a8a29e !important;
 }
 
 .light-mode .border-stone-800,
@@ -538,6 +606,45 @@ body.light-mode {
 
 .light-mode .toggle-switch {
   background-color: #d6d3d1;
+}
+
+/* New Sections Light Mode Audit */
+.light-mode #process-heading,
+.light-mode #sustainability-heading {
+  color: #1c1917 !important;
+}
+
+.light-mode .bg-stone-950\/50 {
+  background-color: rgba(245, 245, 244, 0.5) !important;
+}
+
+.light-mode .sustainability-overlay {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.light-mode .w-16.h-16.bg-stone-900.border.border-stone-800 {
+  background-color: #ffffff !important;
+  border-color: #e7e5e4 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.light-mode .absolute.top-8.left-0.right-0.h-px.bg-stone-800 {
+  background-color: #e7e5e4 !important;
+}
+
+.light-mode input.bg-stone-950 {
+  background-color: #ffffff !important;
+  border-color: #e7e5e4 !important;
+  color: #1c1917 !important;
+}
+
+/* Force white text on region cards in light mode since they have dark overlays */
+.light-mode .region-card-text {
+  color: #ffffff !important;
+}
+
+.light-mode .region-card-subtext {
+  color: #a8a29e !important;
 }
 
 /* =====================
