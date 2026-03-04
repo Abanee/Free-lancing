@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
 </head>
 
 <body class="bg-stone-950 text-stone-100 font-sans">
@@ -18,39 +19,49 @@
     <!-- NAV -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="index.html" class="logo text-2xl font-display font-bold tracking-tight text-amber-400">
-                OffGrid<span class="text-stone-100">.</span>
+            <a href="index.html" class="logo flex items-center gap-2">
+                <img src="assets/images/logo.png" alt="OffGrid Logo" class="h-10 w-auto" />
+                <span
+                    class="text-2xl font-display font-bold tracking-tight text-amber-400 hidden sm:inline-block">OffGrid<span
+                        class="text-stone-100">.</span></span>
             </a>
-            <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition"
-                aria-label="Toggle menu" aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-            <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
-                <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
-                <li><a href="home-2.html" class="nav-link text-amber-400 transition">Home 2</a></li>
-                <li><a href="cabins.html" class="nav-link hover:text-amber-400 transition">Cabin</a></li>
-                <li><a href="about.html" class="nav-link hover:text-amber-400 transition">About</a></li>
-                <li><a href="contact.html" class="nav-link hover:text-amber-400 transition">Contact</a></li>
-                
-                
+            <div class="flex items-center">
+                <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
+                    <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link text-amber-400 transition">Home 2</a></li>
+                    <li><a href="cabins.html" class="nav-link hover:text-amber-400 transition">Cabin</a></li>
+                    <li><a href="about.html" class="nav-link hover:text-amber-400 transition">About</a></li>
+                    <li><a href="contact.html" class="nav-link hover:text-amber-400 transition">Contact</a></li>
 
-                <!-- Theme & Direction Toggles -->
-                <li class="flex items-center gap-2 border-l border-stone-600 pl-4 ml-2 flex-shrink-0">
-                    <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2" aria-label="Toggle Light/Dark Theme">☀️</button>
+
+
+
+                    <li class="flex items-center gap-2 ml-4">
+                        <a href="dashboard.html"
+                            class="px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-full font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
+                        <a href="login.html"
+                            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm">Login</a>
+                    </li>
+
+
+                </ul>
+
+                <div class="flex items-center gap-2 border-stone-600 pl-2 md:pl-4 md:border-l md:ml-2">
+                    <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2"
+                        aria-label="Toggle Light/Dark Theme">☀️</button>
                     <button id="direction-toggle"
-                        class="text-[11px] font-[500] uppercasetracking-[0.1em] hover:text-[#fbbf24] transition pl-2"
-                        aria-label="Toggle LTR/RTL Direction">RTL<br>DIR</button>
-                </li>
-                <li class="flex items-center gap-2 ml-4">
-                    <a href="dashboard.html" class="px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-full font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
-                    <a href="login.html" class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm">Login</a>
-                </li>
-
-                
-            </ul>
+                        class="text-xs font-semibold uppercase tracking-wider hover:text-amber-400 transition"
+                        aria-label="Toggle LTR/RTL Direction">RTL</button>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition ml-4"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-6 py-4">
@@ -60,76 +71,239 @@
                 <li><a href="cabins.html" class="hover:text-amber-400 transition block py-1">Cabin</a></li>
                 <li><a href="about.html" class="hover:text-amber-400 transition block py-1">About</a></li>
                 <li><a href="contact.html" class="hover:text-amber-400 transition block py-1">Contact</a></li>
-                
-                
-                <li class="flex items-center gap-4 py-2 border-t border-stone-700 mt-2">
-                    <button id="theme-toggle-mobile" class="text-xl hover:scale-110 transition" aria-label="Toggle Light/Dark Theme">☀️ Theme</button>
-                    <button id="direction-toggle-mobile"
-                        class="text-sm font-semibold uppercase tracking-wider hover:text-amber-400 transition"
-                        aria-label="Toggle LTR/RTL Direction">RTL Direction</button>
-                </li>
+
+
+
                 <li class="flex flex-col gap-2 mt-4 border-t border-stone-700 pt-4">
-                    <a href="dashboard.html" class="w-full text-center px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-lg font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
-                    <a href="login.html" class="w-full text-center px-4 py-2.5 bg-amber-500 text-stone-950 rounded-lg font-semibold hover:bg-amber-400 transition text-sm">Login</a>
+                    <a href="dashboard.html"
+                        class="w-full text-center px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-lg font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
+                    <a href="login.html"
+                        class="w-full text-center px-4 py-2.5 bg-amber-500 text-stone-950 rounded-lg font-semibold hover:bg-amber-400 transition text-sm">Login</a>
                 </li>
-                
+
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner">
-        <div class="hero-bg absolute inset-0"></div>
-        <div class="hero-overlay absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/30 to-stone-950">
-        </div>
-        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto hero-content">
-            <p class="text-amber-400 uppercase tracking-[0.3em] text-xs font-medium mb-6 fade-in"
-                style="animation-delay:0.1s">Wilderness Awaits</p>
-            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8 fade-in"
-                style="animation-delay:0.2s">
-                Find Your Peace.<br /><em class="italic text-amber-400">Instantly.</em>
-            </h1>
-            <p class="text-stone-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed fade-in"
-                style="animation-delay:0.35s">
-                Discover hidden escapes in completely remote off-grid locations. Your gateway to an undisturbed
-                connection with nature.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in" style="animation-delay:0.5s">
-                <a href="cabins.html"
-                    class="px-8 py-4 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-base">Explore
-                    Cabins</a>
-                <a href="about.html"
-                    class="px-8 py-4 border border-stone-500 text-stone-200 rounded-full font-medium hover:border-amber-400 hover:text-amber-400 transition text-base">Our
-                    Story</a>
+    <!-- HERO (DRAMATIC SPLIT) -->
+    <header class="relative min-h-[90vh] pt-28 pb-20 flex items-center overflow-hidden bg-stone-950" role="banner">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7 relative z-10 fade-in">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    Now Open for 2025
+                </div>
+                <h1 class="font-display text-6xl md:text-8xl font-bold leading-[0.9] mb-10">
+                    The Art <br />of <em class="italic text-amber-400">Nothing.</em>
+                </h1>
+                <p class="text-stone-400 text-xl md:text-2xl max-w-xl mb-12 leading-relaxed font-light">
+                    We don't sell vacations. We provide the luxury of total isolation, powered by silence and the sun.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="cabins.html"
+                        class="group relative px-10 py-5 bg-amber-500 text-stone-950 rounded-2xl font-bold overflow-hidden transition-all hover:pr-14">
+                        <span class="relative z-10">Check Availability</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 opacity-0 group-hover:opacity-100 transition-all"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                    <a href="#how-it-works"
+                        class="px-10 py-5 border border-stone-800 text-stone-300 rounded-2xl font-medium hover:bg-stone-900 transition flex items-center justify-center gap-2">
+                        Step-by-Step Guide
+                    </a>
+                </div>
             </div>
-        </div>
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-500 fade-in"
-            style="animation-delay:0.8s" aria-hidden="true">
-            <span class="text-xs uppercase tracking-widest">Scroll</span>
-            <div class="w-px h-12 bg-gradient-to-b from-stone-500 to-transparent scroll-line"></div>
+            <div class="lg:col-span-5 relative hidden lg:block fade-in" style="animation-delay:0.3s">
+                <div
+                    class="relative rounded-[2.5rem] overflow-hidden aspect-[3/4] shadow-[0_0_80px_rgba(245,158,11,0.1)]">
+                    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800&q=80"
+                        alt="Remote wilderness cabin"
+                        class="w-full h-full object-cover transform scale-110 hover:scale-100 transition duration-[2000ms]" />
+                    <div class="absolute inset-0 bg-stone-950/20"></div>
+                </div>
+                <!-- Decor -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/5 rounded-full blur-[100px]"></div>
+            </div>
         </div>
     </header>
 
     <main>
+        <!-- THE VIBE -->
+        <section class="py-16 bg-stone-950 overflow-hidden" aria-hidden="true">
+            <div
+                class="whitespace-nowrap flex animate-marquee text-[15vh] font-display font-bold uppercase tracking-tighter text-stone-900 opacity-50 select-none">
+                <span class="px-8">Silence • Privacy • Nature • OffGrid • </span>
+                <span class="px-8">Silence • Privacy • Nature • OffGrid • </span>
+            </div>
+        </section>
+
         <!-- STATS STRIP -->
-        <section class="bg-stone-900 border-y border-stone-800 py-10" aria-label="Key statistics">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <section class="bg-stone-900/50 border-y border-stone-800 py-12" aria-label="Key statistics">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 <div>
-                    <p class="font-display text-4xl text-amber-400 font-bold">24</p>
-                    <p class="text-stone-400 text-sm mt-1">Remote Cabins</p>
+                    <p class="font-display text-5xl text-amber-400 font-bold mb-1">24</p>
+                    <p class="text-stone-500 text-xs uppercase tracking-widest font-semibold">Remote Cabins</p>
                 </div>
                 <div>
-                    <p class="font-display text-4xl text-amber-400 font-bold">100%</p>
-                    <p class="text-stone-400 text-sm mt-1">Solar Powered</p>
+                    <p class="font-display text-5xl text-amber-400 font-bold mb-1">100%</p>
+                    <p class="text-stone-500 text-xs uppercase tracking-widest font-semibold">Solar Powered</p>
                 </div>
                 <div>
-                    <p class="font-display text-4xl text-amber-400 font-bold">12</p>
-                    <p class="text-stone-400 text-sm mt-1">Wilderness Zones</p>
+                    <p class="font-display text-5xl text-amber-400 font-bold mb-1">12</p>
+                    <p class="text-stone-500 text-xs uppercase tracking-widest font-semibold">Wild Zones</p>
                 </div>
                 <div>
-                    <p class="font-display text-4xl text-amber-400 font-bold">4.9★</p>
-                    <p class="text-stone-400 text-sm mt-1">Guest Rating</p>
+                    <p class="font-display text-5xl text-amber-400 font-bold mb-1">4.9★</p>
+                    <p class="text-stone-500 text-xs uppercase tracking-widest font-semibold">Guest Rating</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="py-24 px-6 bg-stone-950" aria-labelledby="how-it-works-heading">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-amber-400 uppercase tracking-widest text-xs font-bold mb-4">The Journey</p>
+                <h2 id="how-it-works-heading" class="font-display text-4xl md:text-5xl font-bold mb-6">How to Disconnect
+                </h2>
+                <p class="text-stone-400 text-lg">A simple three-step process to trade your screens for the stars.</p>
+            </div>
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 relative">
+                <!-- Connectors for desktop -->
+                <div
+                    class="hidden md:block absolute top-12 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-stone-800 to-transparent">
+                </div>
+
+                <div class="text-center group relative z-10">
+                    <div
+                        class="w-20 h-20 bg-stone-900 border border-stone-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:border-amber-500 group-hover:bg-amber-500/5 transition-all duration-500 transform group-hover:-translate-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">1. Select Your Zone</h3>
+                    <p class="text-stone-400 leading-relaxed max-w-xs mx-auto">Choose from deep forests, high alpine
+                        peaks, or serene lakesides across our private plots.</p>
+                </div>
+                <div class="text-center group relative z-10">
+                    <div
+                        class="w-20 h-20 bg-stone-900 border border-stone-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:border-amber-500 group-hover:bg-amber-500/5 transition-all duration-500 transform group-hover:-translate-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">2. Access GPS Guide</h3>
+                    <p class="text-stone-400 leading-relaxed max-w-xs mx-auto">Receive a detailed digital key and
+                        offline GPS coordinates 48 hours before your arrival.</p>
+                </div>
+                <div class="text-center group relative z-10">
+                    <div
+                        class="w-20 h-20 bg-stone-900 border border-stone-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:border-amber-500 group-hover:bg-amber-500/5 transition-all duration-500 transform group-hover:-translate-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">3. Truly Disconnect</h3>
+                    <p class="text-stone-400 leading-relaxed max-w-xs mx-auto">Arrive, lock your phone in our 'Zen Box',
+                        and rediscover the rhythm of the primitive world.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUXURY OF ISOLATION (AMENITIES) -->
+        <section class="py-24 bg-stone-900/30 border-y border-stone-800" aria-labelledby="luxury-heading">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80"
+                        alt="Cabin Interior" class="rounded-2xl shadow-2xl" />
+                    <div
+                        class="absolute -bottom-8 -right-8 bg-amber-500 text-stone-950 p-6 rounded-2xl hidden md:block max-w-[240px]">
+                        <p class="font-display text-lg font-bold">"The best silence money can buy."</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-amber-400 uppercase tracking-widest text-xs font-bold mb-4">Primitive Comfort</p>
+                    <h2 id="luxury-heading" class="font-display text-4xl md:text-5xl font-bold mb-6">The Luxury of
+                        Isolation</h2>
+                    <p class="text-stone-400 text-lg mb-10">We provide what modern city life lacks: space, clean air,
+                        and the freedom to be unreachable.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div class="flex items-start gap-4">
+                            <div class="text-amber-500 mt-1">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13.536 14.95a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM6.464 16.364a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Pure Solar Power</h4>
+                                <p class="text-stone-500 text-sm">Consistent energy for essentials without the noise of
+                                    generators.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-amber-500 mt-1">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+                                    </path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Rainwater Harvest</h4>
+                                <p class="text-stone-500 text-sm">Filtered mountain water for drinking and hot showers.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-amber-500 mt-1">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M12.395 2.553a1 1 0 00-1.4503-.332l-5.97 4.974a1 1 0 00-.51 1.258l2.97 8.974a1 1 0 001.258.51l8.974-2.97a1 1 0 00.51-1.258l-2.97-8.974a1 1 0 00-1.258-.51l-1.574.52zM8 10a2 2 0 114 0 2 2 0 01-4 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Zero Connectivity</h4>
+                                <p class="text-stone-500 text-sm">No WiFi, no cellular — just you and the immediate
+                                    environment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-amber-500 mt-1">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M4.226 10.833l6.511-6.511a2.546 2.546 0 013.6 3.6l-6.511 6.511a2.546 2.546 0 01-3.6-3.6z">
+                                    </path>
+                                    <path
+                                        d="M6.025 8.04l8.527 8.527a2.546 2.546 0 11-3.6 3.6l-8.527-8.527a2.546 2.546 0 113.6-3.6z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Local Provisions</h4>
+                                <p class="text-stone-500 text-sm">Baskets of organic, local, and seasonal foods provided
+                                    on arrival.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -234,51 +408,182 @@
             </div>
         </section>
 
+        <!-- SUSTAINABILITY STATEMENT -->
+        <section class="py-24 bg-stone-950 border-t border-stone-900 overflow-hidden relative"
+            aria-labelledby="sustainability-heading">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0 100 Q 50 0 100 100" fill="none" stroke="#F59E0B" stroke-width="0.1" />
+                </svg>
+            </div>
+            <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+                <h2 id="sustainability-heading" class="font-display text-4xl md:text-5xl font-bold mb-6">Leaving Only
+                    <br /><em class="italic text-amber-400">Footprints.</em>
+                </h2>
+                <p class="text-stone-400 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">We believe in
+                    radical preservation. 1% of every booking goes directly to wilderness reforestation in the regions
+                    where we operate.</p>
+                <div class="flex justify-center gap-12">
+                    <div class="text-center">
+                        <p class="font-display text-3xl font-bold text-stone-100">12k+</p>
+                        <p class="text-stone-500 text-xs uppercase tracking-widest mt-1">Trees Planted</p>
+                    </div>
+                    <div class="text-center border-l border-stone-800 pl-12">
+                        <p class="font-display text-3xl font-bold text-stone-100">Zero</p>
+                        <p class="text-stone-500 text-xs uppercase tracking-widest mt-1">Waste Goal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED CABINS SPOTLIGHT (LARGE) -->
+        <section class="py-24 px-6 max-w-7xl mx-auto" aria-labelledby="featured-heading">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                <div>
+                    <p class="text-amber-400 uppercase tracking-widest text-xs font-bold mb-4">Curated Selection</p>
+                    <h2 id="featured-heading" class="font-display text-4xl md:text-5xl font-bold">Featured Cabins</h2>
+                </div>
+                <a href="cabins.html"
+                    class="inline-flex items-center gap-3 text-stone-400 hover:text-amber-400 transition text-sm font-medium group">
+                    View Entire Collection
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 transform group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cabins-grid" role="list">
+                <!-- Cards injected by JS -->
+            </div>
+        </section>
+
+        <!-- EXPLORE BY REGION -->
+        <section class="py-24 px-6 bg-stone-900 border-y border-stone-800" aria-labelledby="regions-heading">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-xl">
+                    <p class="text-amber-400 uppercase tracking-widest text-xs font-bold mb-3">Geographic Escapes</p>
+                    <h2 id="regions-heading" class="font-display text-4xl md:text-5xl font-bold mb-4">Explore by Region
+                    </h2>
+                    <p class="text-stone-400">From the misty northern pines to the high alpine summits, find the
+                        climate that resets your soul.</p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+                <a href="cabins.html?region=northern"
+                    class="relative group block overflow-hidden rounded-2xl aspect-[4/5] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80"
+                        alt="Northern Pine region"
+                        class="w-full h-full object-cover transition duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-display font-bold mb-1">Northern Pines</h3>
+                        <p class="text-stone-400 text-sm">Mist & Evergreens</p>
+                    </div>
+                </a>
+                <a href="cabins.html?region=alpine"
+                    class="relative group block overflow-hidden rounded-2xl aspect-[4/5] shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"
+                        alt="Alpine Peaks region"
+                        class="w-full h-full object-cover transition duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-display font-bold mb-1">Alpine Peaks</h3>
+                        <p class="text-stone-400 text-sm">Snow & Silence</p>
+                    </div>
+                </a>
+                <a href="cabins.html?region=highlands"
+                    class="relative group block overflow-hidden rounded-2xl aspect-[4/5] shadow-2xl md:transform md:translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&q=80"
+                        alt="Highland Meadows region"
+                        class="w-full h-full object-cover transition duration-1000 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-display font-bold mb-1">Highland Meadows</h3>
+                        <p class="text-stone-400 text-sm">Sun & Valleys</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <!-- TESTIMONIALS -->
         <section class="py-24 px-6 max-w-7xl mx-auto" aria-labelledby="testimonials-heading">
-            <div class="text-center mb-14">
-                <p class="text-amber-400 uppercase tracking-widest text-xs mb-3">Guest Stories</p>
-                <h2 id="testimonials-heading" class="font-display text-4xl font-bold">What Guests Say</h2>
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <p class="text-amber-400 uppercase tracking-widest text-xs font-bold mb-4">Guest Journal</p>
+                <h2 id="testimonials-heading" class="font-display text-4xl font-bold">Stories from the Wild</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <blockquote class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800">
-                    <p class="text-amber-400 text-2xl mb-4">★★★★★</p>
-                    <p class="text-stone-300 leading-relaxed mb-6">"Three nights in the Pine Ridge cabin completely
-                        reset my
-                        nervous system. No WiFi, no stress — just owls and woodsmoke. Already booked again."</p>
-                    <footer><cite class="not-italic font-medium text-stone-100">Sarah M.</cite>
-                        <p class="text-stone-500 text-sm">Pine Ridge Cabin · Sept 2024</p>
+                <blockquote
+                    class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800 flex flex-col h-full">
+                    <p class="text-amber-500 text-3xl mb-4 font-display">“</p>
+                    <p class="text-stone-300 leading-relaxed mb-6 flex-grow">"Three nights in the interior
+                        completely reset my nervous system. No WiFi, no stress — just owls and woodsmoke. Already booked
+                        again."</p>
+                    <footer>
+                        <cite class="not-italic font-bold text-stone-100 block mb-1">Sarah M.</cite>
+                        <p class="text-stone-500 text-xs">Pine Ridge Cabin · Sept 2024</p>
                     </footer>
                 </blockquote>
-                <blockquote class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800">
-                    <p class="text-amber-400 text-2xl mb-4">★★★★★</p>
-                    <p class="text-stone-300 leading-relaxed mb-6">"The pre-arrival guide was so thorough we felt like
-                        experts
-                        before we even arrived. The solar setup was impressive — never ran out of power."</p>
-                    <footer><cite class="not-italic font-medium text-stone-100">James & Lily</cite>
-                        <p class="text-stone-500 text-sm">Lakeside Hollow · Aug 2024</p>
+                <blockquote
+                    class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800 flex flex-col h-full">
+                    <p class="text-amber-500 text-3xl mb-4 font-display">“</p>
+                    <p class="text-stone-300 leading-relaxed mb-6 flex-grow">"The pre-arrival guide was so
+                        thorough we felt like experts before we even arrived. The solar setup was impressive — never ran
+                        out of power."</p>
+                    <footer>
+                        <cite class="not-italic font-bold text-stone-100 block mb-1">James & Lily</cite>
+                        <p class="text-stone-500 text-xs">Lakeside Hollow · Aug 2024</p>
                     </footer>
                 </blockquote>
-                <blockquote class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800">
-                    <p class="text-amber-400 text-2xl mb-4">★★★★★</p>
-                    <p class="text-stone-300 leading-relaxed mb-6">"I came for a solo writing retreat and got more done
-                        in 5 days
-                        than in the past 3 months at home. This cabin is a productivity miracle."</p>
-                    <footer><cite class="not-italic font-medium text-stone-100">Priya K.</cite>
-                        <p class="text-stone-500 text-sm">Ridge Top Studio · Oct 2024</p>
+                <blockquote
+                    class="testimonial-card bg-stone-900 rounded-2xl p-8 border border-stone-800 flex flex-col h-full">
+                    <p class="text-amber-500 text-3xl mb-4 font-display">“</p>
+                    <p class="text-stone-300 leading-relaxed mb-6 flex-grow">"I came for a solo writing retreat
+                        and got more done in 5 days than in the past 3 months at home. This cabin is a productivity
+                        miracle."</p>
+                    <footer>
+                        <cite class="not-italic font-bold text-stone-100 block mb-1">Priya K.</cite>
+                        <p class="text-stone-500 text-xs">Ridge Top Studio · Oct 2024</p>
                     </footer>
                 </blockquote>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="py-24 bg-amber-500 text-stone-950 text-center px-6" aria-labelledby="cta-heading">
-            <h2 id="cta-heading" class="font-display text-4xl md:text-5xl font-bold mb-4">Ready to escape?</h2>
-            <p class="text-stone-800 max-w-xl mx-auto mb-8 text-lg">Spots fill fast. Check availability and lock in your
-                wilderness dates today.</p>
-            <a href="cabins.html"
-                class="inline-block px-10 py-4 bg-stone-950 text-amber-400 rounded-full font-semibold hover:bg-stone-800 transition text-base">Browse
-                Available Cabins</a>
+        <!-- CTA & NEWSLETTER -->
+        <section class="py-24 bg-stone-950 border-t border-stone-900" aria-labelledby="cta-heading">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 id="cta-heading" class="font-display text-4xl md:text-5xl font-bold mb-6">Ready to find
+                        <br />your <em class="italic text-amber-400">quiet?</em>
+                    </h2>
+                    <p class="text-stone-400 text-lg mb-8 max-w-lg">Join 40,000+ others receiving our monthly
+                        'Wilderness Digest' with new cabin drops and off-grid living tips.</p>
+                    <form class="flex flex-col sm:flex-row gap-3 max-w-md"
+                        onsubmit="event.preventDefault(); alert('Subscribed!')">
+                        <input type="email" placeholder="Enter your email" required
+                            class="flex-1 bg-stone-900 border border-stone-800 rounded-full px-6 py-4 text-stone-100 focus:outline-none focus:border-amber-500 transition shadow-inner" />
+                        <button type="submit"
+                            class="px-8 py-4 bg-amber-500 text-stone-950 rounded-full font-bold hover:bg-amber-400 transition whitespace-nowrap">Join
+                            Digest</button>
+                    </form>
+                </div>
+                <div
+                    class="bg-amber-500 rounded-3xl p-10 lg:p-12 text-stone-950 text-center lg:text-left relative overflow-hidden group">
+                    <h3 class="text-3xl font-display font-bold mb-4 relative z-10">Last Minute
+                        Escapes</h3>
+                    <p class="text-stone-900 text-lg mb-8 relative z-10 lg:max-w-xs font-medium">Check current
+                        availability for this weekend and get 10% off your stay.</p>
+                    <a href="cabins.html"
+                        class="inline-block relative z-10 px-8 py-4 bg-stone-950 text-amber-500 rounded-full font-bold hover:bg-stone-800 transition">
+                        Browse Cabins
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 

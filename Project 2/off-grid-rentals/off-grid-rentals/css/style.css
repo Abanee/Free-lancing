@@ -6,8 +6,13 @@
    ============================================= */
 
 /* FONTS */
-.font-display { font-family: 'Playfair Display', Georgia, serif; }
-.font-sans { font-family: 'DM Sans', system-ui, sans-serif; }
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
 
 /* =====================
    CSS VARIABLES
@@ -25,7 +30,7 @@
    ===================== */
 .hero-bg {
   background-image:
-    url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1800&q=90');
+    url('./../assets/images/1.jpg');
   background-size: cover;
   background-position: center 30%;
   transform: scale(1.05);
@@ -33,7 +38,23 @@
 }
 
 @keyframes heroZoom {
-  to { transform: scale(1); }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
 }
 
 .scroll-line {
@@ -41,8 +62,15 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* =====================
@@ -65,7 +93,7 @@
    NAVBAR
    ===================== */
 #navbar {
-  background: transparent;
+  background: #000000;
 }
 
 #navbar.scrolled {
@@ -127,7 +155,7 @@
   right: 10px;
   width: 34px;
   height: 34px;
-  background: rgba(12,10,9,0.7);
+  background: rgba(12, 10, 9, 0.7);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -138,7 +166,10 @@
   transition: color 200ms, background 200ms;
 }
 
-.cabin-card__save:hover { color: #F59E0B; background: rgba(12,10,9,0.9); }
+.cabin-card__save:hover {
+  color: #F59E0B;
+  background: rgba(12, 10, 9, 0.9);
+}
 
 /* =====================
    GALLERY
@@ -151,7 +182,9 @@
   transition: filter 200ms ease;
 }
 
-.gallery-thumb:hover { filter: brightness(1.1); }
+.gallery-thumb:hover {
+  filter: brightness(1.1);
+}
 
 /* =====================
    AMENITY ITEMS
@@ -159,6 +192,7 @@
 .amenity-item {
   transition: border-color 200ms ease, transform 200ms ease;
 }
+
 .amenity-item:hover {
   border-color: #78350F;
   transform: translateY(-2px);
@@ -178,7 +212,7 @@
   background: #1C1917 !important;
   border: 1px solid #292524 !important;
   border-radius: 1rem !important;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
   font-family: 'DM Sans', system-ui, sans-serif !important;
 }
 
@@ -257,8 +291,15 @@
 }
 
 @keyframes panelIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =====================
@@ -316,6 +357,7 @@
 .booking-card {
   transition: border-color 200ms ease;
 }
+
 .booking-card:hover {
   border-color: #78350F;
 }
@@ -326,6 +368,7 @@
 .testimonial-card {
   transition: transform 300ms ease, border-color 300ms ease;
 }
+
 .testimonial-card:hover {
   transform: translateY(-4px);
   border-color: #78350F;
@@ -337,6 +380,7 @@
 .mobile-tab-btn {
   transition: color 200ms;
 }
+
 .mobile-tab-btn.active {
   color: #F59E0B;
 }
@@ -347,6 +391,7 @@
 .feature-img {
   transition: filter 300ms ease;
 }
+
 .feature-img:hover {
   filter: brightness(1.1);
 }
@@ -357,13 +402,16 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0C0A09;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #44403c;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #78716c;
 }
@@ -389,8 +437,10 @@
    LIGHT MODE OVERRIDES
    ===================== */
 body.light-mode {
-  background-color: #f5f5f4 !important; /* stone-100 */
-  color: #1c1917 !important; /* stone-900 */
+  background-color: #f5f5f4 !important;
+  /* stone-100 */
+  color: #1c1917 !important;
+  /* stone-900 */
 }
 
 /* Base tailwind color flips */
@@ -421,8 +471,13 @@ body.light-mode {
 }
 
 /* Specific Component Overrides */
+.light-mode #navbar {
+  background: #ffffff;
+}
+
 .light-mode #navbar.scrolled {
   background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid #e7e5e4;
 }
 
@@ -432,7 +487,8 @@ body.light-mode {
 }
 
 .light-mode .cabin-card:hover {
-  border-color: #d97706; /* amber-600 */
+  border-color: #d97706;
+  /* amber-600 */
 }
 
 .light-mode .amenity-item,
@@ -466,9 +522,18 @@ body.light-mode {
   fill: #1c1917 !important;
 }
 
-.light-mode .sidebar-link:hover,
-.light-mode .sidebar-link.active {
+.light-mode .sidebar-link {
+  color: #57534e;
+}
+
+.light-mode .sidebar-link:hover {
   background: #f5f5f4;
+  color: #1c1917;
+}
+
+.light-mode .sidebar-link.active {
+  background: #fef3c7;
+  color: #d97706;
 }
 
 .light-mode .toggle-switch {

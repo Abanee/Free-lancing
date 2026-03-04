@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/images/logo.png" type="image/png" />
 </head>
 
 <body class="bg-stone-950 text-stone-100 font-sans">
@@ -18,39 +19,49 @@
         class="fixed top-0 left-0 right-0 z-50 bg-stone-950/90 backdrop-blur border-b border-stone-800 transition-all duration-500"
         aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="index.html" class="logo text-2xl font-display font-bold tracking-tight text-amber-400">
-                OffGrid<span class="text-stone-100">.</span>
+            <a href="index.html" class="logo flex items-center gap-2">
+                <img src="assets/images/logo.png" alt="OffGrid Logo" class="h-10 w-auto" />
+                <span
+                    class="text-2xl font-display font-bold tracking-tight text-amber-400 hidden sm:inline-block">OffGrid<span
+                        class="text-stone-100">.</span></span>
             </a>
-            <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition"
-                aria-label="Toggle menu" aria-expanded="false">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-            <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
-                <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
-                <li><a href="home-2.html" class="nav-link hover:text-amber-400 transition">Home 2</a></li>
-                <li><a href="cabins.html" class="nav-link hover:text-amber-400 transition">Cabin</a></li>
-                <li><a href="about.html" class="nav-link hover:text-amber-400 transition">About</a></li>
-                <li><a href="contact.html" class="nav-link text-amber-400 transition">Contact</a></li>
-                
-                
+            <div class="flex items-center">
+                <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-300" role="list">
+                    <li><a href="index.html" class="nav-link hover:text-amber-400 transition">Home</a></li>
+                    <li><a href="home-2.html" class="nav-link hover:text-amber-400 transition">Home 2</a></li>
+                    <li><a href="cabins.html" class="nav-link hover:text-amber-400 transition">Cabin</a></li>
+                    <li><a href="about.html" class="nav-link hover:text-amber-400 transition">About</a></li>
+                    <li><a href="contact.html" class="nav-link text-amber-400 transition">Contact</a></li>
 
-                <!-- Theme & Direction Toggles -->
-                <li class="flex items-center gap-2 border-l border-stone-600 pl-4 ml-2">
-                    <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2" aria-label="Toggle Light/Dark Theme">☀️</button>
+
+
+
+                    <li class="flex items-center gap-2 ml-4">
+                        <a href="dashboard.html"
+                            class="px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-full font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
+                        <a href="login.html"
+                            class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm">Login</a>
+                    </li>
+
+
+                </ul>
+
+                <div class="flex items-center gap-2 border-stone-600 pl-2 md:pl-4 md:border-l md:ml-2">
+                    <button id="theme-toggle" class="text-xl hover:scale-110 transition pr-2"
+                        aria-label="Toggle Light/Dark Theme">☀️</button>
                     <button id="direction-toggle"
                         class="text-xs font-semibold uppercase tracking-wider hover:text-amber-400 transition"
                         aria-label="Toggle LTR/RTL Direction">RTL</button>
-                </li>
-                <li class="flex items-center gap-2 ml-4">
-                    <a href="dashboard.html" class="px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-full font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
-                    <a href="login.html" class="px-5 py-2.5 bg-amber-500 text-stone-950 rounded-full font-semibold hover:bg-amber-400 transition text-sm">Login</a>
-                </li>
-
-                
-            </ul>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 transition ml-4"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-t border-stone-800 px-6 py-4">
@@ -60,19 +71,16 @@
                 <li><a href="cabins.html" class="hover:text-amber-400 transition block py-1">Cabin</a></li>
                 <li><a href="about.html" class="hover:text-amber-400 transition block py-1">About</a></li>
                 <li><a href="contact.html" class="text-amber-400 transition block py-1">Contact</a></li>
-                
-                
-                <li class="flex items-center gap-4 py-2 border-t border-stone-700 mt-2">
-                    <button id="theme-toggle-mobile" class="text-xl hover:scale-110 transition" aria-label="Toggle Light/Dark Theme">☀️ Theme</button>
-                    <button id="direction-toggle-mobile"
-                        class="text-sm font-semibold uppercase tracking-wider hover:text-amber-400 transition"
-                        aria-label="Toggle LTR/RTL Direction">RTL Direction</button>
-                </li>
+
+
+
                 <li class="flex flex-col gap-2 mt-4 border-t border-stone-700 pt-4">
-                    <a href="dashboard.html" class="w-full text-center px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-lg font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
-                    <a href="login.html" class="w-full text-center px-4 py-2.5 bg-amber-500 text-stone-950 rounded-lg font-semibold hover:bg-amber-400 transition text-sm">Login</a>
+                    <a href="dashboard.html"
+                        class="w-full text-center px-4 py-2 bg-stone-800 text-stone-200 border border-stone-700 rounded-lg font-medium hover:bg-stone-700 transition text-sm">Dashboard</a>
+                    <a href="login.html"
+                        class="w-full text-center px-4 py-2.5 bg-amber-500 text-stone-950 rounded-lg font-semibold hover:bg-amber-400 transition text-sm">Login</a>
                 </li>
-                
+
             </ul>
         </div>
     </nav>
