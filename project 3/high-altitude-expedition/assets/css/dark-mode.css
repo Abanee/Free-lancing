@@ -1,0 +1,47 @@
+/* ─── Dark Mode Theme Overrides ─── */
+
+.dark #navbar {
+  background: rgba(2,6,23,0.95);
+  border-bottom-color: #1e293b;
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 12px 40px rgba(234,88,12,0.2);
+}
+
+.dark input, .dark textarea, .dark select {
+  background: #0f172a;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark .form-input {
+  background: #0f172a;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark footer {
+  background: #020617;
+  border-top-color: #1e293b;
+}
+
+.dark .badge {
+  background: rgba(234,88,12,0.15);
+  color: #fb923c;
+}
+
+/* Dark Timeline */
+.dark .timeline-item::before {
+  border-color: #1e293b;
+  background: var(--accent);
+}
+
+/* Dark table */
+.dark .cost-table th {
+  background: #0f172a;
+  color: #94a3b8;
+}
+.dark .cost-table tr:hover td {
+  background: #0f172a;
+}

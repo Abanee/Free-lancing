@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 Season — Coming Soon — Apex Ascent Expeditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body { background:#020617; color:#e2e8f0; min-height:100vh; }
+    .error-msg { display:none; color:#dc2626; font-size:0.78rem; margin-top:4px; }
+    .error-msg.visible { display:block; }
+  </style>
+</head>
+<body>
+
+<nav class="fixed top-0 left-0 right-0 z-50" style="background:rgba(2,6,23,0.85);backdrop-filter:blur(12px);border-bottom:1px solid #1e293b;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 no-underline">
+        <span style="color:#ea580c" class="text-xl">⛰</span>
+        <span class="font-heading font-bold text-xl tracking-widest uppercase text-white">Apex Ascent</span>
+      </a>
+      <a href="index.html" class="text-sm" style="color:#94a3b8;">← Back to site</a>
+    </div>
+  </div>
+</nav>
+
+<div style="min-height:100vh;background:linear-gradient(135deg,#020617 0%,#0f172a 50%,#020617 100%);display:flex;align-items:center;justify-content:center;padding:80px 24px;position:relative;overflow:hidden;">
+  <!-- Background stars/pattern -->
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;"></div>
+  <!-- Orange glow -->
+  <div style="position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(234,88,12,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  
+  <div class="text-center" style="max-width:640px;position:relative;z-index:1;">
+    <div style="display:inline-block;background:rgba(234,88,12,0.15);border:1px solid rgba(234,88,12,0.3);border-radius:4px;padding:6px 14px;margin-bottom:24px;">
+      <span class="font-heading text-xs tracking-widest uppercase" style="color:#fb923c">2026 Season Announcement</span>
+    </div>
+    <h1 class="font-heading font-bold text-white mb-4" style="font-size:clamp(3rem,7vw,5.5rem);line-height:1;letter-spacing:-0.02em;">SOMETHING<br/><span style="color:#ea580c">EPIC</span><br/>IS COMING</h1>
+    <p class="text-lg mb-10" style="color:rgba(255,255,255,0.6);">The 2026 season will feature new routes, new peaks, and a new programme for aspiring 8000m climbers. Priority access for newsletter subscribers.</p>
+    
+    <!-- Countdown -->
+    <div class="flex justify-center gap-6 mb-12" id="countdown">
+      <div class="text-center">
+        <div id="cd-days" class="font-heading font-bold text-5xl" style="color:#ea580c">--</div>
+        <div class="font-heading text-xs tracking-widest uppercase mt-1" style="color:#64748b">Days</div>
+      </div>
+      <div class="font-heading font-bold text-5xl" style="color:#334155">:</div>
+      <div class="text-center">
+        <div id="cd-hours" class="font-heading font-bold text-5xl" style="color:#ea580c">--</div>
+        <div class="font-heading text-xs tracking-widest uppercase mt-1" style="color:#64748b">Hours</div>
+      </div>
+      <div class="font-heading font-bold text-5xl" style="color:#334155">:</div>
+      <div class="text-center">
+        <div id="cd-mins" class="font-heading font-bold text-5xl" style="color:#ea580c">--</div>
+        <div class="font-heading text-xs tracking-widest uppercase mt-1" style="color:#64748b">Mins</div>
+      </div>
+      <div class="font-heading font-bold text-5xl" style="color:#334155">:</div>
+      <div class="text-center">
+        <div id="cd-secs" class="font-heading font-bold text-5xl" style="color:#ea580c">--</div>
+        <div class="font-heading text-xs tracking-widest uppercase mt-1" style="color:#64748b">Secs</div>
+      </div>
+    </div>
+
+    <!-- Notify form -->
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:32px;margin-bottom:32px;">
+      <h3 class="font-heading font-bold text-xl mb-2 text-white">Get Early Access</h3>
+      <p class="text-sm mb-4" style="color:rgba(255,255,255,0.55);">Be first to know when 2026 season spots open. Subscribers get 48-hour early access before public launch.</p>
+      <form id="notify-form" onsubmit="event.preventDefault(); document.getElementById('notify-form').style.display='none'; document.getElementById('notify-success').style.display='block';" class="flex gap-3 flex-wrap justify-center">
+        <input type="email" placeholder="your@email.com" required style="flex:1;min-width:220px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);color:#e2e8f0;border-radius:4px;padding:10px 14px;font-size:0.95rem;outline:none;" />
+        <button type="submit" class="btn-primary">Notify Me</button>
+      </form>
+      <div id="notify-success" style="display:none;padding:12px 0;">
+        <div class="text-2xl mb-2">✅</div>
+        <p style="color:rgba(255,255,255,0.7);">You're on the list! We'll email you when 2026 spots open.</p>
+      </div>
+    </div>
+
+    <!-- What's coming teasers -->
+    <div class="grid grid-cols-3 gap-4 mb-10">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px;">
+        <div class="text-2xl mb-2">🏔️</div>
+        <div class="font-heading font-semibold text-sm text-white">Shishapangma</div>
+        <div class="text-xs mt-1" style="color:#64748b">New 8000m route</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px;">
+        <div class="text-2xl mb-2">🧗</div>
+        <div class="font-heading font-semibold text-sm text-white">7000m Academy</div>
+        <div class="text-xs mt-1" style="color:#64748b">New training programme</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px;">
+        <div class="text-2xl mb-2">🤝</div>
+        <div class="font-heading font-semibold text-sm text-white">Sherpa Partnership</div>
+        <div class="text-xs mt-1" style="color:#64748b">Expanded co-ownership</div>
+      </div>
+    </div>
+    <a href="index.html" class="btn-outline">← Back to 2025 Season</a>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  // Countdown to Jan 1 2026
+  const target = new Date('2026-01-15T00:00:00');
+  function updateCountdown() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) { document.getElementById('countdown').innerHTML = '<div class="font-heading font-bold text-2xl text-white">SEASON OPEN NOW!</div>'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

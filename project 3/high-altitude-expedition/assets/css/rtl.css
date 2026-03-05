@@ -1,0 +1,30 @@
+/* ─── RTL (Right-to-Left) Support ─── */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .accent-line::before {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .timeline-item {
+  padding-left: 0;
+  padding-right: 32px;
+  border-left: none;
+  border-right: 2px solid var(--border);
+}
+
+[dir="rtl"] .timeline-item::before {
+  left: auto;
+  right: -9px;
+}
+
+[dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }

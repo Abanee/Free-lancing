@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expeditions & Itinerary — Apex Ascent Expeditions</title>
+  <meta name="description" content="Detailed expedition itineraries for Everest, K2, Annapurna and more. Full logistics, cost breakdowns, and services included." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'};</script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+</head>
+<body style="background:var(--bg);color:var(--text);">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 no-underline">
+        <span style="color:var(--accent)" class="text-xl">⛰</span>
+        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+        <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
+        <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--accent)">Expeditions</a>
+        <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
+        <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--text)">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)">
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        </button>
+        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+      </div>
+      <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+    <div class="px-4 py-4 flex flex-col gap-3">
+      <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+      <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+      <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">Expeditions</a>
+      <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+      <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
+      <div class="flex gap-3 pt-2">
+        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2070&q=80');">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">2025 Season Open</p>
+    <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">Expeditions &<br/>Itineraries</h1>
+    <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.75)">Every route planned to the last rope length. Every decision rehearsed before your boots leave base camp.</p>
+  </div>
+</section>
+
+<!-- EVEREST ITINERARY FEATURED -->
+<section class="section" style="background:var(--bg)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal mb-8 flex flex-wrap justify-between items-end gap-4">
+      <div>
+        <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Featured Route</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">Mount Everest — South Col</h2>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="font-heading text-2xl font-bold" style="color:var(--accent)">$68,000</span>
+        <a href="contact.html" class="btn-primary">Apply for 2025</a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="md:col-span-2">
+        <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80" alt="Everest" class="rounded w-full" style="height:360px;object-fit:cover;" />
+      </div>
+      <div class="space-y-3">
+        <div class="p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+          <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--text-sec)">Duration</div>
+          <div class="font-heading font-bold text-xl" style="color:var(--text)">65 Days</div>
+        </div>
+        <div class="p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+          <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--text-sec)">Season</div>
+          <div class="font-heading font-bold text-xl" style="color:var(--text)">April – June 2025</div>
+        </div>
+        <div class="p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+          <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--text-sec)">Max Team Size</div>
+          <div class="font-heading font-bold text-xl" style="color:var(--text)">6 Climbers</div>
+        </div>
+        <div class="p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+          <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--text-sec)">Difficulty</div>
+          <div class="font-heading font-bold text-xl" style="color:var(--accent)">Extreme</div>
+        </div>
+        <div class="p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+          <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--text-sec)">Available Spots</div>
+          <div class="font-heading font-bold text-xl" style="color:var(--text)">2 Remaining</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day-by-day timeline -->
+    <div class="reveal mb-10">
+      <h3 class="font-heading font-bold text-2xl mb-6" style="color:var(--text)">Day-by-Day Itinerary Overview</h3>
+      <div class="overflow-x-auto rounded border" style="border-color:var(--border)">
+        <table class="cost-table">
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Days</th>
+              <th>Location / Activity</th>
+              <th>Altitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Arrival</td><td>1–2</td><td style="color:var(--text)">Kathmandu — briefings, gear check, permits</td><td>1,400m</td></tr>
+            <tr><td>Trek In</td><td>3–12</td><td style="color:var(--text)">Lukla → Namche → EBC via Tengboche</td><td>2,840–5,364m</td></tr>
+            <tr><td>Acclimatization 1</td><td>13–22</td><td style="color:var(--text)">Khumbu Icefall opening, Camp I rotations</td><td>5,364–6,065m</td></tr>
+            <tr><td>Acclimatization 2</td><td>23–35</td><td style="color:var(--text)">Island Peak ascent + Camp II/III rotations</td><td>6,065–7,200m</td></tr>
+            <tr><td>Rest Window</td><td>36–40</td><td style="color:var(--text)">Return to EBC. Full rest, medical assessment</td><td>5,364m</td></tr>
+            <tr><td>Summit Push</td><td>41–52</td><td style="color:var(--text)">Camp I → II → III → IV → Summit → Descent</td><td>8,848m</td></tr>
+            <tr><td>Contingency</td><td>53–60</td><td style="color:var(--text)">Weather window reserve + secondary attempt</td><td>5,364m+</td></tr>
+            <tr><td>Return</td><td>61–65</td><td style="color:var(--text)">Trek out → Lukla → Kathmandu celebration</td><td>1,400m</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Cost Breakdown -->
+    <div class="reveal mb-10">
+      <h3 class="font-heading font-bold text-2xl mb-6" style="color:var(--text)">Cost Breakdown — What's Included</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="overflow-x-auto rounded border" style="border-color:var(--border)">
+            <table class="cost-table">
+              <thead><tr><th>Item</th><th>Cost (USD)</th></tr></thead>
+              <tbody>
+                <tr><td style="color:var(--text)">Nepal Everest Permit</td><td style="color:var(--accent)">$11,000</td></tr>
+                <tr><td style="color:var(--text)">Sagarmatha National Park Fee</td><td>$300</td></tr>
+                <tr><td style="color:var(--text)">Personal Sherpa (1:1 above C3)</td><td>$8,200</td></tr>
+                <tr><td style="color:var(--text)">Supplemental O₂ (4 bottles)</td><td>$4,800</td></tr>
+                <tr><td style="color:var(--text)">Fixed rope access fee</td><td>$700</td></tr>
+                <tr><td style="color:var(--text)">All camps (tents, food, fuel)</td><td>$9,500</td></tr>
+                <tr><td style="color:var(--text)">Guiding fees (2 senior guides)</td><td>$18,000</td></tr>
+                <tr><td style="color:var(--text)">Rescue insurance & evacuation</td><td>$3,200</td></tr>
+                <tr><td style="color:var(--text)">Flights, transfers, hotels</td><td>$3,800</td></tr>
+                <tr><td style="color:var(--text)">Medical kit, sat comms</td><td>$2,500</td></tr>
+                <tr style="font-weight:600"><td style="color:var(--text)">Subtotal (inclusive)</td><td style="color:var(--accent)">$62,000</td></tr>
+                <tr style="font-weight:700"><td style="color:var(--text)">Total (with margin)</td><td style="color:var(--accent)">$68,000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold mb-4" style="color:var(--text)">Cost Distribution</h4>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span style="color:var(--text)">Guiding & Sherpa</span><span style="color:var(--text-sec)">38%</span></div>
+              <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div class="cost-bar" data-width="38" style="width:0%;height:100%;background:var(--accent);border-radius:4px;transition:width 1s ease;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span style="color:var(--text)">Permits & Fees</span><span style="color:var(--text-sec)">18%</span></div>
+              <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div class="cost-bar" data-width="18" style="width:0%;height:100%;background:#f97316;border-radius:4px;transition:width 1s ease;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span style="color:var(--text)">Camp & Logistics</span><span style="color:var(--text-sec)">22%</span></div>
+              <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div class="cost-bar" data-width="22" style="width:0%;height:100%;background:#fb923c;border-radius:4px;transition:width 1s ease;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span style="color:var(--text)">Oxygen & Medical</span><span style="color:var(--text-sec)">12%</span></div>
+              <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div class="cost-bar" data-width="12" style="width:0%;height:100%;background:#fbbf24;border-radius:4px;transition:width 1s ease;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span style="color:var(--text)">Travel & Accommodation</span><span style="color:var(--text-sec)">10%</span></div>
+              <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;"><div class="cost-bar" data-width="10" style="width:0%;height:100%;background:#64748b;border-radius:4px;transition:width 1s ease;"></div></div>
+            </div>
+          </div>
+          <div class="mt-6 p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
+            <p class="text-xs leading-relaxed" style="color:var(--text-sec)"><strong style="color:var(--text)">Not included:</strong> Personal gear (equipment list provided), personal insurance (mandatory min $500k), visa fees, tips, personal expenses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER EXPEDITIONS GRID -->
+<section class="section" style="background:var(--bg-card)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="reveal mb-10">
+      <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Full Programme</p>
+      <h2 class="font-heading font-bold text-4xl" style="color:var(--text)">All 2025 Expeditions</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- K2 -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" alt="K2" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">K2 — Abruzzi Spur</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$74,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,611m · 70 days · Jun–Aug · Max 4 climbers · Prior 8000m required</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Pakistan</span><span class="text-xs px-2 py-1 rounded" style="background:rgba(234,88,12,0.1);color:var(--accent);border:1px solid rgba(234,88,12,0.3)">Expert Only</span></div>
+        </div>
+      </div>
+      <!-- Annapurna -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=80" alt="Annapurna" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Annapurna I</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$58,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,091m · 55 days · Apr–May · Max 6 climbers · Nepal</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span class="text-xs px-2 py-1 rounded" style="background:rgba(234,88,12,0.1);color:var(--accent);border:1px solid rgba(234,88,12,0.3)">2 Spots Left</span></div>
+        </div>
+      </div>
+      <!-- Lhotse -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" alt="Lhotse" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Lhotse</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$52,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,516m · 58 days · Apr–Jun · Max 6 climbers · Nepal</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Combinable w/ Everest</span></div>
+        </div>
+      </div>
+      <!-- Makalu -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&w=700&q=80" alt="Makalu" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Makalu</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$47,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,485m · 52 days · Apr–May · Max 8 climbers · Nepal</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Advanced</span></div>
+        </div>
+      </div>
+      <!-- Cho Oyu -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=700&q=80" alt="Cho Oyu" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Cho Oyu</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$29,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,188m · 40 days · Sep–Oct · Max 10 climbers · Tibet</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Tibet</span><span class="text-xs px-2 py-1 rounded" style="background:rgba(22,163,74,0.1);color:#16a34a;border:1px solid rgba(22,163,74,0.3)">Entry 8000m</span></div>
+        </div>
+      </div>
+      <!-- Manaslu -->
+      <div class="card-hover reveal rounded border overflow-hidden" style="background:var(--bg);border-color:var(--border)">
+        <div style="height:180px;overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=700&q=80" alt="Manaslu" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="p-5">
+          <div class="flex justify-between mb-2">
+            <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Manaslu</h3>
+            <span class="font-heading font-bold" style="color:var(--accent)">$32,000</span>
+          </div>
+          <p class="text-xs mb-3" style="color:var(--text-sec)">8,163m · 44 days · Sep–Oct · Max 8 climbers · Nepal</p>
+          <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span class="text-xs px-2 py-1 rounded" style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Intermediate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS FAQ -->
+<section class="section" style="background:var(--bg)">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center reveal mb-10">
+      <p class="accent-line font-heading text-xs tracking-widest uppercase inline-block" style="color:var(--accent)">Before You Apply</p>
+      <h2 class="font-heading font-bold text-4xl" style="color:var(--text)">Entry Requirements & FAQ</h2>
+    </div>
+    <div class="space-y-3">
+      <div class="reveal rounded border overflow-hidden" style="border-color:var(--border)">
+        <button data-accordion-trigger="faq1" class="w-full text-left p-5 flex justify-between items-center font-heading font-semibold" style="color:var(--text);background:var(--bg-card);">
+          What prior experience is required for Everest?
+          <span class="accordion-icon text-xl transition-transform" style="color:var(--accent)">+</span>
+        </button>
+        <div id="faq1" class="hidden p-5 text-sm leading-relaxed" style="color:var(--text-sec);background:var(--bg);">Minimum requirements: At least one successful 7000m summit (ideally Aconcagua, Denali, or a Himalayan 7000er), documented experience with fixed lines and jumar technique, current high-altitude rescue certificate, and a detailed meeting with our lead guide. We assess each application individually.</div>
+      </div>
+      <div class="reveal rounded border overflow-hidden" style="border-color:var(--border)">
+        <button data-accordion-trigger="faq2" class="w-full text-left p-5 flex justify-between items-center font-heading font-semibold" style="color:var(--text);background:var(--bg-card);">
+          Is supplemental oxygen always provided?
+          <span class="accordion-icon text-xl transition-transform" style="color:var(--accent)">+</span>
+        </button>
+        <div id="faq2" class="hidden p-5 text-sm leading-relaxed" style="color:var(--text-sec);background:var(--bg);">Yes. All Apex Ascent expeditions above 8000m include supplemental oxygen as standard. We provide Poisk and Summit oxygen systems, with each climber allocated a minimum of 4 bottles (plus guide and sherpa allocation). We do not support "no O2" attempts as they fall outside our safety protocols.</div>
+      </div>
+      <div class="reveal rounded border overflow-hidden" style="border-color:var(--border)">
+        <button data-accordion-trigger="faq3" class="w-full text-left p-5 flex justify-between items-center font-heading font-semibold" style="color:var(--text);background:var(--bg-card);">
+          What is the payment and cancellation structure?
+          <span class="accordion-icon text-xl transition-transform" style="color:var(--accent)">+</span>
+        </button>
+        <div id="faq3" class="hidden p-5 text-sm leading-relaxed" style="color:var(--text-sec);background:var(--bg);">30% deposit upon acceptance to reserve your spot. 40% due 180 days before departure. Final 30% due 60 days before departure. Cancellations within 60 days: deposit forfeited. Within 30 days: 70% forfeited. We strongly recommend comprehensive cancellation insurance, which we can help arrange.</div>
+      </div>
+      <div class="reveal rounded border overflow-hidden" style="border-color:var(--border)">
+        <button data-accordion-trigger="faq4" class="w-full text-left p-5 flex justify-between items-center font-heading font-semibold" style="color:var(--text);background:var(--bg-card);">
+          What happens if weather prevents a summit attempt?
+          <span class="accordion-icon text-xl transition-transform" style="color:var(--accent)">+</span>
+        </button>
+        <div id="faq4" class="hidden p-5 text-sm leading-relaxed" style="color:var(--text-sec);background:var(--bg);">All expeditions include a weather contingency window (10–15 days depending on route). If no viable summit window opens, we offer a 50% credit toward the following year's expedition. Safety-related turnarounds before summit carry no financial penalty — your life and our reputation are worth more than the optics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-10 mb-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span style="color:var(--accent)" class="text-xl">⛰</span>
+          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
+        </div>
+        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-sec)">Elite high-altitude mountaineering expeditions since 2008. 147+ successful summits. Zero client fatalities.</p>
+      </div>
+      <div>
+        <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">Pages</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-sm" style="color:var(--text-sec)">Home</a></li>
+          <li><a href="about.html" class="text-sm" style="color:var(--text-sec)">About</a></li>
+          <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Expeditions</a></li>
+          <li><a href="contact.html" class="text-sm" style="color:var(--text-sec)">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">Apply Now</h4>
+        <p class="text-sm mb-4" style="color:var(--text-sec)">2025 season applications close March 1st for spring expeditions.</p>
+        <a href="contact.html" class="btn-primary">Apply Today</a>
+      </div>
+    </div>
+    <div class="border-t pt-6" style="border-color:var(--border)">
+      <p class="text-xs" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
