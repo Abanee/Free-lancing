@@ -1,373 +1,483 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apex Ascent Expeditions — High-Altitude Mountaineering</title>
-  <meta name="description" content="Elite high-altitude mountaineering expeditions to the world's most demanding peaks. For those who have already conquered everything else." />
+  <meta name="description"
+    content="Elite high-altitude mountaineering expeditions to the world's most demanding peaks. For those who have already conquered everything else." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: { extend: {
-        fontFamily: { heading: ['Oswald','sans-serif'], body: ['Inter','sans-serif'] },
-        colors: { alpine: { 50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617' }, danger:'#ea580c' }
-      }}
+      theme: {
+        extend: {
+          fontFamily: { heading: ['Oswald', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          colors: { alpine: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }, danger: '#ea580c' }
+        }
+      }
     };
   </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
 </head>
+
 <body class="font-body" style="background:var(--bg);color:var(--text);">
 
-<!-- ═══════════════ NAVBAR ═══════════════ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 no-underline">
-        <span style="color:var(--accent)" class="text-xl">⛰</span>
-        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
-        <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
-        <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
-        <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
-        <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--text)">Contact</a>
-      </div>
-      <div class="hidden md:flex items-center gap-3">
-        <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)" aria-label="Toggle theme">
-          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-        </button>
-        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background:var(--text)"></span>
-        <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background:var(--text)"></span>
-        <span class="hamburger-line block w-6 h-0.5 transition-all duration-300" style="background:var(--text)"></span>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
-    <div class="px-4 py-4 flex flex-col gap-3">
-      <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
-      <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
-      <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Expeditions</a>
-      <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
-      <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
-      <div class="flex gap-3 pt-2">
-        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section id="hero" style="position:relative;min-height:100svh;background:linear-gradient(to bottom,rgba(2,6,23,0.35) 0%,rgba(2,6,23,0.65) 50%,rgba(2,6,23,0.92) 100%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;display:flex;align-items:center;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style="padding-top:96px;padding-bottom:80px;">
-    <div class="max-w-3xl">
-      <div class="mb-6">
-        <span class="inline-block font-heading text-xs tracking-widest uppercase px-3 py-1 rounded" style="background:rgba(234,88,12,0.2);color:#fb923c;border:1px solid rgba(234,88,12,0.3)">Est. 2008 · 8000m+ Specialists</span>
-      </div>
-      <h1 class="font-heading font-bold text-white leading-tight mb-6" style="font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-0.01em;">
-        WHERE THE<br/><span style="color:var(--accent)">SUMMIT</span><br/>CALLS THE<br/>WORTHY
-      </h1>
-      <p class="text-lg mb-10 max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.75)">
-        Elite expeditions to Everest, K2, Annapurna, and the world's most formidable peaks. Guided by climbers who have stood at the top of the world — multiple times.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="itinerary.html" class="btn-primary">Explore Expeditions</a>
-        <a href="about.html" class="btn-outline">Meet The Team</a>
-      </div>
-      <div class="mt-12 flex flex-wrap gap-8">
-        <div>
-          <div class="font-heading text-3xl font-bold text-white"><span data-target="147" data-suffix="+">0+</span></div>
-          <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Successful Summits</div>
-        </div>
-        <div>
-          <div class="font-heading text-3xl font-bold text-white"><span data-target="16" data-suffix="">0</span></div>
-          <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Years Experience</div>
-        </div>
-        <div>
-          <div class="font-heading text-3xl font-bold text-white"><span data-target="98" data-suffix="%">0%</span></div>
-          <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Safety Record</div>
-        </div>
-        <div>
-          <div class="font-heading text-3xl font-bold text-white"><span data-target="12" data-suffix="">0</span></div>
-          <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Active Guides</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);animation:fadeIn 2s 1s forwards;opacity:0;">
-    <div class="flex flex-col items-center gap-2" style="color:rgba(255,255,255,0.5)">
-      <span class="text-xs tracking-widest uppercase font-heading">Scroll</span>
-      <div style="width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent)"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ FEATURED EXPEDITIONS ═══════════════ -->
-<section class="section" style="background:var(--bg)">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal mb-12">
-      <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">2025 Season</p>
-      <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">Featured Expeditions</h2>
-      <p class="mt-3 text-lg max-w-2xl" style="color:var(--text-sec)">Each route is meticulously planned across years of high-altitude experience. We run a maximum of 6 climbers per expedition.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Card 1 -->
-      <div class="card-hover rounded border overflow-hidden reveal" style="background:var(--bg-card);border-color:var(--border)">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80" alt="Everest" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-          <div style="position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">Iconic</div>
-        </div>
-        <div class="p-5">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">Mount Everest</h3>
-            <span class="font-heading text-sm" style="color:var(--accent)">8,848m</span>
-          </div>
-          <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">The world's highest peak. Our South Col route via Nepal covers 65 days and includes full acclimatization rotations on Lobuche and Island Peak.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">65 Days</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Apr–Jun</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 6 Climbers</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="font-heading font-bold text-lg" style="color:var(--text)">$68,000</span>
-            <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="card-hover rounded border overflow-hidden reveal" style="background:var(--bg-card);border-color:var(--border)">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="K2" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-          <div style="position:absolute;top:12px;left:12px;background:#1e293b;color:#fb923c;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">Expert Only</div>
-        </div>
-        <div class="p-5">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">K2 — The Savage Mountain</h3>
-            <span class="font-heading text-sm" style="color:var(--accent)">8,611m</span>
-          </div>
-          <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">More technically demanding than Everest. Our Abruzzi Spur route requires prior 8000m experience. The hardest non-technical challenge in alpinism.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">70 Days</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Jun–Aug</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 4 Climbers</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="font-heading font-bold text-lg" style="color:var(--text)">$74,000</span>
-            <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="card-hover rounded border overflow-hidden reveal" style="background:var(--bg-card);border-color:var(--border)">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80" alt="Annapurna" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''"/>
-          <div style="position:absolute;top:12px;left:12px;background:rgba(234,88,12,0.85);color:#fff;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">High Demand</div>
-        </div>
-        <div class="p-5">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">Annapurna I</h3>
-            <span class="font-heading text-sm" style="color:var(--accent)">8,091m</span>
-          </div>
-          <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">The most dangerous 8000m peak statistically. Notorious for avalanche risk and brutal weather windows. North face approach, Nepal.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">55 Days</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Apr–May</span>
-            <span class="text-xs px-2 py-1 rounded" style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 6 Climbers</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="font-heading font-bold text-lg" style="color:var(--text)">$58,000</span>
-            <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-10 reveal">
-      <a href="itinerary.html" class="btn-outline-dark">View All 14 Expeditions</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ WHY APEX ASCENT ═══════════════ -->
-<section class="section" style="background:var(--bg-card)">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div class="reveal">
-        <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Our Philosophy</p>
-        <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6" style="color:var(--text)">Safety is Non-Negotiable. Excellence is Inevitable.</h2>
-        <p class="mb-4 leading-relaxed" style="color:var(--text-sec)">Since 2008, Apex Ascent has operated on a simple principle: every climber who joins our team comes back down. We maintain a 98% summit success rate not by pushing beyond limits, but by preparing beyond them.</p>
-        <p class="mb-6 leading-relaxed" style="color:var(--text-sec)">Our head guides hold multiple 8000m summits each, including winter ascents and speed records. We cap team sizes ruthlessly. We turn around without hesitation. And we've never lost a client.</p>
-        <div class="grid grid-cols-2 gap-4 mb-8">
-          <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
-            <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">0</div>
-            <div class="text-sm" style="color:var(--text-sec)">Client Fatalities</div>
-          </div>
-          <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
-            <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">6:1</div>
-            <div class="text-sm" style="color:var(--text-sec)">Max Client:Guide Ratio</div>
-          </div>
-          <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
-            <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">48h</div>
-            <div class="text-sm" style="color:var(--text-sec)">Weather Monitoring</div>
-          </div>
-          <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
-            <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">100%</div>
-            <div class="text-sm" style="color:var(--text-sec)">Supplemental Oxygen</div>
-          </div>
-        </div>
-        <a href="about.html" class="btn-primary">Meet The Team</a>
-      </div>
-      <div class="reveal">
-        <img src="https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=900&q=80" alt="High altitude climbers" class="rounded w-full" style="box-shadow:0 24px 80px rgba(0,0,0,0.2)" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SERVICES ═══════════════ -->
-<section class="section" style="background:var(--bg)">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center reveal mb-12">
-      <p class="accent-line font-heading text-xs tracking-widest uppercase inline-block" style="color:var(--accent)">What We Offer</p>
-      <h2 class="font-heading font-bold text-4xl md:text-5xl mt-0" style="color:var(--text)">Complete Expedition Support</h2>
-    </div>
-    <div class="grid md:grid-cols-4 gap-6">
-      <div class="reveal p-6 rounded border text-center card-hover" style="background:var(--bg-card);border-color:var(--border)">
-        <div class="text-4xl mb-4">🧗</div>
-        <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Expert Guiding</h3>
-        <p class="text-sm leading-relaxed" style="color:var(--text-sec)">All guides hold IFMGA/UIAGM certification and have 5+ personal 8000m summits each.</p>
-      </div>
-      <div class="reveal p-6 rounded border text-center card-hover" style="background:var(--bg-card);border-color:var(--border)">
-        <div class="text-4xl mb-4">🏥</div>
-        <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Medical Support</h3>
-        <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Dedicated high-altitude physician on every expedition. Full HAPE/HACE protocols on standby.</p>
-      </div>
-      <div class="reveal p-6 rounded border text-center card-hover" style="background:var(--bg-card);border-color:var(--border)">
-        <div class="text-4xl mb-4">📡</div>
-        <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Sat Communication</h3>
-        <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Iridium satellite phone, GPS tracking, and 24/7 base camp radio communication throughout.</p>
-      </div>
-      <div class="reveal p-6 rounded border text-center card-hover" style="background:var(--bg-card);border-color:var(--border)">
-        <div class="text-4xl mb-4">🎒</div>
-        <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Gear & Logistics</h3>
-        <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Top-tier equipment provided or reviewed before departure. All camp logistics handled end-to-end.</p>
-      </div>
-    </div>
-    <div class="text-center mt-10 reveal">
-      <a href="service.html" class="btn-outline-dark">See All Services</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
-<section class="section" style="background:var(--bg-card)">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal mb-12">
-      <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Climber Stories</p>
-      <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">From Those Who Made It</h2>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
-        <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
-        <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"Apex Ascent didn't just get me to the summit of Everest — they got me there and back safely, calmly, and with enough energy to enjoy the moment. Their preparation is unlike anything in the industry."</p>
-        <div class="flex items-center gap-3">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👨</div>
-          <div>
-            <div class="font-medium text-sm" style="color:var(--text)">Marcus Thiele</div>
-            <div class="text-xs" style="color:var(--text-sec)">Everest Summit, 2024</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
-        <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
-        <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"I've climbed with four different guiding companies on 8000m peaks. Nothing comes close to Apex. The guide-to-client ratio, the weather forecasting, the medical kit — everything is at a completely different level."</p>
-        <div class="flex items-center gap-3">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👩</div>
-          <div>
-            <div class="font-medium text-sm" style="color:var(--text)">Dr. Priya Nambiar</div>
-            <div class="text-xs" style="color:var(--text-sec)">K2 Summit, 2023</div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
-        <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
-        <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"When the storm hit on day 58, our guide Marcus called the turnaround with zero hesitation. Two other teams pushed on. We waited 18 hours and summited in perfect conditions. Judgment under pressure — that's what you pay for."</p>
-        <div class="flex items-center gap-3">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🧔</div>
-          <div>
-            <div class="font-medium text-sm" style="color:var(--text)">Tomasz Kowalski</div>
-            <div class="text-xs" style="color:var(--text-sec)">Lhotse Summit, 2024</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ CTA ═══════════════ -->
-<section style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);padding:80px 0;">
-  <div class="max-w-3xl mx-auto text-center px-4">
-    <h2 class="font-heading font-bold text-white text-4xl md:text-5xl mb-4 reveal">Ready to Attempt Your Summit?</h2>
-    <p class="text-lg mb-8 reveal" style="color:rgba(255,255,255,0.65)">Applications for the 2025 season are open. Spots are extremely limited. If you've been preparing for this, now is the time.</p>
-    <div class="flex justify-center gap-4 flex-wrap reveal">
-      <a href="contact.html" class="btn-primary">Apply Now</a>
-      <a href="coming-soon.html" class="btn-outline">2026 Season Preview</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-4 gap-10 mb-10">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-2 mb-4">
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 no-underline">
           <span style="color:var(--accent)" class="text-xl">⛰</span>
-          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
+          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+            Ascent</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home 2</a>
+          <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
+          <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
+          <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--text)">Contact</a>
         </div>
-        <p class="text-sm leading-relaxed mb-4" style="color:var(--text-sec)">Elite high-altitude mountaineering expeditions since 2008. 147+ successful summits. Zero client fatalities. The finest mountain guiding available.</p>
-        <div class="flex gap-4">
-          <a href="#" class="text-sm" style="color:var(--text-sec)">Instagram</a>
-          <a href="#" class="text-sm" style="color:var(--text-sec)">Facebook</a>
-          <a href="#" class="text-sm" style="color:var(--text-sec)">YouTube</a>
+        <div class="hidden md:flex items-center gap-3">
+          <button id="rtl-toggle" class="p-2 rounded font-heading text-sm font-medium tracking-widest uppercase"
+            style="color:var(--text-sec)">LTR</button>
+          <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)" aria-label="Toggle theme">
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </button>
+          <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
         </div>
-      </div>
-      <div>
-        <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">Expeditions</h4>
-        <ul class="space-y-2">
-          <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Mount Everest</a></li>
-          <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">K2</a></li>
-          <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Annapurna</a></li>
-          <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Makalu & Cho Oyu</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">Company</h4>
-        <ul class="space-y-2">
-          <li><a href="about.html" class="text-sm" style="color:var(--text-sec)">About Us</a></li>
-          <li><a href="service.html" class="text-sm" style="color:var(--text-sec)">Services</a></li>
-          <li><a href="contact.html" class="text-sm" style="color:var(--text-sec)">Contact</a></li>
-          <li><a href="coming-soon.html" class="text-sm" style="color:var(--text-sec)">2026 Season</a></li>
-        </ul>
+        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
+          aria-expanded="false">
+          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+            style="background:var(--text)"></span>
+          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+            style="background:var(--text)"></span>
+          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+            style="background:var(--text)"></span>
+        </button>
       </div>
     </div>
-    <div class="border-t pt-6 flex flex-wrap justify-between items-center gap-4" style="border-color:var(--border)">
-      <p class="text-xs" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. All rights reserved.</p>
-      <p class="text-xs" style="color:var(--text-sec)">High-altitude mountaineering involves serious risks including death. All climbers accept full personal liability.</p>
+    <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
+        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+          style="color:var(--text)">Expeditions</a>
+        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
+        <div class="flex gap-3 pt-2">
+          <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </nav>
 
-<script src="../assets/js/main.js"></script>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero" style="position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;">
+    <video autoplay loop muted playsinline
+      style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      <source src="../demo.mp4" type="video/mp4">
+    </video>
+    <div
+      style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(2,6,23,0.35) 0%,rgba(2,6,23,0.65) 50%,rgba(2,6,23,0.92) 100%);z-index:1;">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
+      style="padding-top:96px;padding-bottom:80px;position:relative;z-index:2;">
+      <div class="max-w-3xl">
+        <div class="mb-6">
+          <span class="inline-block font-heading text-xs tracking-widest uppercase px-3 py-1 rounded"
+            style="background:rgba(234,88,12,0.2);color:#fb923c;border:1px solid rgba(234,88,12,0.3)">Est. 2008 · 8000m+
+            Specialists</span>
+        </div>
+        <h1 class="font-heading font-bold text-white leading-tight mb-6"
+          style="font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-0.01em;">
+          WHERE THE<br /><span style="color:var(--accent)">SUMMIT</span><br />CALLS THE<br />WORTHY
+        </h1>
+        <p class="text-lg mb-10 max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.75)">
+          Elite expeditions to Everest, K2, Annapurna, and the world's most formidable peaks. Guided by climbers who
+          have stood at the top of the world — multiple times.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="itinerary.html" class="btn-primary">Explore Expeditions</a>
+          <a href="about.html" class="btn-outline">Meet The Team</a>
+        </div>
+        <div class="mt-12 flex flex-wrap gap-8">
+          <div>
+            <div class="font-heading text-3xl font-bold text-white"><span data-target="147" data-suffix="+">0+</span>
+            </div>
+            <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Successful Summits</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white"><span data-target="16" data-suffix="">0</span></div>
+            <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Years Experience</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white"><span data-target="98" data-suffix="%">0%</span>
+            </div>
+            <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Safety Record</div>
+          </div>
+          <div>
+            <div class="font-heading text-3xl font-bold text-white"><span data-target="12" data-suffix="">0</span></div>
+            <div class="text-sm mt-1" style="color:rgba(255,255,255,0.6)">Active Guides</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);animation:fadeIn 2s 1s forwards;opacity:0;">
+      <div class="flex flex-col items-center gap-2" style="color:rgba(255,255,255,0.5)">
+        <span class="text-xs tracking-widest uppercase font-heading">Scroll</span>
+        <div style="width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FEATURED EXPEDITIONS ═══════════════ -->
+  <section class="section" style="background:var(--bg)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal mb-12">
+        <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">2025 Season
+        </p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">Featured Expeditions</h2>
+        <p class="mt-3 text-lg max-w-2xl" style="color:var(--text-sec)">Each route is meticulously planned across years
+          of high-altitude experience. We run a maximum of 6 climbers per expedition.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="card-hover rounded border overflow-hidden reveal"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80"
+              alt="Everest" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;"
+              onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''" />
+            <div
+              style="position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">
+              Iconic</div>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">Mount Everest</h3>
+              <span class="font-heading text-sm" style="color:var(--accent)">8,848m</span>
+            </div>
+            <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">The world's highest peak. Our South
+              Col route via Nepal covers 65 days and includes full acclimatization rotations on Lobuche and Island Peak.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">65 Days</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Apr–Jun</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 6 Climbers</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-heading font-bold text-lg" style="color:var(--text)">$68,000</span>
+              <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card-hover rounded border overflow-hidden reveal"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+              alt="K2" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;"
+              onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''" />
+            <div
+              style="position:absolute;top:12px;left:12px;background:#1e293b;color:#fb923c;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">
+              Expert Only</div>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">K2 — The Savage Mountain</h3>
+              <span class="font-heading text-sm" style="color:var(--accent)">8,611m</span>
+            </div>
+            <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">More technically demanding than
+              Everest. Our Abruzzi Spur route requires prior 8000m experience. The hardest non-technical challenge in
+              alpinism.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">70 Days</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Jun–Aug</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 4 Climbers</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-heading font-bold text-lg" style="color:var(--text)">$74,000</span>
+              <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card-hover rounded border overflow-hidden reveal"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+              alt="Annapurna" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s;"
+              onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''" />
+            <div
+              style="position:absolute;top:12px;left:12px;background:rgba(234,88,12,0.85);color:#fff;font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;">
+              High Demand</div>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-heading font-semibold text-xl" style="color:var(--text)">Annapurna I</h3>
+              <span class="font-heading text-sm" style="color:var(--accent)">8,091m</span>
+            </div>
+            <p class="text-sm mb-4 leading-relaxed" style="color:var(--text-sec)">The most dangerous 8000m peak
+              statistically. Notorious for avalanche risk and brutal weather windows. North face approach, Nepal.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">55 Days</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Apr–May</span>
+              <span class="text-xs px-2 py-1 rounded"
+                style="background:var(--bg);color:var(--text-sec);border:1px solid var(--border)">Max 6 Climbers</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-heading font-bold text-lg" style="color:var(--text)">$58,000</span>
+              <a href="itinerary.html" class="btn-primary text-xs px-4 py-2">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="itinerary.html" class="btn-outline-dark">View All 14 Expeditions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHY APEX ASCENT ═══════════════ -->
+  <section class="section" style="background:var(--bg-card)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Our
+            Philosophy</p>
+          <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6" style="color:var(--text)">Safety is
+            Non-Negotiable. Excellence is Inevitable.</h2>
+          <p class="mb-4 leading-relaxed" style="color:var(--text-sec)">Since 2008, Apex Ascent has operated on a simple
+            principle: every climber who joins our team comes back down. We maintain a 98% summit success rate not by
+            pushing beyond limits, but by preparing beyond them.</p>
+          <p class="mb-6 leading-relaxed" style="color:var(--text-sec)">Our head guides hold multiple 8000m summits
+            each, including winter ascents and speed records. We cap team sizes ruthlessly. We turn around without
+            hesitation. And we've never lost a client.</p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
+              <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">0</div>
+              <div class="text-sm" style="color:var(--text-sec)">Client Fatalities</div>
+            </div>
+            <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
+              <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">6:1</div>
+              <div class="text-sm" style="color:var(--text-sec)">Max Client:Guide Ratio</div>
+            </div>
+            <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
+              <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">48h</div>
+              <div class="text-sm" style="color:var(--text-sec)">Weather Monitoring</div>
+            </div>
+            <div class="p-4 rounded border" style="background:var(--bg);border-color:var(--border)">
+              <div class="text-2xl font-heading font-bold mb-1" style="color:var(--accent)">100%</div>
+              <div class="text-sm" style="color:var(--text-sec)">Supplemental Oxygen</div>
+            </div>
+          </div>
+          <a href="about.html" class="btn-primary">Meet The Team</a>
+        </div>
+        <div class="reveal">
+          <img src="https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=900&q=80"
+            alt="High altitude climbers" class="rounded w-full" style="box-shadow:0 24px 80px rgba(0,0,0,0.2)" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SERVICES ═══════════════ -->
+  <section class="section" style="background:var(--bg)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal mb-12">
+        <p class="accent-line font-heading text-xs tracking-widest uppercase inline-block" style="color:var(--accent)">
+          What We Offer</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl mt-0" style="color:var(--text)">Complete Expedition
+          Support</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="reveal p-6 rounded border text-center card-hover"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div class="text-4xl mb-4">🧗</div>
+          <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Expert Guiding</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">All guides hold IFMGA/UIAGM certification and
+            have 5+ personal 8000m summits each.</p>
+        </div>
+        <div class="reveal p-6 rounded border text-center card-hover"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div class="text-4xl mb-4">🏥</div>
+          <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Medical Support</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Dedicated high-altitude physician on every
+            expedition. Full HAPE/HACE protocols on standby.</p>
+        </div>
+        <div class="reveal p-6 rounded border text-center card-hover"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div class="text-4xl mb-4">📡</div>
+          <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Sat Communication</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Iridium satellite phone, GPS tracking, and
+            24/7 base camp radio communication throughout.</p>
+        </div>
+        <div class="reveal p-6 rounded border text-center card-hover"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <div class="text-4xl mb-4">🎒</div>
+          <h3 class="font-heading font-semibold text-lg mb-2" style="color:var(--text)">Gear & Logistics</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">Top-tier equipment provided or reviewed
+            before departure. All camp logistics handled end-to-end.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="service.html" class="btn-outline-dark">See All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section class="section" style="background:var(--bg-card)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal mb-12">
+        <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Climber
+          Stories</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">From Those Who Made It</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
+          <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
+          <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"Apex Ascent didn't just get me to the
+            summit of Everest — they got me there and back safely, calmly, and with enough energy to enjoy the moment.
+            Their preparation is unlike anything in the industry."</p>
+          <div class="flex items-center gap-3">
+            <div
+              style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+              👨</div>
+            <div>
+              <div class="font-medium text-sm" style="color:var(--text)">Marcus Thiele</div>
+              <div class="text-xs" style="color:var(--text-sec)">Everest Summit, 2024</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
+          <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
+          <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"I've climbed with four different guiding
+            companies on 8000m peaks. Nothing comes close to Apex. The guide-to-client ratio, the weather forecasting,
+            the medical kit — everything is at a completely different level."</p>
+          <div class="flex items-center gap-3">
+            <div
+              style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+              👩</div>
+            <div>
+              <div class="font-medium text-sm" style="color:var(--text)">Dr. Priya Nambiar</div>
+              <div class="text-xs" style="color:var(--text-sec)">K2 Summit, 2023</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal p-6 rounded border" style="background:var(--bg);border-color:var(--border)">
+          <div class="flex gap-1 mb-4" style="color:var(--accent)">★★★★★</div>
+          <p class="mb-4 italic leading-relaxed" style="color:var(--text-sec)">"When the storm hit on day 58, our guide
+            Marcus called the turnaround with zero hesitation. Two other teams pushed on. We waited 18 hours and
+            summited in perfect conditions. Judgment under pressure — that's what you pay for."</p>
+          <div class="flex items-center gap-3">
+            <div
+              style="width:40px;height:40px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+              🧔</div>
+            <div>
+              <div class="font-medium text-sm" style="color:var(--text)">Tomasz Kowalski</div>
+              <div class="text-xs" style="color:var(--text-sec)">Lhotse Summit, 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);padding:80px 0;">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <h2 class="font-heading font-bold text-white text-4xl md:text-5xl mb-4 reveal">Ready to Attempt Your Summit?</h2>
+      <p class="text-lg mb-8 reveal" style="color:rgba(255,255,255,0.65)">Applications for the 2025 season are open.
+        Spots are extremely limited. If you've been preparing for this, now is the time.</p>
+      <div class="flex justify-center gap-4 flex-wrap reveal">
+        <a href="contact.html" class="btn-primary">Apply Now</a>
+        <a href="coming-soon.html" class="btn-outline">2026 Season Preview</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <span style="color:var(--accent)" class="text-xl">⛰</span>
+            <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+              Ascent</span>
+          </div>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--text-sec)">Elite high-altitude mountaineering
+            expeditions since 2008. 147+ successful summits. Zero client fatalities. The finest mountain guiding
+            available.</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-sm" style="color:var(--text-sec)">Instagram</a>
+            <a href="#" class="text-sm" style="color:var(--text-sec)">Facebook</a>
+            <a href="#" class="text-sm" style="color:var(--text-sec)">YouTube</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">
+            Expeditions</h4>
+          <ul class="space-y-2">
+            <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Mount Everest</a></li>
+            <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">K2</a></li>
+            <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Annapurna</a></li>
+            <li><a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Makalu & Cho Oyu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-sm tracking-widest uppercase mb-4" style="color:var(--text)">
+            Company</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="text-sm" style="color:var(--text-sec)">About Us</a></li>
+            <li><a href="service.html" class="text-sm" style="color:var(--text-sec)">Services</a></li>
+            <li><a href="contact.html" class="text-sm" style="color:var(--text-sec)">Contact</a></li>
+            <li><a href="coming-soon.html" class="text-sm" style="color:var(--text-sec)">2026 Season</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t pt-6 flex flex-wrap justify-between items-center gap-4" style="border-color:var(--border)">
+        <p class="text-xs" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. All rights reserved.</p>
+        <p class="text-xs" style="color:var(--text-sec)">High-altitude mountaineering involves serious risks including
+          death. All climbers accept full personal liability.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

@@ -32,7 +32,7 @@
     toggle.addEventListener('click', () => {
       const isDark = html.classList.contains('dark');
       const next = isDark ? 'light' : 'dark';
-      try { localStorage.setItem('apex-theme', next); } catch {}
+      try { localStorage.setItem('apex-theme', next); } catch { }
       applyTheme(next);
     });
   }
@@ -40,6 +40,21 @@
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
   });
+
+  // ─── RTL Toggle ───
+  const rtlToggle = document.getElementById('rtl-toggle');
+  if (rtlToggle) {
+    rtlToggle.addEventListener('click', () => {
+      const isRTL = html.getAttribute('dir') === 'rtl';
+      if (isRTL) {
+        html.removeAttribute('dir');
+        rtlToggle.textContent = 'RTL';
+      } else {
+        html.setAttribute('dir', 'rtl');
+        rtlToggle.textContent = 'LTR';
+      }
+    });
+  }
 
   // ─── Mobile Menu ───
   const hamburger = document.getElementById('hamburger');
@@ -123,15 +138,15 @@
     const msgEl = document.getElementById('message');
     const counter = document.getElementById('message-count');
 
-    if (nameEl) nameEl.addEventListener('blur', function () { showError('name','name-error', this.value.trim().length < 2); });
-    if (emailEl) emailEl.addEventListener('blur', function () { showError('email','email-error', !validateEmail(this.value.trim())); });
+    if (nameEl) nameEl.addEventListener('blur', function () { showError('name', 'name-error', this.value.trim().length < 2); });
+    if (emailEl) emailEl.addEventListener('blur', function () { showError('email', 'email-error', !validateEmail(this.value.trim())); });
     if (msgEl && counter) {
       msgEl.addEventListener('input', function () {
         const len = this.value.length;
         counter.textContent = `${len} / 50 min`;
         counter.style.color = len >= 50 ? 'var(--accent)' : 'var(--text-sec)';
       });
-      msgEl.addEventListener('blur', function () { showError('message','message-error', this.value.trim().length < 50); });
+      msgEl.addEventListener('blur', function () { showError('message', 'message-error', this.value.trim().length < 50); });
     }
 
     form.addEventListener('submit', function (e) {
@@ -141,9 +156,9 @@
       const email = emailEl ? emailEl.value.trim() : '';
       const message = msgEl ? msgEl.value.trim() : '';
 
-      if (name.length < 2) { showError('name','name-error', true); valid = false; } else showError('name','name-error', false);
-      if (!validateEmail(email)) { showError('email','email-error', true); valid = false; } else showError('email','email-error', false);
-      if (message.length < 50) { showError('message','message-error', true); valid = false; } else showError('message','message-error', false);
+      if (name.length < 2) { showError('name', 'name-error', true); valid = false; } else showError('name', 'name-error', false);
+      if (!validateEmail(email)) { showError('email', 'email-error', true); valid = false; } else showError('email', 'email-error', false);
+      if (message.length < 50) { showError('message', 'message-error', true); valid = false; } else showError('message', 'message-error', false);
 
       const consentEl = document.getElementById('consent');
       const consentErr = document.getElementById('consent-error');

@@ -1,182 +1,277 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apex Ascent — Home v2 (Dark Edition)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { heading: ['Oswald', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          colors: { alpine: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }, danger: '#ea580c' }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
-  <style>
-    /* Force dark mode for this page variant */
-    html { background:#020617; color:#e2e8f0; }
-    :root { --bg:#020617; --bg-card:#0f172a; --text:#e2e8f0; --text-sec:#94a3b8; --accent:#ea580c; --border:#1e293b; --nav-bg:rgba(2,6,23,0.92); }
-  </style>
 </head>
-<body style="background:#020617;color:#e2e8f0;">
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50" style="background:rgba(2,6,23,0.92);backdrop-filter:blur(16px);border-bottom:1px solid #1e293b;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 no-underline">
-        <span style="color:#ea580c" class="text-xl">⛰</span>
-        <span class="font-heading font-bold text-xl tracking-widest uppercase text-white">Apex Ascent</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="nav-link text-sm font-medium text-white">Home</a>
-        <a href="about.html" class="nav-link text-sm font-medium text-white">About</a>
-        <a href="itinerary.html" class="nav-link text-sm font-medium text-white">Expeditions</a>
-        <a href="service.html" class="nav-link text-sm font-medium text-white">Services</a>
-        <a href="contact.html" class="nav-link text-sm font-medium text-white">Contact</a>
-      </div>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="login.html" class="btn-outline text-sm px-4 py-2">Login</a>
-        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open menu" aria-expanded="false">
-        <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
-        <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
-        <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" style="background:rgba(2,6,23,0.98);border-top:1px solid #1e293b;">
-    <div class="px-4 py-4 flex flex-col gap-3">
-      <a href="index.html" class="mobile-nav-link text-sm font-medium py-2 text-white">Home</a>
-      <a href="about.html" class="mobile-nav-link text-sm font-medium py-2 text-white">About</a>
-      <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2 text-white">Expeditions</a>
-      <a href="service.html" class="mobile-nav-link text-sm font-medium py-2 text-white">Services</a>
-      <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2 text-white">Contact</a>
-    </div>
-  </div>
-</nav>
+<body class="font-body" style="background:var(--bg);color:var(--text);">
 
-<!-- HERO — full viewport cinematic dark -->
-<section style="min-height:100svh;background:linear-gradient(to bottom right,#020617,#0f172a);position:relative;display:flex;align-items:center;overflow:hidden;">
-  <!-- Grid pattern -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
-  <!-- Orange accent circle -->
-  <div style="position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,0.12) 0%,transparent 70%);pointer-events:none;"></div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style="padding-top:100px;padding-bottom:80px;">
-    <div class="max-w-4xl">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
-        <div style="width:40px;height:1px;background:#ea580c;"></div>
-        <span class="font-heading text-xs tracking-widest uppercase" style="color:#fb923c">Est. 2008 — 8000m Specialists</span>
-      </div>
-      <h1 class="font-heading font-bold text-white" style="font-size:clamp(3.5rem,8vw,7rem);line-height:0.9;letter-spacing:-0.02em;margin-bottom:32px;">
-        THE WORLD'S<br/>HIGHEST<br/><span style="color:#ea580c;text-shadow:0 0 80px rgba(234,88,12,0.4);">SUMMITS</span><br/>DEMAND<br/>THE BEST.
-      </h1>
-      <div style="width:80px;height:2px;background:linear-gradient(to right,#ea580c,transparent);margin-bottom:24px;"></div>
-      <p class="text-xl max-w-lg" style="color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">Elite guiding. Maximum 6 climbers. Zero fatalities in 16 years. If you're ready for Everest, K2, or any 8000m peak — we're ready for you.</p>
-      <div class="flex flex-wrap gap-4">
-        <a href="itinerary.html" class="btn-primary" style="font-size:1rem;padding:14px 36px;">View Expeditions</a>
-        <a href="about.html" class="btn-outline" style="font-size:1rem;padding:14px 36px;">Our Story</a>
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50"
+    style="background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 no-underline">
+          <span style="color:#ea580c" class="text-xl">⛰</span>
+          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+            Ascent</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="nav-link text-sm font-medium" style="color:var(--accent)">Home 2</a>
+          <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
+          <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
+          <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--text)">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <button id="rtl-toggle" class="p-2 rounded font-heading text-sm font-medium tracking-widest uppercase"
+            style="color:var(--text-sec)">LTR</button>
+          <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)" aria-label="Toggle theme">
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </button>
+          <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+        </div>
+        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-white"></span>
+        </button>
       </div>
     </div>
-  </div>
-  <!-- Mountain silhouette at bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,#020617,transparent);pointer-events:none;"></div>
-</section>
-
-<!-- STATS BAR -->
-<section style="background:#0f172a;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;padding:32px 0;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><div class="font-heading font-bold text-4xl text-white mb-1"><span data-target="147" data-suffix="+">0+</span></div><div class="text-sm" style="color:#64748b">Successful Summits</div></div>
-      <div><div class="font-heading font-bold text-4xl text-white mb-1"><span data-target="16" data-suffix=" yrs">0 yrs</span></div><div class="text-sm" style="color:#64748b">In Operation</div></div>
-      <div><div class="font-heading font-bold text-4xl text-white mb-1"><span data-target="98" data-suffix="%">0%</span></div><div class="text-sm" style="color:#64748b">Summit Success Rate</div></div>
-      <div><div class="font-heading font-bold text-4xl" style="color:#ea580c">0</div><div class="text-sm" style="color:#64748b">Client Fatalities — Ever</div></div>
+    <div id="mobile-menu" class="hidden" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">Home 2</a>
+        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+          style="color:var(--text)">Expeditions</a>
+        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
+      </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- PEAKS GRID -->
-<section class="section" style="background:#020617;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="reveal mb-10">
-      <div style="width:40px;height:2px;background:#ea580c;margin-bottom:12px;"></div>
-      <h2 class="font-heading font-bold text-white" style="font-size:clamp(2rem,4vw,3.5rem);">The 2025 Season</h2>
+  <!-- HERO — full viewport cinematic dark -->
+  <section
+    style="min-height:100svh;background:linear-gradient(to bottom right,var(--bg),var(--bg-card));position:relative;display:flex;align-items:center;overflow:hidden;">
+    <!-- Grid pattern -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;">
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid #1e293b;grid-column:span 2;">
-        <div style="height:280px;position:relative;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1000&q=80" alt="Everest" style="width:100%;height:100%;object-fit:cover;" />
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:20px;left:20px;right:20px;">
-            <div style="font-family:'Oswald',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#fb923c;margin-bottom:4px;">South Col Route</div>
-            <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.75rem;color:#fff;margin-bottom:8px;">Mount Everest — 8,848m</div>
-            <div style="display:flex;gap:12px;align-items:center;">
-              <span style="color:rgba(255,255,255,0.6);font-size:0.85rem;">65 days · Apr–Jun 2025</span>
-              <a href="itinerary.html" class="btn-primary" style="font-size:0.8rem;padding:6px 16px;">$68,000</a>
+    <!-- Orange accent circle -->
+    <div
+      style="position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,0.12) 0%,transparent 70%);pointer-events:none;">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style="padding-top:100px;padding-bottom:80px;">
+      <div class="max-w-4xl">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+          <div style="width:40px;height:1px;background:#ea580c;"></div>
+          <span class="font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Est. 2008 — 8000m
+            Specialists</span>
+        </div>
+        <h1 class="font-heading font-bold"
+          style="color:var(--text);font-size:clamp(2.8rem,6vw,5rem);line-height:0.9;letter-spacing:-0.01em;margin-bottom:32px;">
+          THE WORLD'S<br />HIGHEST<br /><span
+            style="color:var(--accent);text-shadow:0 0 80px rgba(234,88,12,0.4);">SUMMITS</span><br />DEMAND<br />THE
+          BEST.
+        </h1>
+        <div style="width:80px;height:2px;background:linear-gradient(to right,#ea580c,transparent);margin-bottom:24px;">
+        </div>
+        <p class="text-lg max-w-lg" style="color:var(--text-sec);line-height:1.7;margin-bottom:40px;">Elite
+          guiding. Maximum 6 climbers. Zero fatalities in 16 years. If you're ready for Everest, K2, or any 8000m peak —
+          we're ready for you.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="itinerary.html" class="btn-primary">View Expeditions</a>
+          <a href="about.html" class="btn-outline">Our Story</a>
+        </div>
+      </div>
+    </div>
+    <!-- Mountain silhouette at bottom -->
+    <div
+      style="position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none;">
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section
+    style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 0;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="font-heading font-bold text-3xl mb-1" style="color:var(--text)"><span data-target="150"
+              data-suffix="+">0+</span>
+          </div>
+          <div class="text-sm" style="color:var(--text-sec)">Successful Summits</div>
+        </div>
+        <div>
+          <div class="font-heading font-bold text-3xl mb-1" style="color:var(--text)"><span data-target="16"
+              data-suffix=" yrs">0
+              yrs</span></div>
+          <div class="text-sm" style="color:var(--text-sec)">In Operation</div>
+        </div>
+        <div>
+          <div class="font-heading font-bold text-3xl mb-1" style="color:var(--text)"><span data-target="98"
+              data-suffix="%">0%</span>
+          </div>
+          <div class="text-sm" style="color:var(--text-sec)">Summit Success Rate</div>
+        </div>
+        <div>
+          <div class="font-heading font-bold text-3xl mb-1" style="color:var(--text)">0</div>
+          <div class="text-sm" style="color:var(--text-sec)">Client Fatalities — Ever</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEAKS GRID -->
+  <section class="section" style="background:var(--bg);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal mb-12 text-center md:text-left">
+        <div class="hidden md:block" style="width:40px;height:2px;background:var(--accent);margin-bottom:12px;"></div>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl" style="color:var(--text)">The 2025 Season</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="reveal card-hover rounded overflow-hidden"
+          style="border:1px solid var(--border);grid-column:span 2;">
+          <div style="height:280px;position:relative;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1000&q=80"
+              alt="Everest" style="width:100%;height:100%;object-fit:cover;" />
+            <div
+              style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);">
+            </div>
+            <div style="position:absolute;bottom:20px;left:20px;right:20px;">
+              <div class="font-heading text-xs tracking-widest uppercase mb-1" style="color:var(--accent)">
+                South Col Route</div>
+              <h3 class="font-heading font-semibold text-xl mb-2 text-white">
+                Mount Everest — 8,848m</h3>
+              <div class="flex gap-3 items-center">
+                <span class="text-sm text-gray-300">65 days · Apr–Jun 2025</span>
+                <a href="itinerary.html" class="btn-primary" style="font-size:0.8rem;padding:6px 16px;">$68,000</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid var(--border);">
+          <div style="height:280px;position:relative;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80"
+              alt="K2" style="width:100%;height:100%;object-fit:cover;" />
+            <div
+              style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);">
+            </div>
+            <div style="position:absolute;bottom:20px;left:20px;right:20px;">
+              <h3 class="font-heading font-semibold text-xl mb-1 text-white">
+                K2 — 8,611m</h3>
+              <a href="itinerary.html" class="text-sm font-medium" style="color:var(--accent)">From $74,000 →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid var(--border);">
+          <div style="height:200px;position:relative;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80"
+              alt="Annapurna" style="width:100%;height:100%;object-fit:cover;" />
+            <div
+              style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);">
+            </div>
+            <div style="position:absolute;bottom:16px;left:16px;right:16px;">
+              <h3 class="font-heading font-semibold text-xl text-white mb-1">Annapurna — 8,091m</h3>
+              <a href="itinerary.html" class="text-sm font-medium" style="color:var(--accent)">From $58,000 →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid var(--border);">
+          <div style="height:200px;position:relative;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&w=600&q=80"
+              alt="Lhotse" style="width:100%;height:100%;object-fit:cover;" />
+            <div
+              style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);">
+            </div>
+            <div style="position:absolute;bottom:16px;left:16px;right:16px;">
+              <h3 class="font-heading font-semibold text-xl text-white mb-1">Lhotse — 8,516m</h3>
+              <a href="itinerary.html" class="text-sm font-medium" style="color:var(--accent)">From $52,000 →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid var(--border);">
+          <div style="height:200px;position:relative;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=600&q=80"
+              alt="Cho Oyu" style="width:100%;height:100%;object-fit:cover;" />
+            <div
+              style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);">
+            </div>
+            <div style="position:absolute;bottom:16px;left:16px;right:16px;">
+              <h3 class="font-heading font-semibold text-xl text-white mb-1">Cho Oyu — 8,188m</h3>
+              <a href="itinerary.html" class="text-sm font-medium" style="color:var(--accent)">From $29,000 →</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid #1e293b;">
-        <div style="height:280px;position:relative;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" alt="K2" style="width:100%;height:100%;object-fit:cover;" />
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:20px;left:20px;right:20px;">
-            <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:4px;">K2 — 8,611m</div>
-            <a href="itinerary.html" style="font-size:0.8rem;color:#fb923c;">From $74,000 →</a>
-          </div>
-        </div>
-      </div>
-      <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid #1e293b;">
-        <div style="height:200px;position:relative;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80" alt="Annapurna" style="width:100%;height:100%;object-fit:cover;" />
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:16px;left:16px;right:16px;"><div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;">Annapurna — 8,091m</div><a href="itinerary.html" style="font-size:0.8rem;color:#fb923c;">From $58,000 →</a></div>
-        </div>
-      </div>
-      <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid #1e293b;">
-        <div style="height:200px;position:relative;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?auto=format&fit=crop&w=600&q=80" alt="Lhotse" style="width:100%;height:100%;object-fit:cover;" />
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:16px;left:16px;right:16px;"><div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;">Lhotse — 8,516m</div><a href="itinerary.html" style="font-size:0.8rem;color:#fb923c;">From $52,000 →</a></div>
-        </div>
-      </div>
-      <div class="reveal card-hover rounded overflow-hidden" style="border:1px solid #1e293b;">
-        <div style="height:200px;position:relative;overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=600&q=80" alt="Cho Oyu" style="width:100%;height:100%;object-fit:cover;" />
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(2,6,23,0.9) 0%,transparent 60%);"></div>
-          <div style="position:absolute;bottom:16px;left:16px;right:16px;"><div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;">Cho Oyu — 8,188m</div><a href="itinerary.html" style="font-size:0.8rem;color:#fb923c;">From $29,000 →</a></div>
-        </div>
-      </div>
+      <div class="text-center mt-8 reveal"><a href="itinerary.html" class="btn-outline">View All Expeditions</a></div>
     </div>
-    <div class="text-center mt-8 reveal"><a href="itinerary.html" class="btn-outline">View All Expeditions</a></div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section style="background:#0f172a;border-top:1px solid #1e293b;padding:80px 0;">
-  <div class="max-w-3xl mx-auto text-center px-4">
-    <h2 class="font-heading font-bold text-white text-4xl md:text-5xl mb-4 reveal">The Mountain is Waiting.</h2>
-    <p class="text-lg mb-8 reveal" style="color:rgba(255,255,255,0.55)">2025 applications closing. Don't miss your window.</p>
-    <a href="contact.html" class="btn-primary reveal" style="font-size:1.1rem;padding:16px 48px;">Apply Now</a>
-  </div>
-</section>
-
-<footer style="background:#020617;border-top:1px solid #1e293b;padding:48px 0 24px;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
-    <div class="flex items-center gap-2">
-      <span style="color:#ea580c" class="text-xl">⛰</span>
-      <span class="font-heading font-bold text-xl tracking-widest uppercase text-white">Apex Ascent</span>
+  <!-- CTA -->
+  <section style="background:var(--bg-card);border-top:1px solid var(--border);padding:80px 0;">
+    <div class="max-w-3xl mx-auto text-center px-4">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-4 reveal" style="color:var(--text)">The Mountain is
+        Waiting.</h2>
+      <p class="text-lg mb-8 reveal" style="color:var(--text-sec)">2025 applications closing. Don't miss your
+        window.</p>
+      <a href="contact.html" class="btn-primary reveal" style="font-size:1.1rem;padding:16px 48px;">Apply Now</a>
     </div>
-    <div class="flex gap-6">
-      <a href="index.html" class="text-sm" style="color:#64748b">Home</a>
-      <a href="about.html" class="text-sm" style="color:#64748b">About</a>
-      <a href="itinerary.html" class="text-sm" style="color:#64748b">Expeditions</a>
-      <a href="contact.html" class="text-sm" style="color:#64748b">Contact</a>
-    </div>
-    <p class="text-xs w-full mt-4" style="color:#475569">© 2025 Apex Ascent Expeditions. All rights reserved. This is the dark variant homepage.</p>
-  </div>
-</footer>
+  </section>
 
-<script src="../assets/js/main.js"></script>
+  <footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:48px 0 24px;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <span style="color:#ea580c" class="text-xl">⛰</span>
+        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+          Ascent</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="index.html" class="text-sm" style="color:var(--text-sec)">Home</a>
+        <a href="about.html" class="text-sm" style="color:var(--text-sec)">About</a>
+        <a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Expeditions</a>
+        <a href="contact.html" class="text-sm" style="color:var(--text-sec)">Contact</a>
+      </div>
+      <p class="text-xs w-full mt-4" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. All rights reserved.
+        This is
+        the dark variant homepage.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

@@ -1,235 +1,302 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Apply — Apex Ascent Expeditions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { heading: ['Oswald', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          colors: { alpine: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }, danger: '#ea580c' }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <style>
-    .error-msg { display:none; color:#dc2626; font-size:0.78rem; margin-top:4px; }
-    .error-msg.visible { display:block; }
-    #form-success { display:none; }
-    #form-success.visible { display:block; }
+    .error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 0.78rem;
+      margin-top: 4px;
+    }
+
+    .error-msg.visible {
+      display: block;
+    }
+
+    #form-success {
+      display: none;
+    }
+
+    #form-success.visible {
+      display: block;
+    }
   </style>
 </head>
+
 <body style="background:var(--bg);color:var(--text);">
 
-<!-- NAVBAR -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 no-underline">
-        <span style="color:var(--accent)" class="text-xl">⛰</span>
-        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
-        <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
-        <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
-        <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
-        <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--accent)">Contact</a>
-      </div>
-      <div class="hidden md:flex items-center gap-3">
-        <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)">
-          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 no-underline">
+          <span style="color:var(--accent)" class="text-xl">⛰</span>
+          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+            Ascent</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home 2</a>
+          <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
+          <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
+          <a href="service.html" class="nav-link text-sm font-medium" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="nav-link text-sm font-medium" style="color:var(--accent)">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <button id="rtl-toggle" class="p-2 rounded font-heading text-sm font-medium tracking-widest uppercase"
+            style="color:var(--text-sec)">LTR</button>
+          <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)">
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+          </button>
+          <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+        </div>
+        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
+          aria-expanded="false">
+          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
         </button>
-        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
-      </div>
-      <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu" aria-expanded="false">
-        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-        <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
-    <div class="px-4 py-4 flex flex-col gap-3">
-      <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
-      <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
-      <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Expeditions</a>
-      <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
-      <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">Contact</a>
-      <div class="flex gap-3 pt-2">
-        <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-        <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
       </div>
     </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=2070&q=80');">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-    <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">Limited Spots</p>
-    <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">Apply for Your<br/>Expedition</h1>
-    <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.75)">Spots are strictly limited. We review every application personally. If you're ready, we want to hear from you.</p>
-  </div>
-</section>
-
-<!-- CONTACT INFO + FORM -->
-<section class="section" style="background:var(--bg)">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-3 gap-12">
-      <!-- Sidebar info -->
-      <div class="reveal space-y-6">
-        <div>
-          <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Get In Touch</p>
-          <h2 class="font-heading font-bold text-3xl" style="color:var(--text)">Contact Details</h2>
-        </div>
-        <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-2xl mb-2">📍</div>
-          <div class="font-heading font-semibold mb-1" style="color:var(--text)">Base Office</div>
-          <p class="text-sm" style="color:var(--text-sec)">Thamel District<br/>Kathmandu, Nepal 44600</p>
-        </div>
-        <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-2xl mb-2">📞</div>
-          <div class="font-heading font-semibold mb-1" style="color:var(--text)">Phone</div>
-          <p class="text-sm" style="color:var(--text-sec)">+977 1 4701 234<br/>Sat: +881 631 234 567</p>
-        </div>
-        <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-2xl mb-2">✉️</div>
-          <div class="font-heading font-semibold mb-1" style="color:var(--text)">Email</div>
-          <p class="text-sm" style="color:var(--text-sec)">info@apexascent.com<br/>applications@apexascent.com</p>
-        </div>
-        <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-2xl mb-2">⏰</div>
-          <div class="font-heading font-semibold mb-1" style="color:var(--text)">Office Hours</div>
-          <p class="text-sm" style="color:var(--text-sec)">Mon – Fri: 8:00 – 18:00 NST<br/>Sat: 9:00 – 14:00 NST</p>
-        </div>
-        <div class="p-5 rounded border" style="background:rgba(234,88,12,0.08);border-color:rgba(234,88,12,0.3)">
-          <div class="font-heading font-semibold text-sm mb-2" style="color:var(--accent)">⚡ Response Time</div>
-          <p class="text-xs" style="color:var(--text-sec)">All expedition applications reviewed within 5 business days. We may request a video call before formal acceptance.</p>
+    <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
+        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+          style="color:var(--text)">Expeditions</a>
+        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">Contact</a>
+        <div class="flex gap-3 pt-2">
+          <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
         </div>
       </div>
+    </div>
+  </nav>
 
-      <!-- Application Form -->
-      <div class="md:col-span-2 reveal">
-        <h2 class="font-heading font-bold text-3xl mb-6" style="color:var(--text)">Expedition Application Form</h2>
-        
-        <!-- Success message -->
-        <div id="form-success" tabindex="-1" style="background:rgba(22,163,74,0.1);border:1px solid rgba(22,163,74,0.4);border-radius:8px;padding:24px;margin-bottom:24px;">
-          <div class="text-2xl mb-2">✅</div>
-          <h3 class="font-heading font-bold text-xl mb-2" style="color:#16a34a">Application Received!</h3>
-          <p style="color:var(--text-sec)">Thank you for applying. Our team will review your application and contact you within 5 business days. Please check your email — including spam — for our response.</p>
-        </div>
+  <!-- HERO -->
+  <section class="page-hero"
+    style="background-image:url('https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=2070&q=80');">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">Limited Spots</p>
+      <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">Apply for Your<br />Expedition</h1>
+      <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.75)">Spots are strictly limited. We review every
+        application personally. If you're ready, we want to hear from you.</p>
+    </div>
+  </section>
 
-        <form id="application-form" novalidate class="space-y-5">
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label for="name" class="block text-sm font-medium mb-1" style="color:var(--text)">Full Name *</label>
-              <input id="name" type="text" class="form-input" placeholder="Your full legal name" autocomplete="name" />
-              <span id="name-error" class="error-msg">Please enter your name (minimum 2 characters).</span>
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium mb-1" style="color:var(--text)">Email Address *</label>
-              <input id="email" type="email" class="form-input" placeholder="your@email.com" autocomplete="email" />
-              <span id="email-error" class="error-msg">Please enter a valid email address.</span>
-            </div>
-          </div>
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label for="phone" class="block text-sm font-medium mb-1" style="color:var(--text)">Phone Number</label>
-              <input id="phone" type="tel" class="form-input" placeholder="+1 555 000 0000" autocomplete="tel" />
-            </div>
-            <div>
-              <label for="nationality" class="block text-sm font-medium mb-1" style="color:var(--text)">Nationality</label>
-              <input id="nationality" type="text" class="form-input" placeholder="e.g. British, American, German" />
-            </div>
-          </div>
+  <!-- CONTACT INFO + FORM -->
+  <section class="section" style="background:var(--bg)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Sidebar info -->
+        <div class="reveal space-y-6">
           <div>
-            <label for="summit" class="block text-sm font-medium mb-1" style="color:var(--text)">Desired Expedition *</label>
-            <select id="summit" class="form-input" style="cursor:pointer;">
-              <option value="">Select an expedition...</option>
-              <option>Mount Everest — South Col (Apr–Jun 2025) — $68,000</option>
-              <option>K2 — Abruzzi Spur (Jun–Aug 2025) — $74,000</option>
-              <option>Annapurna I (Apr–May 2025) — $58,000</option>
-              <option>Lhotse (Apr–Jun 2025) — $52,000</option>
-              <option>Makalu (Apr–May 2025) — $47,000</option>
-              <option>Cho Oyu (Sep–Oct 2025) — $29,000</option>
-              <option>Manaslu (Sep–Oct 2025) — $32,000</option>
-            </select>
-            <span id="summit-error" class="error-msg">Please select an expedition.</span>
+            <p class="accent-line font-heading text-xs tracking-widest uppercase" style="color:var(--accent)">Get In
+              Touch</p>
+            <h2 class="font-heading font-bold text-3xl" style="color:var(--text)">Contact Details</h2>
           </div>
-          <div class="grid md:grid-cols-2 gap-5">
-            <div>
-              <label for="highest" class="block text-sm font-medium mb-1" style="color:var(--text)">Highest Peak Summited</label>
-              <input id="highest" type="text" class="form-input" placeholder="e.g. Aconcagua 6,962m (2022)" />
+          <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+            <div class="text-2xl mb-2">📍</div>
+            <div class="font-heading font-semibold mb-1" style="color:var(--text)">Base Office</div>
+            <p class="text-sm" style="color:var(--text-sec)">Thamel District<br />Kathmandu, Nepal 44600</p>
+          </div>
+          <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+            <div class="text-2xl mb-2">📞</div>
+            <div class="font-heading font-semibold mb-1" style="color:var(--text)">Phone</div>
+            <p class="text-sm" style="color:var(--text-sec)">+977 1 4701 234<br />Sat: +881 631 234 567</p>
+          </div>
+          <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+            <div class="text-2xl mb-2">✉️</div>
+            <div class="font-heading font-semibold mb-1" style="color:var(--text)">Email</div>
+            <p class="text-sm" style="color:var(--text-sec)">info@apexascent.com<br />applications@apexascent.com</p>
+          </div>
+          <div class="p-5 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+            <div class="text-2xl mb-2">⏰</div>
+            <div class="font-heading font-semibold mb-1" style="color:var(--text)">Office Hours</div>
+            <p class="text-sm" style="color:var(--text-sec)">Mon – Fri: 8:00 – 18:00 NST<br />Sat: 9:00 – 14:00 NST</p>
+          </div>
+          <div class="p-5 rounded border" style="background:rgba(234,88,12,0.08);border-color:rgba(234,88,12,0.3)">
+            <div class="font-heading font-semibold text-sm mb-2" style="color:var(--accent)">⚡ Response Time</div>
+            <p class="text-xs" style="color:var(--text-sec)">All expedition applications reviewed within 5 business
+              days. We may request a video call before formal acceptance.</p>
+          </div>
+        </div>
+
+        <!-- Application Form -->
+        <div class="md:col-span-2 reveal">
+          <h2 class="font-heading font-bold text-3xl mb-6" style="color:var(--text)">Expedition Application Form</h2>
+
+          <!-- Success message -->
+          <div id="form-success" tabindex="-1"
+            style="background:rgba(22,163,74,0.1);border:1px solid rgba(22,163,74,0.4);border-radius:8px;padding:24px;margin-bottom:24px;">
+            <div class="text-2xl mb-2">✅</div>
+            <h3 class="font-heading font-bold text-xl mb-2" style="color:#16a34a">Application Received!</h3>
+            <p style="color:var(--text-sec)">Thank you for applying. Our team will review your application and contact
+              you within 5 business days. Please check your email — including spam — for our response.</p>
+          </div>
+
+          <form id="application-form" novalidate class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-1" style="color:var(--text)">Full Name *</label>
+                <input id="name" type="text" class="form-input" placeholder="Your full legal name"
+                  autocomplete="name" />
+                <span id="name-error" class="error-msg">Please enter your name (minimum 2 characters).</span>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1" style="color:var(--text)">Email Address
+                  *</label>
+                <input id="email" type="email" class="form-input" placeholder="your@email.com" autocomplete="email" />
+                <span id="email-error" class="error-msg">Please enter a valid email address.</span>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-1" style="color:var(--text)">Phone Number</label>
+                <input id="phone" type="tel" class="form-input" placeholder="+1 555 000 0000" autocomplete="tel" />
+              </div>
+              <div>
+                <label for="nationality" class="block text-sm font-medium mb-1"
+                  style="color:var(--text)">Nationality</label>
+                <input id="nationality" type="text" class="form-input" placeholder="e.g. British, American, German" />
+              </div>
             </div>
             <div>
-              <label for="experience" class="block text-sm font-medium mb-1" style="color:var(--text)">Years of Alpine Experience</label>
-              <select id="experience" class="form-input" style="cursor:pointer;">
-                <option value="">Select...</option>
-                <option>1–3 years</option>
-                <option>4–7 years</option>
-                <option>8–12 years</option>
-                <option>13+ years</option>
+              <label for="summit" class="block text-sm font-medium mb-1" style="color:var(--text)">Desired Expedition
+                *</label>
+              <select id="summit" class="form-input" style="cursor:pointer;">
+                <option value="">Select an expedition...</option>
+                <option>Mount Everest — South Col (Apr–Jun 2025) — $68,000</option>
+                <option>K2 — Abruzzi Spur (Jun–Aug 2025) — $74,000</option>
+                <option>Annapurna I (Apr–May 2025) — $58,000</option>
+                <option>Lhotse (Apr–Jun 2025) — $52,000</option>
+                <option>Makalu (Apr–May 2025) — $47,000</option>
+                <option>Cho Oyu (Sep–Oct 2025) — $29,000</option>
+                <option>Manaslu (Sep–Oct 2025) — $32,000</option>
               </select>
+              <span id="summit-error" class="error-msg">Please select an expedition.</span>
             </div>
-          </div>
-          <div>
-            <label for="resume" class="block text-sm font-medium mb-1" style="color:var(--text)">Climbing CV / Résumé * <span class="font-normal" style="color:var(--text-sec)">(PDF or DOC, max 10MB)</span></label>
-            <input id="resume" type="file" accept=".pdf,.doc,.docx" class="form-input" style="padding:8px;" />
-            <span id="resume-error" class="error-msg">Please upload your climbing résumé.</span>
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium mb-1" style="color:var(--text)">Why Do You Want to Climb With Us? * <span style="color:var(--text-sec)" id="message-count" class="font-normal">0 / 50 min</span></label>
-            <textarea id="message" rows="5" class="form-input" placeholder="Tell us about your climbing background, motivations, and why Apex Ascent specifically. Be honest about your current fitness level and any medical conditions."></textarea>
-            <span id="message-error" class="error-msg">Please write at least 50 characters.</span>
-          </div>
-          <div>
-            <label class="flex items-start gap-3 cursor-pointer">
-              <input id="consent" type="checkbox" class="mt-1 flex-shrink-0" style="accent-color:var(--accent);width:16px;height:16px;" />
-              <span class="text-sm" style="color:var(--text-sec)">I understand that high-altitude mountaineering involves serious risks including serious injury and death. I confirm that all information provided is accurate and I consent to Apex Ascent processing my application data. *</span>
-            </label>
-            <span id="consent-error" class="error-msg">You must acknowledge the risk disclaimer to proceed.</span>
-          </div>
-          <button type="submit" class="btn-primary w-full" style="font-size:1rem;letter-spacing:0.12em;">Submit Application</button>
-        </form>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="highest" class="block text-sm font-medium mb-1" style="color:var(--text)">Highest Peak
+                  Summited</label>
+                <input id="highest" type="text" class="form-input" placeholder="e.g. Aconcagua 6,962m (2022)" />
+              </div>
+              <div>
+                <label for="experience" class="block text-sm font-medium mb-1" style="color:var(--text)">Years of Alpine
+                  Experience</label>
+                <select id="experience" class="form-input" style="cursor:pointer;">
+                  <option value="">Select...</option>
+                  <option>1–3 years</option>
+                  <option>4–7 years</option>
+                  <option>8–12 years</option>
+                  <option>13+ years</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="resume" class="block text-sm font-medium mb-1" style="color:var(--text)">Climbing CV / Résumé
+                * <span class="font-normal" style="color:var(--text-sec)">(PDF or DOC, max 10MB)</span></label>
+              <input id="resume" type="file" accept=".pdf,.doc,.docx" class="form-input" style="padding:8px;" />
+              <span id="resume-error" class="error-msg">Please upload your climbing résumé.</span>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-1" style="color:var(--text)">Why Do You Want to
+                Climb With Us? * <span style="color:var(--text-sec)" id="message-count" class="font-normal">0 / 50
+                  min</span></label>
+              <textarea id="message" rows="5" class="form-input"
+                placeholder="Tell us about your climbing background, motivations, and why Apex Ascent specifically. Be honest about your current fitness level and any medical conditions."></textarea>
+              <span id="message-error" class="error-msg">Please write at least 50 characters.</span>
+            </div>
+            <div>
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="consent" type="checkbox" class="mt-1 flex-shrink-0"
+                  style="accent-color:var(--accent);width:16px;height:16px;" />
+                <span class="text-sm" style="color:var(--text-sec)">I understand that high-altitude mountaineering
+                  involves serious risks including serious injury and death. I confirm that all information provided is
+                  accurate and I consent to Apex Ascent processing my application data. *</span>
+              </label>
+              <span id="consent-error" class="error-msg">You must acknowledge the risk disclaimer to proceed.</span>
+            </div>
+            <button type="submit" class="btn-primary w-full" style="font-size:1rem;letter-spacing:0.12em;">Submit
+              Application</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MAP PLACEHOLDER -->
-<section style="height:320px;background:var(--bg-card);position:relative;overflow:hidden;">
-  <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=2000&q=80" alt="Kathmandu map area" style="width:100%;height:100%;object-fit:cover;opacity:0.4;" />
-  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-    <div class="text-center">
-      <div class="text-4xl mb-3">📍</div>
-      <div class="font-heading font-bold text-xl" style="color:var(--text)">Apex Ascent HQ</div>
-      <div class="text-sm" style="color:var(--text-sec)">Thamel District, Kathmandu, Nepal</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap justify-between items-center gap-4">
-      <div class="flex items-center gap-2">
-        <span style="color:var(--accent)" class="text-xl">⛰</span>
-        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
-      </div>
-      <div class="flex gap-6">
-        <a href="index.html" class="text-sm" style="color:var(--text-sec)">Home</a>
-        <a href="about.html" class="text-sm" style="color:var(--text-sec)">About</a>
-        <a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Expeditions</a>
-        <a href="service.html" class="text-sm" style="color:var(--text-sec)">Services</a>
+  <!-- MAP PLACEHOLDER -->
+  <section style="height:320px;background:var(--bg-card);position:relative;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=2000&q=80"
+      alt="Kathmandu map area" style="width:100%;height:100%;object-fit:cover;opacity:0.4;" />
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+      <div class="text-center">
+        <div class="text-4xl mb-3">📍</div>
+        <div class="font-heading font-bold text-xl" style="color:var(--text)">Apex Ascent HQ</div>
+        <div class="text-sm" style="color:var(--text-sec)">Thamel District, Kathmandu, Nepal</div>
       </div>
     </div>
-    <div class="border-t mt-8 pt-6" style="border-color:var(--border)">
-      <p class="text-xs" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. High-altitude mountaineering involves serious risks including death. All climbers accept full personal liability.</p>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="../assets/js/main.js"></script>
+  <!-- FOOTER -->
+  <footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <span style="color:var(--accent)" class="text-xl">⛰</span>
+          <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+            Ascent</span>
+        </div>
+        <div class="flex gap-6">
+          <a href="index.html" class="text-sm" style="color:var(--text-sec)">Home</a>
+          <a href="about.html" class="text-sm" style="color:var(--text-sec)">About</a>
+          <a href="itinerary.html" class="text-sm" style="color:var(--text-sec)">Expeditions</a>
+          <a href="service.html" class="text-sm" style="color:var(--text-sec)">Services</a>
+        </div>
+      </div>
+      <div class="border-t mt-8 pt-6" style="border-color:var(--border)">
+        <p class="text-xs" style="color:var(--text-sec)">© 2025 Apex Ascent Expeditions. High-altitude mountaineering
+          involves serious risks including death. All climbers accept full personal liability.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

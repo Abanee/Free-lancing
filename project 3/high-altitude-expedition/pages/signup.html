@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up — Apex Ascent Expeditions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'};</script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { heading: ['Oswald', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          colors: { alpine: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' }, danger: '#ea580c' }
+        }
+      }
+    };
+  </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
 </head>
+
 <body style="background:var(--bg);color:var(--text);min-height:100vh;">
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 no-underline">
-        <span style="color:var(--accent)" class="text-xl">⛰</span>
-        <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex Ascent</span>
-      </a>
-      <button id="theme-toggle" class="p-2 rounded" style="color:var(--text-sec)">
-        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<div class="pt-16" style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;background:var(--bg);">
-  <div style="width:100%;max-width:520px;">
-    <div class="text-center mb-8">
-      <h1 class="font-heading font-bold text-3xl mb-2" style="color:var(--text)">Create Your Account</h1>
-      <p style="color:var(--text-sec)">Join the Apex Ascent community. Track expeditions, access resources, and manage your application.</p>
-    </div>
-    <div class="p-8 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-      <form class="space-y-4" onsubmit="event.preventDefault(); this.style.display='none'; document.getElementById('signup-success').style.display='block';">
-        <div class="grid grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium mb-1" style="color:var(--text)">First Name</label>
-            <input type="text" class="form-input" placeholder="John" required />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1" style="color:var(--text)">Last Name</label>
-            <input type="text" class="form-input" placeholder="Smith" required />
-          </div>
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1" style="color:var(--text)">Email Address</label>
-          <input type="email" class="form-input" placeholder="your@email.com" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1" style="color:var(--text)">Password</label>
-          <input type="password" class="form-input" placeholder="Minimum 8 characters" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1" style="color:var(--text)">Confirm Password</label>
-          <input type="password" class="form-input" placeholder="Repeat your password" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1" style="color:var(--text)">Climber Level</label>
-          <select class="form-input" style="cursor:pointer;">
-            <option value="">Select your experience level...</option>
-            <option>Beginner (trekking / sub-6000m)</option>
-            <option>Intermediate (6000–7000m peaks)</option>
-            <option>Advanced (7000m+ experience)</option>
-            <option>Expert (8000m experience)</option>
-          </select>
-        </div>
-        <label class="flex items-start gap-3 cursor-pointer">
-          <input type="checkbox" style="accent-color:var(--accent);margin-top:2px;" required />
-          <span class="text-xs" style="color:var(--text-sec)">I agree to the <a href="#" style="color:var(--accent)">Terms of Service</a> and <a href="#" style="color:var(--accent)">Privacy Policy</a>. I understand that creating an account does not constitute an expedition application.</span>
-        </label>
-        <button type="submit" class="btn-primary w-full" style="font-size:1rem;">Create Account</button>
-      </form>
-      <div id="signup-success" style="display:none;text-align:center;padding:32px 0;">
-        <div class="text-4xl mb-4">🎉</div>
-        <h3 class="font-heading font-bold text-xl mb-2" style="color:var(--text)">Account Created!</h3>
-        <p class="mb-6" style="color:var(--text-sec)">Welcome to Apex Ascent. Check your email to verify your address, then log in to access your dashboard.</p>
-        <a href="login.html" class="btn-primary">Go to Login</a>
+  <div
+    style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;background:var(--bg);">
+    <div style="width:100%;max-width:520px;">
+      <div class="text-center mb-8">
+        <h1 class="font-heading font-bold text-3xl mb-2" style="color:var(--text)">Create Your Account</h1>
+        <p style="color:var(--text-sec)">Join the Apex Ascent community. Track expeditions, access resources, and manage
+          your application.</p>
       </div>
+      <div class="p-8 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+        <form class="space-y-4"
+          onsubmit="event.preventDefault(); this.style.display='none'; document.getElementById('signup-success').style.display='block';">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--text)">First Name</label>
+              <input type="text" class="form-input" placeholder="John" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" style="color:var(--text)">Last Name</label>
+              <input type="text" class="form-input" placeholder="Smith" required />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color:var(--text)">Email Address</label>
+            <input type="email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color:var(--text)">Password</label>
+            <input type="password" class="form-input" placeholder="Minimum 8 characters" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color:var(--text)">Confirm Password</label>
+            <input type="password" class="form-input" placeholder="Repeat your password" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" style="color:var(--text)">Climber Level</label>
+            <select class="form-input" style="cursor:pointer;">
+              <option value="">Select your experience level...</option>
+              <option>Beginner (trekking / sub-6000m)</option>
+              <option>Intermediate (6000–7000m peaks)</option>
+              <option>Advanced (7000m+ experience)</option>
+              <option>Expert (8000m experience)</option>
+            </select>
+          </div>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" style="accent-color:var(--accent);margin-top:2px;" required />
+            <span class="text-xs" style="color:var(--text-sec)">I agree to the <a href="#"
+                style="color:var(--accent)">Terms of Service</a> and <a href="#" style="color:var(--accent)">Privacy
+                Policy</a>. I understand that creating an account does not constitute an expedition application.</span>
+          </label>
+          <button type="submit" class="btn-primary w-full" style="font-size:1rem;">Create Account</button>
+        </form>
+        <div id="signup-success" style="display:none;text-align:center;padding:32px 0;">
+          <div class="text-4xl mb-4">🎉</div>
+          <h3 class="font-heading font-bold text-xl mb-2" style="color:var(--text)">Account Created!</h3>
+          <p class="mb-6" style="color:var(--text-sec)">Welcome to Apex Ascent. Check your email to verify your address,
+            then log in to access your dashboard.</p>
+          <a href="login.html" class="btn-primary">Go to Login</a>
+        </div>
+      </div>
+      <p class="text-center mt-6 text-sm" style="color:var(--text-sec)">
+        Already have an account? <a href="login.html" style="color:var(--accent)">Sign in</a>
+      </p>
+      <p class="text-center mt-3 text-xs" style="color:var(--text-sec)">
+        Want to climb with us? <a href="contact.html" style="color:var(--accent)">Apply for an expedition →</a>
+      </p>
     </div>
-    <p class="text-center mt-6 text-sm" style="color:var(--text-sec)">
-      Already have an account? <a href="login.html" style="color:var(--accent)">Sign in</a>
-    </p>
-    <p class="text-center mt-3 text-xs" style="color:var(--text-sec)">
-      Want to climb with us? <a href="contact.html" style="color:var(--accent)">Apply for an expedition →</a>
-    </p>
   </div>
-</div>
 
-<script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>
