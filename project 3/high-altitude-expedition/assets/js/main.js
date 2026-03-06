@@ -5,35 +5,37 @@
 
   // ─── Theme Toggle ───
   const html = document.documentElement;
-  const toggle = document.getElementById('theme-toggle');
-  const iconSun = document.getElementById('icon-sun');
-  const iconMoon = document.getElementById('icon-moon');
+  const themeToggles = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
 
   function getStoredTheme() { try { return localStorage.getItem('apex-theme'); } catch { return null; } }
   function getSystemTheme() { return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
 
   function applyTheme(theme) {
+    const sunIcons = document.querySelectorAll('#icon-sun, #mobile-icon-sun');
+    const moonIcons = document.querySelectorAll('#icon-moon, #mobile-icon-moon');
     if (theme === 'dark') {
       html.classList.add('dark');
-      if (iconSun) iconSun.classList.remove('hidden');
-      if (iconMoon) iconMoon.classList.add('hidden');
-      if (toggle) toggle.setAttribute('aria-label', 'Switch to light mode');
+      sunIcons.forEach(el => el.classList.remove('hidden'));
+      moonIcons.forEach(el => el.classList.add('hidden'));
+      themeToggles.forEach(toggle => toggle.setAttribute('aria-label', 'Switch to light mode'));
     } else {
       html.classList.remove('dark');
-      if (iconSun) iconSun.classList.add('hidden');
-      if (iconMoon) iconMoon.classList.remove('hidden');
-      if (toggle) toggle.setAttribute('aria-label', 'Switch to dark mode');
+      sunIcons.forEach(el => el.classList.add('hidden'));
+      moonIcons.forEach(el => el.classList.remove('hidden'));
+      themeToggles.forEach(toggle => toggle.setAttribute('aria-label', 'Switch to dark mode'));
     }
   }
 
-  if (toggle) {
+  if (themeToggles.length > 0) {
     const stored = getStoredTheme();
     applyTheme(stored || getSystemTheme());
-    toggle.addEventListener('click', () => {
-      const isDark = html.classList.contains('dark');
-      const next = isDark ? 'light' : 'dark';
-      try { localStorage.setItem('apex-theme', next); } catch { }
-      applyTheme(next);
+    themeToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isDark = html.classList.contains('dark');
+        const next = isDark ? 'light' : 'dark';
+        try { localStorage.setItem('apex-theme', next); } catch { }
+        applyTheme(next);
+      });
     });
   }
 
@@ -42,17 +44,19 @@
   });
 
   // ─── RTL Toggle ───
-  const rtlToggle = document.getElementById('rtl-toggle');
-  if (rtlToggle) {
-    rtlToggle.addEventListener('click', () => {
-      const isRTL = html.getAttribute('dir') === 'rtl';
-      if (isRTL) {
-        html.removeAttribute('dir');
-        rtlToggle.textContent = 'RTL';
-      } else {
-        html.setAttribute('dir', 'rtl');
-        rtlToggle.textContent = 'LTR';
-      }
+  const rtlToggles = document.querySelectorAll('#rtl-toggle, #mobile-rtl-toggle');
+  if (rtlToggles.length > 0) {
+    rtlToggles.forEach(rtlToggle => {
+      rtlToggle.addEventListener('click', () => {
+        const isRTL = html.getAttribute('dir') === 'rtl';
+        if (isRTL) {
+          html.removeAttribute('dir');
+          rtlToggles.forEach(t => t.textContent = 'RTL');
+        } else {
+          html.setAttribute('dir', 'rtl');
+          rtlToggles.forEach(t => t.textContent = 'LTR');
+        }
+      });
     });
   }
 
