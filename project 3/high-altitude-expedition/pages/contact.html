@@ -80,40 +80,42 @@
             </svg>
           </button>
           <div class="hidden md:flex gap-3"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
-        
-        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
-          aria-expanded="false">
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-        </button>`n        </div>
-      </div>
-    </div>
-    <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
-      <div class="px-4 py-4 flex flex-col gap-3">
-        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
-        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
-        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
-        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
-          style="color:var(--text)">Expeditions</a>
-        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
-        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">Contact</a>
-        <div class="flex gap-3 pt-2">
-          <div class="hidden md:flex gap-3"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
+            <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+          </div>
+
+          <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+          </button>
         </div>
       </div>
-    </div>
+      <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+        <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
+          <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+          <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+            style="color:var(--text)">Expeditions</a>
+          <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2"
+            style="color:var(--accent)">Contact</a>
+          <div class="flex gap-3 pt-2 md:hidden">
+            <a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
+            <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+          </div>
+        </div>
+      </div>
   </nav>
 
   <!-- HERO -->
   <section class="page-hero"
-    style="background-image:url('https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=2070&q=80');">
+    style="background-image:linear-gradient(rgba(2,6,23,0.5),rgba(2,6,23,0.7)),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2070&q=80');">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">Limited Spots</p>
       <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">Apply for Your<br />Expedition</h1>
-      <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.75)">Spots are strictly limited. We review every
+      <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.85)">Spots are strictly limited. We review every
         application personally. If you're ready, we want to hear from you.</p>
     </div>
   </section>
@@ -260,17 +262,14 @@
     </div>
   </section>
 
-  <!-- MAP PLACEHOLDER -->
-  <section style="height:320px;background:var(--bg-card);position:relative;overflow:hidden;">
-    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=2000&q=80"
-      alt="Kathmandu map area" style="width:100%;height:100%;object-fit:cover;opacity:0.4;" />
-    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-      <div class="text-center">
-        <div class="text-4xl mb-3">📍</div>
-        <div class="font-heading font-bold text-xl" style="color:var(--text)">Apex Ascent HQ</div>
-        <div class="text-sm" style="color:var(--text-sec)">Thamel District, Kathmandu, Nepal</div>
-      </div>
-    </div>
+  <!-- MAP SECTION -->
+  <section
+    style="height:450px;background:var(--bg-card);position:relative;overflow:hidden;border-top:1px solid var(--border);">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14129.544415516993!2d85.30386705541991!3d27.708453400000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb191630163353%3A0xe5c75ed61ed07671!2sThamel%2C%20Kathmandu%2044600%2C%20Nepal!5e0!3m2!1sen!2sus!4v1711234567890!5m2!1sen!2sus"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </section>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
@@ -325,4 +324,3 @@
 </body>
 
 </html>
-
