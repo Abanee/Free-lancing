@@ -45,17 +45,29 @@
 
   // ─── RTL Toggle ───
   const rtlToggles = document.querySelectorAll('#rtl-toggle, #mobile-rtl-toggle');
+
+  function applyRTL(isRTL) {
+    if (isRTL) {
+      html.setAttribute('dir', 'rtl');
+      rtlToggles.forEach(t => t.textContent = 'LTR');
+    } else {
+      html.removeAttribute('dir');
+      rtlToggles.forEach(t => t.textContent = 'RTL');
+    }
+  }
+
+  function getStoredRTL() {
+    try { return localStorage.getItem('apex-rtl') === 'true'; } catch { return false; }
+  }
+
   if (rtlToggles.length > 0) {
+    applyRTL(getStoredRTL());
     rtlToggles.forEach(rtlToggle => {
       rtlToggle.addEventListener('click', () => {
-        const isRTL = html.getAttribute('dir') === 'rtl';
-        if (isRTL) {
-          html.removeAttribute('dir');
-          rtlToggles.forEach(t => t.textContent = 'RTL');
-        } else {
-          html.setAttribute('dir', 'rtl');
-          rtlToggles.forEach(t => t.textContent = 'LTR');
-        }
+        const currentlyRTL = html.getAttribute('dir') === 'rtl';
+        const nextRTL = !currentlyRTL;
+        try { localStorage.setItem('apex-rtl', String(nextRTL)); } catch { }
+        applyRTL(nextRTL);
       });
     });
   }

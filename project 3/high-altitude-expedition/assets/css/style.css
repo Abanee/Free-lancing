@@ -38,6 +38,18 @@ body { background: var(--bg); color: var(--text); transition: background 0.3s, c
   transition: background 0.3s, border-color 0.3s;
 }
 
+@media (max-width: 1024px) {
+  #navbar .md\:flex.gap-8 { gap: 1.5rem; }
+  #navbar .nav-link { font-size: 0.8rem; }
+}
+
+@media (max-width: 900px) {
+  #navbar .md\:flex.items-center.gap-8 { display: none; }
+  #navbar .md\:hidden { display: flex; }
+  #hamburger { display: flex !important; }
+  #navbar .hidden.md\:flex.gap-3 { display: none; }
+}
+
 /* Buttons */
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center;

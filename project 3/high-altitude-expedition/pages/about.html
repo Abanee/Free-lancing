@@ -25,6 +25,8 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
 </head>
 
 <body style="background:var(--bg);color:var(--text);">
@@ -33,13 +35,13 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-2 no-underline">
-          <span style="color:var(--accent)" class="text-xl">⛰</span>
+        <a href="../index.html" class="flex items-center gap-2 no-underline">
+          <img src="../assets/images/logo.png" alt="Apex Ascent" class="h-8 w-auto">
           <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
             Ascent</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+          <a href="../index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
           <a href="home 2.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home 2</a>
           <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--accent)">About</a>
           <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--text)">Expeditions</a>
@@ -62,40 +64,43 @@
             </svg>
           </button>
           <div class="hidden md:flex gap-3"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
-        
-        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
-          aria-expanded="false">
-          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
-            style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
-            style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
-            style="background:var(--text)"></span>
-        </button>
+            <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+          </div>
+
+          <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+              style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+              style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5 transition-all duration-300"
+              style="background:var(--text)"></span>
+          </button>
+        </div>
       </div>
-    </div>
-    <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
-      <div class="px-4 py-4 flex flex-col gap-3">
-        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
-        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
-        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">About</a>
-        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
-          style="color:var(--text)">Expeditions</a>
-        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
-        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
-        <div class="flex gap-3 pt-2 md:hidden"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a><a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
+      <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+        <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="../index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
+          <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--accent)">About</a>
+          <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+            style="color:var(--text)">Expeditions</a>
+          <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
+          <div class="flex gap-3 pt-2 md:hidden"><a href="login.html"
+              class="btn-outline-dark text-sm px-4 py-2">Login</a><a href="signup.html"
+              class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
+        </div>
       </div>
-    </div>
   </nav>
 
   <!-- PAGE HERO -->
   <section class="page-hero"
-    style="background-image:url('https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=2070&q=80');">
+    style="background: linear-gradient(to bottom, rgba(2,6,23,0.8), rgba(2,6,23,0.9)), url('https://images.unsplash.com/photo-1477601263568-180e2c6d046e?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">Our Story</p>
+      <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:var(--accent)">Our Story</p>
       <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">The Team Behind<br />Every Summit</h1>
-      <p class="text-lg max-w-2xl" style="color:rgba(255,255,255,0.75)">Sixteen years of high-altitude experience,
+      <p class="text-lg max-w-2xl" style="color:var(--text-sec)">Sixteen years of high-altitude experience,
         distilled into a team of 12 extraordinary guides who have collectively stood atop every 8000m peak on Earth.</p>
     </div>
   </section>
@@ -122,7 +127,7 @@
           <div class="flex items-center gap-4">
             <div
               style="width:56px;height:56px;border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
-              🧗</div>
+              👤</div>
             <div>
               <div class="font-medium" style="color:var(--text)">Marcus Reid</div>
               <div class="text-sm" style="color:var(--text-sec)">Founder & Lead Expedition Guide</div>
@@ -225,7 +230,7 @@
               Guide</div>
             <p class="text-xs leading-relaxed mb-3" style="color:var(--text-sec)">12× Everest summiter. Former British
               Army Mountain Leader. All 14 eight-thousanders. IFMGA certified.</p>
-            <div class="text-xs" style="color:var(--text-sec)">🏔 14/14 eight-thousanders</div>
+            <div class="text-xs" style="color:var(--text-sec)">⛰ 14/14 eight-thousanders</div>
           </div>
         </div>
         <div class="reveal card-hover rounded border overflow-hidden"
@@ -238,7 +243,7 @@
               High-Altitude Guide</div>
             <p class="text-xs leading-relaxed mb-3" style="color:var(--text-sec)">20× Everest summiter. Born in Namche
               Bazaar. Holder of the Tenzing Norgay National Adventure Award.</p>
-            <div class="text-xs" style="color:var(--text-sec)">🏔 20× Everest summit</div>
+            <div class="text-xs" style="color:var(--text-sec)">⛰ 20× Everest summit</div>
           </div>
         </div>
         <div class="reveal card-hover rounded border overflow-hidden"
@@ -249,9 +254,10 @@
             <div class="font-heading font-semibold text-lg mb-1" style="color:var(--text)">Elena Vasquez</div>
             <div class="text-xs font-heading tracking-widest uppercase mb-2" style="color:var(--accent)">Guide &
               Expedition Medic</div>
-            <p class="text-xs leading-relaxed mb-3" style="color:var(--text-sec)">Emergency medicine physician. 6× 8000m
+            <p class="text-xs leading-relaxed mb-3" style="color:var(--text-sec)">Emergency medicine physician. 6×
+              8000m
               summiter. Specialist in high-altitude pulmonary & cerebral edema.</p>
-            <div class="text-xs" style="color:var(--text-sec)">🏥 MD, High-Altitude Specialist</div>
+            <div class="text-xs" style="color:var(--text-sec)">🩺 MD, High-Altitude Specialist</div>
           </div>
         </div>
         <div class="reveal card-hover rounded border overflow-hidden"
@@ -264,7 +270,7 @@
               Routes</div>
             <p class="text-xs leading-relaxed mb-3" style="color:var(--text-sec)">Austrian alpinist. K2 via four
               different routes. Speed record holder on the Abruzzi Spur. UIAGM guide.</p>
-            <div class="text-xs" style="color:var(--text-sec)">🏔 K2 × 4 routes</div>
+            <div class="text-xs" style="color:var(--text-sec)">⛰ K2 × 4 routes</div>
           </div>
         </div>
       </div>
@@ -312,25 +318,35 @@
         <h2 class="font-heading font-bold text-3xl" style="color:var(--text)">Accreditations & Certifications</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-        <div class="reveal text-center p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-3xl mb-2">🏅</div>
+        <div class="reveal text-center p-4 rounded border flex flex-col items-center justify-center"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=150&q=80"
+            alt="IFMGA" class="w-28 h-28 object-contain mb-3" />
           <div class="font-heading text-xs tracking-widest uppercase" style="color:var(--text-sec)">IFMGA/UIAGM</div>
         </div>
-        <div class="reveal text-center p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-3xl mb-2">🏅</div>
+        <div class="reveal text-center p-4 rounded border flex flex-col items-center justify-center"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=150&q=80"
+            alt="Nepal Tourism" class="w-28 h-28 object-contain mb-3" />
           <div class="font-heading text-xs tracking-widest uppercase" style="color:var(--text-sec)">Nepal Tourism Board
           </div>
         </div>
-        <div class="reveal text-center p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-3xl mb-2">🏅</div>
+        <div class="reveal text-center p-4 rounded border flex flex-col items-center justify-center"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=150&q=80"
+            alt="IMAS" class="w-28 h-28 object-contain mb-3" />
           <div class="font-heading text-xs tracking-widest uppercase" style="color:var(--text-sec)">IMAS Certified</div>
         </div>
-        <div class="reveal text-center p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-3xl mb-2">🏅</div>
+        <div class="reveal text-center p-4 rounded border flex flex-col items-center justify-center"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <img src="https://images.unsplash.com/photo-1454165833762-01ab5d494d1a?auto=format&fit=crop&w=150&q=80"
+            alt="ISO" class="w-28 h-28 object-contain mb-3" />
           <div class="font-heading text-xs tracking-widest uppercase" style="color:var(--text-sec)">ISO 9001:2015</div>
         </div>
-        <div class="reveal text-center p-4 rounded border" style="background:var(--bg-card);border-color:var(--border)">
-          <div class="text-3xl mb-2">🏅</div>
+        <div class="reveal text-center p-4 rounded border flex flex-col items-center justify-center"
+          style="background:var(--bg-card);border-color:var(--border)">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=150&q=80"
+            alt="Eco Trekking" class="w-28 h-28 object-contain mb-3" />
           <div class="font-heading text-xs tracking-widest uppercase" style="color:var(--text-sec)">Eco Trekking Nepal
           </div>
         </div>
@@ -338,16 +354,52 @@
     </div>
   </section>
 
-  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <!-- OUR VALUES -->
+  <section class="section" style="background:var(--bg-card);border-top:1px solid var(--border)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="accent-line font-heading text-xs tracking-widest uppercase inline-block" style="color:var(--accent)">
+          Our Core</p>
+        <h2 class="font-heading font-bold text-4xl" style="color:var(--text)">The Values That Guide Us</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="reveal text-center">
+          <div
+            class="w-20 h-20 bg-alpine-100 dark:bg-alpine-800 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+            🛡️</div>
+          <h3 class="font-heading font-bold text-2xl mb-4" style="color:var(--text)">Safety First</h3>
+          <p style="color:var(--text-sec)">We never compromise on safety. Our decisions are data-driven and backed by
+            decades of high-altitude experience.</p>
+        </div>
+        <div class="reveal text-center">
+          <div
+            class="w-20 h-20 bg-alpine-100 dark:bg-alpine-800 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+            🌿</div>
+          <h3 class="font-heading font-bold text-2xl mb-4" style="color:var(--text)">Eco Integrity</h3>
+          <p style="color:var(--text-sec)">We are guests on the mountain. Our expeditions follow strict Zero Leave Trace
+            protocols to preserve the fragile alpine environment.</p>
+        </div>
+        <div class="reveal text-center">
+          <div
+            class="w-20 h-20 bg-alpine-100 dark:bg-alpine-800 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+            🤝</div>
+          <h3 class="font-heading font-bold text-2xl mb-4" style="color:var(--text)">Radical Honesty</h3>
+          <p style="color:var(--text-sec)">We provide realistic assessments of your capabilities and the mountain's
+            conditions, even when it means turning back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-10 mb-10">
         <div class="md:col-span-2">
-          <div class="flex items-center gap-2 mb-4">
-            <span style="color:var(--accent)" class="text-xl">⛰</span>
-            <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
-              Ascent</span>
-          </div>
+          <a href="../index.html" class="flex items-center gap-2 mb-4 no-underline"><img src="../assets/images/logo.png"
+              alt="Apex Ascent" class="h-8 w-auto"><span
+              class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
+              Ascent</span></a>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--text-sec)">Elite high-altitude mountaineering
             expeditions since 2008. 147+ successful summits. Zero client fatalities. The finest mountain guiding
             available.</p>
@@ -390,5 +442,3 @@
 </body>
 
 </html>
-
-

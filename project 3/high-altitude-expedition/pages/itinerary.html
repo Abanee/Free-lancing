@@ -25,6 +25,8 @@
   </script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
 </head>
 
 <body style="background:var(--bg);color:var(--text);">
@@ -33,13 +35,13 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-2 no-underline">
-          <span style="color:var(--accent)" class="text-xl">⛰</span>
+        <a href="../index.html" class="flex items-center gap-2 no-underline">
+          <img src="../assets/images/logo.png" alt="Apex Ascent" class="h-8 w-auto">
           <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
             Ascent</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
+          <a href="../index.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home</a>
           <a href="home 2.html" class="nav-link text-sm font-medium" style="color:var(--text)">Home 2</a>
           <a href="about.html" class="nav-link text-sm font-medium" style="color:var(--text)">About</a>
           <a href="itinerary.html" class="nav-link text-sm font-medium" style="color:var(--accent)">Expeditions</a>
@@ -62,33 +64,36 @@
             </svg>
           </button>
           <div class="hidden md:flex gap-3"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a>
-          <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
-        
-        <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
-          aria-expanded="false">
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-          <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
-        </button>
+            <a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a>
+          </div>
+
+          <button id="hamburger" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Open navigation menu"
+            aria-expanded="false">
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+            <span class="hamburger-line block w-6 h-0.5" style="background:var(--text)"></span>
+          </button>
+        </div>
       </div>
-    </div>
-    <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
-      <div class="px-4 py-4 flex flex-col gap-3">
-        <a href="index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
-        <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
-        <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
-        <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
-          style="color:var(--accent)">Expeditions</a>
-        <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
-        <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
-        <div class="flex gap-3 pt-2 md:hidden"><a href="login.html" class="btn-outline-dark text-sm px-4 py-2">Login</a><a href="signup.html" class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
+      <div id="mobile-menu" style="background:var(--nav-bg);border-top:1px solid var(--border)">
+        <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="../index.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home</a>
+          <a href="home 2.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Home 2</a>
+          <a href="about.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">About</a>
+          <a href="itinerary.html" class="mobile-nav-link text-sm font-medium py-2"
+            style="color:var(--accent)">Expeditions</a>
+          <a href="service.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Services</a>
+          <a href="contact.html" class="mobile-nav-link text-sm font-medium py-2" style="color:var(--text)">Contact</a>
+          <div class="flex gap-3 pt-2 md:hidden"><a href="login.html"
+              class="btn-outline-dark text-sm px-4 py-2">Login</a><a href="signup.html"
+              class="btn-primary text-sm px-4 py-2">Sign Up</a></div>
+        </div>
       </div>
-    </div>
   </nav>
 
   <!-- HERO -->
   <section class="page-hero"
-    style="background-image:url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2070&q=80');">
+    style="background: linear-gradient(to bottom, rgba(2,6,23,0.5), rgba(2,6,23,0.85)), url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <p class="font-heading text-xs tracking-widest uppercase mb-3" style="color:#fb923c">2025 Season Open</p>
       <h1 class="font-heading font-bold text-5xl md:text-6xl mb-4">Expeditions &<br />Itineraries</h1>
@@ -169,7 +174,7 @@
               <tr>
                 <td>Trek In</td>
                 <td>3–12</td>
-                <td style="color:var(--text)">Lukla → Namche → EBC via Tengboche</td>
+                <td style="color:var(--text)">Lukla â†’ Namche â†’ EBC via Tengboche</td>
                 <td>2,840–5,364m</td>
               </tr>
               <tr>
@@ -193,7 +198,7 @@
               <tr>
                 <td>Summit Push</td>
                 <td>41–52</td>
-                <td style="color:var(--text)">Camp I → II → III → IV → Summit → Descent</td>
+                <td style="color:var(--text)">Camp I â†’ II â†’ III â†’ IV â†’ Summit â†’ Descent</td>
                 <td>8,848m</td>
               </tr>
               <tr>
@@ -205,7 +210,7 @@
               <tr>
                 <td>Return</td>
                 <td>61–65</td>
-                <td style="color:var(--text)">Trek out → Lukla → Kathmandu celebration</td>
+                <td style="color:var(--text)">Trek out â†’ Lukla â†’ Kathmandu celebration</td>
                 <td>1,400m</td>
               </tr>
             </tbody>
@@ -215,7 +220,8 @@
 
       <!-- Cost Breakdown -->
       <div class="reveal mb-10">
-        <h3 class="font-heading font-bold text-2xl mb-6" style="color:var(--text)">Cost Breakdown — What's Included</h3>
+        <h3 class="font-heading font-bold text-2xl mb-6" style="color:var(--text)">Cost Breakdown — What's Included
+        </h3>
         <div class="grid md:grid-cols-2 gap-8">
           <div>
             <div class="overflow-x-auto rounded border" style="border-color:var(--border)">
@@ -356,7 +362,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">K2 — Abruzzi Spur</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$74,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,611m · 70 days · Jun–Aug · Max 4 climbers · Prior
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,611m · 70 days · Jun–Aug · Max 4 climbers ·
+              Prior
               8000m required</p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Pakistan</span><span
@@ -377,7 +384,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Annapurna I</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$58,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,091m · 55 days · Apr–May · Max 6 climbers · Nepal
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,091m · 55 days · Apr–May · Max 6 climbers ·
+              Nepal
             </p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span
@@ -398,7 +406,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Lhotse</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$52,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,516m · 58 days · Apr–Jun · Max 6 climbers · Nepal
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,516m · 58 days · Apr–Jun · Max 6 climbers ·
+              Nepal
             </p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span
@@ -419,7 +428,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Makalu</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$47,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,485m · 52 days · Apr–May · Max 8 climbers · Nepal
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,485m · 52 days · Apr–May · Max 8 climbers ·
+              Nepal
             </p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span
@@ -440,7 +450,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Cho Oyu</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$29,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,188m · 40 days · Sep–Oct · Max 10 climbers · Tibet
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,188m · 40 days · Sep–Oct · Max 10 climbers ·
+              Tibet
             </p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Tibet</span><span
@@ -453,7 +464,7 @@
         <div class="card-hover reveal rounded border overflow-hidden"
           style="background:var(--bg);border-color:var(--border)">
           <div style="height:180px;overflow:hidden;">
-            <img src="https://images.unsplash.com/photo-1439109520926-f0a11cc08a36?auto=format&fit=crop&w=700&q=80"
+            <img src="https://images.unsplash.com/photo-1601344440055-66236bb3364f?auto=format&fit=crop&w=700&q=80"
               alt="Manaslu" style="width:100%;height:100%;object-fit:cover;" />
           </div>
           <div class="p-5">
@@ -461,7 +472,8 @@
               <h3 class="font-heading font-bold text-lg" style="color:var(--text)">Manaslu</h3>
               <span class="font-heading font-bold" style="color:var(--accent)">$32,000</span>
             </div>
-            <p class="text-xs mb-3" style="color:var(--text-sec)">8,163m · 44 days · Sep–Oct · Max 8 climbers · Nepal
+            <p class="text-xs mb-3" style="color:var(--text-sec)">8,163m · 44 days · Sep–Oct · Max 8 climbers ·
+              Nepal
             </p>
             <div class="flex gap-2"><span class="text-xs px-2 py-1 rounded"
                 style="background:var(--bg-card);color:var(--text-sec);border:1px solid var(--border)">Nepal</span><span
@@ -536,16 +548,13 @@
     </div>
   </section>
 
-  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <footer style="background:var(--bg-card);border-top:1px solid var(--border);padding:60px 0 32px;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-10 mb-10">
         <div class="md:col-span-2">
-          <div class="flex items-center gap-2 mb-4">
-            <span style="color:var(--accent)" class="text-xl">⛰</span>
-            <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
-              Ascent</span>
-          </div>
+          <a href="../index.html" class="flex items-center gap-2 mb-4 no-underline"><img src="../assets/images/logo.png" alt="Apex Ascent" class="h-8 w-auto"><span class="font-heading font-bold text-xl tracking-widest uppercase"
+              style="color:var(--text)">Apex Ascent</span></a>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--text-sec)">Elite high-altitude mountaineering
             expeditions since 2008. 147+ successful summits. Zero client fatalities. The finest mountain guiding
             available.</p>
@@ -588,5 +597,3 @@
 </body>
 
 </html>
-
-
