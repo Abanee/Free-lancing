@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Hub — Iron Rail Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-train-tram"></i>
+        Iron<span>Rail</span>
+      </a>
+      <nav class="desktop-nav flex items-center gap-8">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="home2.html"    class="nav-link">Home 2</a>
+        <a href="gallery.html"  class="nav-link">Gallery</a>
+        <a href="service.html"  class="nav-link">Membership</a>
+        <a href="about.html"    class="nav-link">About</a>
+        <a href="dashboard.html" class="btn-primary text-sm py-2 px-4">
+          <i class="fa-solid fa-user-gear"></i> My Hub
+        </a>
+        
+        <!-- New control buttons -->
+        <div class="nav-controls flex items-center gap-3">
+          <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <button class="direction-toggle" aria-label="Toggle text direction" title="Switch text direction">
+            <span class="direction-text">LTR</span>
+          </button>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="service.html">Membership</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">My Hub</a>
+      
+      <!-- Mobile controls section -->
+      <div class="mobile-controls">
+        <button class="theme-toggle mobile" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="control-label">Theme</span>
+        </button>
+        <button class="direction-toggle mobile" aria-label="Toggle text direction">
+          <span class="direction-text">LTR</span>
+          <span class="control-label">Direction</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="flex min-h-screen">
+
+      <!-- ── SIDEBAR ────────────────────────────────────── -->
+      <aside class="dash-sidebar w-64 flex-shrink-0 hidden md:block">
+        <!-- User Profile -->
+        <div class="p-6 border-b border-slate-700">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-emerald-800 flex items-center justify-center text-amber-400 text-lg font-serif font-black flex-shrink-0">
+              RK
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm">R. Kowalski</div>
+              <div class="text-amber-400 text-xs font-mono">Conductor Member</div>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-4 text-center">
+            <div>
+              <div class="text-amber-400 font-bold font-serif">12</div>
+              <div class="text-slate-500 text-xs font-mono">Layouts</div>
+            </div>
+            <div>
+              <div class="text-amber-400 font-bold font-serif">47</div>
+              <div class="text-slate-500 text-xs font-mono">Posts</div>
+            </div>
+            <div>
+              <div class="text-amber-400 font-bold font-serif">8</div>
+              <div class="text-slate-500 text-xs font-mono">Reviews</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="py-4">
+          <a href="#" class="dash-nav-link active" data-panel="panel-overview">
+            <i class="fa-solid fa-gauge-simple w-4"></i>
+            Overview
+          </a>
+          <a href="#" class="dash-nav-link" data-panel="panel-submit">
+            <i class="fa-solid fa-upload w-4"></i>
+            Submit Layout
+          </a>
+          <a href="#" class="dash-nav-link" data-panel="panel-layouts">
+            <i class="fa-solid fa-images w-4"></i>
+            My Layouts
+          </a>
+          <a href="#" class="dash-nav-link" data-panel="panel-reviews">
+            <i class="fa-solid fa-star-half-stroke w-4"></i>
+            Draft Reviews
+          </a>
+          <a href="#" class="dash-nav-link" data-panel="panel-forum">
+            <i class="fa-solid fa-comments w-4"></i>
+            Forum Replies
+          </a>
+          <a href="#" class="dash-nav-link" data-panel="panel-settings">
+            <i class="fa-solid fa-sliders w-4"></i>
+            Settings
+          </a>
+        </nav>
+
+        <div class="p-4 mx-4 mt-4 bg-amber-900 bg-opacity-30 border border-amber-800">
+          <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-1">Conductor</p>
+          <p class="text-slate-300 text-xs">Your premium plan renews on <strong>Jan 15, 2026</strong>.</p>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ────────────────────────────────── -->
+      <div class="flex-1 p-6 md:p-8 bg-slate-50 overflow-auto">
+
+        <!-- Success Banner -->
+        <div id="form-success" class="hidden mb-6 p-4 bg-emerald-50 border border-emerald-300 flex items-center gap-3">
+          <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+          <div>
+            <strong class="text-emerald-800 text-sm">Layout submitted successfully!</strong>
+            <p class="text-emerald-700 text-xs">It will appear in the gallery after moderator review (usually within 24 hours).</p>
+          </div>
+        </div>
+
+        <!-- ── OVERVIEW PANEL ──────────────────────────── -->
+        <div id="panel-overview" class="dash-panel">
+          <div class="mb-8">
+            <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">
+              Welcome back, <span class="text-brass" style="color:var(--brass)">R. Kowalski</span> 👋
+            </h1>
+            <p class="text-slate-500 text-sm">Here's what's happening with your profile today.</p>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white border border-slate-200 p-5 border-t-4 border-t-emerald-700">
+              <div class="text-slate-400 text-xs font-mono uppercase mb-2">Active Forum Posts</div>
+              <div class="font-serif font-black text-3xl text-slate-900">3</div>
+              <div class="text-emerald-600 text-xs mt-1">+2 new replies today</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 border-t-4 border-t-amber-500">
+              <div class="text-slate-400 text-xs font-mono uppercase mb-2">Gallery Views</div>
+              <div class="font-serif font-black text-3xl text-slate-900">1,247</div>
+              <div class="text-amber-600 text-xs mt-1">+89 this week</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 border-t-4 border-t-emerald-700">
+              <div class="text-slate-400 text-xs font-mono uppercase mb-2">Pending Reviews</div>
+              <div class="font-serif font-black text-3xl text-slate-900">2</div>
+              <div class="text-slate-400 text-xs mt-1">drafts saved</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 border-t-4 border-t-amber-500">
+              <div class="text-slate-400 text-xs font-mono uppercase mb-2">Layout Saves</div>
+              <div class="font-serif font-black text-3xl text-slate-900">34</div>
+              <div class="text-emerald-600 text-xs mt-1">by other members</div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bg-white border border-slate-200 mb-6">
+            <div class="px-5 py-4 border-b border-slate-100 flex justify-between items-center">
+              <h3 class="font-serif font-bold text-slate-900">Recent Activity</h3>
+              <span class="tag tag-green">Live</span>
+            </div>
+            <div class="divide-y divide-slate-100">
+              <div class="px-5 py-3 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 text-xs">
+                  <i class="fa-solid fa-comment"></i>
+                </div>
+                <div class="flex-1">
+                  <p class="text-slate-700 text-sm"><strong>TrackLayer_62</strong> replied to your DCC decoder thread</p>
+                  <p class="text-slate-400 text-xs font-mono">2 hours ago</p>
+                </div>
+              </div>
+              <div class="px-5 py-3 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 text-xs">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="flex-1">
+                  <p class="text-slate-700 text-sm"><strong>MicroLayout_Hanna</strong> saved your "Appalachian Mountain Line" layout</p>
+                  <p class="text-slate-400 text-xs font-mono">5 hours ago</p>
+                </div>
+              </div>
+              <div class="px-5 py-3 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-xs">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="flex-1">
+                  <p class="text-slate-700 text-sm">Your layout received a <strong>5-star community rating</strong></p>
+                  <p class="text-slate-400 text-xs font-mono">Yesterday</p>
+                </div>
+              </div>
+              <div class="px-5 py-3 flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="flex-1">
+                  <p class="text-slate-700 text-sm">Layout <strong>"Appalachian Mountain Line"</strong> approved by moderator</p>
+                  <p class="text-slate-400 text-xs font-mono">2 days ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="btn-primary" onclick="document.querySelector('[data-panel=panel-submit]').click(); return false;">
+              <i class="fa-solid fa-plus"></i> Submit New Layout
+            </a>
+            <a href="gallery.html" class="btn-green">
+              <i class="fa-solid fa-images"></i> Browse Gallery
+            </a>
+          </div>
+        </div>
+
+        <!-- ── SUBMIT LAYOUT PANEL ─────────────────────── -->
+        <div id="panel-submit" class="dash-panel hidden">
+          <div class="mb-8">
+            <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">Submit a Layout</h1>
+            <p class="text-slate-500 text-sm">Share your build with the community. All submissions are reviewed within 24 hours.</p>
+          </div>
+
+          <div class="bg-white border border-slate-200 p-6 md:p-8 max-w-2xl">
+            <form id="layout-submit-form" novalidate>
+
+              <div class="form-group">
+                <label class="form-label" for="layout-title">Layout Title *</label>
+                <input class="form-input" type="text" id="layout-title" name="layout-title"
+                       placeholder="e.g. Appalachian Mountain Line — HO Scale" required />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label class="form-label" for="layout-scale">Scale *</label>
+                  <select class="form-select" id="layout-scale" name="layout-scale" required>
+                    <option value="">— Select Scale —</option>
+                    <option value="HO">HO Scale (1:87)</option>
+                    <option value="N">N Scale (1:160)</option>
+                    <option value="O">O Scale (1:48)</option>
+                    <option value="G">G Scale (1:22.5)</option>
+                    <option value="Z">Z Scale (1:220)</option>
+                    <option value="S">S Scale (1:64)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="layout-era">Era</label>
+                  <select class="form-select" id="layout-era" name="layout-era">
+                    <option value="">— Select Era —</option>
+                    <option value="steam">Steam Era (pre-1960)</option>
+                    <option value="transition">Transition Era (1940–1960)</option>
+                    <option value="diesel">Diesel Era (1960–present)</option>
+                    <option value="modern">Modern Era (2000+)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="layout-manufacturer">Primary Manufacturer / Brand</label>
+                <input class="form-input" type="text" id="layout-manufacturer" name="layout-manufacturer"
+                       placeholder="e.g. Athearn, Kato, Lionel, Walthers…" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="layout-dimensions">Layout Dimensions</label>
+                <input class="form-input" type="text" id="layout-dimensions" name="layout-dimensions"
+                       placeholder="e.g. 12 × 8 ft, 4 × 8 ft, around-the-room…" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Photos (up to 10)</label>
+                <div class="upload-zone">
+                  <i class="fa-solid fa-cloud-arrow-up text-slate-300 text-4xl mb-3"></i>
+                  <p class="text-slate-500 text-sm font-semibold">Click to upload or drag & drop</p>
+                  <p class="text-slate-400 text-xs mt-1">JPG, PNG, WEBP · Max 10MB each</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="layout-description">Description</label>
+                <textarea class="form-textarea" id="layout-description" name="layout-description"
+                          rows="5" placeholder="Tell the community about your layout — scale, era, prototypes modeled, construction techniques, challenges overcome…"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="layout-tags">Tags (comma-separated)</label>
+                <input class="form-input" type="text" id="layout-tags" name="layout-tags"
+                       placeholder="DCC, weathered, scratchbuilt, mountain, logging…" />
+              </div>
+
+              <div class="flex items-center gap-3 p-4 bg-amber-50 border border-amber-200 mb-6">
+                <input type="checkbox" id="layout-agree" class="w-4 h-4 accent-emerald-700" />
+                <label for="layout-agree" class="text-slate-600 text-sm">
+                  I confirm these are my own photos and I have the right to publish them on Iron Rail Community.
+                </label>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <button type="submit" class="btn-primary">
+                  <i class="fa-solid fa-upload"></i>
+                  Submit Layout
+                </button>
+                <button type="button" class="btn-secondary" style="color: var(--steam-mid); border-color: #cbd5e1;"
+                        onclick="document.getElementById('layout-submit-form').reset()">
+                  Clear Form
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- ── MY LAYOUTS PANEL ────────────────────────── -->
+        <div id="panel-layouts" class="dash-panel hidden">
+          <div class="mb-6 flex flex-wrap justify-between items-start gap-4">
+            <div>
+              <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">My Layouts</h1>
+              <p class="text-slate-500 text-sm">12 submitted · 11 approved · 1 pending review</p>
+            </div>
+            <a href="#" class="btn-primary" onclick="document.querySelector('[data-panel=panel-submit]').click(); return false;">
+              <i class="fa-solid fa-plus"></i> New Layout
+            </a>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white border border-slate-200 flex flex-wrap gap-4 p-4 items-center">
+              <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=120&q=60" alt="thumb" class="w-20 h-14 object-cover flex-shrink-0" />
+              <div class="flex-1 min-w-0">
+                <h4 class="font-serif font-bold text-slate-900">Appalachian Mountain Line</h4>
+                <div class="flex gap-2 mt-1 flex-wrap">
+                  <span class="tag tag-green">HO Scale</span>
+                  <span class="tag tag-brass">Steam</span>
+                  <span class="tag tag-grey">Athearn</span>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <div class="text-emerald-600 text-xs font-mono font-bold uppercase">✓ Approved</div>
+                <div class="text-slate-400 text-xs">1,247 views · 34 saves</div>
+              </div>
+            </div>
+            <div class="bg-white border border-slate-200 flex flex-wrap gap-4 p-4 items-center">
+              <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=120&q=60" alt="thumb" class="w-20 h-14 object-cover flex-shrink-0" />
+              <div class="flex-1 min-w-0">
+                <h4 class="font-serif font-bold text-slate-900">Blue Ridge Narrow Gauge</h4>
+                <div class="flex gap-2 mt-1 flex-wrap">
+                  <span class="tag tag-green">HO Scale</span>
+                  <span class="tag tag-green">Steam</span>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <div class="text-emerald-600 text-xs font-mono font-bold uppercase">✓ Approved</div>
+                <div class="text-slate-400 text-xs">892 views · 21 saves</div>
+              </div>
+            </div>
+            <div class="bg-amber-50 border border-amber-200 flex flex-wrap gap-4 p-4 items-center">
+              <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=120&q=60" alt="thumb" class="w-20 h-14 object-cover flex-shrink-0 opacity-60" />
+              <div class="flex-1 min-w-0">
+                <h4 class="font-serif font-bold text-slate-900">Tennessee Pass — WIP</h4>
+                <div class="flex gap-2 mt-1 flex-wrap">
+                  <span class="tag tag-green">HO Scale</span>
+                  <span class="tag tag-brass">Diesel</span>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <div class="text-amber-600 text-xs font-mono font-bold uppercase">⏳ Pending Review</div>
+                <div class="text-slate-400 text-xs">Submitted 3 hours ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DRAFT REVIEWS PANEL ─────────────────────── -->
+        <div id="panel-reviews" class="dash-panel hidden">
+          <div class="mb-6">
+            <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">Draft Reviews</h1>
+            <p class="text-slate-500 text-sm">2 drafts saved. Publish when ready.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white border border-slate-200 p-5">
+              <div class="flex justify-between items-start gap-4 flex-wrap">
+                <div>
+                  <div class="flex gap-2 mb-2">
+                    <span class="tag tag-green">HO Scale</span>
+                    <span class="tag tag-grey">Draft</span>
+                  </div>
+                  <h4 class="font-serif font-bold text-slate-900 mb-1">Athearn Genesis SD70ACe — Full Review</h4>
+                  <p class="text-slate-500 text-sm">Draft started 4 days ago. Last edited 2 days ago. ~600 words written.</p>
+                  <div class="flex gap-1 mt-2 text-amber-400">
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-regular fa-star text-sm text-slate-300"></i>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="btn-green text-xs py-2">Edit</button>
+                  <button class="btn-primary text-xs py-2">Publish</button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5">
+              <div class="flex justify-between items-start gap-4 flex-wrap">
+                <div>
+                  <div class="flex gap-2 mb-2">
+                    <span class="tag tag-brass">N Scale</span>
+                    <span class="tag tag-grey">Draft</span>
+                  </div>
+                  <h4 class="font-serif font-bold text-slate-900 mb-1">Kato N Scale SD40-2 — 6-Month Reliability Review</h4>
+                  <p class="text-slate-500 text-sm">Draft started 1 week ago. ~300 words written.</p>
+                  <div class="flex gap-1 mt-2 text-amber-400">
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                    <i class="fa-solid fa-star text-sm"></i>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="btn-green text-xs py-2">Edit</button>
+                  <button class="btn-primary text-xs py-2">Publish</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── FORUM REPLIES PANEL ─────────────────────── -->
+        <div id="panel-forum" class="dash-panel hidden">
+          <div class="mb-6">
+            <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">Forum Replies</h1>
+            <p class="text-slate-500 text-sm">3 active threads you're participating in.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="forum-item bg-white border border-slate-200">
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <span class="tag tag-green mb-2 inline-block">HO Scale</span>
+                  <h4 class="font-serif font-bold text-slate-900 text-sm mb-1">Best DCC decoders for Athearn Genesis locomotives?</h4>
+                  <p class="text-slate-500 text-xs">Your reply: <em>"I've been using the TCS WOW Sound decoders with great results…"</em></p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <div class="text-amber-400 font-bold font-serif">47</div>
+                  <div class="text-slate-500 text-xs">replies</div>
+                </div>
+              </div>
+            </div>
+            <div class="forum-item bg-white border border-slate-200">
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <span class="tag tag-grey mb-2 inline-block">General</span>
+                  <h4 class="font-serif font-bold text-slate-900 text-sm mb-1">Foam vs. plywood subroadbed — the definitive comparison</h4>
+                  <p class="text-slate-500 text-xs">Your reply: <em>"After building on both, I strongly prefer extruded foam for N scale…"</em></p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <div class="text-amber-400 font-bold font-serif">88</div>
+                  <div class="text-slate-500 text-xs">replies</div>
+                </div>
+              </div>
+            </div>
+            <div class="forum-item bg-white border border-slate-200">
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <span class="tag tag-green mb-2 inline-block">HO Scale</span>
+                  <h4 class="font-serif font-bold text-slate-900 text-sm mb-1">Weathering boxcars with cheap acrylic — my complete guide</h4>
+                  <p class="text-slate-500 text-xs">Your reply: <em>"Great tutorial! One thing I'd add: the hairspray technique for…"</em></p>
+                </div>
+                <div class="text-right flex-shrink-0">
+                  <div class="text-amber-400 font-bold font-serif">112</div>
+                  <div class="text-slate-500 text-xs">replies</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SETTINGS PANEL ──────────────────────────── -->
+        <div id="panel-settings" class="dash-panel hidden">
+          <div class="mb-6">
+            <h1 class="font-serif font-black text-2xl text-slate-900 mb-1">Account Settings</h1>
+            <p class="text-slate-500 text-sm">Manage your profile and notification preferences.</p>
+          </div>
+          <div class="max-w-xl space-y-6">
+            <div class="bg-white border border-slate-200 p-6">
+              <h3 class="font-serif font-bold text-slate-900 mb-4 border-b border-slate-100 pb-3">Profile Information</h3>
+              <div class="form-group">
+                <label class="form-label" for="s-display">Display Name</label>
+                <input class="form-input" type="text" id="s-display" value="R. Kowalski" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-email">Email Address</label>
+                <input class="form-input" type="email" id="s-email" value="r.kowalski@example.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="s-bio">Member Bio</label>
+                <textarea class="form-textarea" id="s-bio" rows="3">HO scale modeler since 1989. Specializing in Southern Railway prototype. Currently building the Appalachian Mountain Line.</textarea>
+              </div>
+              <button class="btn-primary">Save Profile</button>
+            </div>
+            <div class="bg-white border border-slate-200 p-6">
+              <h3 class="font-serif font-bold text-slate-900 mb-4 border-b border-slate-100 pb-3">Notification Preferences</h3>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" checked class="w-4 h-4 accent-emerald-700" />
+                  <span class="text-slate-700 text-sm">Email me when someone replies to my forum posts</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" checked class="w-4 h-4 accent-emerald-700" />
+                  <span class="text-slate-700 text-sm">Email me when my layout is approved or rejected</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-emerald-700" />
+                  <span class="text-slate-700 text-sm">Send me the monthly Iron Rail newsletter</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 accent-emerald-700" />
+                  <span class="text-slate-700 text-sm">Notify me about new product reviews in my scales</span>
+                </label>
+              </div>
+              <button class="btn-green mt-4">Save Preferences</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

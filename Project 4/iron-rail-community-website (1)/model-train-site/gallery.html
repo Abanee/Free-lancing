@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Gallery — Iron Rail Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-train-tram"></i>
+        Iron<span>Rail</span>
+      </a>
+      <nav class="desktop-nav flex items-center gap-8">
+        <a href="index.html"    class="nav-link">Home</a>
+        <a href="home2.html"    class="nav-link">Home 2</a>
+        <a href="gallery.html"  class="nav-link active">Gallery</a>
+        <a href="service.html"  class="nav-link">Membership</a>
+        <a href="about.html"    class="nav-link">About</a>
+        <a href="auth.html" class="nav-link" style="font-size:0.8rem;">Sign In</a>
+        <a href="auth.html" class="btn-primary text-sm py-2 px-4">
+          <i class="fa-solid fa-user-gear"></i> My Hub
+        </a>
+        
+        <!-- New control buttons -->
+        <div class="nav-controls flex items-center gap-3">
+          <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+          <button class="direction-toggle" aria-label="Toggle text direction" title="Switch text direction">
+            <span class="direction-text">LTR</span>
+          </button>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="service.html">Membership</a>
+      <a href="about.html">About</a>
+      <a href="dashboard.html">My Hub</a>
+      
+      <!-- Mobile controls section -->
+      <div class="mobile-controls">
+        <button class="theme-toggle mobile" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+          <span class="control-label">Theme</span>
+        </button>
+        <button class="direction-toggle mobile" aria-label="Toggle text direction">
+          <span class="direction-text">LTR</span>
+          <span class="control-label">Direction</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ──────────────────────────────────────── -->
+    <div class="section-dark py-14 stripe-bg">
+      <div class="max-w-7xl mx-auto px-6">
+        <p class="section-label"><i class="fa-solid fa-images mr-1"></i> Community Layouts</p>
+        <h1 class="section-title light text-4xl md:text-5xl">Layout Gallery</h1>
+        <div class="divider"></div>
+        <p class="text-slate-400 max-w-2xl">
+          Over 3,800 member-submitted layouts. Filter by scale, era, or manufacturer
+          to find what inspires you next.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── FILTER BAR ─────────────────────────────────────── -->
+    <div class="bg-white border-b border-slate-200 py-4 sticky top-16 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono text-xs text-slate-400 uppercase tracking-wider mr-2 hidden md:block">Filter:</span>
+
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all mr-1"></i> All
+          </button>
+
+          <div class="w-px h-6 bg-slate-200 mx-1 hidden sm:block"></div>
+          <span class="font-mono text-xs text-slate-400 uppercase tracking-wider hidden sm:block">Scale</span>
+          <button class="filter-btn" data-filter="HO">HO Scale</button>
+          <button class="filter-btn" data-filter="N">N Scale</button>
+          <button class="filter-btn" data-filter="O">O Scale</button>
+
+          <div class="w-px h-6 bg-slate-200 mx-1 hidden sm:block"></div>
+          <span class="font-mono text-xs text-slate-400 uppercase tracking-wider hidden sm:block">Era</span>
+          <button class="filter-btn" data-filter="steam">Steam</button>
+          <button class="filter-btn" data-filter="diesel">Diesel</button>
+
+          <div class="w-px h-6 bg-slate-200 mx-1 hidden sm:block"></div>
+          <span class="font-mono text-xs text-slate-400 uppercase tracking-wider hidden sm:block">Brand</span>
+          <button class="filter-btn" data-filter="Lionel">Lionel</button>
+          <button class="filter-btn" data-filter="Bachmann">Bachmann</button>
+          <button class="filter-btn" data-filter="Athearn">Athearn</button>
+          <button class="filter-btn" data-filter="Kato">Kato</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GALLERY GRID ───────────────────────────────────── -->
+    <section class="py-12 max-w-7xl mx-auto px-6">
+      <div class="gallery-grid" id="gallery-grid">
+
+        <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Athearn">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&q=75" alt="Appalachian HO Steam Layout" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Appalachian Mountain Line</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-brass">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by R. Kowalski · Athearn</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="diesel" data-manufacturer="Bachmann">
+          <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=500&q=75" alt="Chicago N Diesel" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Chicago Yards, 1962</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by M. Thompson · Bachmann</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="O" data-era="steam" data-manufacturer="Lionel">
+          <img src="https://images.unsplash.com/photo-1543158266-0066955047b1?w=500&q=75" alt="Lionel O Gauge" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Winter Village — Lionel O Gauge</h4>
+            <div class="badge-row">
+              <span class="tag tag-brass">O Scale</span>
+              <span class="tag tag-green">Lionel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by S. Barnes · Lionel</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="diesel" data-manufacturer="Athearn">
+          <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=500&q=75" alt="Pacific Coast HO" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Pacific Coast Branch Line</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by D. Andersen · Athearn</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="steam" data-manufacturer="Kato">
+          <img src="https://images.unsplash.com/photo-1553949333-e13cae42ee59?w=500&q=75" alt="Southern N Steam" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Southern Railway Piedmont Run</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by J. Vasquez · Kato</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="O" data-era="diesel" data-manufacturer="Lionel">
+          <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=500&q=75" alt="Desert Southwest O" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Desert Southwest MTH O Gauge</h4>
+            <div class="badge-row">
+              <span class="tag tag-brass">O Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by P. Chen · MTH</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Bachmann">
+          <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=500&q=75" alt="Mountain pass HO" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Rocky Mountain Pass</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by T. Erikson · Bachmann</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="diesel" data-manufacturer="Kato">
+          <img src="https://images.unsplash.com/photo-1527684651001-731c474bbb5a?w=500&q=75" alt="Modern Kato N" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Great Plains Manifest</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by K. Obi · Kato</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="diesel" data-manufacturer="Athearn">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Industrial HO diesel" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Industrial District Switcher</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by A. Müller · Athearn</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="O" data-era="steam" data-manufacturer="Lionel">
+          <img src="https://images.unsplash.com/photo-1494961104209-3c223057bd26?w=500&q=75" alt="Postwar O Steam" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Postwar Lionel Streamliner</h4>
+            <div class="badge-row">
+              <span class="tag tag-brass">O Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by G. Whitfield · Lionel</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="steam" data-manufacturer="Bachmann">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=75" alt="New England N Steam" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>New England Fall Foliage</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by C. Novak · Bachmann</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Athearn">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=75" alt="Coal region HO" loading="lazy" />
+          <div class="gallery-overlay">
+            <h4>Anthracite Coal Region</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by W. Simms · Athearn</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty state -->
+      <div id="gallery-empty" class="hidden text-center py-20">
+        <i class="fa-solid fa-train text-slate-300 text-6xl mb-4"></i>
+        <h3 class="font-serif font-bold text-slate-500 text-xl">No layouts match that filter.</h3>
+        <p class="text-slate-400 mt-2">Try a different combination of filters above.</p>
+      </div>
+
+      <div class="text-center mt-12">
+        <button class="btn-primary" onclick="alert('Loading more layouts...')">
+          <i class="fa-solid fa-plus"></i>
+          Load More Layouts
+        </button>
+        <p class="text-slate-400 text-sm mt-3 font-mono">Showing 12 of 3,812 layouts</p>
+      </div>
+    </section>
+
+    <!-- ── SUBMIT CTA ─────────────────────────────────────── -->
+    <div class="py-12 text-center" style="background: var(--pullman-green);">
+      <p class="font-mono text-amber-400 text-xs tracking-widest uppercase mb-2">Share your build</p>
+      <h2 class="font-serif font-black text-2xl text-white mb-4">Ready to add your layout?</h2>
+      <a href="dashboard.html" class="btn-primary">
+        <i class="fa-solid fa-upload"></i> Submit Your Layout
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        <div class="md:col-span-2">
+          <a href="index.html" class="nav-logo text-2xl mb-3 inline-flex">
+            <i class="fa-solid fa-train-tram"></i> Iron<span>Rail</span>
+          </a>
+          <p class="text-slate-500 text-sm max-w-xs mt-3">The premier online community for model train and railroad enthusiasts worldwide.</p>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">Scales</h4>
+          <a href="#" class="footer-link" onclick="document.querySelector('[data-filter=HO]').click()">HO Scale</a>
+          <a href="#" class="footer-link" onclick="document.querySelector('[data-filter=N]').click()">N Scale</a>
+          <a href="#" class="footer-link" onclick="document.querySelector('[data-filter=O]').click()">O Scale</a>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">Community</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="service.html" class="footer-link">Membership</a>
+          <a href="dashboard.html" class="footer-link">Submit Layout</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-wrap justify-between items-center gap-4">
+        <p class="text-slate-600 text-xs font-mono">© 2025 IronRail Community. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Check for empty gallery after filtering
+    const galleryGrid = document.getElementById('gallery-grid');
+    const emptyState = document.getElementById('gallery-empty');
+    const observer = new MutationObserver(() => {
+      const visible = [...document.querySelectorAll('.gallery-item')].filter(i => i.style.display !== 'none');
+      emptyState.classList.toggle('hidden', visible.length > 0);
+    });
+    observer.observe(galleryGrid, { attributes: true, subtree: true, attributeFilter: ['style'] });
+  </script>
+</body>
+</html>
