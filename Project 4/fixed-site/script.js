@@ -337,6 +337,63 @@ document.addEventListener('DOMContentLoaded', () => {
   try { new ThemeController(); } catch(e) { console.warn('Theme controller error', e); }
 })();
 
+/* ── RTL Controller ──────────────────────────────────── */
+(function() {
+  class RTLController {
+    constructor() {
+      this.currentDir = this.getStoredDir() || 'ltr';
+      this.init();
+    }
+
+    init() {
+      this.applyDir(this.currentDir);
+      this.bindEvents();
+    }
+
+    getStoredDir() {
+      try {
+        const stored = localStorage.getItem('ironrail-dir');
+        return stored && ['ltr', 'rtl'].includes(stored) ? stored : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    storeDir(dir) {
+      try { localStorage.setItem('ironrail-dir', dir); } catch (e) {}
+    }
+
+    applyDir(dir) {
+      document.documentElement.setAttribute('dir', dir);
+      this.updateRTLLinks(dir);
+      this.currentDir = dir;
+    }
+
+    updateRTLLinks(dir) {
+      document.querySelectorAll('.rtl-toggle span').forEach(span => {
+        span.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+      });
+    }
+
+    toggleDir() {
+      const newDir = this.currentDir === 'ltr' ? 'rtl' : 'ltr';
+      this.applyDir(newDir);
+      this.storeDir(newDir);
+    }
+
+    bindEvents() {
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.rtl-toggle')) {
+          e.preventDefault();
+          this.toggleDir();
+        }
+      });
+    }
+  }
+
+  try { new RTLController(); } catch(e) { console.warn('RTL controller error', e); }
+})();
+
 /* ── Dashboard Sidebar Toggle ────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   const dashToggle = document.getElementById('dashToggle');

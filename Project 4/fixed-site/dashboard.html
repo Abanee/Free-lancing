@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Hub — Iron Rail Community</title>
+  <title>Dashboard — Iron Rail Community</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -82,6 +82,10 @@
             <i class="fa-solid fa-sliders w-4"></i>
             Settings
           </a>
+          <a href="contact.html" class="dash-nav-link">
+            <i class="fa-solid fa-envelope-open-text w-4"></i>
+            Contact Us
+          </a>
         </nav>
 
         <!-- Logout Section -->
@@ -110,11 +114,14 @@
               <span class="block w-6 h-0.5 transition-all transform origin-center" style="background: var(--brass);"></span>
             </button>
             <!-- Page title on desktop -->
-            <span class="hidden md:block font-serif font-bold text-lg" style="color: var(--card-text);">My Hub</span>
+            <span class="hidden md:block font-serif font-bold text-lg" style="color: var(--card-text);">Dashboard</span>
           </div>
 
-          <!-- Right: theme toggle + logout -->
+          <!-- Right: rtl toggle + theme toggle + logout -->
           <div class="flex items-center gap-4">
+            <button class="rtl-toggle" aria-label="Toggle RTL/LTR" title="Switch text direction">
+              <span>RTL</span>
+            </button>
             <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
               <span class="theme-icon">🌙</span>
             </button>

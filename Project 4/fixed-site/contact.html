@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Iron Rail Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="nav-logo flex-shrink-0">
+        <i class="fa-solid fa-train-tram"></i>
+        Iron<span>Rail</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="service.html" class="nav-link">Membership</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
+        <a href="dashboard.html" class="btn-primary nav-hub-btn">
+          <i class="fa-solid fa-user-gear"></i> Dashboard
+        </a>
+      </nav>
+
+      <div class="nav-right-controls">
+        <button class="rtl-toggle" aria-label="Toggle RTL/LTR" title="Switch text direction">
+          <span>RTL</span>
+        </button>
+        <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="service.html">Membership</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="auth.html" class="font-bold text-amber-400">Sign In</a>
+      <a href="dashboard.html">
+        <i class="fa-solid fa-user-gear mr-2"></i> Dashboard
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── CONTACT HERO ─────────────────────────────────── -->
+    <section class="page-hero py-20 bg-slate-900 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-black text-white mb-6">Contact the <span class="text-amber-500 italic">Iron Road</span></h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          Questions about membership? Need help with your layout? Or just want to talk trains? 
+          Our team of veteran modelers is standing by in the dispatch office.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── CONTACT GRID ─────────────────────────────────── -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          <!-- Contact Form -->
+          <div class="bg-slate-800 p-8 border border-slate-700">
+            <h2 class="text-2xl font-serif font-bold text-white mb-8">Send a Message</h2>
+            <form action="#" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-slate-400 text-xs font-mono uppercase tracking-widest mb-2">Full Name</label>
+                  <input type="text" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 p-3 text-white focus:border-amber-500 outline-none transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-slate-400 text-xs font-mono uppercase tracking-widest mb-2">Email Address</label>
+                  <input type="email" placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-700 p-3 text-white focus:border-amber-500 outline-none transition-colors" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-slate-400 text-xs font-mono uppercase tracking-widest mb-2">Subject</label>
+                <select class="w-full bg-slate-900 border border-slate-700 p-3 text-white focus:border-amber-500 outline-none transition-colors appearance-none">
+                  <option>Membership Inquiry</option>
+                  <option>Technical Support (DCC/Layout)</option>
+                  <option>Gallery Submission</option>
+                  <option>Feedback or Suggestion</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-400 text-xs font-mono uppercase tracking-widest mb-2">Message</label>
+                <textarea rows="6" placeholder="How can we help you?" class="w-full bg-slate-900 border border-slate-700 p-3 text-white focus:border-amber-500 outline-none transition-colors resize-none"></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full py-4 text-center">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Dispatch Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-2xl font-serif font-bold text-white mb-8">The Roundhouse Office</h2>
+            
+            <div class="space-y-10">
+              <div class="flex gap-6">
+                <div class="w-12 h-12 flex-shrink-0 bg-emerald-900 flex items-center justify-center text-amber-500 text-xl border border-amber-500/30">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="text-slate-200 font-bold mb-1">Physical Address</h4>
+                  <p class="text-slate-400 leading-relaxed">
+                    842 Junction Road, Suite 100<br>
+                    Steel Valley Park, PA 15201
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-6">
+                <div class="w-12 h-12 flex-shrink-0 bg-emerald-900 flex items-center justify-center text-amber-500 text-xl border border-amber-500/30">
+                  <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div>
+                  <h4 class="text-slate-200 font-bold mb-1">Phone Number</h4>
+                  <p class="text-slate-400 leading-relaxed">
+                    Main Line: (555) 246-8100<br>
+                    Support: (555) 246-8101
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-6">
+                <div class="w-12 h-12 flex-shrink-0 bg-emerald-900 flex items-center justify-center text-amber-500 text-xl border border-amber-500/30">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div>
+                  <h4 class="text-slate-200 font-bold mb-1">Email Support</h4>
+                  <p class="text-slate-400 leading-relaxed">
+                    dispatch@ironrail.example.com<br>
+                    support@ironrail.example.com
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 p-8 bg-amber-500/5 border border-amber-500/20">
+              <h4 class="text-amber-400 font-mono text-xs uppercase tracking-widest mb-3">Operating Hours</h4>
+              <p class="text-slate-300 text-sm">
+                Monday — Friday: 9:00 AM - 6:00 PM EST<br>
+                Saturday: 10:00 AM - 4:00 PM EST<br>
+                Sunday: Closed for Layout Sessions
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MAP SECTION ────────────────────────────────── -->
+    <section class="h-[450px] w-full bg-slate-800 relative overflow-hidden">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.066497330724!2d-79.9497554!3d40.4851234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834927f8d68997b%3A0x67341e33c681283c!2sLawrenceville%2C%20Pittsburgh%2C%20PA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+        width="100%" 
+        height="100%" 
+        style="border:0; filter: grayscale(1) contrast(1.2) opacity(0.8);" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="absolute inset-0 pointer-events-none border-y border-slate-700"></div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        <div class="md:col-span-2">
+          <a href="index.html" class="nav-logo text-2xl mb-3 inline-flex">
+            <i class="fa-solid fa-train-tram"></i> Iron<span>Rail</span>
+          </a>
+          <p class="text-slate-500 text-sm max-w-xs mt-3 leading-relaxed">
+            The premier online community for model train and railroad layout enthusiasts worldwide.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">Explore</h4>
+          <a href="gallery.html" class="footer-link">Layout Gallery</a>
+          <a href="gallery.html" class="footer-link">HO Scale</a>
+          <a href="gallery.html" class="footer-link">N Scale</a>
+          <a href="gallery.html" class="footer-link">O Scale</a>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">Community</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="service.html" class="footer-link">Membership</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-wrap justify-between items-center gap-4">
+        <p class="text-slate-600 text-xs font-mono">© 2026 IronRail Community. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-mono">Privacy</a>
+          <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-mono">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
