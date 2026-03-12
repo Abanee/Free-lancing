@@ -10,64 +10,24 @@
 </head>
 <body>
 
-  <!-- ── HEADER ──────────────────────────────────────────── -->
-  <header class="site-header">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="nav-logo">
-        <i class="fa-solid fa-train-tram"></i>
-        Iron<span>Rail</span>
-      </a>
-      <nav class="desktop-nav flex items-center gap-8">
-        <a href="index.html"    class="nav-link">Home</a>
-        <a href="home2.html"    class="nav-link">Home 2</a>
-        <a href="gallery.html"  class="nav-link">Gallery</a>
-        <a href="service.html"  class="nav-link">Membership</a>
-        <a href="about.html"    class="nav-link">About</a>
-        <a href="dashboard.html" class="btn-primary text-sm py-2 px-4">
-          <i class="fa-solid fa-user-gear"></i> My Hub
-        </a>
-        
-        <!-- New control buttons -->
-        <div class="nav-controls flex items-center gap-3">
-          <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
-            <span class="theme-icon">🌙</span>
-          </button>
-          <button class="direction-toggle" aria-label="Toggle text direction" title="Switch text direction">
-            <span class="direction-text">LTR</span>
-          </button>
-        </div>
-      </nav>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu">
-      <a href="index.html">Home</a>
-      <a href="home2.html">Home 2</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="service.html">Membership</a>
-      <a href="about.html">About</a>
-      <a href="dashboard.html">My Hub</a>
-      
-      <!-- Mobile controls section -->
-      <div class="mobile-controls">
-        <button class="theme-toggle mobile" aria-label="Toggle theme">
-          <span class="theme-icon">🌙</span>
-          <span class="control-label">Theme</span>
-        </button>
-        <button class="direction-toggle mobile" aria-label="Toggle text direction">
-          <span class="direction-text">LTR</span>
-          <span class="control-label">Direction</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
   <main>
-    <div class="flex min-h-screen">
+    <div class="flex min-h-screen relative overflow-x-hidden">
+
+      <!-- Dashboard Mobile Overlay -->
+      <div id="dashOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden backdrop-blur-sm transition-opacity"></div>
 
       <!-- ── SIDEBAR ────────────────────────────────────── -->
-      <aside class="dash-sidebar w-64 flex-shrink-0 hidden md:block">
+      <aside class="dash-sidebar w-64 flex-shrink-0 bg-slate-900 border-r border-slate-700 flex flex-col fixed inset-y-0 left-0 z-[58] transform -translate-x-full transition-transform md:translate-x-0 md:relative" id="dashSidebar">
+        <!-- Branding (Mobile) -->
+        <div class="px-6 py-4 border-b border-slate-700 flex items-center justify-between md:hidden">
+          <a href="index.html" class="nav-logo text-lg">
+            <i class="fa-solid fa-train-tram"></i> Iron<span>Rail</span>
+          </a>
+          <button class="text-slate-400 p-2" id="dashClose">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
         <!-- User Profile -->
         <div class="p-6 border-b border-slate-700">
           <div class="flex items-center gap-3">
@@ -96,7 +56,7 @@
         </div>
 
         <!-- Nav -->
-        <nav class="py-4">
+        <nav class="py-4 flex-1 overflow-y-auto">
           <a href="#" class="dash-nav-link active" data-panel="panel-overview">
             <i class="fa-solid fa-gauge-simple w-4"></i>
             Overview
@@ -123,14 +83,49 @@
           </a>
         </nav>
 
-        <div class="p-4 mx-4 mt-4 bg-amber-900 bg-opacity-30 border border-amber-800">
-          <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-1">Conductor</p>
-          <p class="text-slate-300 text-xs">Your premium plan renews on <strong>Jan 15, 2026</strong>.</p>
+        <!-- Logout Section -->
+        <div class="p-4 border-t border-slate-700 bg-slate-900/50">
+          <a href="index.html" class="dash-nav-link text-red-500 hover:bg-red-500/10 hover:text-red-400 transition-colors">
+            <i class="fa-solid fa-right-from-bracket w-4"></i>
+            Log Out
+          </a>
+          <div class="mt-4 p-3 bg-amber-900 bg-opacity-30 border border-amber-800/30 rounded">
+            <p class="text-amber-400 text-[10px] font-mono uppercase tracking-wider mb-1">Conductor</p>
+            <p class="text-slate-400 text-[10px]">Plan renews Jan 15, 2026</p>
+          </div>
         </div>
       </aside>
 
       <!-- ── MAIN CONTENT ────────────────────────────────── -->
-      <div class="flex-1 p-6 md:p-8 bg-slate-50 overflow-auto">
+      <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Dashboard Top Navigation -->
+        <div class="h-16 border-b border-slate-200 bg-white flex items-center justify-between px-6 sticky top-0 z-40 bg-opacity-90 backdrop-blur-md">
+          <div class="md:hidden">
+            <button class="dash-hamburger flex flex-col justify-center gap-1.5 w-10 h-10" id="dashToggle" aria-label="Toggle Sidebar">
+              <span class="block w-6 h-0.5 transition-all transform origin-center" style="background: var(--brass);"></span>
+              <span class="block w-6 h-0.5 transition-all transform origin-center" style="background: var(--brass);"></span>
+              <span class="block w-6 h-0.5 transition-all transform origin-center" style="background: var(--brass);"></span>
+            </button>
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="nav-controls flex items-center gap-3">
+              <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+                <span class="theme-icon">🌙</span>
+              </button>
+              <button class="direction-toggle" aria-label="Toggle text direction" title="Switch text direction">
+                <span class="direction-text">LTR</span>
+              </button>
+            </div>
+            <div class="h-6 w-px bg-slate-200"></div>
+            <a href="index.html" class="btn-logout-top">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Log Out</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 p-6 md:p-8 bg-slate-50 overflow-auto dash-content-area">
 
         <!-- Success Banner -->
         <div id="form-success" class="hidden mb-6 p-4 bg-emerald-50 border border-emerald-300 flex items-center gap-3">

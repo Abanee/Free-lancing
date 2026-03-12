@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', expanded);
     });
 
-    // Close menu on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
         hamburger.classList.remove('open');
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
         hamburger.classList.remove('open');
@@ -52,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Active Nav Link ───────────────────────────────────── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link, .mobile-menu a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
@@ -64,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (filterBtns.length && galleryItems.length) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -92,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Smooth transitions on gallery items
     galleryItems.forEach(item => {
       item.style.transition = 'opacity 0.25s, transform 0.25s';
     });
@@ -106,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     layoutForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Basic validation
       const title = layoutForm.querySelector('#layout-title');
       const scale = layoutForm.querySelector('#layout-scale');
       let valid = true;
@@ -122,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!valid) return;
 
-      // Simulate upload
       const submitBtn = layoutForm.querySelector('[type="submit"]');
       submitBtn.textContent = 'Submitting…';
       submitBtn.disabled = true;
@@ -146,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
       uploadZone.addEventListener(evt, (e) => {
         e.preventDefault();
         uploadZone.style.borderColor = 'var(--pullman-green)';
-        uploadZone.style.background = '#f0fdf4';
       });
     });
 
@@ -154,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
       uploadZone.addEventListener(evt, (e) => {
         e.preventDefault();
         uploadZone.style.borderColor = '';
-        uploadZone.style.background = '';
       });
     });
 
@@ -165,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Click to trigger file input
     uploadZone.addEventListener('click', () => {
       const input = document.createElement('input');
       input.type = 'file';
@@ -195,24 +186,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── Dashboard Tab Navigation ──────────────────────────── */
-  const dashLinks = document.querySelectorAll('.dash-nav-link');
+  const dashLinks = document.querySelectorAll('.dash-nav-link[data-panel]');
   const dashPanels = document.querySelectorAll('.dash-panel');
 
   if (dashLinks.length && dashPanels.length) {
+    const showPanel = (panelId) => {
+      dashLinks.forEach(l => l.classList.remove('active'));
+      dashPanels.forEach(panel => {
+        if (panel.id === panelId) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+      const activeLink = document.querySelector(`.dash-nav-link[data-panel="${panelId}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    };
+
     dashLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        const target = link.dataset.panel;
-        if (!target) return; // Allow natural navigation for logout/external links
-
         e.preventDefault();
-        dashLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
+        const target = link.dataset.panel;
+        if (!target) return;
+        showPanel(target);
 
-        dashPanels.forEach(panel => {
-          panel.classList.toggle('hidden', panel.id !== target);
-        });
+        // On mobile, close sidebar after clicking
+        const sidebar = document.getElementById('dashSidebar');
+        const overlay = document.getElementById('dashOverlay');
+        const toggle = document.getElementById('dashToggle');
+        if (sidebar && window.innerWidth < 768) {
+          sidebar.classList.remove('active');
+          if (overlay) { overlay.classList.remove('active'); overlay.classList.add('hidden'); }
+          if (toggle) toggle.classList.remove('open');
+          document.body.classList.remove('menu-open');
+        }
       });
     });
+
+    // Make overview submit button work
+    const overviewSubmitBtn = document.querySelector('[onclick*="panel-submit"]');
+    if (overviewSubmitBtn) {
+      overviewSubmitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPanel('panel-submit');
+      });
+      overviewSubmitBtn.removeAttribute('onclick');
+    }
+
+    // My Layouts "New Layout" button
+    const layoutsNewBtn = document.querySelector('#panel-layouts [onclick*="panel-submit"]');
+    if (layoutsNewBtn) {
+      layoutsNewBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPanel('panel-submit');
+      });
+      layoutsNewBtn.removeAttribute('onclick');
+    }
   }
 
   /* ── Counter Animation ─────────────────────────────────── */
@@ -244,7 +273,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-  /* ── Theme Controller ──────────────────────────────────── */
+/* ── Theme Controller ──────────────────────────────────── */
+(function() {
   class ThemeController {
     constructor() {
       this.currentTheme = this.getStoredTheme() || this.getSystemTheme();
@@ -265,40 +295,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const stored = localStorage.getItem('ironrail-theme');
         return stored && ['light', 'dark'].includes(stored) ? stored : null;
       } catch (e) {
-        console.warn('localStorage unavailable, using system theme');
         return null;
       }
     }
 
     storeTheme(theme) {
-      try {
-        localStorage.setItem('ironrail-theme', theme);
-        localStorage.setItem('ironrail-theme-timestamp', Date.now().toString());
-      } catch (e) {
-        console.warn('Could not store theme preference');
-      }
+      try { localStorage.setItem('ironrail-theme', theme); } catch (e) {}
     }
 
     applyTheme(theme) {
-      // Add transition class for smooth theme switching
       document.body.classList.add('theme-transitioning');
-      
-      // Remove existing theme classes
-      document.body.className = document.body.className.replace(/theme-\w+/g, '');
+      document.body.classList.remove('theme-light', 'theme-dark');
       document.body.classList.add(`theme-${theme}`);
-      
       this.updateThemeIcons(theme);
       this.currentTheme = theme;
-      
-      // Remove transition class after animation completes
-      setTimeout(() => {
-        document.body.classList.remove('theme-transitioning');
-      }, 300);
+      setTimeout(() => { document.body.classList.remove('theme-transitioning'); }, 300);
     }
 
     updateThemeIcons(theme) {
-      const icons = document.querySelectorAll('.theme-icon');
-      icons.forEach(icon => {
+      document.querySelectorAll('.theme-icon').forEach(icon => {
         icon.textContent = theme === 'light' ? '🌙' : '☀️';
       });
     }
@@ -319,104 +334,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ── Direction Controller ──────────────────────────────── */
-  class DirectionController {
-    constructor() {
-      this.currentDirection = this.getStoredDirection() || 'ltr';
-      this.init();
-    }
-
-    init() {
-      this.applyDirection(this.currentDirection);
-      this.bindEvents();
-    }
-
-    getStoredDirection() {
-      try {
-        const stored = localStorage.getItem('ironrail-direction');
-        return stored && ['ltr', 'rtl'].includes(stored) ? stored : null;
-      } catch (e) {
-        console.warn('localStorage unavailable, using LTR');
-        return null;
-      }
-    }
-
-    storeDirection(direction) {
-      try {
-        localStorage.setItem('ironrail-direction', direction);
-        localStorage.setItem('ironrail-direction-timestamp', Date.now().toString());
-      } catch (e) {
-        console.warn('Could not store direction preference');
-      }
-    }
-
-    applyDirection(direction) {
-      document.documentElement.setAttribute('dir', direction);
-      this.updateDirectionText(direction);
-      this.currentDirection = direction;
-      
-      // Trigger layout recalculation for proper RTL rendering
-      document.body.style.display = 'none';
-      document.body.offsetHeight; // Force reflow
-      document.body.style.display = '';
-    }
-
-    updateDirectionText(direction) {
-      const texts = document.querySelectorAll('.direction-text');
-      texts.forEach(text => {
-        text.textContent = direction.toUpperCase();
-      });
-    }
-
-    toggleDirection() {
-      const newDirection = this.currentDirection === 'ltr' ? 'rtl' : 'ltr';
-      this.applyDirection(newDirection);
-      this.storeDirection(newDirection);
-    }
-
-    bindEvents() {
-      document.addEventListener('click', (e) => {
-        if (e.target.closest('.direction-toggle')) {
-          e.preventDefault();
-          this.toggleDirection();
-        }
-      });
-    }
-  }
-
-  /* ── Initialize Controllers ────────────────────────────── */
-  try {
-    const themeController = new ThemeController();
-    const directionController = new DirectionController();
-  } catch (error) {
-    console.warn('Failed to initialize theme/direction controllers:', error);
-    
-    // Fallback: Basic theme toggle without localStorage
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('.theme-toggle')) {
-        e.preventDefault();
-        const isDark = document.body.classList.contains('theme-dark');
-        document.body.classList.toggle('theme-dark', !isDark);
-        document.body.classList.toggle('theme-light', isDark);
-        
-        // Update icons
-        document.querySelectorAll('.theme-icon').forEach(icon => {
-          icon.textContent = isDark ? '🌙' : '☀️';
-        });
-      }
-      
-      if (e.target.closest('.direction-toggle')) {
-        e.preventDefault();
-        const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
-        document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
-        
-        // Update text
-        document.querySelectorAll('.direction-text').forEach(text => {
-          text.textContent = isRTL ? 'LTR' : 'RTL';
-        });
-      }
-    });
-  }
+  try { new ThemeController(); } catch(e) { console.warn('Theme controller error', e); }
+})();
 
 /* ── Dashboard Sidebar Toggle ────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
@@ -425,15 +344,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const dashOverlay = document.getElementById('dashOverlay');
   const dashClose = document.getElementById('dashClose');
 
-  if (dashSidebar && (dashToggle || dashClose || dashOverlay)) {
+  if (dashSidebar) {
     const toggleSidebar = () => {
       dashSidebar.classList.toggle('active');
       if (dashToggle) dashToggle.classList.toggle('open');
       if (dashOverlay) {
-        dashOverlay.classList.toggle('active');
-        dashOverlay.classList.toggle('hidden');
+        const isActive = dashSidebar.classList.contains('active');
+        dashOverlay.classList.toggle('active', isActive);
+        dashOverlay.classList.toggle('hidden', !isActive);
       }
-      document.body.classList.toggle('menu-open'); // Consistent with global menu overflow lock
+      document.body.classList.toggle('menu-open');
     };
 
     if (dashToggle) dashToggle.addEventListener('click', toggleSidebar);
