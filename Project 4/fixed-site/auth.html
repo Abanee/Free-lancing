@@ -66,7 +66,8 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 5rem;
       padding: 3rem;
     }
 
@@ -147,6 +148,7 @@
       z-index: 2;
     }
     .left-logo span { color: var(--brass); }
+    .left-logo .brand-img { height: 44px; }
 
     .left-content {
       position: relative;
@@ -699,6 +701,7 @@
 
       <!-- Logo -->
       <a href="index.html" class="left-logo">
+        <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" />
         Iron<span>Rail</span>
       </a>
 
