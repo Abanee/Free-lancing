@@ -1242,3 +1242,8 @@ body.theme-light .section-dark .text-slate-400 { color: #94a3b8 !important; }
 .site-footer h4 {
   color: var(--footer-text) !important;
 }
+
+/* Fix footer logo text visibility in light mode */
+.site-footer .nav-logo {
+  color: var(--footer-text) !important;
+}
