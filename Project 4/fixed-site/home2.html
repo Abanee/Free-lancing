@@ -28,8 +28,8 @@
         <a href="about.html" class="nav-link ">About</a>
         <a href="contact.html" class="nav-link ">Contact</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
-        <a href="dashboard.html" class="btn-primary nav-hub-btn">
-          <i class="fa-solid fa-user-gear"></i> Dashboard
+        <a href="auth.html" class="btn-primary nav-hub-btn">
+          <i class="fa-solid fa-user-plus"></i> Sign Up
         </a>
       </nav>
 
@@ -54,10 +54,7 @@
       <a href="service.html">Membership</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="auth.html" class="font-bold text-amber-400">Sign In</a>
-      <a href="dashboard.html">
-        <i class="fa-solid fa-user-gear mr-2"></i> Dashboard
-      </a>
+      <a href="auth.html" class="mobile-auth-btn">Sign In / Join Now</a>
     </div>
   </header>
 
@@ -67,43 +64,36 @@
     <section class="hero">
       <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80');"></div>
       <div class="hero-overlay"></div>
-      <div class="hero-content max-w-7xl mx-auto px-6 py-20 w-full">
-        <p class="hero-eyebrow">
-          <i class="fa-solid fa-circle-dot mr-1"></i>
-          Alternative Layout · Community Platform
-        </p>
-        <h1 class="hero-title">
-          Discover the<br>
-          <em>Rails</em><br>
-          That Connect Us
-        </h1>
-        <p class="hero-subtitle">
-          Experience model railroading like never before. Join our vibrant community
-          of enthusiasts sharing layouts, techniques, and the timeless joy of trains
-          across HO, N, and O scales.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="service.html" class="btn-primary">
-            <i class="fa-solid fa-user-plus"></i>
-            Join Community
-          </a>
-          <a href="gallery.html" class="btn-secondary">
-            <i class="fa-solid fa-images"></i>
-            View Gallery
-          </a>
+      <div class="hero-content max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="hero-eyebrow">
+            <i class="fa-solid fa-circle-dot mr-1"></i>
+            The Next Generation · Community Platform
+          </p>
+          <h1 class="hero-title">
+            Your Journey<br>
+            <em>Transformed</em>
+          </h1>
+          <p class="hero-subtitle">
+            A premium digital hub for serious model railroaders. From DCC schematics to landscape masterclasses, get the insights you need to build your dream empire.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="service.html" class="btn-primary">
+              <i class="fa-solid fa-user-plus"></i>
+              Get Access
+            </a>
+            <a href="gallery.html" class="btn-secondary">
+              <i class="fa-solid fa-images"></i>
+              Browse Layouts
+            </a>
+          </div>
         </div>
-        <div class="flex gap-8 mt-12 flex-wrap">
-          <div>
-            <div class="stat-number text-3xl font-black text-amber-400 font-serif">70+</div>
-            <div class="text-slate-400 text-sm mt-1 font-mono uppercase tracking-wider">Years Heritage</div>
+        <div class="hidden lg:block relative">
+          <div class="glass-panel p-4 rotate-3 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1541484055243-d09618f0a05a?w=800&q=80" alt="Detail" class="rounded-sm shadow-xl" />
           </div>
-          <div>
-            <div class="stat-number text-3xl font-black text-amber-400 font-serif">14,200+</div>
-            <div class="text-slate-400 text-sm mt-1 font-mono uppercase tracking-wider">Active Members</div>
-          </div>
-          <div>
-            <div class="stat-number text-3xl font-black text-amber-400 font-serif">3,800+</div>
-            <div class="text-slate-400 text-sm mt-1 font-mono uppercase tracking-wider">Shared Layouts</div>
+          <div class="absolute -bottom-6 -left-6 glass-panel p-4 -rotate-3 shadow-2xl w-2/3">
+             <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="Detail 2" class="rounded-sm shadow-xl" />
           </div>
         </div>
       </div>
@@ -121,88 +111,37 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="space-y-24 feature-block-alternating mt-16">
 
-        <!-- Card 1 -->
-        <article class="layout-card reveal">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=600&q=75" alt="Desert Southwest O Gauge" loading="lazy" />
-            <span class="scale-badge">O Scale</span>
+        <!-- Block 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=800&q=80" alt="O Scale Layout" class="rounded-lg shadow-2xl border border-slate-200" />
           </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="tag tag-brass">Desert</span>
-              <span class="tag tag-grey">MTH</span>
-            </div>
-            <h3 class="font-serif font-bold text-lg text-slate-900 mb-1">Desert Southwest MTH O Gauge</h3>
-            <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-              MTH DCS-equipped O gauge layout through the Sonoran Desert with sculpted saguaro cacti and working interchange yard.
+          <div class="md:w-1/2">
+            <span class="tag tag-brass mb-4">Masterclass</span>
+            <h3 class="font-serif font-black text-3xl mb-4">The O Scale Mastery</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">
+              Explore the intricate details of O gauge modeling. Our community features some of the finest examples of scratch-built scenery and DCC integration in the industry.
             </p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-emerald-800 flex items-center justify-center text-amber-400 text-xs font-bold">PC</div>
-                <span class="text-slate-600 text-sm font-semibold">P. Chen</span>
-              </div>
-              <a href="gallery.html" class="btn-green text-xs">
-                <i class="fa-solid fa-arrow-right"></i> View
-              </a>
-            </div>
+            <a href="gallery.html" class="btn-primary">View Techniques</a>
           </div>
-        </article>
+        </div>
 
-        <!-- Card 2 -->
-        <article class="layout-card reveal">
-          <div class="card-img-wrap">
-            <img src="./assets/im2.jpg" alt="Southern Railway N Scale" loading="lazy" />
-            <span class="scale-badge">N Scale</span>
+        <!-- Block 2 -->
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="N Scale Layout" class="rounded-lg shadow-2xl border border-slate-200" />
           </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="tag tag-green">Rural</span>
-              <span class="tag tag-grey">Kato</span>
-            </div>
-            <h3 class="font-serif font-bold text-lg text-slate-900 mb-1">Southern Railway Piedmont Run</h3>
-            <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-              Kato N-scale rolling stock on a point-to-point layout through tobacco country with handmade tobacco barns.
+          <div class="md:w-1/2">
+            <span class="tag tag-green mb-4">Compact Rails</span>
+            <h3 class="font-serif font-black text-3xl mb-4">The N Scale Revolution</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">
+              Discover how small-scale modeling is changing the game. Perfect for apartment layouts and complex mainline runs in limited spaces.
             </p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-emerald-800 flex items-center justify-center text-amber-400 text-xs font-bold">JV</div>
-                <span class="text-slate-600 text-sm font-semibold">J. Vasquez</span>
-              </div>
-              <a href="gallery.html" class="btn-green text-xs">
-                <i class="fa-solid fa-arrow-right"></i> View
-              </a>
-            </div>
+            <a href="gallery.html" class="btn-secondary">Check N-Scale Trends</a>
           </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="layout-card reveal">
-          <div class="card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=75" alt="Appalachian Mountain HO Layout" loading="lazy" />
-            <span class="scale-badge">HO Scale</span>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="tag tag-green">Landscape</span>
-              <span class="tag tag-grey">Steam Era</span>
-            </div>
-            <h3 class="font-serif font-bold text-lg text-slate-900 mb-1">Appalachian Mountain Line</h3>
-            <p class="text-slate-500 text-sm mb-4 line-clamp-2">
-              A 12×8 ft HO layout featuring scratch-built tunnels and hand-painted rock faces through the Blue Ridge.
-            </p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-emerald-800 flex items-center justify-center text-amber-400 text-xs font-bold">RK</div>
-                <span class="text-slate-600 text-sm font-semibold">R. Kowalski</span>
-              </div>
-              <a href="gallery.html" class="btn-green text-xs">
-                <i class="fa-solid fa-arrow-right"></i> View
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
 
       </div>
 
@@ -370,7 +309,6 @@
           <a href="about.html" class="footer-link">Forum</a>
           <a href="about.html" class="footer-link">About Us</a>
           <a href="service.html" class="footer-link">Membership</a>
-          <a href="dashboard.html" class="footer-link">My Hub</a>
           <a href="service.html" class="footer-link">Advertise</a>
         </div>
       </div>

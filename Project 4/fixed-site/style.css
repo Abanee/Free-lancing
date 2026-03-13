@@ -18,7 +18,7 @@
   --parchment:       #fef3c7;
   --ink:             #1c1917;
   --rail-silver:     #94a3b8;
-  --font-heading:    'Merriweather', Georgia, serif;
+  --font-heading:    'Source Sans 3', 'Merriweather', Georgia, serif;
   --font-body:       'Source Sans 3', sans-serif;
   --font-mono:       'Courier Prime', monospace;
 
@@ -113,6 +113,10 @@ body {
   color: var(--ink);
   overflow-x: hidden;
   line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading) !important;
 }
 
 /* ── Custom Scrollbar ────────────────────────────────────── */
@@ -428,7 +432,22 @@ body.theme-light .site-header { background: #1e293b; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   border-bottom: 1px solid #334155;
-  transition: color 0.2s;
+  transition: all 0.2s;
+}
+
+.mobile-menu a.mobile-auth-btn {
+  background: var(--brass);
+  color: #1c1917;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border-bottom: none;
+}
+
+.mobile-menu a.mobile-auth-btn:hover {
+  background: var(--brass-light);
+  transform: translateY(-2px);
 }
 
 .mobile-menu a:hover { color: var(--brass); }
@@ -470,6 +489,15 @@ body.theme-light .site-header { background: #1e293b; }
 }
 
 .hero-content { position: relative; z-index: 2; }
+.hero-content.centered {
+  text-align: center;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-content.centered .flex {
+  justify-content: center;
+}
 
 .hero-eyebrow {
   font-family: var(--font-mono);
@@ -1223,6 +1251,23 @@ body.theme-light .footer-link:hover {
   border-color: #ef4444;
 }
 
+.hero-content.centered {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-auth-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-auth-btn {
+    display: block;
+  }
+}
+
 /* ── Auth Page ───────────────────────────────────────────── */
 .auth-card {
   background: var(--card-bg);
@@ -1239,11 +1284,61 @@ body:not(.theme-dark) .text-slate-700 { color: #334155; }
 body.theme-light .section-dark .text-slate-400 { color: #94a3b8 !important; }
 
 /* Fix footer heading visibility in light mode */
-.site-footer h4 {
-  color: var(--footer-text) !important;
+/* ── Glassmorphism & Modern UI ───────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+body.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(2, 44, 34, 0.1);
+}
+
+.feature-block-alternating > div:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /* Fix footer logo text visibility in light mode */
 .site-footer .nav-logo {
   color: var(--footer-text) !important;
+}
+
+/* Global Section Title Force Visibility */
+.section-title.light {
+  color: #f8f7f4 !important;
+}
+
+/* Force dark text for light sections in light mode */
+body.theme-light .section-light .section-title,
+body.theme-light .section-light h2,
+body.theme-light .section-light h3,
+body.theme-light .section-light h4 {
+  color: #1c1917 !important;
+}
+
+/* Force visible headings for banner sections in light mode */
+body.theme-light .section-dark .section-title.light {
+  color: #ffffff !important; /* Keep banners white as they stay dark */
+}
+
+/* Fix specific contact info heading contrast in light mode */
+body.theme-light .flex.gap-6 h4.text-slate-200 {
+  color: #1f2937 !important; /* Dark gray for light mode */
+}
+body.theme-light .flex.gap-6 p.text-slate-400 {
+  color: #4b5563 !important;
+}
+
+/* Fix community standards section in dark mode */
+body.theme-dark section.bg-slate-100 {
+  background-color: #111827 !important; /* Darker bg */
+}
+body.theme-dark section.bg-slate-100 .section-title,
+body.theme-dark section.bg-slate-100 h3,
+body.theme-dark section.bg-slate-100 p {
+  color: #f1f5f9 !important;
 }
