@@ -21,12 +21,13 @@
 
       <!-- Desktop Navigation -->
       <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="home2.html" class="nav-link ">Home 2</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
         <a href="gallery.html" class="nav-link active">Gallery</a>
-        <a href="service.html" class="nav-link ">Membership</a>
-        <a href="about.html" class="nav-link ">About</a>
-        <a href="contact.html" class="nav-link ">Contact</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="service.html" class="nav-link">Membership</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">
           <i class="fa-solid fa-user-plus"></i> Sign Up
@@ -51,6 +52,7 @@
       <a href="index.html">Home</a>
       <a href="home2.html">Home 2</a>
       <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
       <a href="service.html">Membership</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -72,6 +74,44 @@
         </p>
       </div>
     </div>
+
+
+    <!-- ── FEATURED MODELER SPOTLIGHT ──────────────────────── -->
+    <section class="py-16 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl"></div>
+            <img src="assets/train_8.jpg" alt="Featured Modeler" class="relative rounded-2xl shadow-2xl border border-white/50 w-full h-[400px] object-cover" />
+            <div class="absolute bottom-6 right-6 bg-white p-4 rounded-xl shadow-lg border border-slate-100 flex items-center gap-3">
+              <img src="assets/profile_chen.png" class="w-12 h-12 rounded-full border-2 border-amber-500" />
+              <div>
+                <p class="text-xs font-mono font-bold text-amber-600 uppercase">March Spotlight</p>
+                <p class="font-bold text-slate-900">P. Chen's Desert Empire</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="section-label"><i class="fa-solid fa-star mr-1"></i> Modeler in Focus</p>
+            <h2 class="text-3xl md:text-5xl font-serif font-black text-slate-900 mb-6 leading-tight">Authentic Arid Realism in <span class="text-amber-600">O Scale</span></h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+              "The challenge wasn't just the trackage, it was the geology. I spent three months mixing real Sonoran dirt with bonding agents to get the exact hue of the Tucson foothills."
+            </p>
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div class="border-l-4 border-amber-500 pl-4">
+                <p class="text-2xl font-black text-slate-900">1,200+</p>
+                <p class="text-xs font-mono text-slate-500 uppercase">Hand-painted Shrubs</p>
+              </div>
+              <div class="border-l-4 border-amber-500 pl-4">
+                <p class="text-2xl font-black text-slate-900">450ft</p>
+                <p class="text-xs font-mono text-slate-500 uppercase">Custom Trackage</p>
+              </div>
+            </div>
+            <a href="#" class="btn-primary py-4 px-10">View Layout Tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ── FILTER BAR ─────────────────────────────────────── -->
     <div class="bg-white border-b border-slate-200 py-4 sticky top-16 z-50 shadow-sm">
@@ -109,7 +149,7 @@
       <div class="gallery-grid" id="gallery-grid">
 
         <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Athearn">
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&q=75" alt="Appalachian HO Steam Layout" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train.jpg" alt="Appalachian HO Steam Layout" loading="lazy" onerror="this.src='assets/train.jpg'" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Appalachian Mountain Line</h4>
             <div class="badge-row">
@@ -121,7 +161,7 @@
         </div>
 
         <div class="gallery-item" data-scale="N" data-era="diesel" data-manufacturer="Bachmann">
-          <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=500&q=75" alt="Chicago N Diesel" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_1.jpg" alt="Chicago N Diesel" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Chicago Yards, 1962</h4>
             <div class="badge-row">
@@ -133,7 +173,7 @@
         </div>
 
         <div class="gallery-item" data-scale="O" data-era="steam" data-manufacturer="Lionel">
-          <img src="https://images.unsplash.com/photo-1543158266-0066955047b1?w=500&q=75" alt="Lionel O Gauge" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_2.jpg" alt="Lionel O Gauge" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Winter Village — Lionel O Gauge</h4>
             <div class="badge-row">
@@ -145,7 +185,7 @@
         </div>
 
         <div class="gallery-item" data-scale="HO" data-era="diesel" data-manufacturer="Athearn">
-          <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=500&q=75" alt="Pacific Coast HO" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_3.jpg" alt="Pacific Coast HO" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Pacific Coast Branch Line</h4>
             <div class="badge-row">
@@ -157,7 +197,7 @@
         </div>
 
         <div class="gallery-item" data-scale="N" data-era="steam" data-manufacturer="Kato">
-          <img src="./assets/train.jpg" alt="Southern N Steam" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="./assets/train.jpg" alt="Southern N Steam" loading="lazy" onerror="this.src='assets/train.jpg'" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Southern Railway Piedmont Run</h4>
             <div class="badge-row">
@@ -169,7 +209,7 @@
         </div>
 
         <div class="gallery-item" data-scale="O" data-era="diesel" data-manufacturer="Lionel">
-          <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=500&q=75" alt="Desert Southwest O" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_4.jpg" alt="Desert Southwest O" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Desert Southwest MTH O Gauge</h4>
             <div class="badge-row">
@@ -181,7 +221,7 @@
         </div>
 
         <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Bachmann">
-          <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=500&q=75" alt="Mountain pass HO" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_5.jpg" alt="Mountain pass HO" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Rocky Mountain Pass</h4>
             <div class="badge-row">
@@ -193,7 +233,7 @@
         </div>
 
         <div class="gallery-item" data-scale="N" data-era="diesel" data-manufacturer="Kato">
-          <img src="https://images.unsplash.com/photo-1527684651001-731c474bbb5a?w=500&q=75" alt="Modern Kato N" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_6.jpg" alt="Modern Kato N" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Great Plains Manifest</h4>
             <div class="badge-row">
@@ -205,7 +245,7 @@
         </div>
 
         <div class="gallery-item" data-scale="HO" data-era="diesel" data-manufacturer="Athearn">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Industrial HO diesel" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_7.jpg" alt="Industrial HO diesel" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Industrial District Switcher</h4>
             <div class="badge-row">
@@ -217,7 +257,7 @@
         </div>
 
         <div class="gallery-item" data-scale="O" data-era="steam" data-manufacturer="Lionel">
-          <img src="https://images.unsplash.com/photo-1494961104209-3c223057bd26?w=500&q=75" alt="Postwar O Steam" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_8.jpg" alt="Postwar O Steam" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Postwar Lionel Streamliner</h4>
             <div class="badge-row">
@@ -229,7 +269,7 @@
         </div>
 
         <div class="gallery-item" data-scale="N" data-era="steam" data-manufacturer="Bachmann">
-          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&q=75" alt="New England N Steam" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_9.jpg" alt="New England N Steam" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>New England Fall Foliage</h4>
             <div class="badge-row">
@@ -241,7 +281,7 @@
         </div>
 
         <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Athearn">
-          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=75" alt="Coal region HO" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'" />
+          <img src="assets/train_1.jpg" alt="Coal region HO" loading="lazy" onerror="this.src='assets/train.jpg'" />
           <div class="gallery-overlay">
             <h4>Anthracite Coal Region</h4>
             <div class="badge-row">
@@ -249,6 +289,78 @@
               <span class="tag tag-green">Steam</span>
             </div>
             <p class="text-slate-300 text-xs mt-1">by W. Simms · Athearn</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="diesel" data-manufacturer="Athearn">
+          <img src="assets/train_2.jpg" alt="Steel Mill HO" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Steel Valley Industrial</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by J. Miller · Athearn</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="steam" data-manufacturer="Kato">
+          <img src="assets/train_3.jpg" alt="Mountain pass N" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Blue Ridge Crossing</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by L. Chen · Kato</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="O" data-era="diesel" data-manufacturer="Lionel">
+          <img src="assets/train_4.jpg" alt="Cityscape O" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Metropolis Express</h4>
+            <div class="badge-row">
+              <span class="tag tag-brass">O Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by S. Knight · Lionel</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="HO" data-era="steam" data-manufacturer="Bachmann">
+          <img src="assets/train_5.jpg" alt="Logging camp HO" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Redwood Logging Corp</h4>
+            <div class="badge-row">
+              <span class="tag tag-green">HO Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by B. Wright · Bachmann</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="N" data-era="diesel" data-manufacturer="Bachmann">
+          <img src="assets/train_6.jpg" alt="Shoreline N" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Atlantic Shoreline</h4>
+            <div class="badge-row">
+              <span class="tag tag-grey">N Scale</span>
+              <span class="tag tag-brass">Diesel</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by K. Moore · Bachmann</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-scale="O" data-era="steam" data-manufacturer="Lionel">
+          <img src="assets/train_7.jpg" alt="Old West O" loading="lazy" onerror="this.src='assets/train.jpg'" />
+          <div class="gallery-overlay">
+            <h4>Gilded Age Frontier</h4>
+            <div class="badge-row">
+              <span class="tag tag-brass">O Scale</span>
+              <span class="tag tag-green">Steam</span>
+            </div>
+            <p class="text-slate-300 text-xs mt-1">by G. Oldman · Lionel</p>
           </div>
         </div>
 
@@ -267,6 +379,43 @@
           Load More Layouts
         </button>
         <p class="text-slate-400 text-sm mt-3 font-mono">Showing 12 of 3,812 layouts</p>
+      </div>
+    </section>
+
+    <!-- ── LAYOUT TECHNIQUES ───────────────────────────────── -->
+    <section class="py-20 bg-white border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="section-label" style="justify-content:center;"><i class="fa-solid fa-graduation-cap mr-1"></i> Knowledge Base</p>
+          <h2 class="section-title">Technique Quick-Reference</h2>
+          <div class="divider mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition-all border border-slate-100 group">
+            <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+              <i class="fa-solid fa-mountain-sun text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-3">Scenery Depth</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Learn the 'Forced Perspective' methods used by the greats to make 24-inch modules look like miles of rolling hills.</p>
+          </div>
+          
+          <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition-all border border-slate-100 group">
+            <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+              <i class="fa-solid fa-microchip text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-3">DCC Mastery</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">Wiring buses, selecting decoders, and integrating sound without causing short-circuits on complex turnouts.</p>
+          </div>
+          
+          <div class="p-8 bg-slate-50 rounded-2xl hover:shadow-xl transition-all border border-slate-100 group">
+            <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white">
+              <i class="fa-solid fa-brush text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-3">Pro Weathering</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">From airbrushing grime to dry-brushing rust, transform toy-like plastic into authentic heavy-duty equipment.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -302,6 +451,7 @@
         <div>
           <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">EXPLORE</h4>
           <a href="gallery.html" class="footer-link">Layout Gallery</a>
+          <a href="blog.html" class="footer-link">The Blog</a>
           <a href="gallery.html" class="footer-link">HO Scale Layouts</a>
           <a href="gallery.html" class="footer-link">N Scale Layouts</a>
           <a href="gallery.html" class="footer-link">O Scale Layouts</a>

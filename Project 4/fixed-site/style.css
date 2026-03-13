@@ -58,23 +58,23 @@ body.menu-open { overflow: hidden; }
 body.theme-light {
   --pullman-green:   #065f46;
   --pullman-dark:    #022c22;
-  --steam-grey:      #f8fafc;
+  --steam-grey:      #f1f5f9;
   --steam-mid:       #475569;
   --brass:           #d97706;
   --brass-light:     #f59e0b;
   --rust:            #b45309;
   --off-white:       #ffffff;
   --parchment:       #fef3c7;
-  --ink:             #1c1917;
+  --ink:             #000000;
   --rail-silver:     #475569;
   --card-bg:         #ffffff;
   --card-border:     #e2e8f0;
-  --card-text:       #1c1917;
-  --card-subtext:    #64748b;
-  --section-bg:      #f8fafc;
-  --footer-bg:       #f8fafc;
-  --footer-text:     #333333;
-  --footer-link:     #4b5563;
+  --card-text:       #000000;
+  --card-subtext:    #475569;
+  --section-bg:      #ffffff;
+  --footer-bg:       #ffffff;
+  --footer-text:     #000000;
+  --footer-link:     #374151;
   --footer-link-hover: #d97706;
 }
 
@@ -82,22 +82,22 @@ body.theme-light {
 body.theme-dark {
   --pullman-green:   #10b981;
   --pullman-dark:    #064e3b;
-  --steam-grey:      #1e293b;
+  --steam-grey:      #111827;
   --steam-mid:       #94a3b8;
   --brass:           #fbbf24;
   --brass-light:     #fde047;
   --rust:            #f97316;
-  --off-white:       #0f172a;
+  --off-white:       #000000;
   --parchment:       #422006;
-  --ink:             #f1f5f9;
+  --ink:             #ffffff;
   --rail-silver:     #cbd5e1;
-  --card-bg:         #1e293b;
-  --card-border:     #334155;
-  --card-text:       #f1f5f9;
+  --card-bg:         #000000;
+  --card-border:     #1f2937;
+  --card-text:       #ffffff;
   --card-subtext:    #94a3b8;
-  --section-bg:      #0f172a;
-  --footer-bg:       #0f172a;
-  --footer-text:     #f3f4f6;
+  --section-bg:      #000000;
+  --footer-bg:       #000000;
+  --footer-text:     #ffffff;
   --footer-link:     #94a3b8;
   --footer-link-hover: #fbbf24;
 }
@@ -414,7 +414,7 @@ body.theme-light .site-header { background: #1e293b; }
   left: 0;
   right: 0;
   bottom: 0;
-  background: #1e293b;
+  background: var(--off-white);
   padding: 5rem 2rem 2rem;
   z-index: 99;
   overflow-y: auto;
@@ -425,7 +425,7 @@ body.theme-light .site-header { background: #1e293b; }
 .mobile-menu a {
   display: block;
   padding: 1rem 0;
-  color: #94a3b8;
+  color: var(--ink);
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -465,7 +465,7 @@ body.theme-light .site-header { background: #1e293b; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1527684651001-731c474bbb5a?w=1600&q=80');
+  background-image: url('assets/train.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(0.35) saturate(0.7);
@@ -582,15 +582,23 @@ body.theme-light .site-header { background: #1e293b; }
   transform: translateY(-2px);
 }
 
-/* Force white version for dark backgrounds / sections if needed */
-.section-dark .btn-secondary {
+/* Force visibility for buttons in dark contexts (like Hero) */
+.section-dark .btn-secondary,
+.hero-content .btn-secondary {
   color: #f8f7f4;
-  border-color: rgba(255,255,255,0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.section-dark .btn-secondary:hover {
+.section-dark .btn-secondary:hover,
+.hero-content .btn-secondary:hover {
   color: var(--brass);
   border-color: var(--brass);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+/* Specific visibility fix for the Join Forum button in current Hero setup */
+.hero-content .btn-secondary i {
+  color: var(--brass);
 }
 
 .btn-green {
@@ -1146,18 +1154,6 @@ body.theme-dark .tag-grey  { color: #94a3b8; border-color: #475569; background: 
   border-top: 3px solid var(--brass);
 }
 
-.site-footer::after {
-  content: '';
-  display: block;
-  height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--pullman-green) 0px,
-    var(--pullman-green) 20px,
-    var(--brass) 20px,
-    var(--brass) 24px
-  );
-}
 
 .footer-link {
   color: var(--footer-link);

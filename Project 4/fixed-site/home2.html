@@ -1,32 +1,637 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iron Rail Community — Alternative Home</title>
+  <title>Iron Rail Community — Explore the Iron Road</title>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Home 2 Exclusive Styles ───────────────────────────── */
+
+    /* SPLIT HERO */
+    .h2-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 92vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .h2-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .h2-hero-right {
+        min-height: 50vw;
+      }
+    }
+
+    .h2-hero-left {
+      background: var(--pullman-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 640px) {
+      .h2-hero-left {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    .h2-hero-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -40px;
+      bottom: 0;
+      width: 80px;
+      background: var(--pullman-dark);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+      z-index: 3;
+    }
+
+    @media (max-width: 900px) {
+      .h2-hero-left::before {
+        display: none;
+      }
+    }
+
+    .h2-hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .h2-hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.6) brightness(0.75);
+      transform: scale(1.05);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+
+    .h2-hero-right-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(270deg, transparent 40%, var(--pullman-dark) 100%);
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .h2-hero-right-overlay {
+        background: linear-gradient(180deg, transparent 40%, var(--pullman-dark) 100%);
+      }
+    }
+
+    /* Ticker tape */
+    .ticker-wrap {
+      overflow: hidden;
+      background: var(--brass);
+      padding: 0.5rem 0;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 28s linear infinite;
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .ticker-item {
+      display: inline-block;
+      color: var(--pullman-dark);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0 2rem;
+    }
+
+    .ticker-sep {
+      display: inline-block;
+      color: var(--pullman-dark);
+      opacity: 0.5;
+      padding: 0 0.5rem;
+    }
+
+    /* MAGAZINE FEATURE SECTION */
+    .h2-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0;
+    }
+
+    @media (max-width: 900px) {
+      .h2-feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .h2-feature-hero {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    @media (max-width: 900px) {
+      .h2-feature-hero {
+        grid-column: 1;
+        min-height: 280px;
+      }
+    }
+
+    .h2-feature-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .h2-feature-hero:hover img {
+      transform: scale(1.04);
+    }
+
+    .h2-feature-hero-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(2, 44, 34, 0.97) 0%, transparent 100%);
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .h2-feature-aside {
+      grid-column: 3;
+      grid-row: 1 / 3;
+      border-left: 3px solid var(--brass);
+      background: #0f172a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 900px) {
+      .h2-feature-aside {
+        grid-column: 1;
+        border-left: none;
+        border-top: 3px solid var(--brass);
+      }
+    }
+
+    .h2-aside-item {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .h2-aside-item:hover {
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .h2-aside-img {
+      width: 70px;
+      height: 60px;
+      object-fit: cover;
+      flex-shrink: 0;
+      filter: saturate(0.8);
+    }
+
+    .h2-feature-secondary-row {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    @media (max-width: 900px) {
+      .h2-feature-secondary-row {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .h2-secondary-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+      cursor: pointer;
+    }
+
+    .h2-secondary-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .h2-secondary-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .h2-secondary-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(2, 44, 34, 0.93) 0%, rgba(0, 0, 0, 0.1) 100%);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    /* HORIZONTAL SCALE SELECTOR */
+    .h2-scale-tabs {
+      display: flex;
+      border-bottom: 3px solid var(--brass);
+      overflow-x: auto;
+    }
+
+    .h2-scale-tab {
+      padding: 1rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #64748b;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .h2-scale-tab:hover {
+      color: var(--brass);
+    }
+
+    .h2-scale-tab.active {
+      color: var(--brass);
+      border-bottom-color: var(--pullman-dark);
+      background: var(--brass);
+      color: var(--pullman-dark);
+    }
+
+    .h2-scale-panel {
+      display: none;
+    }
+
+    .h2-scale-panel.active {
+      display: block;
+    }
+
+    /* BUILDER CARDS (horizontal scroll) */
+    .h2-builder-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding: 0.5rem 0 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--brass) transparent;
+    }
+
+    .h2-builder-card {
+      flex-shrink: 0;
+      width: 280px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .h2-builder-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pullman-green), var(--brass));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+      z-index: 1;
+    }
+
+    .h2-builder-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .h2-builder-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .h2-builder-img {
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .h2-builder-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .h2-builder-card:hover .h2-builder-img img {
+      transform: scale(1.07);
+    }
+
+    /* PROCESS STEPS */
+    .h2-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      counter-reset: steps;
+    }
+
+    @media (max-width: 900px) {
+      .h2-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .h2-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .h2-step {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+      position: relative;
+      counter-increment: steps;
+    }
+
+    .h2-step:last-child {
+      border-right: none;
+    }
+
+    .h2-step::before {
+      content: counter(steps, decimal-leading-zero);
+      font-family: var(--font-mono);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(245, 158, 11, 0.12);
+      display: block;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    /* TESTIMONIAL RAIL */
+    .h2-testimonial-rail {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--brass);
+    }
+
+    @media (max-width: 900px) {
+      .h2-testimonial-rail {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .h2-testimonial {
+      background: #0f172a;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .h2-testimonial::before {
+      content: '\201C';
+      font-family: Georgia, serif;
+      font-size: 5rem;
+      color: var(--brass);
+      opacity: 0.2;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      line-height: 1;
+    }
+
+    /* PHOTO MOSAIC */
+    .h2-mosaic {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 300px 300px;
+      gap: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .h2-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .h2-mosaic {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 200px);
+      }
+    }
+
+    .h2-mosaic-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .h2-mosaic-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s, filter 0.4s;
+      filter: saturate(0.85);
+    }
+
+    .h2-mosaic-item:hover img {
+      transform: scale(1.08);
+      filter: saturate(1.1) brightness(0.8);
+    }
+
+    .h2-mosaic-item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    @media (max-width: 900px) {
+      .h2-mosaic-item:first-child {
+        grid-row: 1;
+        grid-column: 1 / 3;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .h2-mosaic-item:first-child {
+        grid-row: 1;
+        grid-column: 1;
+      }
+    }
+
+    .h2-mosaic-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(0deg, rgba(2, 44, 34, 0.9) 0%, transparent 100%);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--brass);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .h2-mosaic-item:hover .h2-mosaic-label {
+      opacity: 1;
+    }
+
+    /* NEWSLETTER BAND */
+    .h2-newsletter {
+      background: linear-gradient(135deg, #022c22 0%, #1e293b 60%, #0f172a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .h2-newsletter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(-45deg,
+          transparent,
+          transparent 10px,
+          rgba(245, 158, 11, 0.04) 10px,
+          rgba(245, 158, 11, 0.04) 20px);
+    }
+
+    .h2-email-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(245, 158, 11, 0.4);
+      color: #f8f7f4;
+      padding: 0.8rem 1.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .h2-email-input::placeholder {
+      color: #64748b;
+    }
+
+    .h2-email-input:focus {
+      border-color: var(--brass);
+    }
+
+    /* RAIL DIVIDER */
+    .rail-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .rail-divider::before,
+    .rail-divider::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--brass), transparent);
+    }
+
+    .rail-divider span {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--brass);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* BRAND LOGOS ROW */
+    .h2-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .h2-brand-logo {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #475569;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid #1e293b;
+      transition: all 0.2s;
+    }
+
+    .h2-brand-logo:hover {
+      color: var(--brass);
+      border-color: var(--brass);
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- ── HEADER ──────────────────────────────────────────── -->
-    <header class="site-header">
+  <!-- ── HEADER (unchanged) ──────────────────────────────── -->
+  <header class="site-header">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="nav-logo flex-shrink-0">
         <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" />
         Iron<span>Rail</span>
       </a>
 
-      <!-- Desktop Navigation -->
       <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
+        <a href="index.html" class="nav-link">Home</a>
         <a href="home2.html" class="nav-link active">Home 2</a>
-        <a href="gallery.html" class="nav-link ">Gallery</a>
-        <a href="service.html" class="nav-link ">Membership</a>
-        <a href="about.html" class="nav-link ">About</a>
-        <a href="contact.html" class="nav-link ">Contact</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="service.html" class="nav-link">Membership</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">
           <i class="fa-solid fa-user-plus"></i> Sign Up
@@ -46,11 +651,11 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu">
       <a href="index.html">Home</a>
       <a href="home2.html">Home 2</a>
       <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
       <a href="service.html">Membership</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -60,245 +665,740 @@
 
   <main>
 
-    <!-- ── HERO ──────────────────────────────────────────── -->
-    <section class="hero">
-      <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80');"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="hero-eyebrow">
-            <i class="fa-solid fa-circle-dot mr-1"></i>
-            The Next Generation · Community Platform
-          </p>
-          <h1 class="hero-title">
-            Your Journey<br>
-            <em>Transformed</em>
-          </h1>
-          <p class="hero-subtitle">
-            A premium digital hub for serious model railroaders. From DCC schematics to landscape masterclasses, get the insights you need to build your dream empire.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="service.html" class="btn-primary">
-              <i class="fa-solid fa-user-plus"></i>
-              Get Access
-            </a>
-            <a href="gallery.html" class="btn-secondary">
-              <i class="fa-solid fa-images"></i>
-              Browse Layouts
-            </a>
-          </div>
-        </div>
-        <div class="hidden lg:block relative">
-          <div class="glass-panel p-4 rotate-3 shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1541484055243-d09618f0a05a?w=800&q=80" alt="Detail" class="rounded-sm shadow-xl" />
-          </div>
-          <div class="absolute -bottom-6 -left-6 glass-panel p-4 -rotate-3 shadow-2xl w-2/3">
-             <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="Detail 2" class="rounded-sm shadow-xl" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FEATURED LAYOUTS ───────────────────────────────── -->
-    <section class="py-20 max-w-7xl mx-auto px-6">
-      <div class="mb-12">
-        <p class="section-label"><i class="fa-solid fa-star mr-1"></i> Editor's Choice</p>
-        <h2 class="section-title">Exceptional Model Railroads</h2>
-        <div class="divider"></div>
-        <p class="text-slate-600 max-w-xl">
-          Showcasing the most innovative and beautifully crafted layouts from our
-          community of dedicated model railroad enthusiasts.
+    <!-- ── SPLIT HERO ──────────────────────────────────────── -->
+    <section class="h2-hero">
+      <div class="h2-hero-left">
+        <p class="hero-eyebrow" style="margin-bottom:1.5rem;">
+          <i class="fa-solid fa-train mr-2"></i>
+          The Hobbyist's Digital Depot
         </p>
-      </div>
+        <div class="rail-divider"><span>Est. 1952</span></div>
 
-      <div class="space-y-24 feature-block-alternating mt-16">
+        <h1 class="hero-title" style="text-align:left; max-width:460px;">
+          Built for the<br>
+          <em>Dedicated</em><br>
+          Railroader
+        </h1>
+        <p class="hero-subtitle" style="max-width:420px;">
+          Layouts reviewed. Techniques mastered. Communities forged. Everything a serious model railroader needs — in
+          one place, built the way you'd build a layout: with precision and passion.
+        </p>
 
-        <!-- Block 1 -->
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1511974035430-5de47d3b95da?w=800&q=80" alt="O Scale Layout" class="rounded-lg shadow-2xl border border-slate-200" />
-          </div>
-          <div class="md:w-1/2">
-            <span class="tag tag-brass mb-4">Masterclass</span>
-            <h3 class="font-serif font-black text-3xl mb-4">The O Scale Mastery</h3>
-            <p class="text-slate-600 mb-6 leading-relaxed">
-              Explore the intricate details of O gauge modeling. Our community features some of the finest examples of scratch-built scenery and DCC integration in the industry.
-            </p>
-            <a href="gallery.html" class="btn-primary">View Techniques</a>
-          </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem;">
+          <a href="service.html" class="btn-primary">
+            <i class="fa-solid fa-ticket"></i>
+            Join Free
+          </a>
+          <a href="gallery.html" class="btn-secondary" style="color:#f8f7f4; border-color:rgba(255,255,255,0.3);">
+            <i class="fa-solid fa-images"></i>
+            See Gallery
+          </a>
         </div>
 
-        <!-- Block 2 -->
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="N Scale Layout" class="rounded-lg shadow-2xl border border-slate-200" />
+        <!-- Inline trust bar -->
+        <div
+          style="display:flex; gap:2rem; flex-wrap:wrap; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08);">
+          <div>
+            <div style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--brass);">14K+
+            </div>
+            <div
+              style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.12em; text-transform:uppercase; margin-top:2px;">
+              Members</div>
           </div>
-          <div class="md:w-1/2">
-            <span class="tag tag-green mb-4">Compact Rails</span>
-            <h3 class="font-serif font-black text-3xl mb-4">The N Scale Revolution</h3>
-            <p class="text-slate-600 mb-6 leading-relaxed">
-              Discover how small-scale modeling is changing the game. Perfect for apartment layouts and complex mainline runs in limited spaces.
-            </p>
-            <a href="gallery.html" class="btn-secondary">Check N-Scale Trends</a>
+          <div>
+            <div style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--brass);">3,800+
+            </div>
+            <div
+              style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.12em; text-transform:uppercase; margin-top:2px;">
+              Layouts</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:var(--brass);">89
+            </div>
+            <div
+              style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.12em; text-transform:uppercase; margin-top:2px;">
+              Brands</div>
           </div>
         </div>
-
       </div>
-
-      <div class="text-center mt-12">
-        <a href="gallery.html" class="btn-primary">
-          <i class="fa-solid fa-grid-2"></i>
-          Explore All Layouts
-        </a>
+      <div class="h2-hero-right">
+        <img src="assets/train_7.jpg" alt="Model steam locomotive" />
+        <div class="h2-hero-right-overlay"></div>
       </div>
     </section>
 
-    <!-- ── STATS BAR ──────────────────────────────────────── -->
-    <div class="section-dark stripe-bg">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
-        <div class="stat-item">
-          <div class="stat-number" data-count="14200">0</div>
-          <div class="text-slate-400 text-xs mt-1 font-mono uppercase tracking-wider">Members</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="3812">0</div>
-          <div class="text-slate-400 text-xs mt-1 font-mono uppercase tracking-wider">Layouts</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="527">0</div>
-          <div class="text-slate-400 text-xs mt-1 font-mono uppercase tracking-wider">Reviews</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="89">0</div>
-          <div class="text-slate-400 text-xs mt-1 font-mono uppercase tracking-wider">Manufacturers</div>
-        </div>
+    <!-- ── TICKER TAPE ──────────────────────────────────────── -->
+    <div class="ticker-wrap">
+      <div class="ticker-inner">
+        <span class="ticker-item"><i class="fa-solid fa-train mr-2"></i>New Layout: Pacific Northwest Logging
+          Line</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">DCC Decoder Sale at IronRail Store — 20% Off</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Forum Hot Topic: Weathering with Enamel Washes</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Member Spotlight: R. Kowalski's Appalachian Line wins Layout of the Month</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">New Review: Kato N-Scale Super Chief reviewed</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Convention: National Train Show — Chicago, Aug 2026</span>
+        <span class="ticker-sep">◆</span>
+        <!-- repeat for seamless loop -->
+        <span class="ticker-item"><i class="fa-solid fa-train mr-2"></i>New Layout: Pacific Northwest Logging
+          Line</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">DCC Decoder Sale at IronRail Store — 20% Off</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Forum Hot Topic: Weathering with Enamel Washes</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Member Spotlight: R. Kowalski's Appalachian Line wins Layout of the Month</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">New Review: Kato N-Scale Super Chief reviewed</span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item">Convention: National Train Show — Chicago, Aug 2026</span>
+        <span class="ticker-sep">◆</span>
       </div>
     </div>
 
-    <!-- ── COMMUNITY HIGHLIGHTS ───────────────────────────── -->
-    <section class="py-20 section-dark stripe-bg">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 items-start">
+    <!-- ── MAGAZINE FEATURE GRID ────────────────────────────── -->
+    <section style="background: #0f172a;">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <div
+          style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
           <div>
-            <p class="section-label"><i class="fa-solid fa-users mr-1"></i> Community Spotlight</p>
-            <h2 class="section-title light">Member Achievements</h2>
-            <div class="divider"></div>
-            <p class="text-slate-400 mb-8">
-              Celebrating the incredible work and dedication of our community members
-              who continue to push the boundaries of model railroading excellence.
+            <p class="section-label"><i class="fa-solid fa-newspaper mr-1"></i> This Month's Features</p>
+            <h2 class="section-title light">Editor's Spotlight</h2>
+          </div>
+          <a href="gallery.html" class="btn-primary" style="font-size:0.75rem;">View All <i
+              class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+
+      <div class="h2-feature-grid">
+
+        <!-- Big Hero Feature -->
+        <div class="h2-feature-hero">
+          <img src="assets/train_8.jpg" alt="O Scale Desert Layout" />
+          <div class="h2-feature-hero-caption">
+            <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
+              <span class="tag tag-brass">Cover Story</span>
+              <span class="tag tag-grey">O Scale</span>
+            </div>
+            <h3
+              style="font-family:var(--font-heading); font-size:1.6rem; font-weight:900; color:#f8f7f4; margin-bottom:0.5rem; line-height:1.2;">
+              The Desert Southwest MTH Empire — 400 Hours in the Making
+            </h3>
+            <p style="color:#94a3b8; font-size:0.875rem; margin-bottom:1rem; max-width:520px;">
+              P. Chen spent two years crafting the Sonoran Desert's raw geology in O gauge. An intimate look at his
+              process, tools, and the obsession that drives masterwork.
             </p>
-            <a href="about.html" class="btn-primary">
-              <i class="fa-solid fa-trophy"></i> View Awards
+            <a href="gallery.html" class="btn-primary" style="font-size:0.75rem; padding:0.6rem 1.3rem;">
+              <i class="fa-solid fa-book-open"></i> Read Feature
             </a>
           </div>
-          <div class="space-y-0 border border-slate-700 overflow-hidden">
+        </div>
 
-            <div class="forum-item bg-slate-800 border-slate-700">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="tag tag-brass">Achievement</span>
-                    <span class="text-slate-500 text-xs font-mono">This week</span>
-                  </div>
-                  <h4 class="text-slate-200 font-serif font-bold text-sm mb-1">
-                    Layout of the Month: Chicago Union Station
-                  </h4>
-                  <p class="text-slate-500 text-xs">Awarded to <strong class="text-brass">TrainMaster_Mike</strong></p>
+        <!-- Aside — Latest Posts -->
+        <div class="h2-feature-aside">
+          <div style="padding:1.25rem 1.5rem; border-bottom:1px solid rgba(255,255,255,0.07);">
+            <p class="section-label" style="margin-bottom:0;"><i class="fa-solid fa-bolt mr-1"></i> Latest Posts</p>
+          </div>
+
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_1.jpg" alt="HO Layout" />
+            <div>
+              <span class="tag tag-green" style="margin-bottom:0.4rem; display:inline-block;">HO Scale</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Appalachian Mountain Line — Full Build Log</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">R. Kowalski · 2 days
+                ago</span>
+            </div>
+          </div>
+
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_2.jpg" alt="N Scale" />
+            <div>
+              <span class="tag tag-grey" style="margin-bottom:0.4rem; display:inline-block;">N Scale</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Kato Unitrack Oval to Mainline — a Beginner's Guide</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">MicroLayout_Hanna · 4 days
+                ago</span>
+            </div>
+          </div>
+
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_3.jpg" alt="Lionel O" />
+            <div>
+              <span class="tag tag-brass" style="margin-bottom:0.4rem; display:inline-block;">O Scale</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Postwar Lionel 773 Hudson — Restoration Diary</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">IronMike_OGauge · 1 week
+                ago</span>
+            </div>
+          </div>
+
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_4.jpg" alt="Coastal HO" />
+            <div>
+              <span class="tag tag-green" style="margin-bottom:0.4rem; display:inline-block;">HO Scale</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Trestle Bridge Scratch-Build — Timber by Timber</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">D. Andersen · 1 week
+                ago</span>
+            </div>
+          </div>
+
+          <!-- MORE SIDEBAR POSTS -->
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_5.jpg" alt="Review" />
+            <div>
+              <span class="tag tag-brass" style="margin-bottom:0.4rem; display:inline-block;">Gear Review</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Genesis 2.0 SD70ACe: Worth the Upgrade?</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">Tech_Reyes · 2 weeks
+                ago</span>
+            </div>
+          </div>
+
+          <div class="h2-aside-item">
+            <img class="h2-aside-img" src="assets/train_6.jpg" alt="Wiring" />
+            <div>
+              <span class="tag tag-grey" style="margin-bottom:0.4rem; display:inline-block;">Electronics</span>
+              <p
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:#e2e8f0; line-height:1.3; margin-bottom:0.25rem;">
+                Bus Wire Routing for DCC Layouts</p>
+              <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">Kowalski_DCC · 3 weeks
+                ago</span>
+            </div>
+          </div>
+
+          <div style="padding:1.25rem 1.5rem; margin-top:auto;">
+            <a href="gallery.html" class="btn-primary" style="width:100%; justify-content:center; font-size:0.75rem;">
+              All Articles <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <!-- UPCOMING EVENTS WIDGET -->
+          <div
+            style="padding:1.25rem 1.5rem; border-top:1px solid rgba(255,255,255,0.07); background: rgba(0,0,0,0.2);">
+            <p class="section-label" style="margin-bottom:1rem;"><i class="fa-solid fa-calendar-days mr-1"></i> Upcoming
+              Events</p>
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+                <div
+                  style="background:var(--brass); color:var(--pullman-dark); font-family:var(--font-mono); padding:0.25rem 0.5rem; text-align:center; border-radius:2px; min-width:45px;">
+                  <div style="font-size:0.8rem; font-weight:900; line-height:1;">24</div>
+                  <div style="font-size:0.55rem; font-weight:700; text-transform:uppercase;">Mar</div>
                 </div>
-                <div class="text-center flex-shrink-0">
-                  <div class="text-amber-400 font-bold text-lg font-serif">🏆</div>
+                <div>
+                  <h5 style="font-size:0.8rem; font-weight:700; color:#f8f7f4; margin-bottom:0.1rem;">Spring Swap Meet
+                  </h5>
+                  <p style="font-size:0.65rem; color:#64748b;">Virtual · 7:00 PM EST</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+                <div
+                  style="background:rgba(255,255,255,0.1); color:#fff; font-family:var(--font-mono); padding:0.25rem 0.5rem; text-align:center; border-radius:2px; min-width:45px;">
+                  <div style="font-size:0.8rem; font-weight:900; line-height:1;">02</div>
+                  <div style="font-size:0.55rem; font-weight:700; text-transform:uppercase;">Apr</div>
+                </div>
+                <div>
+                  <h5 style="font-size:0.8rem; font-weight:700; color:#f8f7f4; margin-bottom:0.1rem;">DCC Wiring Class
+                  </h5>
+                  <p style="font-size:0.65rem; color:#64748b;">Live Stream · R. Kowalski</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="forum-item bg-slate-800 border-slate-700">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="tag tag-green">Recognition</span>
-                    <span class="text-slate-500 text-xs font-mono">2 days ago</span>
-                  </div>
-                  <h4 class="text-slate-200 font-serif font-bold text-sm mb-1">
-                    Outstanding Weathering Techniques Tutorial
-                  </h4>
-                  <p class="text-slate-500 text-xs">Created by <strong class="text-brass">DetailMaster_Sarah</strong></p>
-                </div>
-                <div class="text-center flex-shrink-0">
-                  <div class="text-amber-400 font-bold text-lg font-serif">⭐</div>
+        <!-- Secondary Feature Row -->
+        <div class="h2-feature-secondary-row">
+          <div class="h2-secondary-card">
+            <img src="assets/train_3.jpg" alt="New post" />
+            <div class="h2-secondary-overlay">
+              <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+                <span class="tag tag-brass">Tutorial</span>
+              </div>
+              <h4
+                style="font-family:var(--font-heading); font-weight:800; color:#f8f7f4; margin-bottom:0.3rem; font-size:1rem;">
+                Scratch-Build Your First Timber Trestle</h4>
+              <p style="color:#94a3b8; font-size:0.75rem;">Step-by-step guide with material list and jigs</p>
+            </div>
+          </div>
+          <div class="h2-secondary-card">
+            <img src="assets/train_5.jpg" alt="Community layout 2" />
+            <div class="h2-secondary-overlay">
+              <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+                <span class="tag tag-green">Review</span>
+              </div>
+              <h4
+                style="font-family:var(--font-heading); font-weight:800; color:#f8f7f4; margin-bottom:0.3rem; font-size:1rem;">
+                Bachmann Spectrum Genesis — 6-Month Review</h4>
+              <p style="color:#94a3b8; font-size:0.75rem;">Durability, DCC performance, and value breakdown</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BROWSE BY SCALE ──────────────────────────────────── -->
+    <section class="py-12" style="background: var(--off-white);">
+      <div class="max-w-7xl mx-auto px-6">
+        <div style="margin-bottom:0;">
+          <p class="section-label"><i class="fa-solid fa-ruler mr-1"></i> Browse by Scale</p>
+          <h2 class="section-title" style="margin-bottom:0.5rem;">Choose Your Gauge</h2>
+          <p class="text-slate-600" style="max-width:520px; margin-bottom:1.5rem;">
+            Explore layouts, reviews, and techniques filtered by the scale you model in.
+          </p>
+        </div>
+
+        <div class="h2-scale-tabs">
+          <button class="h2-scale-tab active" data-tab="ho">HO Scale (1:87)</button>
+          <button class="h2-scale-tab" data-tab="n">N Scale (1:160)</button>
+          <button class="h2-scale-tab" data-tab="o">O Scale (1:48)</button>
+          <button class="h2-scale-tab" data-tab="z">Z Scale (1:220)</button>
+        </div>
+
+        <!-- HO -->
+        <div class="h2-scale-panel active" id="tab-ho">
+          <div class="h2-builder-track py-6">
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_4.jpg" alt="Community layout 1" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span
+                    class="tag tag-green">Landscape</span></div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Appalachian Mountain Line</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">12×8 ft
+                  with scratch-built tunnels and hand-painted rock faces.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">R. Kowalski</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
                 </div>
               </div>
             </div>
-
-            <div class="forum-item bg-slate-800 border-slate-700">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="tag tag-grey">Milestone</span>
-                    <span class="text-slate-500 text-xs font-mono">1 week ago</span>
-                  </div>
-                  <h4 class="text-slate-200 font-serif font-bold text-sm mb-1">
-                    5 Years of Community Contributions
-                  </h4>
-                  <p class="text-slate-500 text-xs">Celebrating <strong class="text-brass">VintageRails_Bob</strong></p>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_3.jpg" alt="HO Layout 2" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-brass">Coastal</span>
                 </div>
-                <div class="text-center flex-shrink-0">
-                  <div class="text-amber-400 font-bold text-lg font-serif">🎖️</div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Pacific Coast Branch Line</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">
+                  Athearn-powered with timber trestle bridges and working harbor.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">D. Andersen</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
                 </div>
               </div>
             </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_5.jpg" alt="HO Layout 3" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span
+                    class="tag tag-grey">Industrial</span></div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Pittsburgh Steel Division</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">Working
+                  blast furnace, 6-track yard, and scratch-built steel mill.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">T. Mallory</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_1.jpg" alt="New post" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-green">Seasonal</span>
+                </div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Winter Canyon Freight Run</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">
+                  Snow-laden pine slopes, frozen river crossing, and a mountain depot.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">A. Reeves</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img"
+                style="background:#1e293b; display:flex; align-items:center; justify-content:center;">
+                <div style="text-align:center; padding:1rem;">
+                  <i class="fa-solid fa-plus"
+                    style="font-size:2rem; color:var(--brass); margin-bottom:0.5rem; display:block;"></i>
+                  <span
+                    style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.1em; text-transform:uppercase;">248
+                    More HO Layouts</span>
+                </div>
+              </div>
+              <div style="padding:1rem; text-align:center;">
+                <a href="gallery.html" class="btn-primary"
+                  style="width:100%; justify-content:center; font-size:0.75rem;">Browse All HO</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- N -->
+        <div class="h2-scale-panel" id="tab-n">
+          <div class="h2-builder-track py-6">
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_2.jpg" alt="New post" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-brass">Urban</span>
+                </div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Chicago Yards, 1962</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">
+                  Classification yards with Bachmann diesel units and LED station lighting.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">M. Thompson</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="./assets/im2.jpg" alt="N Scale 2" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-green">Rural</span>
+                </div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Southern Railway Piedmont Run</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">Kato
+                  rolling stock through tobacco country with handmade barns.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">J. Vasquez</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img"
+                style="background:#1e293b; display:flex; align-items:center; justify-content:center;">
+                <div style="text-align:center; padding:1rem;">
+                  <i class="fa-solid fa-plus"
+                    style="font-size:2rem; color:var(--brass); margin-bottom:0.5rem; display:block;"></i>
+                  <span
+                    style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.1em; text-transform:uppercase;">184
+                    More N Scale</span>
+                </div>
+              </div>
+              <div style="padding:1rem; text-align:center;">
+                <a href="gallery.html" class="btn-primary"
+                  style="width:100%; justify-content:center; font-size:0.75rem;">Browse All N Scale</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- O -->
+        <div class="h2-scale-panel" id="tab-o">
+          <div class="h2-builder-track py-6">
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_5.jpg" alt="O Scale 1" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-brass">Desert</span>
+                </div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Desert Southwest MTH O Gauge</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">MTH
+                  DCS-equipped through the Sonoran Desert with sculpted saguaro cacti.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">P. Chen</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img">
+                <img src="assets/train_6.jpg" alt="O Scale 2" loading="lazy" />
+              </div>
+              <div style="padding:1rem;">
+                <div style="display:flex; gap:0.4rem; margin-bottom:0.5rem;"><span class="tag tag-green">Seasonal</span>
+                </div>
+                <h4
+                  style="font-family:var(--font-heading); font-weight:800; font-size:1rem; color:var(--card-text); margin-bottom:0.3rem;">
+                  Winter Village — Lionel O Gauge</h4>
+                <p style="font-size:0.8rem; color:var(--card-subtext); line-height:1.5; margin-bottom:0.8rem;">Classic
+                  postwar rolling stock with hand-laid snow and miniature LED villages.</p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">S. Barnes</span>
+                  <a href="gallery.html" class="btn-green" style="font-size:0.65rem; padding:0.4rem 0.8rem;">View →</a>
+                </div>
+              </div>
+            </div>
+            <div class="h2-builder-card">
+              <div class="h2-builder-img"
+                style="background:#1e293b; display:flex; align-items:center; justify-content:center;">
+                <div style="text-align:center; padding:1rem;">
+                  <i class="fa-solid fa-plus"
+                    style="font-size:2rem; color:var(--brass); margin-bottom:0.5rem; display:block;"></i>
+                  <span
+                    style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.1em; text-transform:uppercase;">96
+                    More O Scale</span>
+                </div>
+              </div>
+              <div style="padding:1rem; text-align:center;">
+                <a href="gallery.html" class="btn-primary"
+                  style="width:100%; justify-content:center; font-size:0.75rem;">Browse All O Scale</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Z -->
+        <div class="h2-scale-panel" id="tab-z">
+          <div style="padding:4rem 0; text-align:center;">
+            <i class="fa-solid fa-magnifying-glass"
+              style="font-size:2.5rem; color:var(--brass); margin-bottom:1rem; display:block; opacity:0.5;"></i>
+            <p class="section-label" style="margin-bottom:0.5rem;">Coming Soon</p>
+            <h3
+              style="font-family:var(--font-heading); font-weight:900; font-size:1.4rem; margin-bottom:1rem; color:var(--ink);">
+              Z Scale Gallery Launching Soon</h3>
+            <p style="color:#64748b; max-width:380px; margin:0 auto 1.5rem; font-size:0.875rem;">We're curating the
+              finest micro-scale layouts. Be the first to know when it drops.</p>
+            <a href="auth.html" class="btn-primary">Notify Me</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS / PROCESS ────────────────────────────── -->
+    <section style="background: var(--section-bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+      <div class="max-w-7xl mx-auto px-6 pt-12 pb-0">
+        <div style="text-align:center; margin-bottom:0;">
+          <p class="section-label"><i class="fa-solid fa-route mr-1"></i> How It Works</p>
+          <h2 class="section-title">From Newbie to Layout Master</h2>
+          <div class="divider" style="margin:1rem auto 2rem;"></div>
+          <p style="color:var(--card-subtext); max-width:520px; margin:0 auto 0; font-size:0.95rem;">
+            IronRail is structured around the four phases every model railroader passes through. We meet you where you
+            are.
+          </p>
+        </div>
+      </div>
+      <div class="h2-steps" style="margin-top:2rem;">
+        <div class="h2-step" style="border-color: var(--card-border);">
+          <div class="h2-step-num"></div>
+          <i class="fa-solid fa-user-plus"
+            style="font-size:1.5rem; color:var(--brass); margin-bottom:1rem; display:block;"></i>
+          <h3
+            style="font-family:var(--font-heading); font-weight:900; font-size:1.1rem; color:var(--ink); margin-bottom:0.75rem;">
+            Join Free</h3>
+          <p style="color:var(--card-subtext); font-size:0.875rem; line-height:1.7;">Create your profile in 60 seconds. No credit
+            card needed. Access community forums and the layout gallery immediately.</p>
+        </div>
+        <div class="h2-step" style="border-color: var(--card-border);">
+          <i class="fa-solid fa-magnifying-glass"
+            style="font-size:1.5rem; color:var(--brass); margin-bottom:1rem; display:block;"></i>
+          <h3
+            style="font-family:var(--font-heading); font-weight:900; font-size:1.1rem; color:var(--ink); margin-bottom:0.75rem;">
+            Explore & Learn</h3>
+          <p style="color:var(--card-subtext); font-size:0.875rem; line-height:1.7;">Browse thousands of layouts by scale, theme,
+            and era. Read detailed build logs, watch technique videos, and follow top builders.</p>
+        </div>
+        <div class="h2-step" style="border-color: var(--card-border);">
+          <i class="fa-solid fa-camera"
+            style="font-size:1.5rem; color:var(--brass); margin-bottom:1rem; display:block;"></i>
+          <h3
+            style="font-family:var(--font-heading); font-weight:900; font-size:1.1rem; color:var(--ink); margin-bottom:0.75rem;">
+            Share Your Work</h3>
+          <p style="color:var(--card-subtext); font-size:0.875rem; line-height:1.7;">Upload your layout photos, write a build log,
+            and get feedback from experienced hobbyists. Every submission is reviewed by our moderators.</p>
+        </div>
+        <div class="h2-step" style="border-right:none; background:rgba(245,158,11,0.05);">
+          <i class="fa-solid fa-trophy"
+            style="font-size:1.5rem; color:var(--brass); margin-bottom:1rem; display:block;"></i>
+          <h3
+            style="font-family:var(--font-heading); font-weight:900; font-size:1.1rem; color:var(--ink); margin-bottom:0.75rem;">
+            Earn Recognition</h3>
+          <p style="color:var(--card-subtext); font-size:0.875rem; line-height:1.7;">Get voted Layout of the Month, earn builder
+            badges, and qualify for our annual Iron Rail Awards — the hobby's highest community honor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PHOTO MOSAIC ─────────────────────────────────────── -->
+    <section class="py-12 section-dark stripe-bg">
+      <div class="max-w-7xl mx-auto px-6 mb-8">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <p class="section-label"><i class="fa-solid fa-images mr-1"></i> Photo Gallery</p>
+            <h2 class="section-title light">A Glimpse of What Awaits</h2>
+          </div>
+          <a href="gallery.html" class="btn-secondary">Full Gallery <i class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+      <div class="h2-mosaic max-w-7xl mx-auto px-6">
+        <div class="h2-mosaic-item">
+          <img src="assets/train_1.jpg" alt="Hero layout" loading="lazy" />
+          <div class="h2-mosaic-label">Appalachian Mountain Line · HO Scale</div>
+        </div>
+        <div class="h2-mosaic-item">
+          <img src="assets/train_2.jpg" alt="N layout" loading="lazy" />
+          <div class="h2-mosaic-label">Chicago Yards 1962 · N Scale</div>
+        </div>
+        <div class="h2-mosaic-item">
+          <img src="assets/train_3.jpg" alt="HO landscape" loading="lazy" />
+          <div class="h2-mosaic-label">Blue Ridge Run · HO Scale</div>
+        </div>
+        <div class="h2-mosaic-item">
+          <img src="assets/train_4.jpg" alt="Lionel O" loading="lazy" />
+          <div class="h2-mosaic-label">Winter Village · O Scale</div>
+        </div>
+        <div class="h2-mosaic-item">
+          <img src="assets/train_5.jpg" alt="Desert O" loading="lazy" />
+          <div class="h2-mosaic-label">Sonoran Desert · O Scale</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ─────────────────────────────────────── -->
+    <section style="background:#0f172a; padding:0;">
+      <div class="max-w-7xl mx-auto px-6 py-12 pb-6">
+        <div style="text-align:center; margin-bottom:3rem;">
+          <p class="section-label"><i class="fa-solid fa-comment-dots mr-1"></i> From the Community</p>
+          <h2 class="section-title light">Why Hobbyists Choose IronRail</h2>
+        </div>
+      </div>
+      <div class="h2-testimonial-rail">
+        <div class="h2-testimonial">
+          <p
+            style="color:#cbd5e1; font-size:0.95rem; line-height:1.8; margin-bottom:1.5rem; position:relative; z-index:1;">
+            I've been modeling HO for 22 years and IronRail is the first community that actually treats layout
+            documentation like an art form. The build log system is phenomenal.
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <img src="assets/profile_kowalski.png" alt="R. Kowalski"
+              style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--brass);" />
+            <div>
+              <div style="font-family:var(--font-heading); font-weight:700; color:#f8f7f4; font-size:0.875rem;">R.
+                Kowalski</div>
+              <div style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.08em;">HO
+                Scale · 22 years</div>
+            </div>
+            <div style="margin-left:auto; color:var(--brass); font-size:0.75rem;">★★★★★</div>
+          </div>
+        </div>
+        <div class="h2-testimonial">
+          <p
+            style="color:#cbd5e1; font-size:0.95rem; line-height:1.8; margin-bottom:1.5rem; position:relative; z-index:1;">
+            As an N scale beginner I was intimidated by the hobby. IronRail's forum community answered every single
+            question I had without making me feel out of place. Joined. Stayed. Built my first layout.
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <img src="assets/profile_hanna.png" alt="MicroLayout_Hanna"
+              style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--brass);" />
+            <div>
+              <div style="font-family:var(--font-heading); font-weight:700; color:#f8f7f4; font-size:0.875rem;">
+                MicroLayout_Hanna</div>
+              <div style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.08em;">N
+                Scale · Beginner</div>
+            </div>
+            <div style="margin-left:auto; color:var(--brass); font-size:0.75rem;">★★★★★</div>
+          </div>
+        </div>
+        <div class="h2-testimonial">
+          <p
+            style="color:#cbd5e1; font-size:0.95rem; line-height:1.8; margin-bottom:1.5rem; position:relative; z-index:1;">
+            My O gauge layout got Layout of the Month last November. The traffic to my build log tripled overnight.
+            IronRail put my hobby on the map — literally and figuratively.
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <img src="assets/profile_chen.png" alt="P. Chen"
+              style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--brass);" />
+            <div>
+              <div style="font-family:var(--font-heading); font-weight:700; color:#f8f7f4; font-size:0.875rem;">P. Chen
+              </div>
+              <div style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b; letter-spacing:0.08em;">O
+                Scale · 11 years</div>
+            </div>
+            <div style="margin-left:auto; color:var(--brass); font-size:0.75rem;">★★★★★</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA BAND ────────────────────────────────────────── -->
-    <section class="py-16" style="background: var(--pullman-green);">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <p class="font-mono text-amber-400 text-xs tracking-widest uppercase mb-3">Start your journey today</p>
-        <h2 class="font-serif font-black text-3xl text-white mb-4">
-          Every great layout starts with a single track.
-        </h2>
-        <p class="text-emerald-200 mb-8 text-lg">
-          Whether you're a beginner or a seasoned pro, our community is here to
-          support your model railroading journey every step of the way.
+    <!-- ── SUPPORTED BRANDS ─────────────────────────────────── -->
+    <section class="py-14" style="background:var(--off-white); border-top:1px solid var(--card-border);">
+      <div class="max-w-7xl mx-auto px-6">
+        <p
+          style="text-align:center; font-family:var(--font-mono); font-size:0.7rem; color:#94a3b8; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:2rem;">
+          Reviewed & documented layouts featuring equipment from
         </p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="service.html" class="btn-primary">
-            <i class="fa-solid fa-rocket"></i>
-            Get Started
-          </a>
-          <a href="about.html" class="btn-secondary">
-            <i class="fa-solid fa-question-circle"></i>
-            Learn More
-          </a>
+        <div class="h2-brand-row">
+          <span class="h2-brand-logo">Athearn</span>
+          <span class="h2-brand-logo">Kato</span>
+          <span class="h2-brand-logo">Lionel</span>
+          <span class="h2-brand-logo">MTH</span>
+          <span class="h2-brand-logo">Bachmann</span>
+          <span class="h2-brand-logo">Atlas</span>
+          <span class="h2-brand-logo">Walthers</span>
+          <span class="h2-brand-logo">Märklin</span>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <!-- ── FOOTER (unchanged) ──────────────────────────────── -->
   <footer class="site-footer py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
         <div class="md:col-span-2">
           <a href="index.html" class="nav-logo text-2xl mb-3 inline-flex">
-            <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" /> Iron<span>Rail</span>
+            <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" />
+            Iron<span>Rail</span>
           </a>
           <p class="text-slate-500 text-sm max-w-xs mt-3 leading-relaxed">
-            The premier online community for model train and railroad layout enthusiasts worldwide. Built by hobbyists, for hobbyists.
+            The premier online community for model train and railroad layout enthusiasts worldwide. Built by hobbyists,
+            for hobbyists.
           </p>
           <div class="flex gap-4 mt-5">
-            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
-            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-reddit-alien fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i
+                class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i
+                class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i
+                class="fab fa-youtube fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i
+                class="fab fa-reddit-alien fa-lg"></i></a>
           </div>
         </div>
         <div>
           <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">EXPLORE</h4>
           <a href="gallery.html" class="footer-link">Layout Gallery</a>
+          <a href="blog.html" class="footer-link">The Blog</a>
           <a href="gallery.html" class="footer-link">HO Scale Layouts</a>
           <a href="gallery.html" class="footer-link">N Scale Layouts</a>
           <a href="gallery.html" class="footer-link">O Scale Layouts</a>
@@ -324,5 +1424,18 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Scale tabs
+    document.querySelectorAll('.h2-scale-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.h2-scale-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.h2-scale-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const panel = document.getElementById('tab-' + tab.dataset.tab);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  </script>
 </body>
+
 </html>

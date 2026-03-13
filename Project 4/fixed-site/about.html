@@ -21,12 +21,13 @@
 
       <!-- Desktop Navigation -->
       <nav class="desktop-nav">
-        <a href="index.html" class="nav-link ">Home</a>
-        <a href="home2.html" class="nav-link ">Home 2</a>
-        <a href="gallery.html" class="nav-link ">Gallery</a>
-        <a href="service.html" class="nav-link ">Membership</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="service.html" class="nav-link">Membership</a>
         <a href="about.html" class="nav-link active">About</a>
-        <a href="contact.html" class="nav-link ">Contact</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
         <a href="auth.html" class="btn-primary nav-hub-btn">
           <i class="fa-solid fa-user-plus"></i> Sign Up
@@ -51,6 +52,7 @@
       <a href="index.html">Home</a>
       <a href="home2.html">Home 2</a>
       <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
       <a href="service.html">Membership</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -100,7 +102,7 @@
         </div>
         <div class="relative">
           <img
-            src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=700&q=80"
+            src="assets/train_9.jpg"
             alt="Model railroad layout detail"
             class="w-full object-cover"
             style="height: 420px;"
@@ -247,33 +249,54 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
           <div class="text-center p-6 bg-slate-800 border border-slate-700 hover:border-amber-500 transition-colors">
-            <div class="w-20 h-20 rounded-full bg-emerald-900 flex items-center justify-center text-amber-400 text-2xl font-serif font-black mx-auto mb-4">EW</div>
+            <img src="assets/profile_whitmore.png" alt="Earl Whitmore" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 mx-auto mb-4" />
             <h4 class="font-serif font-bold text-white mb-1">Earl Whitmore</h4>
             <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-2">Founder & Admin</p>
             <p class="text-slate-400 text-xs">HO modeler since 1971. Southern Railway prototype specialist. 40+ years of weathering experience.</p>
           </div>
 
           <div class="text-center p-6 bg-slate-800 border border-slate-700 hover:border-amber-500 transition-colors">
-            <div class="w-20 h-20 rounded-full bg-emerald-900 flex items-center justify-center text-amber-400 text-2xl font-serif font-black mx-auto mb-4">LH</div>
+            <img src="assets/profile_hargrove.png" alt="Linda Hargrove" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 mx-auto mb-4" />
             <h4 class="font-serif font-bold text-white mb-1">Linda Hargrove</h4>
             <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-2">Gallery Curator</p>
             <p class="text-slate-400 text-xs">N scale minimalist and layout photographer. Creator of the famous "N in a Drawer" challenge.</p>
           </div>
 
           <div class="text-center p-6 bg-slate-800 border border-slate-700 hover:border-amber-500 transition-colors">
-            <div class="w-20 h-20 rounded-full bg-emerald-900 flex items-center justify-center text-amber-400 text-2xl font-serif font-black mx-auto mb-4">BP</div>
+            <img src="assets/profile_pacheco.png" alt="Bob Pacheco" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 mx-auto mb-4" />
             <h4 class="font-serif font-bold text-white mb-1">Bob Pacheco</h4>
             <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-2">Forum Moderator</p>
             <p class="text-slate-400 text-xs">O gauge Lionel postwar collector and DCS/Legacy electronics expert with 800+ forum posts.</p>
           </div>
 
           <div class="text-center p-6 bg-slate-800 border border-slate-700 hover:border-amber-500 transition-colors">
-            <div class="w-20 h-20 rounded-full bg-emerald-900 flex items-center justify-center text-amber-400 text-2xl font-serif font-black mx-auto mb-4">SR</div>
+            <img src="assets/profile_reyes.png" alt="Sasha Reyes" class="w-20 h-20 rounded-full object-cover border-2 border-amber-400 mx-auto mb-4" />
             <h4 class="font-serif font-bold text-white mb-1">Sasha Reyes</h4>
             <p class="text-amber-400 text-xs font-mono uppercase tracking-wider mb-2">Tech & DCC Mod</p>
             <p class="text-slate-400 text-xs">Electronics engineer and DCC/sound specialist. Runs the annual decoder comparison shootout thread.</p>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VOLUNTEER ───────────────────────────────────────── -->
+    <section class="py-20 section-light border-y border-slate-100">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <i class="fa-solid fa-hands-helping text-amber-600 text-5xl mb-6"></i>
+        <h2 class="text-3xl md:text-5xl font-serif font-black text-slate-900 mb-6 section-title">Keep the Tradition Alive</h2>
+        <p class="text-slate-600 text-lg mb-10 leading-relaxed">
+          Iron Rail is 100% volunteer-run. Whether you're a DCC expert, a history buff, or just a great 
+          community moderator, we need your help to keep this railroad running on time. Join our crew 
+          and help us build the future of model railroading.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="contact.html" class="btn-primary py-4 px-10">
+            Become a Moderator
+          </a>
+          <a href="contact.html" class="btn-secondary py-4 px-10">
+            Contribute Articles
+          </a>
         </div>
       </div>
     </section>
@@ -301,6 +324,7 @@
         <div>
           <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">EXPLORE</h4>
           <a href="gallery.html" class="footer-link">Layout Gallery</a>
+          <a href="blog.html" class="footer-link">The Blog</a>
           <a href="gallery.html" class="footer-link">HO Scale Layouts</a>
           <a href="gallery.html" class="footer-link">N Scale Layouts</a>
           <a href="gallery.html" class="footer-link">O Scale Layouts</a>

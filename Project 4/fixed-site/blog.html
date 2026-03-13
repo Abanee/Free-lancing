@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Iron Dispatch Blog — Iron Rail Community</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* BLOG EXCLUSIVE STYLES */
+    .blog-hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('assets/train_7.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .blog-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      overflow: hidden;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: var(--brass);
+    }
+    .blog-img-container {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .blog-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .blog-card:hover .blog-img-container img {
+      transform: scale(1.1);
+    }
+    .blog-category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--brass);
+      color: var(--pullman-dark);
+      padding: 0.25rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      pointer-events: none;
+    }
+    .blog-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="nav-logo flex-shrink-0">
+        <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" />
+        Iron<span>Rail</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="service.html" class="nav-link">Membership</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
+        <a href="auth.html" class="btn-primary nav-hub-btn">
+          <i class="fa-solid fa-user-plus"></i> Sign Up
+        </a>
+      </nav>
+
+      <div class="nav-right-controls">
+        <button class="rtl-toggle" aria-label="Toggle RTL/LTR" title="Switch text direction">
+          <span>RTL</span>
+        </button>
+        <button class="theme-toggle" aria-label="Toggle theme" title="Switch theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="service.html">Membership</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="auth.html" class="mobile-auth-btn">Sign In / Join Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── BLOG HERO ──────────────────────────────────────── -->
+    <section class="blog-hero">
+      <div class="max-w-4xl mx-auto px-6">
+        <p class="section-label" style="justify-content:center;"><i class="fa-solid fa-newspaper mr-1"></i> The Iron Dispatch</p>
+        <h1 class="text-4xl md:text-6xl font-serif font-black text-white mb-6">Expertise, Stories, and <span class="text-amber-500 italic">Layout Inspiration</span></h1>
+        <p class="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          Deep dives into modeling techniques, historical research, and the legendary layouts that define our community.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── FEATURED POST ──────────────────────────────────── -->
+    <section class="py-16 bg-slate-900 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative group cursor-pointer overflow-hidden">
+            <img src="assets/train_8.jpg" alt="Featured Post" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+          </div>
+          <div>
+            <span class="tag tag-brass mb-4 inline-block">Featured Feature</span>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">Mastering Desert Geology: P. Chen's Sonoran MTH Empire</h2>
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              Discover how one modeler used actual Sonoran soil, hand-sculpted saguaros, and custom-mixed acrylics to create a desert landscape so realistic you can almost feel the heat. A 12-page deep dive into the O scale masterpiece.
+            </p>
+            <div class="flex items-center gap-4 mb-8">
+              <img src="assets/profile_chen.png" alt="P. Chen" class="w-10 h-10 rounded-full object-cover border border-amber-500" />
+              <div>
+                <p class="text-white text-sm font-bold">P. Chen</p>
+                <p class="text-slate-500 text-xs font-mono">Master Modeler · 12 Min Read</p>
+              </div>
+            </div>
+            <a href="#" class="btn-primary py-3 px-8">Read Full Article</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LATEST ARTICLES ────────────────────────────────── -->
+    <section class="py-20 section-light">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+          <div>
+            <p class="section-label"><i class="fa-solid fa-bolt mr-1"></i> Fresh Off the Rails</p>
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="flex gap-2">
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 font-mono text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-colors">Tutorials</button>
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 font-mono text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-colors">History</button>
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 font-mono text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-white transition-colors">Tech</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Blog Card 1 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Tutorial</span>
+              <img src="assets/train_3.jpg" alt="Tutorial" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">March 12, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Scratch-Building Timber Trestles: A Definitive Guide</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                Stop buying plastic bridges. Learn the geometry and structural secrets to building prototype-accurate timber trestles from basswood and stained cedar.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_whitmore.png" alt="Earl Whitmore" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">E. Whitmore</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Reviews</span>
+              <img src="assets/train_5.jpg" alt="Review" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">March 10, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Genesis vs. Broadway Limited: The Big HO Steam Shootout</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                We put the latest Challenger models through their paces on the heavy grade. DCC performance, sound fidelity, and pulling power — which brand wins?
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_reyes.png" alt="Sasha Reyes" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">S. Reyes</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">History</span>
+              <img src="assets/train_2.jpg" alt="History" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">March 08, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">The Chicago Yards in Transition: 1960-1965</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                A historical look at the shift from steam to diesel in the world's busiest rail hub, and how to model the gritty realism of the era.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_hargrove.png" alt="Linda Hargrove" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">L. Hargrove</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 4 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Tech</span>
+              <img src="assets/train_7.jpg" alt="Tech" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">March 05, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Arduino-Powered Signal Control for Dummies</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                You don't need a computer science degree to automate your layout signals. A step-by-step guide to using inexpensive microcontrollers.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_reyes.png" alt="Sasha Reyes" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">S. Reyes</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 5 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Spotlight</span>
+              <img src="assets/train_4.jpg" alt="Spotlight" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">March 02, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Layout of the Month: The Appalachian Line</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                R. Kowalski's HO masterpiece features hand-laid track, realistic weathering, and a fully functional coal loading operation.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_kowalski.png" alt="R. Kowalski" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">R. Kowalski</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 6 -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Opinion</span>
+              <img src="assets/train_1.jpg" alt="Opinion" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">February 28, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Is 3D Printing the Future (or the Death) of Scratch-Building?</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                A controversial look at the rise of resin printing in the hobby. Does it kill the craft, or just change the toolset for the modern builder?
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_pacheco.png" alt="Bob Pacheco" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">B. Pacheco</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- NEW BLOG ARTICLES -->
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Electronics</span>
+              <img src="assets/train_6.jpg" alt="DCC Basics" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">February 25, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">DCC Wiring: The "No-Magic" Approach</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                Demystifying layout power. How to wire your layout for reliable DCC operation without specialized electrical engineering knowledge.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_kowalski.png" alt="R. Kowalski" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">R. Kowalski</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-img-container">
+              <span class="blog-category">Scenery</span>
+              <img src="assets/train_9.jpg" alt="Trees" />
+            </div>
+            <div class="p-6">
+              <span class="blog-date">February 22, 2026</span>
+              <h3 class="font-serif font-bold text-xl text-slate-800 mb-3 hover:text-amber-600 cursor-pointer transition-colors">Realistic Conifers from Filter Fibers</h3>
+              <p class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                A budget-friendly tutorial on creating mass quantities of realistic pine trees using common household materials and grass strands.
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <img src="assets/profile_hanna.png" alt="M. Hanna" class="w-6 h-6 rounded-full object-cover" />
+                  <span class="text-xs text-slate-600 font-bold">M. Hanna</span>
+                </div>
+                <a href="#" class="text-amber-600 text-xs font-mono font-bold uppercase tracking-widest">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-16">
+          <button class="btn-primary px-12 py-4">Load Older Posts</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEWSLETTER ──────────────────────────────────────── -->
+    <section class="py-20 bg-emerald-900 section-dark border-t border-amber-500/20">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-serif font-black text-white mb-6">Stay on Track</h2>
+        <p class="text-slate-400 mb-10 text-lg">
+          Join 4,200+ subscribers who get our best articles, tech tips, and layout features delivered directly to their inbox every Thursday morning.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-0 max-w-md mx-auto">
+          <input type="email" placeholder="Your best email" class="flex-1 p-4 bg-slate-950 border border-slate-800 text-white outline-none focus:border-amber-500 transition-colors" />
+          <button class="bg-amber-500 text-slate-900 font-mono font-bold uppercase tracking-widest px-8 py-4 hover:bg-white transition-colors">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        <div class="md:col-span-2">
+          <a href="index.html" class="nav-logo text-2xl mb-3 inline-flex">
+            <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" /> Iron<span>Rail</span>
+          </a>
+          <p class="text-slate-500 text-sm max-w-xs mt-3 leading-relaxed">
+            The premier online community for model train and railroad layout enthusiasts worldwide. Built by hobbyists, for hobbyists.
+          </p>
+          <div class="flex gap-4 mt-5">
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="#" class="text-slate-500 hover:text-amber-400 transition-colors"><i class="fab fa-reddit-alien fa-lg"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">EXPLORE</h4>
+          <a href="gallery.html" class="footer-link">Layout Gallery</a>
+          <a href="blog.html" class="footer-link">The Blog</a>
+          <a href="gallery.html" class="footer-link">HO Scale Layouts</a>
+          <a href="gallery.html" class="footer-link">N Scale Layouts</a>
+          <a href="gallery.html" class="footer-link">O Scale Layouts</a>
+          <a href="service.html" class="footer-link">Product Reviews</a>
+        </div>
+        <div>
+          <h4 class="text-slate-300 font-bold text-xs tracking-widest uppercase mb-4 font-mono">COMMUNITY</h4>
+          <a href="about.html" class="footer-link">Forum</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="service.html" class="footer-link">Membership</a>
+          <a href="service.html" class="footer-link">Advertise</a>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-wrap justify-between items-center gap-4">
+        <p class="text-slate-600 text-xs font-mono">© 2026 IronRail Community. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-mono">Privacy</a>
+          <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-mono">Terms</a>
+          <a href="#" class="text-slate-600 hover:text-slate-400 text-xs font-mono">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
