@@ -448,6 +448,7 @@ body.theme-light .site-header { background: #1e293b; }
 .mobile-menu a.mobile-auth-btn:hover {
   background: var(--brass-light);
   transform: translateY(-2px);
+  color: #1c1917 !important;
 }
 
 .mobile-menu a:hover { color: var(--brass); }
@@ -562,13 +563,13 @@ body.theme-light .site-header { background: #1e293b; }
   align-items: center;
   gap: 0.5rem;
   background: transparent;
-  color: #f8f7f4;
+  color: var(--ink);
   font-weight: 700;
   font-size: 0.875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.8rem 1.8rem;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: 2px solid var(--ink);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
@@ -579,6 +580,17 @@ body.theme-light .site-header { background: #1e293b; }
   border-color: var(--brass);
   color: var(--brass);
   transform: translateY(-2px);
+}
+
+/* Force white version for dark backgrounds / sections if needed */
+.section-dark .btn-secondary {
+  color: #f8f7f4;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.section-dark .btn-secondary:hover {
+  color: var(--brass);
+  border-color: var(--brass);
 }
 
 .btn-green {
@@ -1172,6 +1184,10 @@ body.theme-light .footer-link {
 
 body.theme-light .footer-link:hover {
   color: #d97706;
+}
+
+body.theme-light .site-footer h4 {
+  color: #111827 !important;
 }
 
 /* ── Utility ─────────────────────────────────────────────── */
