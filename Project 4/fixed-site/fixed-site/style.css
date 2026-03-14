@@ -1533,3 +1533,23 @@ body.theme-dark .glass-panel {
   background: rgba(22, 36, 24, 0.6);
   border-color: rgba(42, 64, 48, 0.6);
 }
+
+/* GLOBAL DARK MODE HOVER FIXES */
+body.theme-dark .hover\:bg-slate-50:hover { 
+  background-color: #1e3024 !important; 
+}
+body.theme-dark .hover\:bg-slate-100:hover { 
+  background-color: #1e3024 !important; 
+}
+
+/* Home 2 Brand Logo Visibility */
+body.theme-dark .h2-brand-logo {
+  color: #8fada0;
+  border-color: #2a4030;
+  background: #111f18;
+}
+body.theme-dark .h2-brand-logo:hover {
+  color: var(--brass);
+  border-color: var(--brass);
+  background: #1e3024;
+}

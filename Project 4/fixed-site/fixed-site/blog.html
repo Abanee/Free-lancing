@@ -66,6 +66,30 @@
       margin-bottom: 0.5rem;
       display: block;
     }
+
+    /* DARK MODE READABILITY OVERRIDES */
+    body.theme-dark .blog-card h3 {
+      color: var(--card-text) !important;
+    }
+    body.theme-dark .blog-card p {
+      color: var(--card-subtext) !important;
+    }
+    body.theme-dark .blog-card .blog-date {
+      color: var(--card-subtext) !important;
+    }
+    body.theme-dark .blog-card .text-slate-600 {
+      color: var(--card-subtext) !important;
+    }
+
+    /* Newsletter Button Visibility in Dark Mode */
+    body.theme-dark .section-dark button {
+      background: var(--brass) !important;
+      color: var(--ink) !important;
+    }
+    body.theme-dark .section-dark button:hover {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
   </style>
 </head>
 <body>
