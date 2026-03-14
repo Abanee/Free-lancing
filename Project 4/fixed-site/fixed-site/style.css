@@ -79,27 +79,51 @@ body.theme-light {
 }
 
 /* ── DARK THEME ─────────────────────────────────────────── */
+/*
+   Dark palette philosophy: "Deep Forest Night"
+   Rather than pure black, we ground every surface in a very
+   dark desaturated forest-green — echoing the Pullman green
+   brand identity. This creates warmth and visual depth that
+   pure black can never achieve. A 4-stop surface system:
+
+   Page bg  → #0d1a14  (deepest — body background)
+   Section  → #111f18  (slightly lighter — alternate sections)
+   Card     → #162418  (card surfaces — clearly distinct from bg)
+   Elevated → #1e3024  (hovered/featured cards, modals)
+   Borders  → #2a4030  (always visible, never harsh)
+*/
 body.theme-dark {
+  /* Brand greens — lightened for dark bg legibility */
   --pullman-green:   #10b981;
-  --pullman-dark:    #064e3b;
-  --steam-grey:      #111827;
-  --steam-mid:       #94a3b8;
-  --brass:           #fbbf24;
-  --brass-light:     #fde047;
-  --rust:            #f97316;
-  --off-white:       #000000;
-  --parchment:       #422006;
-  --ink:             #ffffff;
+  --pullman-dark:    #065f46;
+
+  /* Surface system — replaces the flat #000000 problem */
+  --steam-grey:      #162418;   /* used as card-level surface in components */
+  --steam-mid:       #9ab8a8;   /* mid-tone text, borders */
+
+  /* Accent colors — same brass identity, slightly richer */
+  --brass:           #f59e0b;
+  --brass-light:     #fcd34d;
+  --rust:            #fb923c;
+
+  /* Page & type */
+  --off-white:       #0d1a14;   /* THE FIX: deep forest, not pure black */
+  --parchment:       #1a1800;   /* warm amber-tinted dark for parchment areas */
+  --ink:             #eef2ee;   /* soft warm-white, easier on eyes than #fff */
   --rail-silver:     #cbd5e1;
-  --card-bg:         #000000;
-  --card-border:     #1f2937;
-  --card-text:       #ffffff;
-  --card-subtext:    #94a3b8;
-  --section-bg:      #000000;
-  --footer-bg:       #000000;
-  --footer-text:     #ffffff;
-  --footer-link:     #94a3b8;
-  --footer-link-hover: #fbbf24;
+
+  /* Card system — 4 distinct levels */
+  --card-bg:         #162418;   /* card surface (clearly above page bg) */
+  --card-border:     #2a4030;   /* always visible border */
+  --card-text:       #eef2ee;   /* same as --ink */
+  --card-subtext:    #8fada0;   /* muted secondary text */
+
+  /* Section & footer */
+  --section-bg:      #111f18;   /* alternate section bg */
+  --footer-bg:       #0a1510;   /* darkest — footer feels anchored */
+  --footer-text:     #c8ddd4;
+  --footer-link:     #7a9e90;
+  --footer-link-hover: #f59e0b;
 }
 
 /* ── Reset & Base ────────────────────────────────────────── */
@@ -144,8 +168,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-heading); line-height: 1.25; }
   transition: all 0.3s ease;
 }
 
-/* Dark theme header */
-body.theme-dark .site-header { background: #1e293b; }
+/* Dark theme header — slightly elevated above page bg */
+body.theme-dark .site-header { background: #0f1c15; border-bottom-color: #2a4030; }
 body.theme-light .site-header { background: #1e293b; }
 
 .site-header::before {
@@ -709,13 +733,35 @@ body.theme-light .site-header { background: #1e293b; }
   border-left: 3px solid transparent;
   background: var(--card-bg);
   border-bottom: 1px solid var(--card-border);
-  transition: border-color 0.2s, background 0.2s;
+  transition: all 0.3s ease;
   cursor: pointer;
+}
+
+.forum-item h4 {
+  color: var(--card-text);
+  transition: color 0.3s ease;
 }
 
 .forum-item:hover {
   border-left-color: var(--brass);
-  background: rgba(245,158,11,0.07);
+  background: var(--steam-grey);
+}
+
+.forum-item:hover h4 {
+  color: #f8f7f4;
+}
+
+.forum-item:hover p, 
+.forum-item:hover .text-slate-500 {
+  color: #94a3b8;
+}
+
+.forum-item:hover .text-amber-400 {
+  color: var(--brass);
+}
+
+.forum-item:hover .tag {
+  border-color: rgba(245, 158, 11, 0.5);
 }
 
 /* Forum on dark sections stays dark */
@@ -878,61 +924,63 @@ body.theme-light .site-header { background: #1e293b; }
   color: var(--card-text);
 }
 
-/* Override hardcoded white bg in dashboard cards */
+/* ── Dark mode Tailwind class overrides ────────────────── */
+/* All backgrounds now use the forest-green surface system  */
+
 body.theme-dark .bg-white {
-  background: #1e293b !important;
+  background: #1e3024 !important; /* elevated card level */
 }
 
 body.theme-dark .border-slate-200 {
-  border-color: #334155 !important;
+  border-color: #2a4030 !important;
 }
 
 body.theme-dark .text-slate-900 {
-  color: #f1f5f9 !important;
+  color: #eef2ee !important;
 }
 
 body.theme-dark .text-slate-700 {
-  color: #cbd5e1 !important;
+  color: #c8ddd4 !important;
 }
 
 body.theme-dark .text-slate-600 {
-  color: #94a3b8 !important;
+  color: #9ab8a8 !important;
 }
 
 body.theme-dark .text-slate-500 {
-  color: #64748b !important;
+  color: #7a9e90 !important;
 }
 
 body.theme-dark .text-slate-400 {
-  color: #94a3b8 !important;
+  color: #9ab8a8 !important;
 }
 
 body.theme-dark .divide-slate-100 > * + * {
-  border-color: #334155 !important;
+  border-color: #2a4030 !important;
 }
 
 body.theme-dark .border-slate-100 {
-  border-color: #334155 !important;
+  border-color: #2a4030 !important;
 }
 
 body.theme-dark .bg-slate-50 {
-  background: #0f172a !important;
+  background: #0d1a14 !important; /* page bg level */
 }
 
 body.theme-dark .bg-amber-50 {
-  background: rgba(251,191,36,0.08) !important;
+  background: rgba(245,158,11,0.08) !important;
 }
 
 body.theme-dark .border-amber-200 {
-  border-color: rgba(251,191,36,0.3) !important;
+  border-color: rgba(245,158,11,0.28) !important;
 }
 
 body.theme-dark .bg-emerald-50 {
-  background: rgba(16,185,129,0.08) !important;
+  background: rgba(16,185,129,0.07) !important;
 }
 
 body.theme-dark .border-emerald-300 {
-  border-color: rgba(16,185,129,0.3) !important;
+  border-color: rgba(16,185,129,0.28) !important;
 }
 
 body.theme-dark .text-emerald-800 {
@@ -944,35 +992,35 @@ body.theme-dark .text-emerald-700 {
 }
 
 body.theme-dark .text-slate-300 {
-  color: #e2e8f0 !important;
+  color: #c8ddd4 !important;
 }
 
 /* Form inputs in dark mode */
 body.theme-dark .form-input,
 body.theme-dark .form-select,
 body.theme-dark .form-textarea {
-  background: #0f172a;
-  border-color: #334155;
-  color: #f1f5f9;
+  background: #0d1a14;
+  border-color: #2a4030;
+  color: #eef2ee;
 }
 
 body.theme-dark .form-input::placeholder,
 body.theme-dark .form-textarea::placeholder {
-  color: #64748b;
+  color: #4d6e5e;
 }
 
 body.theme-dark .form-label {
-  color: #94a3b8;
+  color: #8fada0;
 }
 
 body.theme-dark .upload-zone {
-  background: #0f172a;
-  border-color: #334155;
+  background: #0d1a14;
+  border-color: #2a4030;
 }
 
 body.theme-dark .upload-zone:hover {
   border-color: var(--brass);
-  background: rgba(251,191,36,0.05);
+  background: rgba(245,158,11,0.04);
 }
 
 /* Light theme general page text */
@@ -1347,10 +1395,141 @@ body.theme-light .flex.gap-6 p.text-slate-400 {
 
 /* Fix community standards section in dark mode */
 body.theme-dark section.bg-slate-100 {
-  background-color: #111827 !important; /* Darker bg */
+  background-color: #111f18 !important; /* section-level surface */
 }
 body.theme-dark section.bg-slate-100 .section-title,
 body.theme-dark section.bg-slate-100 h3,
 body.theme-dark section.bg-slate-100 p {
-  color: #f1f5f9 !important;
+  color: #eef2ee !important;
+}
+
+/* ── DARK THEME — Additional surface & depth polish ──────── */
+
+/* Dashboard sidebar — forest floor */
+body.theme-dark .dash-sidebar {
+  background: #0a1510;
+  border-right: 1px solid #2a4030;
+}
+
+/* Mobile menu — immersive dark */
+body.theme-dark .mobile-menu {
+  background: #0d1a14;
+}
+
+body.theme-dark .mobile-menu a {
+  color: #c8ddd4;
+  border-bottom-color: #2a4030;
+}
+
+body.theme-dark .mobile-menu a:hover {
+  color: var(--brass);
+}
+
+/* Forum items in dark mode */
+body.theme-dark .forum-item {
+  background: #162418;
+  border-bottom-color: #2a4030;
+}
+
+body.theme-dark .forum-item:hover {
+  background: #1e3024;
+  border-left-color: var(--brass);
+}
+
+body.theme-dark .forum-item h4 {
+  color: #eef2ee;
+}
+
+/* Pricing card featured state */
+body.theme-dark .pricing-card {
+  background: #162418;
+  border-color: #2a4030;
+  color: #eef2ee;
+}
+
+body.theme-dark .pricing-card.featured {
+  background: #1e3024;
+  border-color: var(--brass);
+}
+
+/* Filter buttons in dark mode */
+body.theme-dark .filter-btn {
+  background: #162418;
+  border-color: #2a4030;
+  color: #8fada0;
+}
+
+body.theme-dark .filter-btn:hover,
+body.theme-dark .filter-btn.active {
+  background: var(--pullman-dark);
+  border-color: var(--pullman-green);
+  color: var(--brass);
+}
+
+/* Gallery items — keep dark surface */
+body.theme-dark .gallery-item {
+  background: #111f18;
+}
+
+/* Section dark (stays consistent) */
+body.theme-dark .section-dark {
+  background: #0a1510;
+}
+
+/* Dark mode contact/info headings */
+body.theme-dark .flex.gap-6 h4.text-slate-200 {
+  color: #eef2ee !important;
+}
+body.theme-dark .flex.gap-6 p.text-slate-400 {
+  color: #8fada0 !important;
+}
+
+/* Dark mode auth card */
+body.theme-dark .auth-card {
+  background: #162418;
+  border-color: #2a4030;
+}
+
+/* Scrollbar — forest-green tinted */
+body.theme-dark ::-webkit-scrollbar-track {
+  background: #0d1a14;
+}
+
+body.theme-dark ::-webkit-scrollbar-thumb {
+  background: #2a5040;
+  border-color: #0d1a14;
+}
+
+body.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--brass);
+}
+
+/* Additional Tailwind utility overrides for dark */
+body.theme-dark .bg-slate-800,
+body.theme-dark .bg-gray-800 {
+  background: #1e3024 !important;
+}
+
+body.theme-dark .bg-slate-900,
+body.theme-dark .bg-gray-900 {
+  background: #111f18 !important;
+}
+
+body.theme-dark .border-slate-700 {
+  border-color: #2a4030 !important;
+}
+
+body.theme-dark .text-white {
+  color: #eef2ee !important;
+}
+
+/* Timeline dots in dark mode */
+body.theme-dark .timeline-item::before {
+  border-color: #162418;
+}
+
+/* Glass panel in dark mode */
+body.theme-dark .glass-panel {
+  background: rgba(22, 36, 24, 0.6);
+  border-color: rgba(42, 64, 48, 0.6);
 }
