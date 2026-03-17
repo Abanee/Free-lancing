@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Our Services - HeritageCraft Historic Preservation">
+  <title>Services - HeritageCraft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { display: ['Crimson Pro','Georgia','serif'], body: ['Manrope','system-ui','sans-serif'] }, colors: { primary: '#D4745B', secondary: '#E8B464', accent: '#2C3E50' } } }
+    }
+  </script>
+  <style>
+    /* Animate on scroll */
+    .animate-on-scroll { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    .animate-on-scroll.visible { opacity:1; transform:none; }
+
+    /* Service card */
+    .service-card { position:relative; overflow:hidden; background:var(--color-surface); border-radius:1rem; padding:2rem; box-shadow:var(--shadow-md); transition:all .3s ease; border:1px solid transparent; }
+    .service-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-xl); border-color:var(--color-primary); }
+    .service-icon { width:4rem; height:4rem; border-radius:.875rem; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+
+    /* Drag & Drop zone */
+    .drop-zone { border:2px dashed var(--color-border); border-radius:1rem; padding:3rem 2rem; text-align:center; transition:all .3s ease; cursor:pointer; background:var(--color-surface); }
+    .drop-zone.drag-over { border-color:var(--color-primary); background:rgba(212,116,91,.06); transform:scale(1.01); }
+    .drop-zone:hover { border-color:var(--color-primary); }
+
+    /* Estimator */
+    .estimator-input { width:100%; background:var(--color-surface-elevated); border:1px solid var(--color-border); border-radius:.75rem; padding:.875rem 1.25rem; font-size:1rem; color:var(--color-text-primary); transition:border .25s ease; outline:none; }
+    .estimator-input:focus { border-color:var(--color-primary); box-shadow:0 0 0 3px rgba(212,116,91,.12); }
+    .result-box { background:linear-gradient(135deg,rgba(212,116,91,.1),rgba(232,180,100,.1)); border:1px solid rgba(212,116,91,.25); border-radius:1rem; padding:1.5rem; margin-top:1.5rem; display:none; }
+    .result-box.show { display:block; animation:fadeInUp .4s ease; }
+
+    /* File list */
+    .file-item { display:flex; align-items:center; justify-content:space-between; padding:.625rem 1rem; background:var(--color-surface-elevated); border-radius:.5rem; margin-top:.5rem; }
+
+    /* Range slider */
+    input[type=range] { -webkit-appearance:none; width:100%; height:6px; border-radius:9999px; background:var(--color-border); outline:none; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--color-primary); cursor:pointer; box-shadow:0 2px 6px rgba(212,116,91,.4); }
+
+    /* Process step */
+    .process-step { display:flex; gap:1.25rem; align-items:flex-start; padding:1.25rem; border-radius:.875rem; background:var(--color-surface); box-shadow:var(--shadow-sm); transition:box-shadow .3s ease; }
+    .process-step:hover { box-shadow:var(--shadow-md); }
+    .step-num { width:2.5rem; height:2.5rem; border-radius:50%; background:linear-gradient(135deg,var(--color-primary),var(--color-secondary)); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.875rem; flex-shrink:0; }
+  </style>
+</head>
+<body class="font-body">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center transform group-hover:scale-105 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <div class="hidden sm:block">
+            <h2 class="font-display font-bold text-lg leading-tight">Heritage<span class="text-primary">Craft</span></h2>
+            <p class="text-xs text-tertiary">Preservation & Restoration</p>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <div class="relative group">
+            <button class="text-secondary hover:text-primary font-medium flex items-center gap-1 transition-colors">Home <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="absolute top-full -left-4 pt-4 hidden group-hover:block animate-fade-in z-50">
+              <div class="bg-surface rounded-xl shadow-xl border border-border p-2 w-48">
+                <a href="../index.html" class="block p-3 rounded-lg hover:bg-surface-elevated transition-colors text-sm">Classic Restoration</a>
+                <a href="../index2.html" class="block p-3 rounded-lg hover:bg-surface-elevated transition-colors text-sm">Modern Preservation</a>
+              </div>
+            </div>
+          </div>
+          <a href="about.html" class="text-secondary hover:text-primary transition-colors">About</a>
+          <a href="services.html" class="text-primary font-medium">Services</a>
+          <a href="project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a>
+          <a href="blog.html" class="text-secondary hover:text-primary transition-colors">Insights</a>
+          <a href="contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="dir-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-sm font-semibold">LTR</button>
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="hidden sm:flex items-center gap-2">
+            <a href="login.html" class="btn-secondary px-4 py-2">Login</a>
+            <a href="signup.html" class="btn-primary px-4 py-2">Sign Up</a>
+          </div>
+          <button id="hamburger" class="hamburger md:hidden"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="font-display text-xl font-semibold">Menu</h3>
+        <button id="mobile-menu-close" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="../index.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home</a>
+        <a href="about.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">About</a>
+        <a href="services.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary border-b border-border">Services</a>
+        <a href="project-galleries.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Portfolio</a>
+        <a href="blog.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Insights</a>
+        <a href="contact.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Contact</a>
+        <a href="dashboard.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary">Client Portal</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-surface-elevated to-background relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image:repeating-linear-gradient(0deg,var(--color-primary) 0px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,var(--color-primary) 0px,transparent 1px,transparent 40px);"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-on-scroll">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        Specialized Restoration Services
+      </div>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+        What We <span class="text-gradient">Restore</span>
+      </h1>
+      <p class="text-xl text-secondary max-w-3xl mx-auto">Six core disciplines, one singular purpose — preserving architectural integrity with unmatched craftsmanship.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="service-card animate-on-scroll stagger-1">
+          <div class="service-icon bg-gradient-primary">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Masonry Restoration</h3>
+          <p class="text-secondary leading-relaxed mb-4">Expert brick and stone restoration using period-appropriate techniques. From historic brick matching to lime mortar repointing and terracotta conservation.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Historic brick & stone matching</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Mortar repointing & tuckpointing</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Terracotta & stone cleaning</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Typical duration: 2–8 weeks</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll stagger-2">
+          <div class="service-icon bg-gradient-secondary">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Structural Reinforcement</h3>
+          <p class="text-secondary leading-relaxed mb-4">Modern engineering solutions that strengthen historic structures while preserving original character. Seismic retrofitting to NPS standards.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Foundation stabilization</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Seismic retrofitting</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Load-bearing system analysis</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Typical duration: 4–24 weeks</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll stagger-3">
+          <div class="service-icon bg-gradient-accent">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Historical Woodwork</h3>
+          <p class="text-secondary leading-relaxed mb-4">Meticulous restoration of historic wooden elements from ornate moldings to structural timber, using period-matching species and hand tools.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Period millwork reproduction</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Window & door restoration</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Decorative element repair</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Typical duration: 2–12 weeks</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll stagger-4">
+          <div class="service-icon bg-gradient-primary">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Facade Preservation</h3>
+          <p class="text-secondary leading-relaxed mb-4">Complete exterior restoration including cleaning, repair, and protective treatments ensuring LEED-compatible preservation of historic facades.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Building envelope repair</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Weatherproofing & sealants</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Historic paint analysis</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Typical duration: 3–16 weeks</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll stagger-5">
+          <div class="service-icon bg-gradient-secondary">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Heritage Consulting</h3>
+          <p class="text-secondary leading-relaxed mb-4">Expert guidance through compliance, grants and tax credits, and preservation planning with state and federal historic offices.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Federal & state tax credits</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Compliance documentation</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>National Register nominations</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Ongoing engagement</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll stagger-6">
+          <div class="service-icon bg-gradient-accent">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-3">Systems Integration</h3>
+          <p class="text-secondary leading-relaxed mb-4">Seamlessly integrate modern HVAC, electrical, and plumbing systems without compromising historic fabric or visual integrity.</p>
+          <ul class="space-y-2 text-sm text-secondary">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Discreet HVAC routing</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Energy efficiency upgrades</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Code compliance upgrades</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="text-xs text-tertiary">Typical duration: 4–20 weeks</span>
+            <a href="contact.html" class="text-primary text-sm font-semibold hover:underline">Inquire →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE ESTIMATOR -->
+  <section class="py-24 bg-surface-elevated">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Estimator Calculator -->
+        <div class="animate-on-scroll">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Service Estimator Tool
+          </div>
+          <h2 class="font-display text-4xl font-bold mb-4">Rough <span class="text-gradient">Project Estimate</span></h2>
+          <p class="text-secondary mb-8">Get a ballpark timeline and cost bracket based on your project's scope. For a detailed quote, <a href="contact.html" class="text-primary hover:underline">contact us directly</a>.</p>
+
+          <div class="bg-surface rounded-2xl p-6 shadow-md space-y-6" id="estimator">
+            <!-- Service Type -->
+            <div>
+              <label class="block text-sm font-semibold mb-2" for="service-type">Service Type</label>
+              <select class="estimator-input" id="service-type">
+                <option value="">Select a service…</option>
+                <option value="masonry">Masonry Restoration</option>
+                <option value="structural">Structural Reinforcement</option>
+                <option value="woodwork">Historical Woodwork</option>
+                <option value="facade">Facade Preservation</option>
+                <option value="consulting">Heritage Consulting</option>
+                <option value="systems">Systems Integration</option>
+              </select>
+            </div>
+
+            <!-- Square Footage -->
+            <div>
+              <label class="block text-sm font-semibold mb-2" for="sqft">Affected Area (sq ft): <span id="sqft-display" class="text-primary font-bold">1,000</span></label>
+              <input type="range" id="sqft" min="100" max="50000" step="100" value="1000">
+              <div class="flex justify-between text-xs text-tertiary mt-1"><span>100 sq ft</span><span>50,000 sq ft</span></div>
+            </div>
+
+            <!-- Condition -->
+            <div>
+              <label class="block text-sm font-semibold mb-2">Condition of Structure</label>
+              <div class="grid grid-cols-3 gap-3">
+                <label class="condition-btn flex flex-col items-center p-3 border-2 border-border rounded-xl cursor-pointer text-center transition-all hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+                  <input type="radio" name="condition" value="fair" class="hidden">
+                  <span class="text-2xl mb-1">🟡</span>
+                  <span class="text-xs font-semibold">Fair</span>
+                </label>
+                <label class="condition-btn flex flex-col items-center p-3 border-2 border-border rounded-xl cursor-pointer text-center transition-all hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+                  <input type="radio" name="condition" value="poor" class="hidden" checked>
+                  <span class="text-2xl mb-1">🟠</span>
+                  <span class="text-xs font-semibold">Poor</span>
+                </label>
+                <label class="condition-btn flex flex-col items-center p-3 border-2 border-border rounded-xl cursor-pointer text-center transition-all hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-primary/10">
+                  <input type="radio" name="condition" value="critical" class="hidden">
+                  <span class="text-2xl mb-1">🔴</span>
+                  <span class="text-xs font-semibold">Critical</span>
+                </label>
+              </div>
+            </div>
+
+            <button id="calc-btn" class="btn-primary w-full"><span class="flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Calculate Estimate
+            </span></button>
+
+            <!-- Result Box -->
+            <div class="result-box" id="result-box">
+              <h3 class="font-display text-xl font-semibold mb-4">Your Estimated Range</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-surface rounded-lg p-3 text-center">
+                  <p class="text-xs text-tertiary mb-1 uppercase tracking-wide">Cost Range</p>
+                  <p class="font-display text-xl font-bold text-primary" id="cost-result">—</p>
+                </div>
+                <div class="bg-surface rounded-lg p-3 text-center">
+                  <p class="text-xs text-tertiary mb-1 uppercase tracking-wide">Timeline</p>
+                  <p class="font-display text-xl font-bold text-secondary" id="time-result">—</p>
+                </div>
+              </div>
+              <p class="text-xs text-tertiary mt-4">* Estimates are preliminary guides only. Final pricing requires an on-site assessment. <a href="contact.html" class="text-primary hover:underline">Schedule a consultation</a> for a precise quote.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drag & Drop Inquiry -->
+        <div class="animate-on-scroll stagger-2">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Photo Consultation Upload
+          </div>
+          <h2 class="font-display text-4xl font-bold mb-4">Share Your <span class="text-gradient">Building's Story</span></h2>
+          <p class="text-secondary mb-8">Drop photos of the damage or areas of concern. Our team will review and respond within 2 business days with preliminary observations.</p>
+
+          <div class="bg-surface rounded-2xl p-6 shadow-md">
+            <!-- Drop Zone -->
+            <!-- BACKEND INTEGRATION: Connect drop zone to a file upload endpoint or Formspree with file attachments -->
+            <div class="drop-zone" id="drop-zone" role="region" aria-label="File upload drop zone">
+              <div id="drop-zone-content">
+                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                </div>
+                <p class="font-semibold mb-1">Drag & drop photos here</p>
+                <p class="text-secondary text-sm mb-4">or click to browse files</p>
+                <p class="text-xs text-tertiary">Supports JPG, PNG, HEIC, PDF · Max 10 MB per file · Up to 10 files</p>
+              </div>
+              <input type="file" id="file-input" class="hidden" multiple accept="image/*,.pdf">
+            </div>
+
+            <!-- File List -->
+            <div id="file-list" class="mt-4 space-y-2"></div>
+
+            <!-- Contact Info for inquiry -->
+            <div class="mt-6 space-y-3">
+              <input type="text" id="inquiry-name" placeholder="Your Full Name" class="estimator-input" aria-label="Full name">
+              <input type="email" id="inquiry-email" placeholder="Email Address" class="estimator-input" aria-label="Email">
+              <textarea id="inquiry-message" placeholder="Briefly describe the damage or restoration need…" rows="3" class="estimator-input resize-none"></textarea>
+            </div>
+
+            <button id="submit-inquiry" class="btn-primary w-full mt-4"><span class="flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              Send for Consultation
+            </span></button>
+
+            <div id="inquiry-success" class="hidden mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl text-center">
+              <svg class="w-8 h-8 text-green-500 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <p class="font-semibold text-green-700 dark:text-green-400">Inquiry Received!</p>
+              <p class="text-sm text-green-600 dark:text-green-500 mt-1">We'll review your photos and respond within 2 business days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Our <span class="text-gradient">Process</span></h2>
+        <p class="text-xl text-secondary">Every restoration follows a rigorous, transparent methodology</p>
+      </div>
+      <div class="space-y-4">
+        <div class="process-step animate-on-scroll stagger-1"><div class="step-num">1</div><div><h3 class="font-display text-xl font-semibold mb-1">Archival Research & Documentation</h3><p class="text-secondary text-sm">We begin with deep historical research — original blueprints, period photographs, material specifications, and building records to understand the structure's authentic character.</p></div></div>
+        <div class="process-step animate-on-scroll stagger-2"><div class="step-num">2</div><div><h3 class="font-display text-xl font-semibold mb-1">Physical Assessment & Material Analysis</h3><p class="text-secondary text-sm">On-site 3D laser scanning, mortar sampling, material testing, and structural evaluation to identify scope and risks before any work begins.</p></div></div>
+        <div class="process-step animate-on-scroll stagger-3"><div class="step-num">3</div><div><h3 class="font-display text-xl font-semibold mb-1">Preservation Plan & Client Approval</h3><p class="text-secondary text-sm">A comprehensive written preservation plan with phased timeline, material specifications, budget breakdown, and regulatory compliance review — submitted for client approval.</p></div></div>
+        <div class="process-step animate-on-scroll stagger-4"><div class="step-num">4</div><div><h3 class="font-display text-xl font-semibold mb-1">Skilled Restoration Work</h3><p class="text-secondary text-sm">Certified craftsmen execute the approved plan using authentic methods and sourced materials, with continuous photographic documentation and quality control checks.</p></div></div>
+        <div class="process-step animate-on-scroll stagger-5"><div class="step-num">5</div><div><h3 class="font-display text-xl font-semibold mb-1">Final Documentation & Handover</h3><p class="text-secondary text-sm">Comprehensive as-built documentation including before/after photography, material records, and maintenance guidelines delivered to the client and regulatory office.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-elevated pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div><h3 class="font-display font-bold text-lg">HeritageCraft</h3><p class="text-xs text-tertiary">Since 1985</p></div>
+          </div>
+          <p class="text-secondary text-sm leading-relaxed">Dedicated to preserving architectural heritage with uncompromising quality and authenticity.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="../index.html" class="text-secondary hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-secondary hover:text-primary transition-colors">About</a></li>
+            <li><a href="project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="blog.html" class="text-secondary hover:text-primary transition-colors">Insights</a></li>
+            <li><a href="contact.html" class="text-secondary hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Our Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Masonry Restoration</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Structural Reinforcement</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Historical Woodwork</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Facade Preservation</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Heritage Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Contact Info</h4>
+          <div class="space-y-2 text-sm text-secondary">
+            <p>+1 (555) 123-4567</p><p>info@heritagecraft.com</p>
+            <p>123 Heritage Lane<br>Historic District, NY 10001</p>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-border">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-tertiary">
+          <p>&copy; 2026 HeritageCraft Preservation & Restoration. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Service Estimator
+    const rates = {
+      masonry:    { low: 45, high: 90,  weeks: [2, 8] },
+      structural: { low: 80, high: 200, weeks: [4, 24] },
+      woodwork:   { low: 55, high: 120, weeks: [2, 12] },
+      facade:     { low: 35, high: 80,  weeks: [3, 16] },
+      consulting: { low: 150, high: 300, weeks: [4, 12] },
+      systems:    { low: 60, high: 140, weeks: [4, 20] }
+    };
+    const conditionMultipliers = { fair: 1, poor: 1.4, critical: 1.9 };
+
+    const sqftSlider = document.getElementById('sqft');
+    const sqftDisplay = document.getElementById('sqft-display');
+    sqftSlider.addEventListener('input', () => {
+      sqftDisplay.textContent = Number(sqftSlider.value).toLocaleString();
+    });
+
+    document.getElementById('calc-btn').addEventListener('click', () => {
+      const service = document.getElementById('service-type').value;
+      const sqft = parseInt(sqftSlider.value);
+      const condition = document.querySelector('input[name=condition]:checked')?.value || 'poor';
+      if (!service) { alert('Please select a service type.'); return; }
+      const r = rates[service];
+      const mult = conditionMultipliers[condition];
+      const lowCost = Math.round((r.low * sqft * mult) / 1000) * 1000;
+      const highCost = Math.round((r.high * sqft * mult) / 1000) * 1000;
+      const fmt = n => '$' + n.toLocaleString();
+      document.getElementById('cost-result').textContent = `${fmt(lowCost)} – ${fmt(highCost)}`;
+      document.getElementById('time-result').textContent = `${r.weeks[0]}–${r.weeks[1]} wks`;
+      const box = document.getElementById('result-box');
+      box.classList.add('show');
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // Drag & Drop
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileList = document.getElementById('file-list');
+    let uploadedFiles = [];
+
+    dropZone.addEventListener('click', () => fileInput.click());
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+    dropZone.addEventListener('drop', e => {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      handleFiles([...e.dataTransfer.files]);
+    });
+    fileInput.addEventListener('change', () => handleFiles([...fileInput.files]));
+
+    function handleFiles(files) {
+      files.forEach(file => {
+        if (file.size > 10 * 1024 * 1024) { alert(`${file.name} exceeds 10 MB limit.`); return; }
+        if (uploadedFiles.length >= 10) { alert('Maximum 10 files allowed.'); return; }
+        uploadedFiles.push(file);
+        const div = document.createElement('div');
+        div.className = 'file-item';
+        div.innerHTML = `<div class="flex items-center gap-2 min-w-0"><svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg><span class="text-sm truncate">${file.name}</span><span class="text-xs text-tertiary flex-shrink-0">${(file.size/1024).toFixed(0)} KB</span></div><button class="text-error text-xs hover:underline flex-shrink-0 remove-file">Remove</button>`;
+        div.querySelector('.remove-file').addEventListener('click', () => {
+          uploadedFiles = uploadedFiles.filter(f => f !== file);
+          div.remove();
+        });
+        fileList.appendChild(div);
+      });
+    }
+
+    // Submit Inquiry (mocked)
+    // BACKEND INTEGRATION: Replace fetch URL with actual endpoint (Formspree, Netlify, etc.)
+    document.getElementById('submit-inquiry').addEventListener('click', () => {
+      const name = document.getElementById('inquiry-name').value.trim();
+      const email = document.getElementById('inquiry-email').value.trim();
+      if (!name || !email) { alert('Please provide your name and email.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+      // Simulate submission
+      document.getElementById('submit-inquiry').disabled = true;
+      document.getElementById('submit-inquiry').innerHTML = '<span>Sending…</span>';
+      setTimeout(() => {
+        document.getElementById('inquiry-success').classList.remove('hidden');
+        document.getElementById('submit-inquiry').classList.add('hidden');
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
