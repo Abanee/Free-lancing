@@ -1,0 +1,245 @@
+/**
+ * RTL (Right-to-Left) Styles
+ * Historic Preservation & Restoration Contractor
+ * 
+ * Overrides for Arabic, Hebrew, and other RTL languages
+ * Uses logical CSS properties for proper text flow
+ */
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Typography adjustments for RTL */
+[dir="rtl"] body {
+  text-align: right;
+}
+
+/* Navbar RTL adjustments */
+[dir="rtl"] .navbar {
+  direction: rtl;
+}
+
+[dir="rtl"] .navbar-links {
+  flex-direction: row-reverse;
+}
+
+/* Button icon adjustments */
+[dir="rtl"] .btn-icon {
+  transform: scaleX(-1);
+}
+
+/* Timeline adjustments for RTL */
+[dir="rtl"] .timeline-step {
+  padding-left: 0;
+  padding-right: 2.5rem;
+}
+
+[dir="rtl"] .timeline-step::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .timeline-step::after {
+  left: auto;
+  right: 7px;
+}
+
+/* Comparison slider RTL */
+[dir="rtl"] .comparison-slider .label-before {
+  left: auto;
+  right: 20px;
+}
+
+[dir="rtl"] .comparison-slider .label-after {
+  right: auto;
+  left: 20px;
+}
+
+[dir="rtl"] .comparison-slider .slider-button::before {
+  left: auto;
+  right: 12px;
+  transform: rotate(-45deg);
+}
+
+[dir="rtl"] .comparison-slider .slider-button::after {
+  right: auto;
+  left: 12px;
+  transform: rotate(135deg);
+}
+
+/* Mobile menu RTL */
+[dir="rtl"] .mobile-menu {
+  right: auto;
+  left: -100%;
+}
+
+[dir="rtl"] .mobile-menu.active {
+  right: auto;
+  left: 0;
+}
+
+/* Card layouts RTL */
+[dir="rtl"] .card-grid {
+  direction: rtl;
+}
+
+/* Form elements RTL */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+/* List items RTL */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+/* Sidebar RTL */
+[dir="rtl"] .sidebar {
+  border-left: none;
+  border-right: 1px solid var(--color-border);
+}
+
+/* Icon reversals for directional icons */
+[dir="rtl"] .icon-arrow-right {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .icon-arrow-left {
+  transform: rotate(180deg);
+}
+
+/* Dashboard layout RTL */
+[dir="rtl"] .dashboard-sidebar {
+  border-left: none;
+  border-right: 1px solid var(--color-border);
+}
+
+/* Table RTL adjustments */
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+[dir="rtl"] th:first-child,
+[dir="rtl"] td:first-child {
+  text-align: right;
+}
+
+/* Dropdown menus RTL */
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* Badge positioning RTL */
+[dir="rtl"] .badge {
+  direction: rtl;
+}
+
+/* Footer RTL */
+[dir="rtl"] .footer {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-links {
+  text-align: right;
+}
+
+/* Social icons RTL */
+[dir="rtl"] .social-icons {
+  flex-direction: row-reverse;
+}
+
+/* Breadcrumb RTL */
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb-separator {
+  transform: scaleX(-1);
+}
+
+/* Decorative line RTL */
+[dir="rtl"] .decorative-line {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Grid RTL - maintain visual order */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Flexbox RTL utilities */
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+/* Spacing RTL adjustments */
+[dir="rtl"] .ms-auto {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .me-auto {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Text alignment utilities RTL */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Floating elements RTL */
+[dir="rtl"] .float-left {
+  float: right;
+}
+
+[dir="rtl"] .float-right {
+  float: left;
+}
+
+/* Border radius RTL (for asymmetric designs) */
+[dir="rtl"] .rounded-l-none {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+[dir="rtl"] .rounded-r-none {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Smooth transitions for direction changes */
+[dir="rtl"] * {
+  transition: margin var(--transition-base),
+              padding var(--transition-base),
+              text-align var(--transition-base);
+}
+
+/* Disable transitions during direction toggle */
+[dir="rtl"].transitioning * {
+  transition: none !important;
+}

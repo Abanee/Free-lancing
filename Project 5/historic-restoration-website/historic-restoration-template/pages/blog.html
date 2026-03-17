@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insights & News - Historic Preservation & Restoration">
+  <title>Insights & News - HeritageCraft</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Crimson Pro', 'Georgia', 'serif'],
+            body: ['Manrope', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: '#D4745B',
+            secondary: '#E8B464',
+            accent: '#2C3E50',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-body">
+  
+  <!-- Navbar (same as home page) -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center transform group-hover:scale-105 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <div class="hidden sm:block">
+            <h2 class="font-display font-bold text-lg leading-tight">Heritage<span class="text-primary">Craft</span></h2>
+            <p class="text-xs text-tertiary">Preservation & Restoration</p>
+          </div>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+          <a href="project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a>
+          <a href="blog.html" class="text-primary font-medium transition-colors">Insights</a>
+          <a href="index.html#services" class="text-secondary hover:text-primary transition-colors">Services</a>
+          <a href="index.html#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <button id="dir-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-sm font-semibold">LTR</button>
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="dashboard.html" class="hidden sm:block btn-primary"><span>Client Login</span></a>
+          <button id="hamburger" class="hamburger md:hidden"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="font-display text-xl font-semibold">Menu</h3>
+        <button id="mobile-menu-close" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home</a>
+        <a href="project-galleries.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Portfolio</a>
+        <a href="blog.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary border-b border-border">Insights</a>
+        <a href="index.html#services" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Services</a>
+        <a href="index.html#contact" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Contact</a>
+        <a href="dashboard.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary">Client Portal</a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-br from-surface-elevated to-background">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">Preservation Insights</h1>
+        <p class="text-xl text-secondary">Expert knowledge, techniques, and stories from the world of historic restoration</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Articles Grid -->
+        <div class="lg:col-span-2">
+          <div class="grid sm:grid-cols-2 gap-8">
+            
+            <!-- Article Card 1 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=600&h=400&fit=crop" alt="Masonry restoration techniques" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-info">Techniques</span>
+                  <span class="text-sm text-tertiary">8 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  The Art of Historic Brick Matching
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  Learn how we source and match period-appropriate bricks to maintain the authentic character of heritage buildings.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">Sarah Mitchell</p>
+                    <p class="text-xs text-tertiary">March 15, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 2 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop" alt="Window restoration" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-success">Case Study</span>
+                  <span class="text-sm text-tertiary">12 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  Restoring Victorian Stained Glass
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  A detailed look at our approach to conserving and restoring intricate stained glass windows from the Victorian era.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">Michael Chen</p>
+                    <p class="text-xs text-tertiary">March 10, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 3 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Foundation repair" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-warning">Best Practices</span>
+                  <span class="text-sm text-tertiary">6 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  Foundation Stabilization Methods
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  Modern engineering techniques that strengthen historic foundations while preserving architectural integrity.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">Robert Thompson</p>
+                    <p class="text-xs text-tertiary">March 5, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 4 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Mortar analysis" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-info">Research</span>
+                  <span class="text-sm text-tertiary">10 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  Historic Mortar Analysis Guide
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  Understanding original mortar composition is crucial for authentic restoration. Here's our complete guide.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">Dr. Emily Rodriguez</p>
+                    <p class="text-xs text-tertiary">February 28, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 5 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&h=400&fit=crop" alt="Architectural details" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-success">Heritage</span>
+                  <span class="text-sm text-tertiary">15 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  Preserving Ornamental Plasterwork
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  Techniques for restoring decorative plaster elements while maintaining historical authenticity and craftsmanship.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">James Patterson</p>
+                    <p class="text-xs text-tertiary">February 20, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+            <!-- Article Card 6 -->
+            <article class="bg-surface rounded-2xl overflow-hidden shadow-md card-hover">
+              <div class="aspect-video overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop" alt="Tax credits" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="badge badge-warning">Financial</span>
+                  <span class="text-sm text-tertiary">7 min read</span>
+                </div>
+                <h2 class="font-display text-2xl font-semibold mb-3 hover:text-primary transition-colors cursor-pointer">
+                  Understanding Historic Tax Credits
+                </h2>
+                <p class="text-secondary mb-4 leading-relaxed">
+                  A comprehensive guide to federal and state tax incentives for historic preservation projects.
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary"></div>
+                  <div>
+                    <p class="font-semibold text-sm">Lisa Anderson</p>
+                    <p class="text-xs text-tertiary">February 15, 2024</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            
+          </div>
+          
+          <!-- Pagination -->
+          <div class="mt-12 flex justify-center gap-2">
+            <button class="w-10 h-10 rounded-lg border border-border hover:bg-surface-elevated transition-colors flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button class="w-10 h-10 rounded-lg bg-primary text-white font-semibold">1</button>
+            <button class="w-10 h-10 rounded-lg border border-border hover:bg-surface-elevated transition-colors">2</button>
+            <button class="w-10 h-10 rounded-lg border border-border hover:bg-surface-elevated transition-colors">3</button>
+            <button class="w-10 h-10 rounded-lg border border-border hover:bg-surface-elevated transition-colors flex items-center justify-center">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="space-y-8">
+          
+          <!-- Categories -->
+          <div class="bg-surface rounded-2xl p-6 shadow-md">
+            <h3 class="font-display text-xl font-semibold mb-4">Categories</h3>
+            <ul class="space-y-3">
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Techniques</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">12</span>
+              </a></li>
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Case Studies</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">8</span>
+              </a></li>
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Best Practices</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">15</span>
+              </a></li>
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Research</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">6</span>
+              </a></li>
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Heritage</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">10</span>
+              </a></li>
+              <li><a href="#" class="flex items-center justify-between py-2 hover:text-primary transition-colors group">
+                <span>Financial</span>
+                <span class="text-sm text-tertiary group-hover:text-primary">4</span>
+              </a></li>
+            </ul>
+          </div>
+          
+          <!-- Recent Posts -->
+          <div class="bg-surface rounded-2xl p-6 shadow-md">
+            <h3 class="font-display text-xl font-semibold mb-4">Recent Posts</h3>
+            <ul class="space-y-4">
+              <li class="pb-4 border-b border-border last:border-0 last:pb-0">
+                <a href="#" class="group">
+                  <h4 class="font-semibold mb-2 group-hover:text-primary transition-colors">Restoring Georgian Windows</h4>
+                  <p class="text-sm text-tertiary">March 18, 2024</p>
+                </a>
+              </li>
+              <li class="pb-4 border-b border-border last:border-0 last:pb-0">
+                <a href="#" class="group">
+                  <h4 class="font-semibold mb-2 group-hover:text-primary transition-colors">Chimney Restoration Essentials</h4>
+                  <p class="text-sm text-tertiary">March 12, 2024</p>
+                </a>
+              </li>
+              <li class="pb-4 border-b border-border last:border-0 last:pb-0">
+                <a href="#" class="group">
+                  <h4 class="font-semibold mb-2 group-hover:text-primary transition-colors">Heritage Paint Analysis</h4>
+                  <p class="text-sm text-tertiary">March 8, 2024</p>
+                </a>
+              </li>
+              <li class="pb-4 border-b border-border last:border-0 last:pb-0">
+                <a href="#" class="group">
+                  <h4 class="font-semibold mb-2 group-hover:text-primary transition-colors">Slate Roof Repair Guide</h4>
+                  <p class="text-sm text-tertiary">March 2, 2024</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 text-white shadow-md">
+            <h3 class="font-display text-xl font-semibold mb-3">Stay Informed</h3>
+            <p class="text-sm opacity-90 mb-4">Get the latest preservation insights delivered to your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" class="w-full px-4 py-3 rounded-lg text-primary mb-3" required>
+              <button type="submit" class="w-full bg-white text-primary font-semibold py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer (same as home page) -->
+  <footer id="contact" class="bg-surface-elevated pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-lg">HeritageCraft</h3>
+              <p class="text-xs text-tertiary">Since 1985</p>
+            </div>
+          </div>
+          <p class="text-secondary text-sm leading-relaxed mb-4">
+            Dedicated to preserving architectural heritage with uncompromising quality and authenticity.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a></li>
+            <li><a href="project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="blog.html" class="text-secondary hover:text-primary transition-colors">Insights & News</a></li>
+            <li><a href="dashboard.html" class="text-secondary hover:text-primary transition-colors">Client Portal</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Our Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Masonry Restoration</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Structural Reinforcement</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Historical Woodwork</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Contact Info</h4>
+          <div class="space-y-2 text-sm text-secondary">
+            <p>+1 (555) 123-4567</p>
+            <p>info@heritagecraft.com</p>
+            <p>123 Heritage Lane<br>Historic District, NY 10001</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-border">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-tertiary">
+          <p>&copy; 2024 HeritageCraft. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-primary transition-colors">Privacy</a>
+            <a href="#" class="hover:text-primary transition-colors">Terms</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../assets/js/main.js"></script>
+  
+</body>
+</html>

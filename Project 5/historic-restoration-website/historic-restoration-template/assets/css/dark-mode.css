@@ -1,0 +1,195 @@
+/**
+ * Dark Mode & Theme Variables
+ * Historic Preservation & Restoration Contractor
+ * 
+ * This file defines CSS custom properties for theming
+ * Supports automatic dark mode detection and manual toggle
+ */
+
+:root {
+  /* Light Mode - Default Theme (Architectural & Heritage Colors) */
+  --color-primary: #D4745B;        /* Terracotta - warm, earthy */
+  --color-primary-dark: #B85D46;   /* Darker terracotta */
+  --color-primary-light: #E8947F;  /* Light terracotta */
+  
+  --color-secondary: #E8B464;      /* Warm ochre/gold */
+  --color-secondary-dark: #D19E4A;
+  --color-secondary-light: #F0C67B;
+  
+  --color-accent: #2C3E50;         /* Deep architectural blue */
+  --color-accent-light: #3D5265;
+  
+  /* Neutral colors */
+  --color-background: #FDFBF8;     /* Warm off-white */
+  --color-surface: #FFFFFF;        /* Pure white for cards */
+  --color-surface-elevated: #F8F5F1; /* Cream for elevated surfaces */
+  
+  --color-text-primary: #2C2C2C;   /* Almost black */
+  --color-text-secondary: #5A5A5A; /* Medium gray */
+  --color-text-tertiary: #8A8A8A;  /* Light gray */
+  --color-text-inverse: #FFFFFF;
+  
+  /* Borders and dividers */
+  --color-border: #E5E1DC;         /* Soft border */
+  --color-border-light: #F0EDE8;
+  --color-divider: #D8D4CF;
+  
+  /* Status colors */
+  --color-success: #52A866;
+  --color-warning: #E8A444;
+  --color-error: #D84A4A;
+  --color-info: #4A90D8;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(44, 62, 80, 0.08);
+  --shadow-md: 0 4px 12px rgba(44, 62, 80, 0.12);
+  --shadow-lg: 0 10px 30px rgba(44, 62, 80, 0.15);
+  --shadow-xl: 0 20px 60px rgba(44, 62, 80, 0.20);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(212, 116, 91, 0.2);
+  --glass-shadow: 0 8px 32px rgba(44, 62, 80, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  
+  /* Typography scale */
+  --font-display: 'Crimson Pro', 'Georgia', serif;
+  --font-body: 'Manrope', 'system-ui', sans-serif;
+  
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  
+  /* Spacing scale (aligned with Tailwind) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* Dark Mode Theme */
+[data-theme="dark"] {
+  --color-primary: #E8947F;        /* Lighter terracotta for dark mode */
+  --color-primary-dark: #F0A894;
+  --color-primary-light: #D4745B;
+  
+  --color-secondary: #F0C67B;      /* Lighter ochre */
+  --color-secondary-dark: #F5D599;
+  --color-secondary-light: #E8B464;
+  
+  --color-accent: #5C8AB3;         /* Lighter blue */
+  --color-accent-light: #7BA3C4;
+  
+  /* Backgrounds - rich, warm darks */
+  --color-background: #1A1614;     /* Deep warm black */
+  --color-surface: #2A2421;        /* Warm dark surface */
+  --color-surface-elevated: #352D28; /* Elevated warm surface */
+  
+  /* Text colors */
+  --color-text-primary: #F8F5F1;   /* Warm white */
+  --color-text-secondary: #C8C0B8; /* Warm light gray */
+  --color-text-tertiary: #9A9288;  /* Warm medium gray */
+  --color-text-inverse: #1A1614;
+  
+  /* Borders */
+  --color-border: #3D3530;
+  --color-border-light: #322B26;
+  --color-divider: #4A3F38;
+  
+  /* Status colors (slightly adjusted for dark mode) */
+  --color-success: #6BC682;
+  --color-warning: #F5B760;
+  --color-error: #F06060;
+  --color-info: #68A8E8;
+  
+  /* Shadows (darker, more prominent) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+  
+  /* Glassmorphism for dark mode */
+  --glass-bg: rgba(42, 36, 33, 0.85);
+  --glass-border: rgba(232, 148, 127, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* System preference detection (automatic) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: #E8947F;
+    --color-primary-dark: #F0A894;
+    --color-primary-light: #D4745B;
+    
+    --color-secondary: #F0C67B;
+    --color-secondary-dark: #F5D599;
+    --color-secondary-light: #E8B464;
+    
+    --color-accent: #5C8AB3;
+    --color-accent-light: #7BA3C4;
+    
+    --color-background: #1A1614;
+    --color-surface: #2A2421;
+    --color-surface-elevated: #352D28;
+    
+    --color-text-primary: #F8F5F1;
+    --color-text-secondary: #C8C0B8;
+    --color-text-tertiary: #9A9288;
+    --color-text-inverse: #1A1614;
+    
+    --color-border: #3D3530;
+    --color-border-light: #322B26;
+    --color-divider: #4A3F38;
+    
+    --color-success: #6BC682;
+    --color-warning: #F5B760;
+    --color-error: #F06060;
+    --color-info: #68A8E8;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+    
+    --glass-bg: rgba(42, 36, 33, 0.85);
+    --glass-border: rgba(232, 148, 127, 0.3);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Smooth theme transitions */
+body,
+body * {
+  transition: background-color var(--transition-base),
+              color var(--transition-base),
+              border-color var(--transition-base);
+}
+
+/* Disable transitions during page load */
+body.preload * {
+  transition: none !important;
+}

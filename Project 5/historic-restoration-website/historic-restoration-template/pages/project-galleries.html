@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio - Historic Preservation & Restoration Projects">
+  <title>Project Gallery - HeritageCraft</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Crimson Pro', 'Georgia', 'serif'],
+            body: ['Manrope', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: '#D4745B',
+            secondary: '#E8B464',
+            accent: '#2C3E50',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-body">
+  
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center transform group-hover:scale-105 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <div class="hidden sm:block">
+            <h2 class="font-display font-bold text-lg leading-tight">Heritage<span class="text-primary">Craft</span></h2>
+            <p class="text-xs text-tertiary">Preservation & Restoration</p>
+          </div>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a>
+          <a href="project-galleries.html" class="text-primary font-medium transition-colors">Portfolio</a>
+          <a href="blog.html" class="text-secondary hover:text-primary transition-colors">Insights</a>
+          <a href="index.html#services" class="text-secondary hover:text-primary transition-colors">Services</a>
+          <a href="index.html#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <button id="dir-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-sm font-semibold">LTR</button>
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="dashboard.html" class="hidden sm:block btn-primary"><span>Client Login</span></a>
+          <button id="hamburger" class="hamburger md:hidden"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <h3 class="font-display text-xl font-semibold">Menu</h3>
+        <button id="mobile-menu-close" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="space-y-4">
+        <a href="index.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home</a>
+        <a href="project-galleries.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary border-b border-border">Portfolio</a>
+        <a href="blog.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Insights</a>
+        <a href="index.html#services" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Services</a>
+        <a href="index.html#contact" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Contact</a>
+        <a href="dashboard.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary">Client Portal</a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-br from-surface-elevated to-background">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">Project Portfolio</h1>
+        <p class="text-xl text-secondary">Witness the transformative power of expert preservation through our before and after galleries</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Filter Bar -->
+  <section class="py-8 bg-surface sticky top-20 z-40 border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap gap-3 justify-center">
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-primary text-white font-semibold transition-all" data-filter="all">
+          All Projects
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-surface-elevated hover:bg-primary/10 hover:text-primary font-semibold transition-all" data-filter="residential">
+          Residential
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-surface-elevated hover:bg-primary/10 hover:text-primary font-semibold transition-all" data-filter="commercial">
+          Commercial
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-surface-elevated hover:bg-primary/10 hover:text-primary font-semibold transition-all" data-filter="monuments">
+          Monuments
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-surface-elevated hover:bg-primary/10 hover:text-primary font-semibold transition-all" data-filter="religious">
+          Religious
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Gallery -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        
+        <!-- Project 1 -->
+        <div class="project-item" data-category="residential">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="comparison-slider">
+              <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&h=600&fit=crop" alt="Victorian Mansion Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop" alt="Victorian Mansion After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-info">Residential</span>
+                <span class="text-sm text-tertiary">Completed 2023</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Victorian Mansion Revival</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Complete restoration of a 1890s Victorian mansion including facade repair, window restoration, ornamental plasterwork conservation, and structural reinforcement. The project preserved all original architectural details while modernizing systems infrastructure.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Boston, Massachusetts</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">18 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Victorian (1890)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Square Footage</p>
+                  <p class="font-semibold">8,500 sq ft</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Masonry</span>
+                <span class="badge badge-success">Woodwork</span>
+                <span class="badge badge-success">Plasterwork</span>
+                <span class="badge badge-success">Structural</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-item" data-category="religious">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 comparison-slider">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop" alt="Church Interior Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Church Interior After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div class="lg:order-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-warning">Religious</span>
+                <span class="text-sm text-tertiary">Completed 2022</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Historic Church Restoration</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Comprehensive interior and exterior restoration of a 19th-century church. Work included stained glass conservation, ornate ceiling restoration, pew refinishing, and complete structural stabilization of the bell tower.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Philadelphia, PA</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">24 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Gothic Revival (1875)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Congregation</p>
+                  <p class="font-semibold">Active Parish</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Stained Glass</span>
+                <span class="badge badge-success">Plasterwork</span>
+                <span class="badge badge-success">Woodwork</span>
+                <span class="badge badge-success">Tower Repair</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-item" data-category="commercial">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="comparison-slider">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Office Building Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=600&fit=crop" alt="Office Building After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-success">Commercial</span>
+                <span class="text-sm text-tertiary">Completed 2024</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Art Deco Office Building</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Transformation of a 1920s Art Deco office building into modern commercial space while preserving all decorative elements. Project included terracotta facade cleaning, metal window restoration, and lobby marble refinishing.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Chicago, Illinois</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">14 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Art Deco (1928)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Stories</p>
+                  <p class="font-semibold">12 Floors</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Terracotta</span>
+                <span class="badge badge-success">Metal Windows</span>
+                <span class="badge badge-success">Marble</span>
+                <span class="badge badge-success">Decorative Elements</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-item" data-category="monuments">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 comparison-slider">
+              <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=600&fit=crop" alt="Monument Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=600&fit=crop" alt="Monument After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div class="lg:order-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-error">Monument</span>
+                <span class="text-sm text-tertiary">Completed 2023</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Civil War Memorial Restoration</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Careful conservation of a bronze and granite Civil War memorial including structural repairs, bronze cleaning and patination, inscription re-carving, and foundation stabilization. Work completed in partnership with state historic preservation office.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Richmond, Virginia</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">8 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Memorial (1885)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Height</p>
+                  <p class="font-semibold">32 Feet</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Bronze</span>
+                <span class="badge badge-success">Granite</span>
+                <span class="badge badge-success">Foundation</span>
+                <span class="badge badge-success">Conservation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-item" data-category="residential">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="comparison-slider">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Brownstone Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop" alt="Brownstone After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-info">Residential</span>
+                <span class="text-sm text-tertiary">Completed 2023</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Brooklyn Brownstone Revival</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Complete restoration of a historic brownstone row house including facade cleaning, stoop repair, original window restoration, interior plaster conservation, and period-appropriate mechanical systems integration.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Brooklyn, New York</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">16 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Row House (1880)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Square Footage</p>
+                  <p class="font-semibold">4,200 sq ft</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Brownstone</span>
+                <span class="badge badge-success">Windows</span>
+                <span class="badge badge-success">Plaster</span>
+                <span class="badge badge-success">HVAC Integration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 -->
+        <div class="project-item" data-category="commercial">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 comparison-slider">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=600&fit=crop" alt="Theater Before" class="before-image">
+              <div class="after-image">
+                <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&h=600&fit=crop" alt="Theater After">
+              </div>
+              <div class="slider-handle">
+                <div class="slider-button"></div>
+              </div>
+              <div class="label label-before">Before</div>
+              <div class="label label-after">After</div>
+            </div>
+            
+            <div class="lg:order-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge badge-success">Commercial</span>
+                <span class="text-sm text-tertiary">Completed 2022</span>
+              </div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Historic Theater Restoration</h2>
+              <p class="text-secondary leading-relaxed mb-6">
+                Full restoration of a 1920s movie palace including ornamental plasterwork, gilded details, original seating restoration, stage rigging modernization, and acoustic improvements—all while maintaining historic character.
+              </p>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Location</p>
+                  <p class="font-semibold">Detroit, Michigan</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Duration</p>
+                  <p class="font-semibold">28 Months</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Era</p>
+                  <p class="font-semibold">Movie Palace (1925)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-tertiary mb-1">Capacity</p>
+                  <p class="font-semibold">1,800 Seats</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="badge badge-success">Plasterwork</span>
+                <span class="badge badge-success">Gilding</span>
+                <span class="badge badge-success">Seating</span>
+                <span class="badge badge-success">Acoustics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-primary to-secondary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Restore Your Historic Property?</h2>
+      <p class="text-xl opacity-90 mb-8">Let's discuss how we can preserve your architectural heritage for generations to come.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index.html#contact" class="btn-secondary bg-white text-primary border-white hover:bg-opacity-90">
+          <span>Schedule Consultation</span>
+        </a>
+        <a href="dashboard.html" class="btn-secondary border-white text-white hover:bg-white/20">
+          <span>Access Client Portal</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-surface-elevated pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-lg">HeritageCraft</h3>
+              <p class="text-xs text-tertiary">Since 1985</p>
+            </div>
+          </div>
+          <p class="text-secondary text-sm leading-relaxed">
+            Dedicated to preserving architectural heritage with uncompromising quality.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a></li>
+            <li><a href="project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="blog.html" class="text-secondary hover:text-primary transition-colors">Insights</a></li>
+            <li><a href="dashboard.html" class="text-secondary hover:text-primary transition-colors">Client Portal</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Masonry Restoration</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Structural Work</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Woodwork</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-display font-semibold text-lg mb-6">Contact</h4>
+          <div class="space-y-2 text-sm text-secondary">
+            <p>+1 (555) 123-4567</p>
+            <p>info@heritagecraft.com</p>
+            <p>123 Heritage Lane<br>Historic District, NY 10001</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-border text-center text-sm text-tertiary">
+        <p>&copy; 2024 HeritageCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="../assets/js/main.js"></script>
+  
+  <script>
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-primary', 'text-white');
+          b.classList.add('bg-surface-elevated');
+        });
+        btn.classList.add('bg-primary', 'text-white');
+        btn.classList.remove('bg-surface-elevated');
+        
+        // Filter projects
+        document.querySelectorAll('.project-item').forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+            item.classList.add('fade-in-up');
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  
+</body>
+</html>
