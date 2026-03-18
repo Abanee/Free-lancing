@@ -151,8 +151,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover {
-  color: var(--color-text-inverse);
+  color: var(--color-background); /* Use background color for best contrast on primary color */
   border-color: var(--color-primary);
+}
+
+/* Global Navbar Link Hover Improvement */
+.nav-link:hover {
+  color: var(--color-primary) !important;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--color-primary-light) !important;
+  text-shadow: 0 0 1px rgba(255,255,255,0.1);
 }
 
 /* Card hover effects */
