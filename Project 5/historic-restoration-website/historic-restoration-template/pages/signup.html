@@ -46,27 +46,26 @@
     .social-btn:hover { background: var(--color-surface-elevated); transform: translateY(-2px); }
   </style>
 </head>
-<body class="font-body min-h-screen flex items-center justify-center auth-bg p-4 transition-colors duration-300">
+<body class="font-body bg-background transition-colors duration-300 min-h-screen flex items-center justify-center p-4 auth-bg relative">
 
-  <div class="max-w-md w-full glass-box rounded-[2.5rem] p-8 sm:p-12 shadow-2xl animate-fade-in-up">
-    <div class="text-center mb-10">
-      <div class="flex justify-between items-center mb-6">
-        <a href="../index.html" class="inline-flex items-center gap-2 group">
-          <div class="w-12 h-12 flex items-center justify-center transform group-hover:scale-110 transition-transform overflow-hidden">
-            <img src="../assets/logo.png" alt="HeritageCraft Logo" class="w-full h-full object-contain">
-          </div>
-          <span class="font-display font-black text-2xl uppercase tracking-tighter">Heritage<span class="text-primary">Craft</span></span>
-        </a>
-        <div class="flex items-center gap-2">
-          <button id="dir-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-xs font-bold">LTR</button>
-          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+  <div class="max-w-md w-full glass-box rounded-[2.5rem] p-8 sm:p-12 shadow-2xl animate-fade-in-up relative">
+    <!-- Header with Toggles -->
+    <div class="flex justify-between items-center mb-8">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 flex items-center justify-center transform group-hover:scale-105 transition-transform overflow-hidden">
+          <img src="../assets/logo.png" alt="HeritageCraft Logo" class="w-full h-full object-contain">
         </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <button id="dir-toggle" class="w-8 h-8 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-xs font-semibold">LTR</button>
+        <button id="theme-toggle" class="w-8 h-8 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
+    </div>
+
       <h1 class="text-3xl font-display font-bold mb-2">Create Account</h1>
       <p class="text-secondary text-sm">Join the preservation community and track your projects.</p>
-    </div>
 
     <!-- Social Login Section -->
     <div class="space-y-3 mb-8">
@@ -122,11 +121,6 @@
       Already have an account? <a href="login.html" class="text-primary font-black hover:underline uppercase tracking-tight">Sign In</a>
     </p>
   </div>
-
-  <!-- Theme Toggle Floating -->
-  <button id="theme-toggle" class="fixed bottom-8 right-8 w-14 h-14 rounded-full bg-surface shadow-2xl border border-border flex items-center justify-center hover:scale-110 transition-all z-50">
-      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
 
   <script src="../assets/js/main.js"></script>
 </body>
