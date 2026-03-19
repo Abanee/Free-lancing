@@ -27,6 +27,14 @@
 
     .pulse-glow { animation: pulse-glow 3s infinite; }
     @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(212, 116, 91, 0.4); } 50% { box-shadow: 0 0 20px 10px rgba(212, 116, 91, 0); } }
+
+    /* Carousel Styles */
+    .carousel-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; z-index: 1; }
+    .carousel-slide.active { opacity: 1; z-index: 2; }
+    .carousel-indicators { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 30; }
+    .indicator-dot { width: 8px; height: 8px; background: rgba(255,255,255,0.3); border-radius: 50%; cursor: pointer; transition: all 0.3s ease; }
+    .indicator-dot.active { background: var(--color-primary); width: 24px; border-radius: 4px; }
   </style>
 </head>
 <body class="font-body bg-background text-primary transition-colors duration-300">
@@ -117,8 +125,8 @@
   </div>
 
   <!-- HERO SECTION -->
-  <section class="hero-split overflow-hidden">
-    <div class="flex flex-col justify-center px-8 sm:px-16 lg:px-24 bg-surface relative pt-20">
+  <section class="hero-split pt-20 overflow-hidden bg-surface">
+    <div class="flex flex-col justify-center px-8 sm:px-16 lg:px-24 relative pt-12 lg:pt-0">
       <div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
       <div class="relative z-10 space-y-8 animate-fade-in-up">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
@@ -142,9 +150,33 @@
         </div>
       </div>
     </div>
-    <div class="relative min-h-[50vh] transition-transform duration-700 hover:scale-105">
-      <div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent z-10 lg:block hidden"></div>
-      <img src="https://images.unsplash.com/photo-1518005020470-58b912a7cb66?auto=format&fit=crop&q=80&w=2000" alt="Architecture" class="absolute inset-0 w-full h-full object-cover">
+    <div class="relative min-h-[60vh] lg:min-h-[calc(100vh-5rem)] overflow-hidden">
+      <div class="carousel-container">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+          <img src="assets/Images/hero_carousel_1.png" alt="Cathedral Restoration" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/20 to-transparent z-10 lg:block hidden"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <img src="assets/Images/hero_carousel_2.png" alt="Craftsmanship" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/20 to-transparent z-10 lg:block hidden"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <img src="assets/Images/hero_carousel_3.png" alt="Historic Contrast" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/20 to-transparent z-10 lg:block hidden"></div>
+        </div>
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <div class="indicator-dot active" data-slide="0"></div>
+        <div class="indicator-dot" data-slide="1"></div>
+        <div class="indicator-dot" data-slide="2"></div>
+      </div>
+
+      <!-- Context Card Overlay -->
       <div class="absolute bottom-12 left-12 right-12 z-20">
         <div class="glass-card p-6 rounded-2xl flex items-center justify-between border border-white/10 backdrop-blur-xl">
             <div>
@@ -412,6 +444,34 @@
     themeBtn?.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Hero Carousel Logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.indicator-dot');
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    let itv = setInterval(nextSlide, slideInterval);
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(itv);
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            itv = setInterval(nextSlide, slideInterval);
+        });
     });
   </script>
 </body>
