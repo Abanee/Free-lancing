@@ -1,0 +1,169 @@
+/* ================================================================
+   Digital Marketing Studio - RTL (Right-to-Left) Support
+   Layout mirroring and text direction overrides
+   ================================================================ */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navbar RTL Adjustments */
+[dir="rtl"] .navbar-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-menu {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-link::after {
+  left: auto;
+  right: 0;
+}
+
+/* Mobile Menu RTL */
+[dir="rtl"] .mobile-menu-toggle {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mobile-menu-link:hover {
+  padding-left: var(--space-4);
+  padding-right: var(--space-6);
+}
+
+/* Button Icons RTL */
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
+}
+
+/* Card RTL */
+[dir="rtl"] .card::before {
+  transform-origin: right;
+}
+
+[dir="rtl"] .card-footer {
+  text-align: right;
+}
+
+/* Form RTL */
+[dir="rtl"] .form-label {
+  text-align: right;
+}
+
+[dir="rtl"] select.form-control {
+  background-position: left var(--space-4) center;
+  padding-left: var(--space-12);
+  padding-right: var(--space-4);
+}
+
+[dir="rtl"] .form-check {
+  flex-direction: row-reverse;
+}
+
+/* Footer RTL */
+[dir="rtl"] .footer-content {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-social {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-legal {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-link:hover {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+/* Back to Top RTL */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: var(--space-6);
+}
+
+/* Grid and Flex RTL Utilities */
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Arrows and Icons - Mirror */
+[dir="rtl"] .arrow-right::after {
+  content: '←';
+}
+
+[dir="rtl"] .arrow-left::after {
+  content: '→';
+}
+
+/* Animation Direction RTL */
+[dir="rtl"] @keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[dir="rtl"] @keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Badge RTL */
+[dir="rtl"] .badge {
+  flex-direction: row-reverse;
+}
+
+/* Responsive RTL Grid Adjustments */
+@media (min-width: 768px) {
+  [dir="rtl"] .footer-bottom {
+    text-align: right;
+  }
+}
+
+/* Lists RTL */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: var(--space-6);
+  padding-left: 0;
+}
+
+[dir="rtl"] li {
+  text-align: right;
+}

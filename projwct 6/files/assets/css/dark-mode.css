@@ -1,0 +1,205 @@
+/* ================================================================
+   Digital Marketing Studio - Dark Mode Theme
+   Electric Neo-Brutalist Dark Aesthetic
+   ================================================================ */
+
+[data-theme="dark"] {
+  /* Color System - Dark Theme */
+  --color-primary: #3385FF;
+  --color-primary-dark: #0066FF;
+  --color-primary-light: #66A3FF;
+  
+  --color-secondary: #FF6699;
+  --color-secondary-dark: #FF3366;
+  --color-secondary-light: #FF99BB;
+  
+  --color-accent: #00FFCC;
+  --color-accent-dark: #00CC99;
+  --color-accent-light: #33FFD6;
+  
+  /* Neutrals - Dark (Enhanced Contrast) */
+  --color-bg-primary: #0A0E27;
+  --color-bg-secondary: #151A35;
+  --color-bg-tertiary: #1F2440;
+  --color-surface: #1A1F3A;
+  --color-surface-elevated: #252A45;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E1E5F0;
+  --color-text-tertiary: #B0BAD0;
+  --color-text-inverse: #0A0E27;
+  
+  --color-border: #2A2F4A;
+  --color-border-strong: #3A3F5A;
+  
+  /* Feedback Colors - Enhanced for Dark */
+  --color-success: #22C55E;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
+  --color-info: #60A5FA;
+  
+  /* Gradients - Dark Enhanced */
+  --gradient-primary: linear-gradient(135deg, #3385FF 0%, #00FFCC 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6699 0%, #FF99BB 100%);
+  --gradient-accent: linear-gradient(135deg, #00FFCC 0%, #3385FF 100%);
+  --gradient-dark: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
+  
+  /* Shadows - Dark Enhanced with Glow */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  --shadow-brutal: 8px 8px 0 0 rgba(0, 255, 204, 0.2);
+  --shadow-brutal-strong: 12px 12px 0 0 var(--color-accent);
+  
+  /* Glow Effects for Dark Mode */
+  --glow-primary: 0 0 20px rgba(51, 133, 255, 0.3), 0 0 40px rgba(51, 133, 255, 0.1);
+  --glow-accent: 0 0 20px rgba(0, 255, 204, 0.3), 0 0 40px rgba(0, 255, 204, 0.1);
+  --glow-secondary: 0 0 20px rgba(255, 102, 153, 0.3), 0 0 40px rgba(255, 102, 153, 0.1);
+}
+
+/* Dark Mode Specific Overrides */
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(10, 14, 39, 0.8);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background-color: rgba(10, 14, 39, 0.95);
+  box-shadow: var(--shadow-lg), var(--glow-primary);
+}
+
+[data-theme="dark"] .card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--shadow-xl), var(--glow-primary);
+}
+
+[data-theme="dark"] .card-brutal {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-brutal);
+  background: var(--color-surface);
+}
+
+[data-theme="dark"] .card-brutal:hover {
+  box-shadow: 4px 4px 0 0 rgba(0, 255, 204, 0.3);
+}
+
+[data-theme="dark"] .btn-brutal {
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-brutal);
+}
+
+[data-theme="dark"] .btn-brutal:hover {
+  box-shadow: 4px 4px 0 0 rgba(0, 255, 204, 0.3);
+}
+
+[data-theme="dark"] .btn-primary {
+  box-shadow: var(--shadow-md), var(--glow-primary);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: var(--shadow-lg), var(--glow-primary);
+}
+
+[data-theme="dark"] .form-control {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(51, 133, 255, 0.2), var(--glow-primary);
+}
+
+[data-theme="dark"] select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23B8C1D9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .footer {
+  background: var(--color-bg-secondary);
+  border-top-color: var(--color-border);
+}
+
+[data-theme="dark"] .social-icon {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .social-icon:hover {
+  box-shadow: var(--glow-primary);
+}
+
+[data-theme="dark"] .back-to-top {
+  box-shadow: var(--shadow-lg), var(--glow-primary);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+  box-shadow: var(--shadow-xl), var(--glow-primary);
+}
+
+[data-theme="dark"] .bg-pattern {
+  background-image: 
+    linear-gradient(rgba(51, 133, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 133, 255, 0.05) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .glassmorphism {
+  background: rgba(21, 26, 53, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Text Effect for Dark Mode */
+[data-theme="dark"] .neon-text {
+  color: var(--color-accent);
+  text-shadow: 
+    0 0 10px rgba(0, 255, 204, 0.5),
+    0 0 20px rgba(0, 255, 204, 0.3),
+    0 0 30px rgba(0, 255, 204, 0.2);
+}
+
+/* Enhanced Badge in Dark Mode */
+[data-theme="dark"] .badge {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .badge-accent {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent);
+  box-shadow: var(--glow-accent);
+}
+
+/* Mobile Menu Dark Mode */
+[data-theme="dark"] .mobile-menu {
+  background: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .mobile-menu-link:hover {
+  background: var(--color-bg-secondary);
+}
+
+/* Theme Toggle Icon States */
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .rtl-toggle {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .theme-toggle:hover,
+[data-theme="dark"] .rtl-toggle:hover {
+  background: var(--color-bg-tertiary);
+  box-shadow: var(--glow-accent);
+}
