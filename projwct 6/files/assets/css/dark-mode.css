@@ -196,10 +196,27 @@
 [data-theme="dark"] .rtl-toggle {
   background: var(--color-surface);
   border-color: var(--color-border);
+  color: var(--color-accent);
 }
 
 [data-theme="dark"] .theme-toggle:hover,
 [data-theme="dark"] .rtl-toggle:hover {
   background: var(--color-bg-tertiary);
   box-shadow: var(--glow-accent);
+  color: #FFFFFF;
+}
+
+/* Fix Badge Visibility on Home 2 Featured Section in Dark Mode */
+[data-theme="dark"] .badge-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: var(--glow-primary);
+}
+
+[data-theme="dark"] .badge-secondary {
+  background: var(--color-secondary);
+  color: #FFFFFF;
+  border-color: var(--color-secondary);
+  box-shadow: var(--glow-secondary);
 }
