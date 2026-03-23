@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Historic Preservation & Restoration - Where Historical Integrity Meets Modern Techniques">
+  <meta name="description"
+    content="Historic Preservation & Restoration - Where Historical Integrity Meets Modern Techniques">
   <title>Historic Preservation & Restoration Contractor</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="assets/css/rtl.css">
-  
+
   <!-- Tailwind Configuration -->
   <script>
     tailwind.config = {
@@ -35,12 +37,15 @@
     }
   </script>
 </head>
+
 <body class="font-body">
+
+  
   
   <!-- ============================================================================ -->
   <!-- NAVBAR -->
   <!-- ============================================================================ -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/80 transition-all duration-300">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface transition-all duration-300 border-b border-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         
@@ -57,24 +62,22 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-4 xl:gap-8 flex-nowrap">
-          <a href="index.html" class="nav-link text-primary font-medium transition-colors border-b-2 border-primary whitespace-nowrap">Home</a>
-          <a href="home2.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Home 2</a>
-          <a href="pages/about.html" class="nav-link text-secondary transition-colors whitespace-nowrap">About</a>
-          <a href="pages/services.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Services</a>
-          <a href="pages/project-galleries.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Portfolio</a>
-          <a href="pages/blog.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Insights</a>
-          <a href="pages/contact.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Contact</a>
+          <a href="index.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Home</a>
+          <a href="home2.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Home 2</a>
+          <a href="pages/about.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">About</a>
+          <a href="pages/services.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Services</a>
+          <a href="pages/project-galleries.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Portfolio</a>
+          <a href="pages/blog.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Insights</a>
+          <a href="pages/contact.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Contact</a>
         </div>
         
         <!-- Right Side Controls -->
         <div class="flex items-center gap-2 xl:gap-3 flex-shrink-0">
-          <!-- RTL Toggle -->
           <button id="dir-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center text-sm font-semibold">
             LTR
           </button>
           
-          <!-- Theme Toggle -->
-          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-all flex items-center justify-center">
+          <button id="theme-toggle" class="w-10 h-10 rounded-lg hover:bg-surface-elevated transition-colors flex items-center justify-center">
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -88,7 +91,6 @@
             <a href="pages/login.html" class="btn-primary px-5 py-2.5"><span>Sign In / Join</span></a>
           </div>
           
-          <!-- Mobile Menu Toggle -->
           <button id="hamburger" class="hamburger lg:hidden">
             <span></span>
             <span></span>
@@ -98,9 +100,9 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="mobile-menu">
+  <div id="mobile-menu" class="mobile-menu bg-surface">
     <div class="p-6">
       <div class="flex justify-between items-center mb-8">
         <h3 class="font-display text-xl font-semibold">Menu</h3>
@@ -110,69 +112,78 @@
           </svg>
         </button>
       </div>
-      
       <nav class="space-y-4">
-        <a href="index.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium text-primary border-b border-border">Home</a>
-        <a href="home2.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home 2</a>
-        <a href="pages/about.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">About</a>
-        <a href="pages/services.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Services</a>
-        <a href="pages/project-galleries.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Portfolio</a>
-        <a href="pages/blog.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Insights</a>
-        <a href="pages/contact.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Contact</a>
-        <a href="pages/dashboard.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium text-primary border-b border-border">Dashboard</a>
-        <a href="pages/login.html" class="nav-link mobile-menu-link block py-3 text-lg font-medium text-primary">Sign In / Join</a>
+        <a href="index.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home</a>
+        <a href="home2.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Home 2</a>
+        <a href="pages/about.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">About</a>
+        <a href="pages/services.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Services</a>
+        <a href="pages/project-galleries.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Portfolio</a>
+        <a href="pages/blog.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Insights</a>
+        <a href="pages/contact.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Contact</a>
+        <a href="pages/dashboard.html" class="mobile-menu-link block py-3 text-lg font-medium hover:text-primary border-b border-border">Dashboard</a>
+        <a href="pages/login.html" class="mobile-menu-link block py-3 text-lg font-medium text-primary">Sign In / Join</a>
       </nav>
     </div>
-  </div>
-  
-  <!-- ============================================================================ -->
+  </div><!-- ============================================================================ -->
   <!-- HERO SECTION -->
   <!-- ============================================================================ -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, var(--color-primary) 0px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, var(--color-primary) 0px, transparent 1px, transparent 40px);"></div>
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/Images/hero_banner_index.png" alt="Hero Background" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
     </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10 z-0">
+      <div class="absolute inset-0"
+        style="background-image: repeating-linear-gradient(0deg, var(--color-primary) 0px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, var(--color-primary) 0px, transparent 1px, transparent 40px);">
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
       <div class="text-center animate-on-scroll fade-in-up">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
           Since 1985 - Certified Historic Preservation Specialists
         </div>
-        
+
         <!-- Main Headline -->
         <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Historical Integrity<br>
           Meets <span class="text-gradient">Modern Techniques</span>
         </h1>
-        
+
         <!-- Subheadline -->
         <p class="text-xl sm:text-2xl text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
           Reviving architectural heritage with meticulous craftsmanship and cutting-edge preservation methods
         </p>
-        
+
         <!-- Decorative Line -->
         <div class="decorative-line mx-auto"></div>
-        
+
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
           <a href="pages/project-galleries.html" class="btn-primary w-full sm:w-auto">
             <span class="flex items-center justify-center gap-2">
               View Our Work
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
           </a>
-          <a href="pages/dashboard.html" class="btn-secondary w-full sm:w-auto">
+          <a href="pages/dashboard.html"
+            class="btn-secondary w-full sm:w-auto flex items-center justify-center"
+            style="color: white !important; border-color: white !important;">
             <span>Client Portal</span>
           </a>
         </div>
-        
+
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
           <div class="text-center">
@@ -194,18 +205,18 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
       <div class="flex flex-col items-center gap-2 animate-bounce">
         <span class="text-sm text-tertiary">Scroll to explore</span>
         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
     </div>
   </section>
-  
+
   <!-- ============================================================================ -->
   <!-- FEATURES SECTION -->
   <!-- ============================================================================ -->
@@ -213,191 +224,241 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-on-scroll fade-in-up">
         <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Our Core Competencies</h2>
-        <p class="text-xl text-secondary max-w-2xl mx-auto">Specialized services that preserve the past while securing the future</p>
+        <p class="text-xl text-secondary max-w-2xl mx-auto">Specialized services that preserve the past while securing
+          the future</p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature Card 1 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-1">
           <div class="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Masonry Restoration</h3>
-          <p class="text-secondary leading-relaxed mb-4">Expert brick and stone restoration using period-appropriate techniques and materials to maintain structural and aesthetic integrity.</p>
+          <p class="text-secondary leading-relaxed mb-4">Expert brick and stone restoration using period-appropriate
+            techniques and materials to maintain structural and aesthetic integrity.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Historic brick matching</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Mortar repointing</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Stone cleaning & repair</span>
             </li>
           </ul>
         </div>
-        
+
         <!-- Feature Card 2 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-2">
           <div class="w-16 h-16 rounded-xl bg-gradient-secondary flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Structural Reinforcement</h3>
-          <p class="text-secondary leading-relaxed mb-4">Modern engineering solutions that strengthen historic structures while preserving their original character and appearance.</p>
+          <p class="text-secondary leading-relaxed mb-4">Modern engineering solutions that strengthen historic
+            structures while preserving their original character and appearance.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Foundation stabilization</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Seismic retrofitting</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Load-bearing analysis</span>
             </li>
           </ul>
         </div>
-        
+
         <!-- Feature Card 3 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-3">
           <div class="w-16 h-16 rounded-xl bg-gradient-accent flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Historical Woodwork</h3>
-          <p class="text-secondary leading-relaxed mb-4">Meticulous restoration of historic wooden elements from ornate moldings to structural timber, preserving craftsmanship.</p>
+          <p class="text-secondary leading-relaxed mb-4">Meticulous restoration of historic wooden elements from ornate
+            moldings to structural timber, preserving craftsmanship.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Period millwork reproduction</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Window restoration</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Decorative element repair</span>
             </li>
           </ul>
         </div>
-        
+
         <!-- Feature Card 4 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-4">
           <div class="w-16 h-16 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Facade Preservation</h3>
-          <p class="text-secondary leading-relaxed mb-4">Complete exterior restoration including cleaning, repair, and protective treatments for lasting beauty and durability.</p>
+          <p class="text-secondary leading-relaxed mb-4">Complete exterior restoration including cleaning, repair, and
+            protective treatments for lasting beauty and durability.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Building envelope repair</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Terracotta restoration</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Weatherproofing systems</span>
             </li>
           </ul>
         </div>
-        
+
         <!-- Feature Card 5 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-5">
           <div class="w-16 h-16 rounded-xl bg-gradient-secondary flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Heritage Consulting</h3>
-          <p class="text-secondary leading-relaxed mb-4">Expert guidance through compliance, grants, and preservation planning to protect and enhance historic properties.</p>
+          <p class="text-secondary leading-relaxed mb-4">Expert guidance through compliance, grants, and preservation
+            planning to protect and enhance historic properties.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Compliance documentation</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Tax credit assistance</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Historical research</span>
             </li>
           </ul>
         </div>
-        
+
         <!-- Feature Card 6 -->
         <div class="bg-surface rounded-2xl p-8 shadow-md card-hover animate-on-scroll fade-in-up stagger-6">
           <div class="w-16 h-16 rounded-xl bg-gradient-accent flex items-center justify-center mb-6">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
           <h3 class="font-display text-2xl font-semibold mb-4">Systems Integration</h3>
-          <p class="text-secondary leading-relaxed mb-4">Seamlessly integrate modern HVAC, electrical, and plumbing systems while respecting historic fabric.</p>
+          <p class="text-secondary leading-relaxed mb-4">Seamlessly integrate modern HVAC, electrical, and plumbing
+            systems while respecting historic fabric.</p>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Climate control systems</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Discreet infrastructure</span>
             </li>
             <li class="flex items-center gap-2">
               <svg class="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
               </svg>
               <span>Energy efficiency upgrades</span>
             </li>
@@ -406,7 +467,62 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- ============================================================================ -->
+  <!-- RESTORATION LIFECYCLE (New Section) -->
+  <!-- ============================================================================ -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 animate-on-scroll fade-in-up">
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">The Restoration Lifecycle</h2>
+        <p class="text-xl text-secondary max-w-2xl mx-auto">A meticulous, multi-phase approach to ensuring historical
+          longevity</p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2 z-0"></div>
+
+        <div class="grid lg:grid-cols-4 gap-8 relative z-10">
+          <div
+            class="bg-surface p-8 rounded-2xl shadow-lg border border-border/50 animate-on-scroll fade-in-up stagger-1">
+            <div
+              class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mb-6 mx-auto lg:mx-0">
+              1</div>
+            <h4 class="font-display text-xl font-bold mb-3">Discovery & Audit</h4>
+            <p class="text-sm text-secondary">Historical research, structural forensics, and material composition
+              analysis.</p>
+          </div>
+          <div
+            class="bg-surface p-8 rounded-2xl shadow-lg border border-border/50 animate-on-scroll fade-in-up stagger-2">
+            <div
+              class="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-xl mb-6 mx-auto lg:mx-0">
+              2</div>
+            <h4 class="font-display text-xl font-bold mb-3">Material Strategy</h4>
+            <p class="text-sm text-secondary">Custom mortar matching and sourcing period-accurate stone and timber.</p>
+          </div>
+          <div
+            class="bg-surface p-8 rounded-2xl shadow-lg border border-border/50 animate-on-scroll fade-in-up stagger-3">
+            <div
+              class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xl mb-6 mx-auto lg:mx-0">
+              3</div>
+            <h4 class="font-display text-xl font-bold mb-3">Elite Intervention</h4>
+            <p class="text-sm text-secondary">Master craftsmen execute repairs using time-honored techniques.</p>
+          </div>
+          <div
+            class="bg-surface p-8 rounded-2xl shadow-lg border border-border/50 animate-on-scroll fade-in-up stagger-4">
+            <div
+              class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mb-6 mx-auto lg:mx-0">
+              4</div>
+            <h4 class="font-display text-xl font-bold mb-3">Legacy Validation</h4>
+            <p class="text-sm text-secondary">Quality assurance, protective treatments, and final heritage
+              certification.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================================ -->
   <!-- MINI GALLERY (Before/After Preview) -->
   <!-- ============================================================================ -->
@@ -414,9 +530,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 animate-on-scroll fade-in-up">
         <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Transformation Showcase</h2>
-        <p class="text-xl text-secondary max-w-2xl mx-auto">Witness the remarkable journey from weathered heritage to restored grandeur</p>
+        <p class="text-xl text-secondary max-w-2xl mx-auto">Witness the remarkable journey from weathered heritage to
+          restored grandeur</p>
       </div>
-      
+
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Before/After Comparison 1 -->
         <div class="animate-on-scroll fade-in-up stagger-1">
@@ -433,10 +550,11 @@
           </div>
           <div class="mt-6">
             <h3 class="font-display text-2xl font-semibold mb-2">Victorian Mansion Facade</h3>
-            <p class="text-secondary">Complete facade restoration including masonry repair, window replacement, and decorative element reconstruction. Completed in 2023.</p>
+            <p class="text-secondary">Complete facade restoration including masonry repair, window replacement, and
+              decorative element reconstruction. Completed in 2023.</p>
           </div>
         </div>
-        
+
         <!-- Before/After Comparison 2 -->
         <div class="animate-on-scroll fade-in-up stagger-2">
           <div class="comparison-slider">
@@ -452,24 +570,125 @@
           </div>
           <div class="mt-6">
             <h3 class="font-display text-2xl font-semibold mb-2">Historic Church Interior</h3>
-            <p class="text-secondary">Meticulous restoration of ornate plasterwork, stained glass conservation, and structural reinforcement. Completed in 2022.</p>
+            <p class="text-secondary">Meticulous restoration of ornate plasterwork, stained glass conservation, and
+              structural reinforcement. Completed in 2022.</p>
           </div>
         </div>
       </div>
-      
+
       <div class="text-center mt-12">
         <a href="pages/project-galleries.html" class="btn-primary inline-flex">
           <span class="flex items-center gap-2">
             Explore Full Portfolio
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </span>
         </a>
       </div>
     </div>
   </section>
-  
+
+  <!-- ============================================================================ -->
+  <!-- VOICES OF PRESERVATION (New Section) -->
+  <!-- ============================================================================ -->
+  <section class="py-24 bg-surface-elevated">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll fade-in-left">
+          <img src="assets/Images/testimonial_1.png" alt="Happy Clients" class="rounded-3xl shadow-2xl">
+        </div>
+        <div class="space-y-8 animate-on-scroll fade-in-right">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            Success Stories
+          </div>
+          <h2 class="font-display text-4xl sm:text-5xl font-bold">What Our Clients Say</h2>
+          <div class="relative">
+            <svg class="absolute -top-10 -left-10 w-20 h-20 text-primary/10" fill="currentColor" viewBox="0 0 32 32">
+              <path
+                d="M10 8v8H6v2a2 2 0 002 2h2v4H8a6 6 0 01-6-6v-8a2 2 0 012-2h4zm14 0v8h-4v2a2 2 0 002 2h2v4h-2a6 6 0 01-6-6v-8a2 2 0 012-2h4z" />
+            </svg>
+            <p class="text-2xl text-secondary italic leading-relaxed relative z-10">
+              "HeritageCraft didn't just fix our house; they restored our family's history. Their attention to detail on
+              the Victorian moldings was breath-taking. They are true artists of the built environment."
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold text-xl">The Sterling Family</h4>
+            <p class="text-tertiary">Owners, Restored 1892 Queen Anne Victorian</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================================ -->
+  <!-- HERITAGE INSIGHTS (Blog Preview) -->
+  <!-- ============================================================================ -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+        <div class="animate-on-scroll fade-in-up">
+          <h2 class="font-display text-4xl sm:text-5xl font-bold mb-4">Heritage Insights</h2>
+          <p class="text-xl text-secondary">Expert perspectives on the art and science of preservation</p>
+        </div>
+        <a href="pages/blog.html" class="btn-secondary">Read All Articles</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Blog Post 1 -->
+        <div class="group cursor-pointer animate-on-scroll fade-in-up stagger-1">
+          <div class="overflow-hidden rounded-2xl mb-6">
+            <img src="assets/Images/blog_restoration_tech.png" alt="3D Laser Scanning"
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">Restoration Tech</p>
+          <h3 class="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">The Future of 3D
+            Laser Scanning in Heritage Sites</h3>
+          <p class="text-secondary text-sm mb-4">How digital twins are saving structures that were once deemed beyond
+            repair.</p>
+          <span class="flex items-center gap-2 text-primary font-bold text-sm uppercase">Read More <svg class="w-4 h-4"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg></span>
+        </div>
+        <!-- Blog Post 2 -->
+        <div class="group cursor-pointer animate-on-scroll fade-in-up stagger-2">
+          <div class="overflow-hidden rounded-2xl mb-6">
+            <img src="assets/Images/blog_material_science.png" alt="Historic Mortar Matching"
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">Material Science</p>
+          <h3 class="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Matching Historic
+            Mortar: An Art Form</h3>
+          <p class="text-secondary text-sm mb-4">Why chemical compatibility is more important than visual aesthetics in
+            masonry.</p>
+          <span class="flex items-center gap-2 text-primary font-bold text-sm uppercase">Read More <svg class="w-4 h-4"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg></span>
+        </div>
+        <!-- Blog Post 3 -->
+        <div class="group cursor-pointer animate-on-scroll fade-in-up stagger-3">
+          <div class="overflow-hidden rounded-2xl mb-6">
+            <img src="assets/Images/blog_heritage_law.png" alt="Historic District Zoning"
+              class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <p class="text-primary font-bold text-xs uppercase tracking-widest mb-2">Heritage Law</p>
+          <h3 class="font-display text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Navigating
+            Historic District Zoning Laws</h3>
+          <p class="text-secondary text-sm mb-4">Pro tips for getting your restoration project approved by local
+            commissions.</p>
+          <span class="flex items-center gap-2 text-primary font-bold text-sm uppercase">Read More <svg class="w-4 h-4"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================================ -->
   <!-- FOOTER -->
   <!-- ============================================================================ -->
@@ -479,9 +698,10 @@
         <!-- Company Info -->
         <div>
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 flex items-center justify-center overflow-hidden">
+            <a href="index.html"
+              class="w-12 h-12 flex items-center justify-center overflow-hidden transform hover:scale-105 transition-transform">
               <img src="assets/logo.png" alt="HeritageCraft Logo" class="w-full h-full object-contain">
-            </div>
+            </a>
             <div>
               <h3 class="font-display font-bold text-lg">HeritageCraft</h3>
               <p class="text-xs text-tertiary">Since 1985</p>
@@ -491,85 +711,106 @@
             Dedicated to preserving architectural heritage with uncompromising quality and authenticity.
           </p>
           <div class="flex gap-3">
-            <a href="#" class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            <a href="#"
+              class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
+              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
-            <a href="#" class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            <a href="#"
+              class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
+              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
               </svg>
             </a>
-            <a href="#" class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+            <a href="#"
+              class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
+              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
               </svg>
             </a>
-            <a href="#" class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            <a href="#"
+              class="w-10 h-10 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
+              <svg class="w-5 h-5 text-secondary group-hover:text-primary transition-colors" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
           </div>
         </div>
-        
+
         <!-- Quick Links -->
         <div>
           <h4 class="font-display font-semibold text-lg mb-6">Quick Links</h4>
           <ul class="space-y-3 text-sm">
             <li><a href="index.html" class="text-secondary hover:text-primary transition-colors">Home</a></li>
-            <li><a href="pages/project-galleries.html" class="text-secondary hover:text-primary transition-colors">Portfolio</a></li>
-            <li><a href="pages/blog.html" class="text-secondary hover:text-primary transition-colors">Insights & News</a></li>
+            <li><a href="pages/project-galleries.html"
+                class="text-secondary hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="pages/blog.html" class="text-secondary hover:text-primary transition-colors">Insights &
+                News</a></li>
             <li><a href="#services" class="text-secondary hover:text-primary transition-colors">Services</a></li>
-            <li><a href="pages/dashboard.html" class="text-secondary hover:text-primary transition-colors">Client Portal</a></li>
+            <li><a href="pages/dashboard.html" class="text-secondary hover:text-primary transition-colors">Client
+                Portal</a></li>
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">About Us</a></li>
           </ul>
         </div>
-        
+
         <!-- Services -->
         <div>
           <h4 class="font-display font-semibold text-lg mb-6">Our Services</h4>
           <ul class="space-y-3 text-sm">
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">Masonry Restoration</a></li>
-            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Structural Reinforcement</a></li>
+            <li><a href="#" class="text-secondary hover:text-primary transition-colors">Structural Reinforcement</a>
+            </li>
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">Historical Woodwork</a></li>
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">Facade Preservation</a></li>
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">Heritage Consulting</a></li>
             <li><a href="#" class="text-secondary hover:text-primary transition-colors">Systems Integration</a></li>
           </ul>
         </div>
-        
+
         <!-- Newsletter -->
         <div>
           <h4 class="font-display font-semibold text-lg mb-6">Stay Updated</h4>
-          <p class="text-secondary text-sm mb-4">Subscribe to our newsletter for preservation insights and project updates.</p>
+          <p class="text-secondary text-sm mb-4">Subscribe to our newsletter for preservation insights and project
+            updates.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Your email address" class="newsletter-input mb-3" required>
             <button type="submit" class="btn-primary w-full">
               <span>Subscribe</span>
             </button>
           </form>
-          
+
           <div class="mt-6">
             <h5 class="font-semibold text-sm mb-3">Contact Info</h5>
             <div class="space-y-2 text-sm text-secondary">
               <p class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +1 (555) 123-4567
               </p>
               <p class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 info@heritagecraft.com
               </p>
               <p class="flex items-start gap-2">
                 <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 123 Heritage Lane<br>Historic District, NY 10001
               </p>
@@ -577,7 +818,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Bottom Bar -->
       <div class="pt-8 border-t border-border">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-tertiary">
@@ -591,9 +832,10 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- Custom JavaScript -->
   <script src="assets/js/main.js"></script>
-  
+
 </body>
+
 </html>
