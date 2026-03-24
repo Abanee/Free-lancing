@@ -13,7 +13,7 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: { extend: { fontFamily: { display: ['Crimson Pro','serif'], body: ['Manrope','sans-serif'] }, colors: { primary: '#D4745B', secondary: '#E8B464', accent: '#2C3E50' } } }
+      theme: { extend: { fontFamily: { display: ['Crimson Pro','serif'], body: ['Manrope','sans-serif'] }, colors: { primary: '#D4745B', secondary: '#E8B464', accent: '#2C3E50', surface: 'var(--color-surface)', border: 'var(--color-border)' } } }
     }
   </script>
   <style>
@@ -57,13 +57,13 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-4 xl:gap-8 flex-nowrap">
-          <a href="index.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Home</a>
-          <a href="home2.html" class="nav-link text-primary font-medium transition-colors border-b-2 border-primary whitespace-nowrap">Home 2</a>
-          <a href="pages/about.html" class="nav-link text-secondary transition-colors whitespace-nowrap">About</a>
-          <a href="pages/services.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Services</a>
-          <a href="pages/project-galleries.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Portfolio</a>
-          <a href="pages/blog.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Insights</a>
-          <a href="pages/contact.html" class="nav-link text-secondary transition-colors whitespace-nowrap">Contact</a>
+          <a href="index.html" class="nav-link transition-colors whitespace-nowrap">Home</a>
+          <a href="home2.html" class="nav-link active transition-colors whitespace-nowrap">Home 2</a>
+          <a href="pages/about.html" class="nav-link transition-colors whitespace-nowrap">About</a>
+          <a href="pages/services.html" class="nav-link transition-colors whitespace-nowrap">Services</a>
+          <a href="pages/project-galleries.html" class="nav-link transition-colors whitespace-nowrap">Portfolio</a>
+          <a href="pages/blog.html" class="nav-link transition-colors whitespace-nowrap">Insights</a>
+          <a href="pages/contact.html" class="nav-link transition-colors whitespace-nowrap">Contact</a>
         </div>
         
         <!-- Right Side Controls -->

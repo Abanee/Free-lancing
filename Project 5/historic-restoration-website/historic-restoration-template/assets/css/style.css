@@ -71,11 +71,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Glassmorphism navbar effect */
 .navbar-glass {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--glass-border) !important;
   box-shadow: var(--glass-shadow) !important;
+}
+
+#navbar {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* Custom button styles */
@@ -155,15 +156,36 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-primary);
 }
 
-/* Global Navbar Link Hover Improvement */
-.nav-link:hover {
-  color: var(--color-primary) !important;
-  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+/* Global Navbar Link Styles */
+.nav-link {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: all 0.3s ease;
+  color: var(--color-text-secondary);
 }
 
-[data-theme="dark"] .nav-link:hover {
-  color: var(--color-primary-light) !important;
-  text-shadow: 0 0 1px rgba(255,255,255,0.1);
+.nav-link:hover, .nav-link.active {
+  color: var(--color-primary) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Theme-specific adjustments */
+[data-theme="dark"] .nav-link {
+  color: var(--color-text-secondary);
 }
 
 /* Card hover effects */

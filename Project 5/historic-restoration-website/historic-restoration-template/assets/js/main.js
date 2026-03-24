@@ -155,28 +155,38 @@ function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
   
-  let lastScroll = 0;
-  const scrollThreshold = 50;
+  const scrollThreshold = 20;
   
-  window.addEventListener('scroll', () => {
+  const updateNavbarStyle = () => {
     const currentScroll = window.pageYOffset;
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     
-    // Add glassmorphism effect on scroll
     if (currentScroll > scrollThreshold) {
-      navbar.classList.add('navbar-glass');
+      navbar.classList.add('shadow-md', 'backdrop-blur-md');
+      // Dark White in light mode, Dark Black in dark mode - high opacity for scroll
+      navbar.style.backgroundColor = isDark ? 'rgba(26, 22, 20, 0.98)' : 'rgba(248, 245, 241, 0.95)';
+      navbar.style.borderBottomColor = isDark ? 'rgba(232, 148, 127, 0.2)' : 'rgba(212, 116, 91, 0.1)';
     } else {
-      navbar.classList.remove('navbar-glass');
+      navbar.classList.remove('shadow-md', 'backdrop-blur-md');
+      // Slightly more transparent at the top
+      navbar.style.backgroundColor = isDark ? 'rgba(26, 22, 20, 0.85)' : 'rgba(248, 245, 241, 0.85)';
+      navbar.style.borderBottomColor = 'transparent';
     }
-    
-    // Optional: Hide navbar on scroll down, show on scroll up
-    // if (currentScroll > lastScroll && currentScroll > 200) {
-    //   navbar.style.transform = 'translateY(-100%)';
-    // } else {
-    //   navbar.style.transform = 'translateY(0)';
-    // }
-    
-    lastScroll = currentScroll;
-  });
+  };
+
+  // Initial call
+  updateNavbarStyle();
+  
+  window.addEventListener('scroll', updateNavbarStyle);
+  
+  // Also update when theme changes
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      // Small delay to ensure data-theme attribute has updated
+      setTimeout(updateNavbarStyle, 10);
+    });
+  }
 }
 
 // ============================================================================

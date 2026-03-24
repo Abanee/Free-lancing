@@ -31,6 +31,8 @@
             primary: '#D4745B',
             secondary: '#E8B464',
             accent: '#2C3E50',
+            surface: 'var(--color-surface)',
+            border: 'var(--color-border)',
           }
         }
       }
@@ -45,7 +47,7 @@
   <!-- ============================================================================ -->
   <!-- NAVBAR -->
   <!-- ============================================================================ -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface transition-all duration-300 border-b border-border">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/80 transition-all duration-300 border-b border-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         
@@ -62,13 +64,13 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-4 xl:gap-8 flex-nowrap">
-          <a href="index.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Home</a>
-          <a href="home2.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Home 2</a>
-          <a href="pages/about.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">About</a>
-          <a href="pages/services.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Services</a>
-          <a href="pages/project-galleries.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Portfolio</a>
-          <a href="pages/blog.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Insights</a>
-          <a href="pages/contact.html" class="nav-link text-secondary hover:text-primary transition-colors whitespace-nowrap">Contact</a>
+          <a href="index.html" class="nav-link active transition-colors whitespace-nowrap">Home</a>
+          <a href="home2.html" class="nav-link transition-colors whitespace-nowrap">Home 2</a>
+          <a href="pages/about.html" class="nav-link transition-colors whitespace-nowrap">About</a>
+          <a href="pages/services.html" class="nav-link transition-colors whitespace-nowrap">Services</a>
+          <a href="pages/project-galleries.html" class="nav-link transition-colors whitespace-nowrap">Portfolio</a>
+          <a href="pages/blog.html" class="nav-link transition-colors whitespace-nowrap">Insights</a>
+          <a href="pages/contact.html" class="nav-link transition-colors whitespace-nowrap">Contact</a>
         </div>
         
         <!-- Right Side Controls -->
