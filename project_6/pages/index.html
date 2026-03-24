@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventure Film & Photography Collective — Extreme Expedition Media</title>
+  <meta name="description" content="Premium adventure film and photography collective specializing in extreme environments. Hire us for brand campaigns, tourism boards, and expedition coverage worldwide." />
+  <meta name="keywords" content="adventure photography, expedition filmmaking, extreme environment photography, outdoor brand campaigns, travel filmmaking" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Adventure Film & Photography Collective" />
+  <meta property="og:description" content="World-class adventure film and photography from extreme environments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+
+  <script>
+    // Prevent flash of wrong theme
+    (function(){
+      const saved = localStorage.getItem('afpc-theme');
+      const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || preferred);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" aria-label="Close lightbox">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <img class="lightbox-img" src="" alt="Gallery preview" />
+  </div>
+</div>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" aria-hidden="true"></div>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+    <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
+    <li><a href="service.html" class="mobile-nav-link">Services</a></li>
+    <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+    <li><a href="blog.html" class="mobile-nav-link">Stories</a></li>
+    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+  </ul>
+  <div style="display:flex; gap:12px; flex-direction:column;">
+    <a href="contact.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Hire Us</a>
+    <a href="signin.html" class="btn btn-outline-dark" style="text-align:center; justify-content:center;">Sign In</a>
+  </div>
+</nav>
+
+<!-- NAVBAR -->
+<header class="navbar hero-active" role="banner">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo" aria-label="Adventure Film & Photography Collective Home">
+        <span class="nav-logo-text">AFPC</span>
+        <span class="nav-logo-sub">Film &amp; Photography</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="blog.html" class="nav-link">Stories</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark/light mode">
+          <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="nav-cta">Hire Us</a>
+        <button class="rtl-toggle" data-rtl-toggle aria-label="Toggle LTR/RTL mode">
+          <span class="rtl-toggle-text">LTR</span>
+        </button>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" aria-label="Hero">
+  <!-- Atmospheric background layers -->
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <!-- Hero image — vivid mountain landscape placeholder -->
+  <div class="hero-image" aria-hidden="true" style="
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=80');
+    background-position: center 40%;
+  "></div>
+
+  <!-- Overlays -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Floating orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-eyebrow" data-aos="fade-up">
+        <span class="hero-eyebrow-line" aria-hidden="true"></span>
+        <span class="hero-eyebrow-text">Extreme Expedition Media</span>
+      </div>
+
+      <h1 class="hero-title reveal">
+        Beyond<br>
+        <em>Every</em><br>
+        <span class="outline-text">Horizon</span>
+      </h1>
+
+      <p class="hero-desc reveal reveal-delay-2">
+        We capture the world's most extreme environments — from arctic summits to ocean depths. Premium film and photography for brands that dare to go further.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="contact.html" class="btn btn-primary">
+          Hire Us
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a href="#projects" class="btn btn-outline">
+          View Work
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="hero-stats" aria-label="Key statistics">
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="340" data-suffix="+">340+</span>
+      <span class="hero-stat-label">Expeditions</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="78">78</span>
+      <span class="hero-stat-label">Countries</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="12">12</span>
+      <span class="hero-stat-label">Awards</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-count="95" data-suffix="%">95%</span>
+      <span class="hero-stat-label">Client Satisfaction</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED PROJECTS
+     ============================================================ -->
+<section id="projects" style="padding: 100px 0;">
+  <div class="container">
+    <div class="section-header-inline">
+      <div>
+        <span class="overline reveal">Featured Work</span>
+        <h2 class="display-md reveal reveal-delay-1" style="margin-top:12px;">Expeditions That<br><em style="font-style:italic; color:var(--accent1);">Define the Medium</em></h2>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <a href="pages/service.html" class="btn btn-ghost btn-outline-dark">
+          All Projects
+          <span class="btn-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="category-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="mountains">Mountains</button>
+      <button class="filter-btn" data-filter="oceans">Oceans</button>
+      <button class="filter-btn" data-filter="deserts">Deserts</button>
+      <button class="filter-btn" data-filter="polar">Polar</button>
+      <button class="filter-btn" data-filter="aerial">Aerial</button>
+      <button class="filter-btn" data-filter="brands">Brand Campaigns</button>
+    </div>
+
+    <div class="projects-grid reveal">
+      <!-- Featured large card -->
+      <article class="project-card project-card--featured" data-category="mountains" data-lightbox="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80" role="button" tabindex="0" aria-label="View K2 North Face project">
+        <img class="project-thumb img-placeholder"
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&q=80"
+          alt="Climbers ascending K2 North Face in winter conditions"
+          loading="lazy" />
+        <div class="project-overlay" aria-hidden="true"></div>
+        <div class="project-info">
+          <span class="project-cat">Mountains · Pakistan</span>
+          <h3 class="project-title">K2 North Face — Winter Ascent</h3>
+          <div class="project-meta">
+            <span class="project-meta-tag">Documentary</span>
+            <span class="project-meta-sep">·</span>
+            <span class="project-meta-tag">4K · 6 weeks</span>
+            <span class="project-meta-sep">·</span>
+            <span class="project-meta-tag">2024</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tall card -->
+      <article class="project-card project-card--tall" data-category="polar" data-lightbox="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80" role="button" tabindex="0" aria-label="View Greenland Traverse project">
+        <img class="project-thumb img-placeholder"
+          src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80"
+          alt="Expedition team crossing the Greenland ice sheet at golden hour"
+          loading="lazy" />
+        <div class="project-overlay" aria-hidden="true"></div>
+        <div class="project-info">
+          <span class="project-cat">Polar · Greenland</span>
+          <h3 class="project-title">Greenland Ice Traverse</h3>
+          <div class="project-meta">
+            <span class="project-meta-tag">Photography</span>
+            <span class="project-meta-sep">·</span>
+            <span class="project-meta-tag">8 weeks</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Wide card -->
+      <article class="project-card project-card--wide" data-category="deserts" data-lightbox="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1000&q=80" role="button" tabindex="0" aria-label="View Rub al Khali project">
+        <img class="project-thumb img-placeholder"
+          src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=700&q=80"
+          alt="Sand dunes of the Rub al Khali desert at sunset"
+          loading="lazy" />
+        <div class="project-overlay" aria-hidden="true"></div>
+        <div class="project-info">
+          <span class="project-cat">Deserts · Arabia</span>
+          <h3 class="project-title">Rub' al Khali — Empty Quarter</h3>
+          <div class="project-meta">
+            <span class="project-meta-tag">Brand Campaign</span>
+            <span class="project-meta-sep">·</span>
+            <span class="project-meta-tag">Tourism Board</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Small card -->
+      <article class="project-card project-card--sm" data-category="oceans" data-lightbox="https://images.unsplash.com/photo-1498889444388-e67ea62c464b?w=800&q=80" role="button" tabindex="0" aria-label="View Pacific Depths project">
+        <img class="project-thumb img-placeholder"
+          src="https://images.unsplash.com/photo-1498889444388-e67ea62c464b?w=600&q=80"
+          alt="Deep ocean freediving in Pacific crystal blue waters"
+          loading="lazy" />
+        <div class="project-overlay" aria-hidden="true"></div>
+        <div class="project-info">
+          <span class="project-cat">Oceans · Pacific</span>
+          <h3 class="project-title">Pacific Depths</h3>
+          <div class="project-meta">
+            <span class="project-meta-tag">Freediving Doc</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY SECTION — IMMERSIVE STRIP
+     ============================================================ -->
+<section class="gallery-section" aria-label="Photo gallery">
+  <div class="gallery-header-area">
+    <div class="container">
+      <div class="section-header-inline">
+        <div>
+          <span class="overline reveal" style="color:var(--accent3);">Visual Archive</span>
+          <h2 class="display-md reveal reveal-delay-1" style="margin-top:12px; color:#fff;">
+            The World Through<br><em style="font-style:italic; color:var(--accent1);">Our Lens</em>
+          </h2>
+        </div>
+        <a href="#" class="btn btn-outline reveal reveal-delay-2">Full Gallery</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expanding gallery strip -->
+  <div class="gallery-strip" role="list">
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="Alpine peak in stormy weather" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Alpine Storm</span>
+    </div>
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=600&q=80" alt="Ocean wave during big swell" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Pacific Swell</span>
+    </div>
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80" alt="Desert canyon at golden hour" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Canyon Gold</span>
+    </div>
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80" alt="Northern lights over ice tundra" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Aurora Tundra</span>
+    </div>
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1682685796536-8d6d06fa18f0?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1682685796536-8d6d06fa18f0?w=600&q=80" alt="Aerial view of mountain ridge" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Ridge Aerial</span>
+    </div>
+    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1000&q=80" tabindex="0">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" alt="Underwater coral reef photography" loading="lazy" />
+      <div class="gallery-item-overlay" aria-hidden="true"></div>
+      <span class="gallery-item-label">Coral Depths</span>
+    </div>
+  </div>
+
+  <!-- Mosaic gallery -->
+  <div class="gallery-mosaic">
+    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" tabindex="0" role="button" aria-label="View mountain sunrise photo">
+      <img class="mosaic-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Dramatic mountain sunrise with cloud sea below" loading="lazy" />
+      <div class="mosaic-overlay" aria-hidden="true">
+        <div class="mosaic-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80" tabindex="0" role="button" aria-label="View fog valley photo">
+      <img class="mosaic-img" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80" alt="Valley filled with morning fog and pine trees" loading="lazy" />
+      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    </div>
+    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?w=800&q=80" tabindex="0" role="button" aria-label="View glacier photo">
+      <img class="mosaic-img" src="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?w=600&q=80" alt="Ice glacier with deep crevasses in blue light" loading="lazy" />
+      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    </div>
+    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1200&q=80" tabindex="0" role="button" aria-label="View midnight sun photo">
+      <img class="mosaic-img" src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=800&q=80" alt="Midnight sun over arctic landscape" loading="lazy" />
+      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    </div>
+    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80" tabindex="0" role="button" aria-label="View waterfall photo">
+      <img class="mosaic-img" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80" alt="Powerful waterfall cascading through rainforest" loading="lazy" />
+      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials-section" aria-label="Client testimonials">
+  <div class="container">
+    <div class="section-header" style="text-align:center; position:relative; z-index:1;">
+      <span class="overline reveal">Client Voices</span>
+      <h2 class="display-md reveal reveal-delay-1" style="margin-top:12px;">
+        Trusted by the World's<br><em style="font-style:italic; color:var(--accent1);">Premier Brands</em>
+      </h2>
+      <div class="divider reveal reveal-delay-2" style="margin:20px auto;"></div>
+    </div>
+
+    <div class="testimonials-grid" data-stagger="0.12">
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"AFPC delivered imagery that transformed our entire campaign. Their ability to capture raw emotion in extreme conditions is unmatched — the kind of work you simply can't brief."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">SM</div>
+          <div>
+            <span class="testimonial-name">Sarah Mitchell</span>
+            <span class="testimonial-role">Creative Director, Arc'teryx</span>
+          </div>
+        </div>
+        <span class="testimonial-project">K2 Winter Campaign · 2024</span>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"We commissioned AFPC for our National Tourism campaign in Patagonia. The final film exceeded every expectation — it won three international awards and increased visitor enquiries by 340%."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">JR</div>
+          <div>
+            <span class="testimonial-name">James Rodrigues</span>
+            <span class="testimonial-role">Director, Visit Patagonia Board</span>
+          </div>
+        </div>
+        <span class="testimonial-project">Patagonia Tourism Film · 2023</span>
+      </article>
+
+      <article class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars" aria-label="5 stars">
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"Professional, fearless, and artistically extraordinary. AFPC embedded with our expedition team for 6 weeks in Greenland and produced documentation that became the defining visual record of the journey."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">AK</div>
+          <div>
+            <span class="testimonial-name">Anna Kowalski</span>
+            <span class="testimonial-role">Expedition Leader, Polar Routes</span>
+          </div>
+        </div>
+        <span class="testimonial-project">Greenland Ice Cap Crossing · 2024</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section class="stats-section" aria-label="Achievement statistics">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat-item">
+        <span class="stat-num" data-count="340" data-suffix="+">340+</span>
+        <span class="stat-label">Expeditions Documented</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="78">78</span>
+        <span class="stat-label">Countries Covered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="12">12</span>
+        <span class="stat-label">Industry Awards</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="4.8" data-suffix="/5">4.8/5</span>
+        <span class="stat-label">Average Client Rating</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BRANDS STRIP
+     ============================================================ -->
+<section class="brands-section" aria-label="Clients and partners">
+  <div class="container">
+    <p class="brands-header">Trusted by world-class brands &amp; tourism boards</p>
+  </div>
+  <div class="brands-track-wrapper">
+    <div class="brands-track" aria-hidden="true">
+      <span class="brand-name">Arc'teryx</span>
+      <span class="brand-name">Red Bull</span>
+      <span class="brand-name">National Geographic</span>
+      <span class="brand-name">The North Face</span>
+      <span class="brand-name">Visit Iceland</span>
+      <span class="brand-name">Patagonia</span>
+      <span class="brand-name">Rolex</span>
+      <span class="brand-name">Land Rover</span>
+      <span class="brand-name">Visit Norway</span>
+      <span class="brand-name">Salomon</span>
+      <span class="brand-name">BBC Storyworks</span>
+      <span class="brand-name">Gore-Tex</span>
+      <!-- Duplicate for seamless scroll -->
+      <span class="brand-name">Arc'teryx</span>
+      <span class="brand-name">Red Bull</span>
+      <span class="brand-name">National Geographic</span>
+      <span class="brand-name">The North Face</span>
+      <span class="brand-name">Visit Iceland</span>
+      <span class="brand-name">Patagonia</span>
+      <span class="brand-name">Rolex</span>
+      <span class="brand-name">Land Rover</span>
+      <span class="brand-name">Visit Norway</span>
+      <span class="brand-name">Salomon</span>
+      <span class="brand-name">BBC Storyworks</span>
+      <span class="brand-name">Gore-Tex</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS SECTION
+     ============================================================ -->
+<section class="process-section" style="padding: 100px 0;" aria-label="Our process">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 72px;">
+      <span class="overline reveal">How We Work</span>
+      <h2 class="display-md reveal reveal-delay-1" style="margin-top:12px;">
+        From Brief to<br><em style="font-style:italic; color:var(--accent1);">Screen</em>
+      </h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-num" aria-hidden="true">01</div>
+        <h3 class="process-title">Expedition Planning</h3>
+        <p class="process-desc">We assess locations, seasons, permits, and logistics for each unique project, ensuring every shot is possible and safe.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num" aria-hidden="true">02</div>
+        <h3 class="process-title">Creative Direction</h3>
+        <p class="process-desc">Our team develops a visual language and story arc that aligns with your brand's identity and the expedition's spirit.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num" aria-hidden="true">03</div>
+        <h3 class="process-title">Field Production</h3>
+        <p class="process-desc">We deploy with military-grade equipment into the world's most challenging environments — from base camp to the summit.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num" aria-hidden="true">04</div>
+        <h3 class="process-title">Post & Delivery</h3>
+        <p class="process-desc">Premium editing, color grading, and asset packaging to deliver final work ready for broadcast, digital, and print.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA SECTION
+     ============================================================ -->
+<section class="cta-section" aria-label="Hire us call to action">
+  <div class="container" style="position:relative; z-index:1;">
+    <span class="overline reveal" style="color:var(--accent3);">Start Your Project</span>
+    <h2 class="cta-title reveal reveal-delay-1">
+      Ready to Create<br><em style="font-style:italic; background:linear-gradient(135deg,#22D3EE,#14B8A6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Something Extraordinary?</em>
+    </h2>
+    <p class="cta-desc reveal reveal-delay-2">
+      Whether it's a brand campaign, a tourism film, or a full expedition documentary — we bring the world's most extreme environments to life.
+    </p>
+    <div class="reveal reveal-delay-3" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+      <a href="pages/contact.html" class="btn btn-primary" style="padding: 16px 40px; font-size: 0.85rem;">
+        Hire the Collective
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      </a>
+      <a href="pages/service.html" class="btn btn-outline" style="padding: 16px 40px;">
+        View Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="display:inline-flex; margin-bottom:0;">
+          <span class="nav-logo-text" style="font-size:1.5rem;">AFPC</span>
+          <span class="nav-logo-sub" style="margin-top:2px;">Film &amp; Photography</span>
+        </a>
+        <p class="footer-brand-desc">A premium collective of expedition filmmakers and photographers operating at the edge of the world's most extreme environments.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.5C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-heading">Work</h3>
+        <ul class="footer-links">
+          <li><a href="service.html" class="footer-link">All Projects</a></li>
+          <li><a href="service.html" class="footer-link">Mountains</a></li>
+          <li><a href="service.html" class="footer-link">Oceans</a></li>
+          <li><a href="service.html" class="footer-link">Polar Regions</a></li>
+          <li><a href="service.html" class="footer-link">Deserts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="service.html" class="footer-link">Adventure Filmmaking</a></li>
+          <li><a href="service.html" class="footer-link">Expedition Photography</a></li>
+          <li><a href="service.html" class="footer-link">Brand Production</a></li>
+          <li><a href="service.html" class="footer-link">Tourism Content</a></li>
+          <li><a href="service.html" class="footer-link">Aerial Coverage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">Company</h3>
+        <ul class="footer-links">
+          <li><a href="blog.html" class="footer-link">Stories</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          <li><a href="signin.html" class="footer-link">Sign In</a></li>
+        </ul>
+        <div style="margin-top:28px;">
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:6px; font-weight:500;">Based in:</p>
+          <p style="font-size:0.88rem; color:var(--text-secondary);">Chamonix · Reykjavík<br>Cape Town · Queenstown</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Adventure Film &amp; Photography Collective. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Preferences</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

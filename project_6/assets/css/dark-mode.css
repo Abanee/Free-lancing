@@ -1,0 +1,145 @@
+/* ============================================================
+   ADVENTURE FILM & PHOTOGRAPHY COLLECTIVE
+   Dark Mode Supplement — dark-mode.css
+   ============================================================ */
+
+/* Additional dark-mode-specific refinements beyond CSS variables */
+
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(7, 17, 26, 0.88);
+}
+
+[data-theme="dark"] .hero-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(34,211,238,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(20,184,166,0.10) 0%, transparent 50%),
+    linear-gradient(180deg, #07111A 0%, #051320 100%);
+}
+
+[data-theme="dark"] .stats-section {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .stat-num {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .cta-section {
+  background: linear-gradient(135deg, #07111A 0%, #0D2A3A 50%, #07111A 100%);
+}
+
+[data-theme="dark"] .cta-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .cta-desc {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .section-number {
+  color: rgba(255,255,255,0.04);
+}
+
+[data-theme="dark"] .testimonials-section::before {
+  color: rgba(255,255,255,0.03);
+}
+
+[data-theme="dark"] .process-num {
+  background: var(--surface2);
+}
+
+[data-theme="dark"] .upload-area:hover {
+  background: rgba(34,211,238,0.04);
+  border-color: var(--accent1);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: var(--surface2);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .testimonial-card {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .service-card::before {
+  background: linear-gradient(135deg, rgba(34,211,238,0.05) 0%, rgba(20,184,166,0.05) 100%);
+}
+
+[data-theme="dark"] .gallery-section {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .brands-track-wrapper::before {
+  background: linear-gradient(to right, #07111A, transparent);
+}
+
+[data-theme="dark"] .brands-track-wrapper::after {
+  background: linear-gradient(to left, #07111A, transparent);
+}
+
+[data-theme="dark"] .page-hero {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .page-hero-bg {
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(34,211,238,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 80%, rgba(20,184,166,0.06) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .auth-media {
+  background: #07111A;
+}
+
+[data-theme="dark"] .nav-cta:hover {
+  background: var(--accent1);
+  border-color: var(--accent1);
+  color: #07111A;
+}
+
+[data-theme="dark"] .btn-primary {
+  background: var(--accent1);
+  color: #07111A;
+  border-color: var(--accent1);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: #07111A;
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .filter-btn.active {
+  background: var(--accent1);
+  border-color: var(--accent1);
+  color: #07111A;
+}
+
+[data-theme="dark"] .social-login-btn {
+  background: var(--surface2);
+}
+
+[data-theme="dark"] .mobile-nav {
+  background: var(--surface);
+}
+
+/* Scrollbar for dark mode */
+[data-theme="dark"]::-webkit-scrollbar-track { background: #07111A; }
+[data-theme="dark"]::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); }
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover { background: var(--accent1); }

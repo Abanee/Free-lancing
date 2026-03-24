@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Collective — Adventure Film & Photography Collective</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  
+  <script>
+    (function(){
+      const saved = localStorage.getItem('afpc-theme');
+      const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || preferred);
+    })();
+  </script>
+</head>
+<body class="auth-page">
+
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- SIMPLE NAV -->
+<header class="navbar scrolled" style="background:transparent; border-bottom:none;">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-text">AFPC</span>
+      </a>
+      <a href="index.html" class="nav-link" style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase;">← Back to Home</a>
+      <a href="home2.html" class="nav-link" style="font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-left: 16px;">Home 2</a>
+      <button class="rtl-toggle" data-rtl-toggle aria-label="Toggle LTR/RTL mode" style="margin-left:auto;">
+        <span class="rtl-toggle-text">LTR</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="auth-container">
+  <div class="auth-box reveal">
+    <div class="auth-header">
+      <span class="overline">New Membership</span>
+      <h1 class="display-sm" style="margin-top:12px;">Join the Collective</h1>
+      <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem;">Become part of a world-class network of expedition filmmakers and photographers.</p>
+    </div>
+
+    <form class="auth-form" onsubmit="return false;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+        <div class="form-group">
+          <label class="form-label" for="first-name">First Name</label>
+          <input type="text" id="first-name" class="form-input" placeholder="Marcus" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="last-name">Last Name</label>
+          <input type="text" id="last-name" class="form-input" placeholder="Veld" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input type="email" id="email" class="form-input" placeholder="name@company.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="password">Create Password</label>
+        <input type="password" id="password" class="form-input" placeholder="••••••••" required />
+        <p style="font-size:0.7rem; color:var(--text-muted); margin-top:6px;">Minimum 8 characters with at least one number.</p>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:24px;">
+        <input type="checkbox" id="terms" required style="width:16px; height:16px; margin-top:3px; accent-color:var(--accent1);" />
+        <label for="terms" style="font-size:0.82rem; color:var(--text-secondary); line-height:1.5; cursor:pointer;">
+          I agree to the <a href="#" style="color:var(--accent1);">Terms of Service</a> and <a href="#" style="color:var(--accent1);">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">
+        Create Account
+      </button>
+
+      <div class="auth-divider">
+        <span>Or sign up with</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+        <button type="button" class="btn btn-outline" style="font-size:0.75rem; padding:10px;">Google</button>
+        <button type="button" class="btn btn-outline" style="font-size:0.75rem; padding:10px;">Apple</button>
+      </div>
+    </form>
+
+    <div class="auth-footer">
+      <p>Already have an account? <a href="signin.html" style="color:var(--accent1); font-weight:600;">Sign In</a></p>
+    </div>
+  </div>
+</main>
+
+<style>
+  .auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    background-image: radial-gradient(circle at 50% -20%, rgba(34, 211, 238, 0.05), transparent);
+  }
+  .auth-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+  .auth-box {
+    width: 100%;
+    max-width: 480px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: var(--shadow-xl);
+  }
+  .auth-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 32px 0;
+  }
+  .auth-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .auth-divider span {
+    position: relative;
+    background: var(--surface2);
+    padding: 0 16px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .auth-footer {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+</style>
+
+<footer style="padding: 24px 0; text-align:center; font-size:0.75rem; color:var(--text-muted); border-top: 1px solid var(--border);">
+  <div class="container">
+    <p>© 2026 Adventure Film & Photography Collective. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
