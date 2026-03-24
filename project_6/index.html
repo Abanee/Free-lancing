@@ -22,8 +22,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/dark-mode.css" />
 
   <script>
     // Prevent flash of wrong theme
@@ -56,16 +56,16 @@
 <nav class="mobile-nav" aria-label="Mobile navigation">
   <ul class="mobile-nav-links">
     <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-    <li><a href="home2.html" class="mobile-nav-link">Home 2</a></li>
-    <li><a href="service.html" class="mobile-nav-link">Services</a></li>
-    <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
-    <li><a href="blog.html" class="mobile-nav-link">Stories</a></li>
-    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    <li><a href="pages/home2.html" class="mobile-nav-link">Home 2</a></li>
+    <li><a href="pages/service.html" class="mobile-nav-link">Services</a></li>
+    <li><a href="pages/gallery.html" class="mobile-nav-link">Gallery</a></li>
+    <li><a href="pages/blog.html" class="mobile-nav-link">Stories</a></li>
+    <li><a href="pages/about.html" class="mobile-nav-link">About</a></li>
+    <li><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
   </ul>
   <div style="display:flex; gap:12px; flex-direction:column;">
-    <a href="contact.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Hire Us</a>
-    <a href="signin.html" class="btn btn-outline-dark" style="text-align:center; justify-content:center;">Sign In</a>
+    <a href="pages/contact.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Hire Us</a>
+    <a href="pages/signin.html" class="btn btn-outline-dark" style="text-align:center; justify-content:center;">Sign In</a>
   </div>
 </nav>
 
@@ -81,12 +81,12 @@
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="home2.html" class="nav-link">Home 2</a></li>
-          <li><a href="service.html" class="nav-link">Services</a></li>
-          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li><a href="blog.html" class="nav-link">Stories</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="pages/home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="pages/service.html" class="nav-link">Services</a></li>
+          <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="pages/blog.html" class="nav-link">Stories</a></li>
+          <li><a href="pages/about.html" class="nav-link">About</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
@@ -95,7 +95,7 @@
           <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="contact.html" class="nav-cta">Hire Us</a>
+        <a href="pages/contact.html" class="nav-cta">Hire Us</a>
         <button class="rtl-toggle" data-rtl-toggle aria-label="Toggle LTR/RTL mode">
           <span class="rtl-toggle-text">LTR</span>
         </button>
@@ -147,7 +147,7 @@
       </p>
 
       <div class="hero-actions reveal reveal-delay-3">
-        <a href="contact.html" class="btn btn-primary">
+        <a href="pages/contact.html" class="btn btn-primary">
           Hire Us
           <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7 7 7-7 7"/></svg>
         </a>
@@ -310,66 +310,102 @@
       </div>
     </div>
   </div>
-
-  <!-- Expanding gallery strip -->
-  <div class="gallery-strip" role="list">
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="Alpine peak in stormy weather" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Alpine Storm</span>
+  <!-- Zoom Carousel Gallery -->
+  <div class="gallery-carousel reveal" id="visual-archive">
+    <!-- img1 -->
+    <div class="carousel-item" data-lightbox="assets/images/img1.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img1.jpg" alt="Gallery Image 1" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Frozen Peaks</span></div>
     </div>
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=600&q=80" alt="Ocean wave during big swell" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Pacific Swell</span>
+    <!-- img2 -->
+    <div class="carousel-item" data-lightbox="assets/images/img2.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img2.jpg" alt="Gallery Image 2" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Golden Coast</span></div>
     </div>
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80" alt="Desert canyon at golden hour" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Canyon Gold</span>
+    <!-- img3 -->
+    <div class="carousel-item" data-lightbox="assets/images/img3.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img3.jpg" alt="Gallery Image 3" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Alpine Ridge</span></div>
     </div>
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80" alt="Northern lights over ice tundra" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Aurora Tundra</span>
+    <!-- img4 -->
+    <div class="carousel-item" data-lightbox="assets/images/img4.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img4.jpg" alt="Gallery Image 4" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Snow Edge</span></div>
     </div>
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1682685796536-8d6d06fa18f0?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1682685796536-8d6d06fa18f0?w=600&q=80" alt="Aerial view of mountain ridge" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Ridge Aerial</span>
+    <!-- img5 -->
+    <div class="carousel-item" data-lightbox="assets/images/img5.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img5.jpg" alt="Gallery Image 5" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Horizon Line</span></div>
     </div>
-    <div class="gallery-item" role="listitem" data-lightbox="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1000&q=80" tabindex="0">
-      <img class="gallery-img" src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" alt="Underwater coral reef photography" loading="lazy" />
-      <div class="gallery-item-overlay" aria-hidden="true"></div>
-      <span class="gallery-item-label">Coral Depths</span>
+    <!-- img6 -->
+    <div class="carousel-item" data-lightbox="assets/images/img6.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img6.jpg" alt="Gallery Image 6" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Cold Ascent</span></div>
     </div>
-  </div>
-
-  <!-- Mosaic gallery -->
-  <div class="gallery-mosaic">
-    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" tabindex="0" role="button" aria-label="View mountain sunrise photo">
-      <img class="mosaic-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Dramatic mountain sunrise with cloud sea below" loading="lazy" />
-      <div class="mosaic-overlay" aria-hidden="true">
-        <div class="mosaic-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg>
-        </div>
-      </div>
+    <!-- img7 -->
+    <div class="carousel-item" data-lightbox="assets/images/img7.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img7.jpg" alt="Gallery Image 7" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Tundra Morning</span></div>
     </div>
-    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80" tabindex="0" role="button" aria-label="View fog valley photo">
-      <img class="mosaic-img" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80" alt="Valley filled with morning fog and pine trees" loading="lazy" />
-      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    <!-- img8 -->
+    <div class="carousel-item" data-lightbox="assets/images/img8.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img8.jpg" alt="Gallery Image 8" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Desert Bloom</span></div>
     </div>
-    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?w=800&q=80" tabindex="0" role="button" aria-label="View glacier photo">
-      <img class="mosaic-img" src="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?w=600&q=80" alt="Ice glacier with deep crevasses in blue light" loading="lazy" />
-      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    <!-- img9 -->
+    <div class="carousel-item" data-lightbox="assets/images/img9.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img9.jpg" alt="Gallery Image 9" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Deep Blues</span></div>
     </div>
-    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1200&q=80" tabindex="0" role="button" aria-label="View midnight sun photo">
-      <img class="mosaic-img" src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=800&q=80" alt="Midnight sun over arctic landscape" loading="lazy" />
-      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    <!-- img10 -->
+    <div class="carousel-item" data-lightbox="assets/images/img10.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img10.jpg" alt="Gallery Image 10" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Vertical World</span></div>
     </div>
-    <div class="mosaic-item" data-lightbox="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80" tabindex="0" role="button" aria-label="View waterfall photo">
-      <img class="mosaic-img" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80" alt="Powerful waterfall cascading through rainforest" loading="lazy" />
-      <div class="mosaic-overlay" aria-hidden="true"><div class="mosaic-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM10 7v6m3-3H7"/></svg></div></div>
+    <!-- img11 -->
+    <div class="carousel-item" data-lightbox="assets/images/img11.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img11.jpg" alt="Gallery Image 11" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Storm Watch</span></div>
+    </div>
+    <!-- img12 -->
+    <div class="carousel-item" data-lightbox="assets/images/img12.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img12.jpg" alt="Gallery Image 12" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Wild Spirit</span></div>
+    </div>
+    <!-- img13 -->
+    <div class="carousel-item" data-lightbox="assets/images/img13.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img13.jpg" alt="Gallery Image 13" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Glider Pulse</span></div>
+    </div>
+    <!-- img14 -->
+    <div class="carousel-item" data-lightbox="assets/images/img14.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img14.jpg" alt="Gallery Image 14" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Silent Coast</span></div>
+    </div>
+    <!-- img15 -->
+    <div class="carousel-item" data-lightbox="assets/images/img15.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img15.jpg" alt="Gallery Image 15" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Canine Companion</span></div>
+    </div>
+    <!-- img16 -->
+    <div class="carousel-item" data-lightbox="assets/images/img16.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img16.jpg" alt="Gallery Image 16" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Tactile Earth</span></div>
+    </div>
+    <!-- img17 -->
+    <div class="carousel-item" data-lightbox="assets/images/img17.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img17.jpg" alt="Gallery Image 17" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Peak Shadow</span></div>
+    </div>
+    <!-- img18 -->
+    <div class="carousel-item" data-lightbox="assets/images/img18.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img18.jpg" alt="Gallery Image 18" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Infinite Range</span></div>
+    </div>
+    <!-- img19 -->
+    <div class="carousel-item" data-lightbox="assets/images/img19.jpg" tabindex="0">
+      <img class="carousel-img" src="assets/images/img19.jpg" alt="Gallery Image 19" loading="lazy" />
+      <div class="carousel-overlay" aria-hidden="true"><span class="carousel-label">Final Frontier</span></div>
     </div>
   </div>
 </section>
@@ -634,6 +670,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
