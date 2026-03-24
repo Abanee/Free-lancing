@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <script>(function(){const s=localStorage.getItem('afpc-theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||p);})();</script>
   <style>
     .gallery-page-hero { padding: 160px 0 80px; background: var(--surface); border-bottom: 1px solid var(--border); }
@@ -54,8 +55,12 @@
 <header class="navbar scrolled" role="banner">
   <div class="container">
     <div class="navbar-inner">
-      <a href="../index.html" class="nav-logo" aria-label="AFPC Home">
-        <span class="nav-logo-text">AFPC</span><span class="nav-logo-sub">Film &amp; Photography</span>
+      <a href="../index.html" class="nav-logo" aria-label="Adventure Film & Photography Collective Home">
+        <img src="../assets/logo.png" alt="AFPC Logo" class="nav-logo-img">
+        <div class="nav-logo-content">
+          <span class="nav-logo-text">AFPC</span>
+          <span class="nav-logo-sub">Film &amp; Photography</span>
+        </div>
       </a>
       <nav aria-label="Main navigation">
         <ul class="nav-links" style="white-space: nowrap; flex-shrink: 0;">

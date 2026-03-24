@@ -12,6 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <script>
     (function(){
       const saved = localStorage.getItem('afpc-theme');
@@ -44,7 +45,13 @@
 <header class="navbar scrolled" role="banner">
   <div class="container">
     <div class="navbar-inner">
-      <a href="../index.html" class="nav-logo"><span class="nav-logo-text">AFPC</span><span class="nav-logo-sub">Film &amp; Photography</span></a>
+      <a href="../index.html" class="nav-logo" aria-label="Adventure Film & Photography Collective Home">
+        <img src="../assets/logo.png" alt="AFPC Logo" class="nav-logo-img">
+        <div class="nav-logo-content">
+          <span class="nav-logo-text">AFPC</span>
+          <span class="nav-logo-sub">Film &amp; Photography</span>
+        </div>
+      </a>
       <nav aria-label="Main navigation">
         <ul class="nav-links" style="white-space: nowrap; flex-shrink: 0;">
           <li><a href="../index.html" class="nav-link">Home</a></li>
