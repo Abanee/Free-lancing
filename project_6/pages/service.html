@@ -12,6 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <script>
     (function(){
       const saved = localStorage.getItem('afpc-theme');
@@ -46,9 +47,12 @@
 <header class="navbar scrolled" role="banner">
   <div class="container">
     <div class="navbar-inner">
-      <a href="../index.html" class="nav-logo" aria-label="AFPC Home">
-        <span class="nav-logo-text">AFPC</span>
-        <span class="nav-logo-sub">Film &amp; Photography</span>
+      <a href="../index.html" class="nav-logo" aria-label="Adventure Film & Photography Collective Home">
+        <img src="../assets/logo.png" alt="AFPC Logo" class="nav-logo-img">
+        <div class="nav-logo-content">
+          <span class="nav-logo-text">AFPC</span>
+          <span class="nav-logo-sub">Film &amp; Photography</span>
+        </div>
       </a>
       <nav aria-label="Main navigation">
         <ul class="nav-links" style="white-space: nowrap; flex-shrink: 0;">
@@ -315,9 +319,12 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="../index.html" class="nav-logo" style="display:inline-flex; margin-bottom:0;">
-          <span class="nav-logo-text" style="font-size:1.5rem;">AFPC</span>
-          <span class="nav-logo-sub" style="margin-top:2px;">Film &amp; Photography</span>
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo.png" alt="AFPC Logo" class="footer-logo-img">
+          <div class="footer-logo-content">
+            <span class="footer-logo-text">AFPC</span>
+            <span class="footer-logo-sub">Film &amp; Photography</span>
+          </div>
         </a>
         <p class="footer-brand-desc">A premium collective of expedition filmmakers and photographers operating at the edge of the world's most extreme environments.</p>
         <div class="footer-social" aria-label="Social media links">

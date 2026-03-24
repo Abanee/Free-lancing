@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <script>(function(){const s=localStorage.getItem('afpc-theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||p);})();</script>
   <style>
     .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
@@ -57,7 +58,11 @@
   <div class="container">
     <div class="navbar-inner">
       <a href="../index.html" class="nav-logo" aria-label="Adventure Film & Photography Collective Home">
-        <span class="nav-logo-text">AFPC</span><span class="nav-logo-sub">Film &amp; Photography</span>
+        <img src="../assets/logo.png" alt="AFPC Logo" class="nav-logo-img">
+        <div class="nav-logo-content">
+          <span class="nav-logo-text">AFPC</span>
+          <span class="nav-logo-sub">Film &amp; Photography</span>
+        </div>
       </a>
       <nav aria-label="Main navigation">
         <ul class="nav-links" style="white-space: nowrap; flex-shrink: 0;">
@@ -295,9 +300,12 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="nav-logo" style="display:inline-flex; margin-bottom:0;">
-          <span class="nav-logo-text" style="font-size:1.5rem;">AFPC</span>
-          <span class="nav-logo-sub" style="margin-top:2px;">Film &amp; Photography</span>
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo.png" alt="AFPC Logo" class="footer-logo-img">
+          <div class="footer-logo-content">
+            <span class="footer-logo-text">AFPC</span>
+            <span class="footer-logo-sub">Film &amp; Photography</span>
+          </div>
         </a>
         <p class="footer-brand-desc">A premium collective of expedition filmmakers and photographers operating at the edge of the world's most extreme environments.</p>
         <div class="footer-social" aria-label="Social media links">
