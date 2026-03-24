@@ -545,6 +545,74 @@
   };
 
   /* ============================================================
+     CAROUSEL MANAGER (Auto-play)
+     ============================================================ */
+  const CarouselManager = {
+    carousels: [],
+
+    init() {
+      this.carousels = document.querySelectorAll('.gallery-carousel');
+      if (!this.carousels.length) return;
+
+      this.carousels.forEach(carousel => {
+        this.setupAutoPlay(carousel);
+      });
+    },
+
+    setupAutoPlay(carousel) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let interval;
+
+      const startAutoPlay = () => {
+        interval = setInterval(() => {
+          if (isDown) return;
+          const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+          if (carousel.scrollLeft >= maxScroll - 5) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+          }
+        }, 4000);
+      };
+
+      const stopAutoPlay = () => clearInterval(interval);
+
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        stopAutoPlay();
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        startAutoPlay();
+      });
+
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        startAutoPlay();
+      });
+
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch events
+      carousel.addEventListener('touchstart', stopAutoPlay, { passive: true });
+      carousel.addEventListener('touchend', startAutoPlay, { passive: true });
+
+      startAutoPlay();
+    }
+  };
+
+  /* ============================================================
      INIT ALL
      ============================================================ */
   function init() {
@@ -563,6 +631,7 @@
     VideoCards.init();
     StaggerChildren.init();
     BlogFilter.init();
+    CarouselManager.init();
   }
 
   if (document.readyState === 'loading') {
