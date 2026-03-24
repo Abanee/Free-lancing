@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Kombucha Brewery</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .signin-body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(45, 71, 57, 0.9), rgba(45, 71, 57, 0.9)), url('../assets/images/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .signin-card {
+            width: 100%;
+            max-width: 450px;
+            padding: 4rem;
+            text-align: center;
+        }
+        .signin-card h2 { color: white; margin-bottom: 2rem; }
+        .signin-card input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .signin-card input::placeholder { color: rgba(255,255,255,0.5); }
+    </style>
+</head>
+<body class="signin-body">
+    <div class="glass-card signin-card">
+        <a href="../index.html" class="logo" style="color: white; display: block; margin-bottom: 1rem;">Kombucha.</a>
+        <div class="nav-toggles" style="justify-content: center; margin-bottom: 2rem;">
+            <button id="theme-toggle" class="toggle-btn">Dark</button>
+            <button id="rtl-toggle" class="toggle-btn">RTL</button>
+        </div>
+        <h2>Welcome Back</h2>
+        <form>
+            <input type="email" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <button type="submit" class="btn btn-primary" style="width: 100%; background-color: var(--secondary); margin-top: 1rem;">Sign In</button>
+        </form>
+        <p style="color: white; margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">Don't have an account? <a href="#" style="color: var(--secondary); font-weight: 600;">Sign Up</a></p>
+    </div>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

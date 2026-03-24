@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombucha Brewery | Artisanal Effervescence</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css" id="dark-mode-style" disabled>
+    <link rel="stylesheet" href="assets/css/rtl.css" id="rtl-style" disabled>
+    <style>
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-glass {
+            max-width: 800px;
+            padding: 4rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .hero h1 {
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, min-minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .product-card {
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .product-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .process-section {
+            background-color: #f0f2ed;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .process-image {
+            flex: 1;
+            height: 600px;
+            background: url('assets/images/about_brewery.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .process-content {
+            flex: 1;
+            padding: 4rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 0 2rem;
+            margin-top: 5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .footer-logo {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links h4 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+            opacity: 0.7;
+        }
+        .footer-links ul li:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Kombucha.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">Our Story</a></li>
+                <li><a href="pages/service.html">Services</a></li>
+                <li><a href="pages/blog.html">Blog</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+                <li class="nav-toggles">
+                    <button id="theme-toggle" class="toggle-btn">Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </li>
+            </ul>
+            <a href="pages/signin.html" class="btn btn-outline" style="border-color: white; color: white; padding: 8px 25px;">Sign In</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="glass-card hero-glass">
+            <h1>Nature in Every Bubble.</h1>
+            <p>Experience the finest artisanal kombucha, brewed with organic ingredients and ancient fermentation traditions.</p>
+            <div class="flex-center" style="gap: 1.5rem;">
+                <a href="#flavors" class="btn btn-primary">Discover Flavors</a>
+                <a href="pages/about.html" class="btn btn-outline" style="border-color: white; color: white;">Our Process</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section-padding" id="flavors">
+        <div class="up-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+            <h4 style="color: var(--secondary); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 1rem;">Signature Brews</h4>
+            <h2 style="font-size: 3rem;">Crafted for Your Soul</h2>
+        </div>
+
+        <div class="product-grid up-on-scroll">
+            <div class="product-card">
+                <img src="assets/images/product_set.png" alt="Signature Kombucha Flavors">
+                <h3>The Summer Collection</h3>
+                <p>A refreshing blend of seasonal fruits and botanicals.</p>
+                <a href="pages/service.html" style="color: var(--secondary); font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--secondary); padding-bottom: 2px; margin-top: 1rem; display: inline-block;">Shop Now</a>
+            </div>
+            <!-- More products could go here -->
+        </div>
+
+        <div class="process-section section-padding up-on-scroll" style="margin-top: 8rem;">
+            <div class="process-image"></div>
+            <div class="process-content">
+                <h4 style="color: var(--secondary); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 1rem;">Why Us?</h4>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Pure Ingredients. Pure Energy.</h2>
+                <p style="margin-bottom: 2rem;">Our kombucha is raw, unfiltered, and packed with probiotics. We source only the highest quality organic tea and locally grown fruits to ensure every bottle is a masterpiece of health and flavor.</p>
+                <a href="pages/about.html" class="btn btn-primary">Learn Our Secret</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Kombucha.</div>
+                    <p style="opacity: 0.7; max-width: 300px;">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/service.html">Services</a></li>
+                        <li><a href="pages/blog.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; opacity: 0.5;">
+                <p>&copy; 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
