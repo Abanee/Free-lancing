@@ -42,12 +42,15 @@ function initThemeManager() {
   
   if (savedTheme) {
     html.setAttribute('data-theme', savedTheme);
+    html.classList.toggle('dark', savedTheme === 'dark');
     updateThemeIcon(savedTheme);
   } else if (systemPrefersDark) {
     html.setAttribute('data-theme', 'dark');
+    html.classList.add('dark');
     updateThemeIcon('dark');
   } else {
     html.setAttribute('data-theme', 'light');
+    html.classList.remove('dark');
     updateThemeIcon('light');
   }
   
@@ -58,6 +61,7 @@ function initThemeManager() {
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       html.setAttribute('data-theme', newTheme);
+      html.classList.toggle('dark', newTheme === 'dark');
       localStorage.setItem('theme', newTheme);
       updateThemeIcon(newTheme);
       
@@ -74,6 +78,7 @@ function initThemeManager() {
     if (!localStorage.getItem('theme')) {
       const newTheme = e.matches ? 'dark' : 'light';
       html.setAttribute('data-theme', newTheme);
+      html.classList.toggle('dark', newTheme === 'dark');
       updateThemeIcon(newTheme);
     }
   });
