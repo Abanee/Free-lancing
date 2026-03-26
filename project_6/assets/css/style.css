@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 .body-md { font-size: 1rem; line-height: 1.7; }
 .body-sm { font-size: 0.875rem; line-height: 1.65; }
 
-p { color: var(--text-secondary); line-height: 1.75; }
+p { color: var(--text-secondary); line-height: 1.75; font-size: 1rem; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -193,6 +193,7 @@ section { padding: 100px 0; }
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  height: 100%;
 }
 
 .nav-logo {
@@ -398,13 +399,29 @@ section { padding: 100px 0; }
   height: 100vh;
   background: var(--surface);
   z-index: 999;
-  padding: 100px 40px 40px;
+  padding: 100px 40px 60px;
   transition: right 0.48s cubic-bezier(0.4,0,0.2,1);
   display: flex;
   flex-direction: column;
   gap: 32px;
   border-left: 1px solid var(--border);
   box-shadow: -20px 0 60px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.mobile-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.mobile-nav .theme-toggle,
+.mobile-nav .rtl-toggle {
+  display: flex !important;
 }
 
 .mobile-nav.open { right: 0; }
@@ -678,7 +695,7 @@ section { padding: 100px 0; }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 14px 32px;
+  padding: 14px 32px 16px;
   border-radius: 50px;
   border: 2px solid transparent;
   cursor: pointer;
@@ -2181,21 +2198,16 @@ section { padding: 100px 0; }
    PAGE HERO (inner pages)
    ============================================================ */
 .page-hero {
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding-top: 180px;
+  padding-bottom: 90px;
   position: relative;
   overflow: hidden;
   background: var(--surface2);
+  text-align: center;
 }
 
 .page-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--grad-accent);
+  display: none;
 }
 
 .page-hero-bg {
@@ -2208,7 +2220,7 @@ section { padding: 100px 0; }
 }
 
 .breadcrumb {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;

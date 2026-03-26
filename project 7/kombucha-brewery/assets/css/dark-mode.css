@@ -1,20 +1,41 @@
 body.dark-mode {
-    --bg-light: #121212;
-    --text-dark: #F5F5F5;
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --text-primary: #F5F5F5;
+    --text-secondary: #B0B0B0;
+    --brand-primary: #8EB69B; /* Lighter moss for dark mode */
+    --brand-secondary: #FFD700; /* Vibrant Gold */
+    --nav-bg: #1A1A1A;
+    --nav-text: #F5F5F5;
+    
     --glass: rgba(30, 30, 30, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
-    --primary: #8EB69B; /* Lighter moss for dark mode */
 }
 
-/* Specific Dark Mode overrides if needed */
-body.dark-mode .glass-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
+/* Specific Dark Mode overrides for premium feel */
+body.dark-mode .process-section {
+    background-color: var(--bg-secondary);
 }
 
-body.dark-mode .logo,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3 {
-    color: var(--primary);
+body.dark-mode .product-card h3 {
+    color: var(--brand-secondary);
+}
+
+body.dark-mode .price-card {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+body.dark-mode .price-card h4 {
+    color: var(--brand-primary);
+}
+
+body.dark-mode .contact-form,
+body.dark-mode .blog-card {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+body.dark-mode footer {
+    background: #000;
 }
