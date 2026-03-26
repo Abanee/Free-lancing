@@ -2197,13 +2197,21 @@ section { padding: 100px 0; }
 /* ============================================================
    PAGE HERO (inner pages)
    ============================================================ */
-.page-hero {
+.page-hero,
+.about-hero {
   padding-top: 180px;
   padding-bottom: 90px;
   position: relative;
   overflow: hidden;
   background: var(--surface2);
   text-align: center;
+}
+
+.page-hero .container,
+.about-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-hero::before {
