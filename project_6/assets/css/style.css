@@ -514,7 +514,7 @@ section { padding: 100px 0; }
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0;
+  padding: 100px 0 0;
   width: 100%;
 }
 
@@ -541,7 +541,7 @@ section { padding: 100px 0; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 10rem);
+  font-size: clamp(3.2rem, 8.5vw, 6.5rem);
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0.92;
@@ -2232,6 +2232,26 @@ section { padding: 100px 0; }
 .breadcrumb-link:hover { color: var(--accent1); }
 .breadcrumb-sep { color: var(--border-strong); }
 .breadcrumb-current { color: var(--text-primary); font-weight: 500; }
+
+/* Force light text in banners for all themes due to dark backgrounds */
+.page-hero h1, 
+.about-hero h1,
+.page-hero .display-lg, 
+.about-hero .display-lg,
+.page-hero .body-lg, 
+.about-hero .body-lg,
+.page-hero .overline,
+.about-hero .overline,
+.page-hero .breadcrumb-link,
+.about-hero .breadcrumb-link,
+.page-hero .breadcrumb-current,
+.about-hero .breadcrumb-current {
+  color: #FFFFFF !important;
+}
+.page-hero .breadcrumb-sep,
+.about-hero .breadcrumb-sep {
+  color: rgba(255,255,255,0.4) !important;
+}
 
 /* ============================================================
    RESPONSIVE
