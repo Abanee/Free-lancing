@@ -1000,6 +1000,15 @@ footer {
         gap: 0.5rem;
     }
 
+    .nav-actions {
+        gap: 1rem;
+    }
+
+    .nav-actions .btn-outline {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
     .nav-toggles {
         margin-top: 1rem;
         padding-top: 1.5rem;
@@ -1022,6 +1031,10 @@ footer {
     .newsletter-section { padding: 3rem 2rem; }
     .newsletter-form { flex-direction: column; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
+
+    .nav-actions .btn-outline {
+        display: none; /* Hide on small mobile to give logo more space */
+    }
 }
 
 @media (max-width: 480px) {
