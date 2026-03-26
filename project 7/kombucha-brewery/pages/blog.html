@@ -4,118 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal | Kombucha Brewery</title>
+    <meta name="description" content="Read the Kombucha Brewery journal — fermentation science, lifestyle recipes, health research, and the stories behind our brews.">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-        .blog-card {
-            border-radius: 20px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .blog-card:hover { transform: translateY(-5px); }
-        .blog-card img { width: 100%; height: 250px; object-fit: cover; }
-        .blog-content { padding: 2rem; }
-        .blog-meta { font-size: 0.8rem; color: #777; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-    </style>
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
 </head>
 <body>
     <nav id="main-nav">
         <div class="container nav-content">
-            <a href="../index.html" class="logo">Kombucha.</a>
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
                 <li><a href="about.html">Our Story</a></li>
                 <li><a href="service.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html" class="active">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="nav-toggles">
-                    <button id="theme-toggle" class="toggle-btn">Dark</button>
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
                     <button id="rtl-toggle" class="toggle-btn">RTL</button>
                 </li>
             </ul>
-            <a href="signin.html" class="btn btn-outline" style="border-color: white; color: white; padding: 8px 25px;">Sign In</a>
+            <a href="signin.html" class="btn btn-outline">Sign In</a>
         </div>
     </nav>
 
-    <main class="container section-padding" style="padding-top: 150px;">
-        <div class="up-on-scroll" style="text-align: center; margin-bottom: 4rem;">
-            <h4 style="color: var(--brand-secondary); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 1rem;">The Journal</h4>
-            <h2 style="font-size: 3rem;">Effervescent Thoughts</h2>
+    <header class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/hero_bg.png'); background-size: cover; background-position: center;">
+        <div class="page-hero-content">
+            <p class="section-label">The Journal</p>
+            <h1>Effervescent Thoughts</h1>
+            <p>Science, stories, and recipes from the world of artisanal kombucha.</p>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+
+        <div class="up-on-scroll text-center" style="margin-bottom: 4rem;">
+            <p class="section-label">Latest Posts</p>
+            <h2 class="section-title">Fresh from the Brewery</h2>
         </div>
 
+        <!-- Featured Post -->
+        <div class="up-on-scroll" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; margin-bottom: 5rem; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-color);">
+            <img src="../assets/images/hero_bg.png" alt="Featured blog post" style="width: 100%; height: 400px; object-fit: cover;">
+            <div style="padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                <div class="blog-meta">March 24, 2026 • Fermentation Science</div>
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--brand-primary);">The Science of Bubbles: Understanding CO2 in Kombucha</h2>
+                <p style="margin-bottom: 2rem;">Discover how CO2 levels — the natural result of yeast fermentation — affect the flavor profile, mouthfeel, and probiotic density of our signature batches. An in-depth guide from our lead microbiologist.</p>
+                <a href="#" class="btn btn-primary" style="display: inline-block; width: fit-content;">Read Full Article →</a>
+            </div>
+        </div>
+
+        <!-- Blog Grid -->
         <div class="blog-grid up-on-scroll">
             <div class="blog-card">
-                <img src="../assets/images/hero_bg.png" alt="Blog Post">
+                <img src="../assets/images/about_brewery.png" alt="Kombucha Cocktails">
                 <div class="blog-content">
-                    <div class="blog-meta">March 24, 2026 • Fermentation</div>
-                    <h3>The Science of Bubbles</h3>
-                    <p>Discover how CO2 levels affect the flavor profile of our signature kombucha batches.</p>
-                    <a href="#" style="color: var(--brand-primary); font-weight: 600; margin-top: 1rem; display: inline-block;">Read More →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="../assets/images/about_brewery.png" alt="Blog Post">
-                <div class="blog-content">
-                    <div class="blog-meta">March 15, 2026 • Lifestyle</div>
+                    <div class="blog-meta">March 15, 2026 • Lifestyle &amp; Recipes</div>
                     <h3>Kombucha Cocktails</h3>
-                    <p>Three refreshing recipes to elevate your weekend gatherings with organic fizz.</p>
-                    <a href="#" style="color: var(--brand-primary); font-weight: 600; margin-top: 1rem; display: inline-block;">Read More →</a>
+                    <p>Three refreshing mocktail and cocktail recipes to elevate your weekend gatherings with organic fizz and florals.</p>
+                    <a href="#" class="read-more">Read More →</a>
                 </div>
             </div>
             <div class="blog-card">
-                <img src="../assets/images/product_set.png" alt="Blog Post">
+                <img src="../assets/images/product_set.png" alt="Probiotics and Mind">
                 <div class="blog-content">
-                    <div class="blog-meta">March 10, 2026 • Health</div>
+                    <div class="blog-meta">March 10, 2026 • Health &amp; Wellness</div>
                     <h3>Probiotics & Your Mind</h3>
-                    <p>Exploring the gut-brain axis and how fermented drinks can boost your mood.</p>
-                    <a href="#" style="color: var(--brand-primary); font-weight: 600; margin-top: 1rem; display: inline-block;">Read More →</a>
+                    <p>Exploring the gut-brain axis and the latest research on how fermented drinks can boost your mood and reduce anxiety.</p>
+                    <a href="#" class="read-more">Read More →</a>
                 </div>
             </div>
+            <div class="blog-card">
+                <img src="../assets/images/hero_bg.png" alt="Sourcing Tea">
+                <div class="blog-content">
+                    <div class="blog-meta">March 5, 2026 • Behind the Brew</div>
+                    <h3>Sourcing the Perfect Tea</h3>
+                    <p>Our head brewer visits three organic tea farms in Oregon and explains exactly what makes a superior kombucha base.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../assets/images/about_brewery.png" alt="Seasonal Flavors">
+                <div class="blog-content">
+                    <div class="blog-meta">February 28, 2026 • Seasonal</div>
+                    <h3>Designing the Summer Collection</h3>
+                    <p>Behind the scenes of our flavor development process — from initial concept and aroma tests to final fermentation.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../assets/images/product_set.png" alt="Gut Health Guide">
+                <div class="blog-content">
+                    <div class="blog-meta">February 20, 2026 • Health &amp; Wellness</div>
+                    <h3>The Beginner's Guide to Gut Health</h3>
+                    <p>Everything you need to know about the microbiome, fermented foods, and starting your probiotic journey.</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="../assets/images/hero_bg.png" alt="Kombucha History">
+                <div class="blog-content">
+                    <div class="blog-meta">February 12, 2026 • History</div>
+                    <h3>2,000 Years of Kombucha History</h3>
+                    <p>From ancient China to modern craft breweries — the remarkable and surprisingly turbulent history of the "immortal health elixir."</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-section up-on-scroll">
+            <p class="section-label" style="color: var(--brand-secondary);">Stay in the Loop</p>
+            <h2>Get Brew Stories in Your Inbox</h2>
+            <p>Weekly articles on fermentation, health, recipes, and early access to new flavors — straight from our brewery to you.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Your email address...">
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+            <div class="footer-grid">
                 <div>
-                    <div class="footer-logo" style="font-size: 2rem; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;">Kombucha.</div>
-                    <p style="opacity: 0.7; max-width: 300px;">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-logo">Kombucha<span>.</span></div>
+                    <p class="footer-desc">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
                 </div>
-                <div class="footer-links" style="color: white;">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Explore</h4>
-                    <ul style="list-style: none;">
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="about.html">Our Story</a></li>
                         <li><a href="service.html">Services</a></li>
                         <li><a href="blog.html">Journal</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Support</h4>
-                    <ul style="list-style: none;">
+                    <h4>Support</h4>
+                    <ul>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="#">Shipping Policy</a></li>
                         <li><a href="#">Wholesale</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Follow</h4>
-                    <ul style="list-style: none;">
+                    <h4>Follow Us</h4>
+                    <ul>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Twitter</a></li>
                         <li><a href="#">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; opacity: 0.5;">
-                <p>&copy; 2026 Kombucha Brewery. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>© 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

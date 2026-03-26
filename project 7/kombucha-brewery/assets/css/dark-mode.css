@@ -1,41 +1,260 @@
+/* ============================================
+   DARK MODE OVERRIDES
+   Applied when body has class "dark-mode"
+   ============================================ */
 body.dark-mode {
-    --bg-primary: #121212;
-    --bg-secondary: #1E1E1E;
-    --text-primary: #F5F5F5;
-    --text-secondary: #B0B0B0;
-    --brand-primary: #8EB69B; /* Lighter moss for dark mode */
-    --brand-secondary: #FFD700; /* Vibrant Gold */
-    --nav-bg: #1A1A1A;
-    --nav-text: #F5F5F5;
-    
-    --glass: rgba(30, 30, 30, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    /* Core Colors */
+    --bg-primary: #111827;
+    --bg-secondary: #1F2937;
+    --bg-card: #1F2937;
+    --text-primary: #F3F4F6;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+
+    /* Brand stays recognizable but lighter */
+    --brand-primary: #6EAF8B;
+    --brand-secondary: #FFD700;
+    --brand-accent: #FF9A7C;
+
+    /* Nav */
+    --nav-bg: #0D1117;
+    --nav-text: #F3F4F6;
+
+    /* Borders & Inputs */
+    --border-color: #374151;
+    --input-bg: #374151;
+    --input-border: #4B5563;
+
+    /* Glass */
+    --glass: rgba(31, 41, 55, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+
+    /* Footer */
+    --footer-bg: #0D1117;
+    --footer-text: #F3F4F6;
+
+    /* Shadows */
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Specific Dark Mode overrides for premium feel */
+/* ===== BODY & BACKGROUND ===== */
+body.dark-mode {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* ===== HEADINGS ===== */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+    color: var(--brand-primary);
+}
+
+/* ===== PARAGRAPHS ===== */
+body.dark-mode p {
+    color: var(--text-secondary);
+}
+
+/* ===== NAVIGATION ===== */
+body.dark-mode nav {
+    background: var(--nav-bg);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+/* ===== STATS BAR ===== */
+body.dark-mode .stats-bar {
+    background: #0D1117;
+}
+
+/* ===== HERO ===== */
+body.dark-mode .page-hero {
+    background: #0D1117;
+}
+body.dark-mode .page-hero::before {
+    background: linear-gradient(135deg, rgba(13,17,23,0.97) 0%, rgba(31,41,55,0.9) 100%);
+}
+
+/* ===== GLASS CARD ===== */
+body.dark-mode .glass-card {
+    background: var(--glass);
+    border-color: var(--glass-border);
+}
+
+/* ===== PROCESS SECTION ===== */
 body.dark-mode .process-section {
     background-color: var(--bg-secondary);
 }
 
+/* ===== FLAVOR CARDS ===== */
+body.dark-mode .flavor-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .flavor-body h3 {
+    color: var(--brand-primary);
+}
+body.dark-mode .flavor-price {
+    color: var(--brand-secondary);
+}
+
+/* ===== PRODUCT CARDS ===== */
 body.dark-mode .product-card h3 {
     color: var(--brand-secondary);
 }
 
+/* ===== PRICING CARDS ===== */
 body.dark-mode .price-card {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
+    background: var(--bg-card);
+    border-color: var(--border-color);
 }
-
 body.dark-mode .price-card h4 {
     color: var(--brand-primary);
 }
+body.dark-mode .price {
+    color: var(--brand-secondary);
+}
+body.dark-mode .price-card ul li {
+    color: var(--text-secondary);
+}
 
-body.dark-mode .contact-form,
-body.dark-mode .blog-card {
+/* ===== FEATURE ITEMS ===== */
+body.dark-mode .feature-item {
     background: var(--bg-secondary);
     color: var(--text-primary);
 }
+body.dark-mode .feature-item:hover {
+    background: var(--bg-card);
+}
+body.dark-mode .feature-item h4 {
+    color: var(--brand-primary);
+}
+body.dark-mode .feature-item p {
+    color: var(--text-secondary);
+}
 
+/* ===== BLOG CARDS ===== */
+body.dark-mode .blog-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .blog-meta {
+    color: var(--text-muted);
+}
+body.dark-mode .blog-content h3 {
+    color: var(--brand-primary);
+}
+body.dark-mode .read-more {
+    color: var(--brand-secondary);
+}
+
+/* ===== TESTIMONIALS ===== */
+body.dark-mode .testimonials-section {
+    background: var(--bg-secondary);
+}
+body.dark-mode .testimonial-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .author-name {
+    color: var(--text-primary);
+}
+
+/* ===== CONTACT FORM ===== */
+body.dark-mode .contact-form {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .form-group label {
+    color: var(--text-primary);
+}
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-primary);
+}
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: var(--brand-secondary);
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.15);
+}
+body.dark-mode .info-icon {
+    background: var(--bg-secondary);
+}
+body.dark-mode .contact-info h3 {
+    color: var(--brand-primary);
+}
+body.dark-mode .info-item h4 {
+    color: var(--brand-primary);
+}
+
+/* ===== TEAM CARDS ===== */
+body.dark-mode .team-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .team-card h3 { color: var(--brand-primary); }
+
+/* ===== VALUES ===== */
+body.dark-mode .value-card {
+    background: var(--bg-secondary);
+}
+body.dark-mode .value-card h4 { color: var(--brand-primary); }
+
+/* ===== FAQ ===== */
+body.dark-mode .faq-item {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+body.dark-mode .faq-question {
+    color: var(--text-primary);
+}
+body.dark-mode .faq-icon {
+    background: var(--bg-secondary);
+    color: var(--brand-secondary);
+}
+body.dark-mode .faq-item.open .faq-icon {
+    background: var(--brand-secondary);
+    color: #111;
+}
+body.dark-mode .faq-answer-inner {
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+body.dark-mode .faq-category-title {
+    color: var(--brand-primary);
+}
+
+/* ===== NEWSLETTER ===== */
+body.dark-mode .newsletter-section {
+    background: #0D1117;
+}
+
+/* ===== FOOTER ===== */
 body.dark-mode footer {
-    background: #000;
+    background: var(--footer-bg);
+}
+
+/* ===== BUTTONS in dark mode ===== */
+body.dark-mode .btn-outline {
+    border-color: var(--nav-text);
+    color: var(--nav-text);
+}
+body.dark-mode .btn-outline:hover {
+    background-color: var(--brand-secondary);
+    border-color: var(--brand-secondary);
+    color: #111;
+}
+
+/* ===== SECTION LABEL ===== */
+body.dark-mode .section-label {
+    color: var(--brand-secondary);
 }

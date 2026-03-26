@@ -4,52 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In | Kombucha Brewery</title>
+    <meta name="description" content="Sign in to your Kombucha Brewery account to manage your subscription and preferences.">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
     <style>
-        .signin-body {
-            height: 100vh;
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #1a2e24 100%);
+        }
+        main {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(45, 71, 57, 0.9), rgba(45, 71, 57, 0.9)), url('../assets/images/hero_bg.png');
-            background-size: cover;
-            background-position: center;
+            padding: 8rem 2rem 4rem;
         }
-        .signin-card {
+        .auth-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 3.5rem;
             width: 100%;
-            max-width: 450px;
-            padding: 4rem;
+            max-width: 440px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+        }
+        .auth-logo {
             text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-primary);
         }
-        .signin-card h2 { color: white; margin-bottom: 2rem; }
-        .signin-card input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            border: none;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+        .auth-logo span { color: var(--brand-secondary); }
+        .auth-title {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--brand-primary);
         }
-        .signin-card input::placeholder { color: rgba(255,255,255,0.5); }
+        .auth-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+        .auth-footer-text {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .auth-footer-text a {
+            color: var(--brand-secondary);
+            font-weight: 600;
+        }
+        .forgot-link {
+            float: right;
+            font-size: 0.82rem;
+            color: var(--brand-secondary);
+            font-weight: 600;
+        }
+        body.dark-mode .auth-card {
+            background: var(--bg-card);
+        }
     </style>
 </head>
-<body class="signin-body">
-    <div class="glass-card signin-card">
-        <a href="../index.html" class="logo" style="color: white; display: block; margin-bottom: 1rem;">Kombucha.</a>
-        <div class="nav-toggles" style="justify-content: center; margin-bottom: 2rem;">
-            <button id="theme-toggle" class="toggle-btn">Dark</button>
-            <button id="rtl-toggle" class="toggle-btn">RTL</button>
+<body>
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-toggles">
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </li>
+            </ul>
         </div>
-        <h2>Welcome Back</h2>
-        <form>
-            <input type="email" placeholder="Email Address">
-            <input type="password" placeholder="Password">
-            <button type="submit" class="btn btn-primary" style="width: 100%; background-color: var(--brand-secondary); margin-top: 1rem;">Sign In</button>
-        </form>
-        <p style="color: white; margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">Don't have an account? <a href="#" style="color: var(--brand-secondary); font-weight: 600;">Sign Up</a></p>
-    </div>
+    </nav>
+
+    <main>
+        <div class="auth-card">
+            <div class="auth-logo">Kombucha<span>.</span></div>
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-subtitle">Sign in to manage your subscription and preferences.</p>
+
+            <form onsubmit="return false;">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">
+                        Password
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </label>
+                    <input type="password" id="password" placeholder="Your password" autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 0.95rem; padding: 14px;">Sign In</button>
+
+                <div class="divider">or continue with</div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button type="button" style="padding: 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-primary); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; transition: var(--transition);">🔵 Google</button>
+                    <button type="button" style="padding: 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-primary); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; transition: var(--transition);">⬛ Apple</button>
+                </div>
+            </form>
+
+            <p class="auth-footer-text">
+                Don't have an account? <a href="service.html">Start your subscription →</a>
+            </p>
+        </div>
+    </main>
+
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

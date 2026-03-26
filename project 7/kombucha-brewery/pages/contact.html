@@ -4,127 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Kombucha Brewery</title>
+    <meta name="description" content="Get in touch with Kombucha Brewery for subscription inquiries, wholesale orders, or just to say hello.">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
     <style>
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        .contact-form {
-            background: #fff;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
-        .form-group input, .form-group textarea {
+        .map-placeholder {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
+            height: 280px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--text-muted);
+            border: 2px dashed var(--border-color);
+            margin-top: 2rem;
+            overflow: hidden;
         }
-        .contact-info h3 { margin-bottom: 1.5rem; }
-        .info-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        body.dark-mode .map-placeholder {
+            background: var(--bg-secondary);
+            border-color: var(--border-color);
+        }
     </style>
 </head>
 <body>
     <nav id="main-nav">
         <div class="container nav-content">
-            <a href="../index.html" class="logo">Kombucha.</a>
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
                 <li><a href="about.html">Our Story</a></li>
                 <li><a href="service.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
                 <li class="nav-toggles">
-                    <button id="theme-toggle" class="toggle-btn">Dark</button>
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
                     <button id="rtl-toggle" class="toggle-btn">RTL</button>
                 </li>
             </ul>
-            <a href="signin.html" class="btn btn-outline" style="border-color: white; color: white; padding: 8px 25px;">Sign In</a>
+            <a href="signin.html" class="btn btn-outline">Sign In</a>
         </div>
     </nav>
 
-    <main class="container section-padding" style="padding-top: 150px;">
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <p class="section-label">Get in Touch</p>
+            <h1>We'd Love to Hear From You</h1>
+            <p>Whether you have a question about flavors, orders, or wholesale — we're here.</p>
+        </div>
+    </header>
+
+    <main class="container section-padding">
         <div class="contact-container up-on-scroll">
+            <!-- Contact Info -->
             <div class="contact-info">
-                <h4 style="color: var(--brand-secondary); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 1rem;">Get in Touch</h4>
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;">We'd Love to Hear From You</h2>
-                <p style="margin-bottom: 3rem;">Whether you have a question about our flavors, subscriptions, or wholesale, we're here to help.</p>
-                
+                <p class="section-label">Our Details</p>
+                <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">Find us, reach out,<br>or just say hi.</h2>
+                <p style="margin-bottom: 2.5rem;">Whether you have a question about our subscriptions, want to partner for wholesale, or just want to chat about fermentation — our small team is ready to help.</p>
+
                 <div class="info-item">
+                    <div class="info-icon">📍</div>
                     <div>
-                        <h4>Brewery Address</h4>
-                        <p>123 Fermentation Way, Portland, OR</p>
+                        <h4>Brewery &amp; HQ</h4>
+                        <p>123 Fermentation Way, Portland, OR 97201</p>
                     </div>
                 </div>
                 <div class="info-item">
+                    <div class="info-icon">✉️</div>
                     <div>
                         <h4>Email Us</h4>
                         <p>hello@kombuchabrewery.com</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">We reply within 24 hours.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p>+1 (503) 555-0192</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">Mon–Fri, 9am–5pm PT</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>
+                        <h4>Tasting Room Hours</h4>
+                        <p>Thursday–Sunday: 11am–6pm</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">Visit us for unlimited samples!</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="margin-bottom: 1rem;">Follow Our Journey</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="Twitter">🐦</a>
+                        <a href="#" class="social-link" title="LinkedIn">💼</a>
+                        <a href="#" class="social-link" title="Pinterest">📌</a>
+                        <a href="#" class="social-link" title="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🗺️</div>
+                        <p>123 Fermentation Way, Portland OR</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">Open in Maps →</p>
                     </div>
                 </div>
             </div>
 
-            <form class="contact-form">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="John Doe">
+            <!-- Contact Form -->
+            <form class="contact-form" onsubmit="return false;">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Send Us a Message</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="Jane">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Doe">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="john@example.com">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="jane@example.com">
                 </div>
                 <div class="form-group">
-                    <label>Message</label>
-                    <textarea rows="5" placeholder="Tell us what's on your mind..."></textarea>
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option value="">Select a topic...</option>
+                        <option>Subscription Inquiry</option>
+                        <option>Wholesale Partnership</option>
+                        <option>Flavor Feedback</option>
+                        <option>Shipping Question</option>
+                        <option>Press &amp; Media</option>
+                        <option>Other</option>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="6" placeholder="Tell us what's on your mind..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 0.95rem; padding: 14px;">Send Message ✉️</button>
+                <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">We typically respond within 24 hours on business days.</p>
             </form>
         </div>
+
+        <!-- FAQ Teaser -->
+        <section class="up-on-scroll" style="margin-top: 7rem; text-align: center; background: var(--bg-secondary); border-radius: var(--radius); padding: 4rem;">
+            <p class="section-label">Quick Answers</p>
+            <h2 class="section-title">Have a Common Question?</h2>
+            <p style="max-width: 480px; margin: 1rem auto 2rem;">Check out our FAQ page — we cover everything from subscriptions and shipping to fermentation science and health benefits.</p>
+            <a href="faq.html" class="btn btn-primary">Browse FAQ</a>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+            <div class="footer-grid">
                 <div>
-                    <div class="footer-logo" style="font-size: 2rem; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;">Kombucha.</div>
-                    <p style="opacity: 0.7; max-width: 300px;">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-logo">Kombucha<span>.</span></div>
+                    <p class="footer-desc">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
                 </div>
-                <div class="footer-links" style="color: white;">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Explore</h4>
-                    <ul style="list-style: none;">
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="about.html">Our Story</a></li>
                         <li><a href="service.html">Services</a></li>
                         <li><a href="blog.html">Journal</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Support</h4>
-                    <ul style="list-style: none;">
+                    <h4>Support</h4>
+                    <ul>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="#">Shipping Policy</a></li>
                         <li><a href="#">Wholesale</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Follow</h4>
-                    <ul style="list-style: none;">
+                    <h4>Follow Us</h4>
+                    <ul>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Twitter</a></li>
                         <li><a href="#">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; opacity: 0.5;">
-                <p>&copy; 2026 Kombucha Brewery. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>© 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

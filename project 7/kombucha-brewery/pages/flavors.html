@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors | Kombucha Brewery</title>
+    <meta name="description" content="Explore our full range of artisanal kombucha flavors — from classic green tea to bold tropical and adaptogenic wellness blends.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <style>
+        .flavor-filter {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2.5rem 0 3.5rem;
+        }
+        .filter-btn {
+            padding: 8px 22px;
+            border-radius: 25px;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+            color: white;
+        }
+        body.dark-mode .filter-btn {
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        body.dark-mode .filter-btn:hover,
+        body.dark-mode .filter-btn.active {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="flavors.html" class="active">Flavors</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-toggles">
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </li>
+            </ul>
+            <a href="signin.html" class="btn btn-outline">Sign In</a>
+        </div>
+    </nav>
+
+    <header class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../assets/images/product_set.png'); background-size: cover; background-position: center;">
+        <div class="page-hero-content">
+            <p class="section-label">12 Signature Flavors</p>
+            <h1>Find Your Perfect Brew</h1>
+            <p>Handcrafted in small batches using only organic, locally sourced ingredients.</p>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+
+        <div class="up-on-scroll text-center" style="margin-bottom: 0.5rem;">
+            <p class="section-label">Our Collection</p>
+            <h2 class="section-title">All Flavors</h2>
+            <p style="max-width: 560px; margin: 1rem auto 0;">Every flavor is a carefully balanced composition — designed to delight your palate and nourish your gut.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flavor-filter up-on-scroll">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Classic</button>
+            <button class="filter-btn">Tropical</button>
+            <button class="filter-btn">Wellness</button>
+            <button class="filter-btn">Seasonal</button>
+        </div>
+
+        <!-- Flavor Grid -->
+        <div class="flavor-grid up-on-scroll">
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/hero_bg.png');">
+                    <span class="flavor-tag">Classic</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Original Green Tea</h3>
+                    <p>Our flagship brew. Crisp, lightly tart, with gentle effervescence and a clean, refreshing finish.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$8<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/product_set.png');">
+                    <span class="flavor-tag">Tropical</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Mango Hibiscus</h3>
+                    <p>Sun-ripened mango meets floral hibiscus in a vibrant, aromatic brew bursting with tropical sweetness.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$9<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/about_brewery.png');">
+                    <span class="flavor-tag">Wellness</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Turmeric Ginger</h3>
+                    <p>Anti-inflammatory powerhouse. Golden turmeric root, fresh ginger, and a touch of black pepper for absorption.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$10<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/hero_bg.png');">
+                    <span class="flavor-tag">Classic</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Lemon Lavender</h3>
+                    <p>Bright citrus lemon balanced with calming lavender — a brew as beautiful as it is delicious.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$9<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/product_set.png');">
+                    <span class="flavor-tag">Seasonal</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Wildberry Summer</h3>
+                    <p>Raspberry, blackberry, and elderberry come together in our most popular summer limited edition.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$10<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/about_brewery.png');">
+                    <span class="flavor-tag">Wellness</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Reishi Adaptogen</h3>
+                    <p>Reishi mushroom, ashwagandha root, and holy basil — our premium stress-relief functional brew.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$12<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/hero_bg.png');">
+                    <span class="flavor-tag">Tropical</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Pineapple Coconut</h3>
+                    <p>Tropical vibes in a bottle — fresh pineapple and coconut water fermented to a light, creamy effervescence.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$9<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flavor-card">
+                <div class="flavor-card-img" style="background-image: url('../assets/images/about_brewery.png');">
+                    <span class="flavor-tag">Seasonal</span>
+                </div>
+                <div class="flavor-body">
+                    <h3>Apple Cinnamon Spice</h3>
+                    <p>Our autumn classic — crisp orchard apples with warming cinnamon and a hint of clove. Limited fall edition.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="flavor-price">$10<span>/bottle</span></div>
+                        <a href="service.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.75rem;">Add to Box</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="up-on-scroll" style="margin-top: 7rem; background: linear-gradient(135deg, var(--brand-primary), #1a2e24); border-radius: 30px; padding: 5rem; text-align: center; color: white;">
+            <p class="section-label" style="color: var(--brand-secondary);">Customize Your Box</p>
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Build Your Perfect Brew Box</h2>
+            <p style="color: rgba(255,255,255,0.8); max-width: 520px; margin: 0 auto 2.5rem;">Subscribe to the Brewmaster's plan and choose your exact flavors every single month. Mix, match, and discover.</p>
+            <a href="service.html" class="btn btn-secondary" style="font-size: 0.95rem; padding: 15px 40px;">Start Building My Box</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Kombucha<span>.</span></div>
+                    <p class="footer-desc">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

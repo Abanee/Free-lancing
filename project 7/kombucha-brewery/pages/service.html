@@ -3,132 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Kombucha Brewery</title>
+    <title>Services & Subscriptions | Kombucha Brewery</title>
+    <meta name="description" content="Choose your perfect Kombucha Brewery subscription — from monthly sampler boxes to the Brewmaster's exclusive selection.">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        .service-hero {
-            height: 50vh;
-            background: var(--nav-bg);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .service-hero h1 { color: white; font-size: 3rem; }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: -100px;
-        }
-        .price-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        .price-card:hover { transform: translateY(-10px); }
-        .price { font-size: 3rem; font-weight: 700; color: var(--brand-primary); margin: 1.5rem 0; }
-        .price span { font-size: 1rem; font-weight: 400; color: #777; }
-    </style>
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
 </head>
 <body>
     <nav id="main-nav">
         <div class="container nav-content">
-            <a href="../index.html" class="logo" style="color: white;">Kombucha.</a>
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="../index.html" style="color: white;">Home</a></li>
-                <li><a href="about.html" style="color: white;">Our Story</a></li>
-                <li><a href="service.html" style="color: white;">Services</a></li>
-                <li><a href="blog.html" style="color: white;">Blog</a></li>
-                <li><a href="contact.html" style="color: white;">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="service.html" class="active">Services</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li class="nav-toggles">
-                    <button id="theme-toggle" class="toggle-btn">Dark</button>
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
                     <button id="rtl-toggle" class="toggle-btn">RTL</button>
                 </li>
             </ul>
-            <a href="signin.html" class="btn btn-outline" style="border-color: white; color: white; padding: 8px 25px;">Sign In</a>
+            <a href="signin.html" class="btn btn-outline">Sign In</a>
         </div>
     </nav>
 
-    <header class="service-hero">
-        <div class="container">
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <p class="section-label">Flexible Plans</p>
             <h1>Organic Subscriptions</h1>
+            <p>Curated monthly deliveries tailored to your lifestyle and taste.</p>
         </div>
     </header>
 
     <main class="container section-padding">
+
+        <!-- Pricing Cards -->
+        <div class="up-on-scroll text-center" style="margin-bottom: 1rem;">
+            <p class="section-label">Choose Your Plan</p>
+            <h2 class="section-title">Simple, Honest Pricing</h2>
+            <p style="max-width: 520px; margin: 1rem auto 0;">Cancel or pause anytime. No hidden fees, no lock-ins — just great kombucha delivered to your door.</p>
+        </div>
+
         <div class="pricing-grid up-on-scroll">
             <div class="price-card">
                 <h4>Monthly Sips</h4>
                 <div class="price">$29<span>/mo</span></div>
-                <p style="margin-bottom: 2rem;">6 Curated bottles delivered to your door every month.</p>
-                <ul style="list-style: none; margin-bottom: 2.5rem; text-align: left; padding: 0 1rem;">
-                    <li style="margin-bottom: 10px;">✓ 6 Seasonal Flavors</li>
-                    <li style="margin-bottom: 10px;">✓ Free Shipping</li>
-                    <li style="margin-bottom: 10px;">✓ Early Access to New Brews</li>
+                <p style="margin-bottom: 1.5rem;">Perfect for the curious newcomer. 6 curated bottles to discover your favorites.</p>
+                <ul>
+                    <li>✓ 6 Seasonal Flavor Bottles</li>
+                    <li>✓ Free Standard Shipping</li>
+                    <li>✓ Early Access to New Brews</li>
+                    <li>✓ Tasting Notes Card Included</li>
+                    <li>✓ Pause or Cancel Anytime</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width: 100%;">Subscribe</a>
+                <a href="#" class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
             </div>
-            <div class="price-card" style="border: 2px solid var(--brand-secondary);">
+
+            <div class="price-card featured">
+                <div style="background: var(--brand-secondary); color: #1A1A1A; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 1rem;">Most Popular</div>
                 <h4 style="color: var(--brand-secondary);">Brewmaster's Choice</h4>
                 <div class="price">$49<span>/mo</span></div>
-                <p style="margin-bottom: 2rem;">12 Bottles of our finest, including exclusive limited editions.</p>
-                <ul style="list-style: none; margin-bottom: 2.5rem; text-align: left; padding: 0 1rem;">
-                    <li style="margin-bottom: 10px;">✓ 12 Organic Bottles</li>
-                    <li style="margin-bottom: 10px;">✓ Custom Flavor Selection</li>
-                    <li style="margin-bottom: 10px;">✓ Glass Bottle Recycling</li>
-                    <li style="margin-bottom: 10px;">✓ 15% Off All One-time Orders</li>
+                <p style="margin-bottom: 1.5rem;">12 bottles of our finest, including exclusive limited-edition brews and seasonal specials.</p>
+                <ul>
+                    <li>✓ 12 Premium Organic Bottles</li>
+                    <li>✓ Custom Flavor Selection</li>
+                    <li>✓ Glass Bottle Recycling Program</li>
+                    <li>✓ 15% Off All One-Time Orders</li>
+                    <li>✓ Priority Customer Support</li>
+                    <li>✓ Exclusive Member Events Access</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width: 100%;">Subscribe</a>
+                <a href="#" class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
             </div>
+
             <div class="price-card">
-                <h4>Wholesale</h4>
-                <p style="margin: 2rem 0; font-size: 1.1rem; opacity: 0.7;">Interested in stocking our kombucha at your cafe or retail store?</p>
-                <a href="contact.html" class="btn btn-outline" style="width: 100%;">Contact Sales</a>
+                <h4>Wholesale Partner</h4>
+                <div class="price" style="font-size: 2rem; margin: 1.5rem 0;">Custom<span style="font-size: 0.9rem;"> pricing</span></div>
+                <p style="margin-bottom: 1.5rem;">Stock our kombucha at your café, restaurant, or retail store. Minimum 48 bottles per order.</p>
+                <ul>
+                    <li>✓ Bulk Pricing Discounts</li>
+                    <li>✓ Dedicated Account Manager</li>
+                    <li>✓ Custom Label Options</li>
+                    <li>✓ Exclusive Seasonal Releases</li>
+                    <li>✓ Co-branded Marketing Support</li>
+                </ul>
+                <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales Team</a>
             </div>
         </div>
+
+        <!-- Features Section -->
+        <section style="margin-top: 8rem;" class="up-on-scroll">
+            <div class="text-center" style="margin-bottom: 1rem;">
+                <p class="section-label">Every Subscription Includes</p>
+                <h2 class="section-title">The Kombucha Brewery Promise</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h4>Free Delivery</h4>
+                    <p>Complimentary shipping on all subscription orders, delivered in temperature-controlled packaging.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔬</div>
+                    <h4>Lab Tested</h4>
+                    <p>Every batch is tested for live culture count, acidity levels, and purity before it leaves the brewery.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌿</div>
+                    <h4>Certified Organic</h4>
+                    <p>All ingredients hold USDA Organic certification. No artificial sweeteners, colors, or preservatives.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💚</div>
+                    <h4>Satisfaction Guarantee</h4>
+                    <p>Didn't love a bottle? We'll replace it, no questions asked. Your happiness is our priority.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <h4>Eco Packaging</h4>
+                    <p>Glass bottles, recycled cardboard, and zero-plastic insulation. Beautiful and responsible.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <h4>Surprise Gifts</h4>
+                    <p>Brewmaster's subscribers receive occasional surprise additions — limited blends, merchandise, and recipes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section style="margin-top: 8rem;" class="up-on-scroll">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <p class="section-label">Compare</p>
+                <h2 class="section-title">Plan Comparison</h2>
+            </div>
+            <div style="overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border-color); box-shadow: var(--shadow-card);">
+                <table style="width: 100%; border-collapse: collapse; background: var(--bg-card);">
+                    <thead>
+                        <tr style="background: var(--brand-primary); color: white;">
+                            <th style="padding: 1.25rem 2rem; text-align: left; font-family: 'Inter', sans-serif;">Feature</th>
+                            <th style="padding: 1.25rem; text-align: center; font-family: 'Inter', sans-serif;">Monthly Sips</th>
+                            <th style="padding: 1.25rem; text-align: center; font-family: 'Inter', sans-serif; color: var(--brand-secondary);">Brewmaster's</th>
+                            <th style="padding: 1.25rem; text-align: center; font-family: 'Inter', sans-serif;">Wholesale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem 2rem; color: var(--text-secondary);">Bottles per Month</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-primary);">6</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--brand-secondary); font-weight: 700;">12</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-primary);">48+</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color); background: var(--bg-secondary);">
+                            <td style="padding: 1rem 2rem; color: var(--text-secondary);">Free Shipping</td>
+                            <td style="padding: 1rem; text-align: center;">✓</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--brand-secondary); font-weight: 700;">✓</td>
+                            <td style="padding: 1rem; text-align: center;">Negotiated</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                            <td style="padding: 1rem 2rem; color: var(--text-secondary);">Custom Flavor Selection</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-muted);">—</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--brand-secondary); font-weight: 700;">✓</td>
+                            <td style="padding: 1rem; text-align: center;">✓</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-color); background: var(--bg-secondary);">
+                            <td style="padding: 1rem 2rem; color: var(--text-secondary);">Discount on Extra Orders</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-muted);">—</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--brand-secondary); font-weight: 700;">15%</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-primary);">Custom</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem 2rem; color: var(--text-secondary);">Member Events Access</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-muted);">—</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--brand-secondary); font-weight: 700;">✓</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--text-muted);">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem;">
+            <div class="footer-grid">
                 <div>
-                    <div class="footer-logo" style="font-size: 2rem; font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;">Kombucha.</div>
-                    <p style="opacity: 0.7; max-width: 300px;">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-logo">Kombucha<span>.</span></div>
+                    <p class="footer-desc">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                    </div>
                 </div>
-                <div class="footer-links" style="color: white;">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Explore</h4>
-                    <ul style="list-style: none;">
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="about.html">Our Story</a></li>
                         <li><a href="service.html">Services</a></li>
                         <li><a href="blog.html">Journal</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Support</h4>
-                    <ul style="list-style: none;">
+                    <h4>Support</h4>
+                    <ul>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
                         <li><a href="#">Shipping Policy</a></li>
                         <li><a href="#">Wholesale</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 style="color: var(--brand-secondary); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Follow</h4>
-                    <ul style="list-style: none;">
+                    <h4>Follow Us</h4>
+                    <ul>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Twitter</a></li>
                         <li><a href="#">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; opacity: 0.5;">
-                <p>&copy; 2026 Kombucha Brewery. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>© 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
