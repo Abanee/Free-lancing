@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
     const themeBtn = document.getElementById('theme-toggle');
     const rtlBtn = document.getElementById('rtl-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
     // ==========================================
     // NAVBAR SCROLL EFFECT
@@ -59,6 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (localStorage.getItem('direction') === 'rtl') {
         applyDir('rtl');
+    }
+
+    // ==========================================
+    // MOBILE MENU TOGGLE
+    // ==========================================
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
     }
 
     // ==========================================
