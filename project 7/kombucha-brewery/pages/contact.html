@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dark-mode.css">
     <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .map-placeholder {
             width: 100%;
@@ -109,21 +110,20 @@
                 <div>
                     <h4 style="margin-bottom: 1rem;">Follow Our Journey</h4>
                     <div class="social-links">
-                        <a href="#" class="social-link" title="Instagram">📷</a>
-                        <a href="#" class="social-link" title="Twitter">🐦</a>
-                        <a href="#" class="social-link" title="LinkedIn">💼</a>
-                        <a href="#" class="social-link" title="Pinterest">📌</a>
-                        <a href="#" class="social-link" title="YouTube">▶</a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Map Placeholder -->
-                <div class="map-placeholder">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🗺️</div>
-                        <p>123 Fermentation Way, Portland OR</p>
-                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">Open in Maps →</p>
-                    </div>
+                <!-- Real Google Map -->
+                <div class="map-container" style="margin-top: 2rem; border-radius: var(--radius-sm); overflow: hidden; height: 300px; box-shadow: var(--shadow-card); border: 1px solid var(--border-color);">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.532729906!2d-122.684705623!3d45.5152345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a1604a88f7%3A0xf64c614b1b3b1ba6!2s123%20SW%20Fermentation%20Way%2C%20Portland%2C%20OR%2097201!5e0!3m2!1sen!2sus!4v1711811800000!5m2!1sen!2sus" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
 

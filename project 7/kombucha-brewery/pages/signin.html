@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In | Kombucha Brewery</title>
-    <meta name="description" content="Sign in to your Kombucha Brewery account to manage your subscription and preferences.">
+    <meta name="description" content="Sign in or register to your Kombucha Brewery account to manage your subscription and preferences.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dark-mode.css">
     <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             min-height: 100vh;
@@ -25,33 +26,55 @@
         .auth-card {
             background: var(--bg-card);
             border-radius: var(--radius);
-            padding: 3.5rem;
+            padding: 3.5rem 0; /* Vertical padding only, forms handle horizontal */
             width: 100%;
-            max-width: 440px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 460px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
             border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
         }
         .auth-logo {
             text-align: center;
             margin-bottom: 2rem;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--brand-primary);
         }
         .auth-logo span { color: var(--brand-secondary); }
+        
         .auth-title {
-            font-size: 1.6rem;
+            font-size: 1.75rem;
             margin-bottom: 0.5rem;
             text-align: center;
             color: var(--brand-primary);
         }
         .auth-subtitle {
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
         }
+        
+        .form-container {
+            display: flex;
+            width: 200%;
+            transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            will-change: transform;
+        }
+        
+        .auth-form {
+            width: 50%;
+            flex-shrink: 0;
+            padding: 0 3.5rem;
+            box-sizing: border-box;
+        }
+        
+        .auth-card.show-register .form-container {
+            transform: translateX(-50%);
+        }
+        
         .divider {
             display: flex;
             align-items: center;
@@ -67,22 +90,55 @@
             height: 1px;
             background: var(--border-color);
         }
+        
         .auth-footer-text {
             text-align: center;
             margin-top: 2rem;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
         .auth-footer-text a {
             color: var(--brand-secondary);
             font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
         }
+        
         .forgot-link {
             float: right;
             font-size: 0.82rem;
             color: var(--brand-secondary);
             font-weight: 600;
         }
+        
+        .social-auth {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn-social {
+            padding: 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: var(--input-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .btn-social:hover {
+            background: var(--bg-secondary);
+            border-color: var(--brand-secondary);
+        }
+
         body.dark-mode .auth-card {
             background: var(--bg-card);
         }
@@ -117,39 +173,107 @@
     </nav>
 
     <main>
-        <div class="auth-card">
-            <div class="auth-logo">Kombucha<span>.</span></div>
-            <h1 class="auth-title">Welcome Back</h1>
-            <p class="auth-subtitle">Sign in to manage your subscription and preferences.</p>
-
-            <form onsubmit="return false;">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+        <div class="auth-card" id="auth-card">
+            <div class="auth-logo" style="padding: 0 3.5rem;">Kombucha<span>.</span></div>
+            
+            <div class="form-container">
+                <!-- Login Form -->
+                <div class="auth-form" id="login-section">
+                    <h1 class="auth-title">Welcome Back</h1>
+                    <p class="auth-subtitle">Sign in to manage your subscription.</p>
+                    
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">
+                                Password
+                                <a href="#" class="forgot-link">Forgot Password?</a>
+                            </label>
+                            <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 0.95rem; padding: 14px;">Sign In</button>
+                    </form>
+                    
+                    <div class="divider">or continue with</div>
+                    
+                    <div class="social-auth">
+                        <button type="button" class="btn-social"><i class="fab fa-google" style="color: #4285F4;"></i> Google</button>
+                        <button type="button" class="btn-social"><i class="fab fa-apple"></i> Apple</button>
+                    </div>
+                    
+                    <p class="auth-footer-text">
+                        Don't have an account? <a id="go-to-register">Create one →</a>
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label for="password">
-                        Password
-                        <a href="#" class="forgot-link">Forgot Password?</a>
-                    </label>
-                    <input type="password" id="password" placeholder="Your password" autocomplete="current-password">
+
+                <!-- Register Form -->
+                <div class="auth-form" id="register-section">
+                    <h1 class="auth-title">Join the Brewery</h1>
+                    <p class="auth-subtitle">Start your journey to wellness today.</p>
+                    
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="reg-name">Full Name</label>
+                            <input type="text" id="reg-name" placeholder="Jane Doe" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email Address</label>
+                            <input type="email" id="reg-email" placeholder="jane@example.com" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" placeholder="Create a password" autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 0.95rem; padding: 14px;">Create Account</button>
+                    </form>
+                    
+                    <div class="divider">or sign up with</div>
+                    
+                    <div class="social-auth">
+                        <button type="button" class="btn-social"><i class="fab fa-google" style="color: #4285F4;"></i> Google</button>
+                        <button type="button" class="btn-social"><i class="fab fa-apple"></i> Apple</button>
+                    </div>
+                    
+                    <p class="auth-footer-text">
+                        Already have an account? <a id="go-to-login">Sign in instead →</a>
+                    </p>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 0.95rem; padding: 14px;">Sign In</button>
-
-                <div class="divider">or continue with</div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <button type="button" style="padding: 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-primary); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; transition: var(--transition);">🔵 Google</button>
-                    <button type="button" style="padding: 12px; border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-primary); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600; transition: var(--transition);">⬛ Apple</button>
-                </div>
-            </form>
-
-            <p class="auth-footer-text">
-                Don't have an account? <a href="service.html">Start your subscription →</a>
-            </p>
+            </div>
         </div>
     </main>
 
+    <footer style="background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); padding: 2rem 0; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">© 2026 Kombucha Brewery. Hand-crafted for wellness.</p>
+        </div>
+    </footer>
+
     <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authCard = document.getElementById('auth-card');
+            const goToRegister = document.getElementById('go-to-register');
+            const goToLogin = document.getElementById('go-to-login');
+
+            if(goToRegister) {
+                goToRegister.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    authCard.classList.add('show-register');
+                    document.title = "Create Account | Kombucha Brewery";
+                });
+            }
+
+            if(goToLogin) {
+                goToLogin.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    authCard.classList.remove('show-register');
+                    document.title = "Sign In | Kombucha Brewery";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
