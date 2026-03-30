@@ -212,12 +212,25 @@ nav {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.6rem;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
     color: var(--nav-text);
     flex-shrink: 0;
+    transition: var(--transition);
 }
+.logo:hover {
+    opacity: 0.85;
+}
+.logo-img {
+    height: 40px; /* Constrains height to match text roughly */
+    width: auto;
+    object-fit: contain;
+}
+
 .logo span { color: var(--brand-secondary); }
 
 .nav-links {
@@ -1034,12 +1047,25 @@ footer {
     margin-bottom: 4rem;
 }
 .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
     font-size: 2rem;
     font-family: 'Playfair Display', serif;
     color: white;
-    margin-bottom: 1.25rem;
     font-weight: 800;
+    transition: var(--transition);
 }
+.footer-logo:hover {
+    opacity: 0.85;
+}
+.footer-logo-img {
+    height: 55px; /* Slightly larger footer logo */
+    width: auto;
+    object-fit: contain;
+}
+
 .footer-logo span { color: var(--brand-secondary); }
 .footer-desc {
     opacity: 0.65;
