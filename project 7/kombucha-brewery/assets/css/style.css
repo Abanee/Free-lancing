@@ -1183,6 +1183,10 @@ footer {
         width: 100%;
         justify-content: center;
     }
+    
+    nav {
+        padding: 0.75rem 0; /* Slightly tighter on mobile */
+    }
 }
 
 @media (max-width: 768px) {
