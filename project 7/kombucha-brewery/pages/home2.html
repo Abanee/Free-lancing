@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 - The Bio-Archive | Kombucha Brewery</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="../index.html" class="logo">Kombucha<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="home2.html" class="active">Home 2</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-toggles">
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../assets/images/hero_premium_bg.png');">
+        <div class="hero-glass up-on-scroll">
+            <p class="section-label">A New Chapter</p>
+            <h1>The Bio-Archive Edition</h1>
+            <p>Exploring the microscopic world of artisanal fermentation. A deeper dive into our cultures, our carbon-neutral journey, and the science of the fizz.</p>
+            <div class="hero-btns">
+                <a href="#bio-archive" class="btn btn-primary">Explore Archive</a>
+                <a href="flavors.html" class="btn btn-ghost">Latest Drops</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bio Archive Section -->
+        <section id="bio-archive" class="container" style="padding: 10rem 0;">
+            <div class="section-header text-center up-on-scroll">
+                <p class="section-label">Legacy Strains</p>
+                <h2 class="section-title">The Master Cultures</h2>
+                <p style="max-width: 600px; margin: 1.5rem auto 0;">Every bottle begins with our proprietary SCOBY strains, some of which have been nurtured for over a decade.</p>
+            </div>
+            <div class="flex-center" style="margin-top: 5rem; gap: 4rem; flex-wrap: wrap;">
+                <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
+                    <div style="background: var(--bg-card); padding: 3rem; border-radius: 40px; box-shadow: var(--shadow);">
+                        <h3 style="margin-bottom: 1rem;">Strain Alpha-7</h3>
+                        <p style="margin-bottom: 2rem;">Known for its sharp, crisp acidity and high probiotic density. Used exclusively for our Pacific Rain and Mountain Peak collections.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span style="background: var(--bg-secondary); padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">pH 2.8</span>
+                            <span style="background: var(--bg-secondary); padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">High Carbonation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
+                    <img src="../assets/images/bio_archive.png" alt="Bio Archive" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Pairings -->
+        <section style="background: var(--bg-secondary); padding: 8rem 0;">
+            <div class="container">
+                <div class="section-header text-center up-on-scroll">
+                    <p class="section-label">Lifestyle</p>
+                    <h2 class="section-title">The Art of Pairing</h2>
+                </div>
+                <div class="grid-3" style="margin-top: 4rem;">
+                    <div class="glass-card up-on-scroll" style="padding: 3rem; background: var(--bg-card);">
+                        <h4>Sparkling Rosé</h4>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">Pairs beautifully with artisanal goat cheese and sun-dried tomatoes. The floral notes cut through the richness of the cheese.</p>
+                    </div>
+                    <div class="glass-card up-on-scroll" style="padding: 3rem; background: var(--bg-card);">
+                        <h4>Bitter Roots</h4>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">The perfect companion for dark chocolate and sea salt. The earthy ginger overtones create a complex, lingering finish.</p>
+                    </div>
+                    <div class="glass-card up-on-scroll" style="padding: 3rem; background: var(--bg-card);">
+                        <h4>Ocean Mist</h4>
+                        <p style="font-size: 0.9rem; margin-top: 1rem;">Ideal for spicy Asian cuisine. The light, effervescent citrus body cools the palate while enhancing delicate spices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Report -->
+        <section class="container" style="padding: 8rem 0;">
+            <div class="flex-center" style="gap: 5rem; flex-wrap: wrap-reverse;">
+                <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div class="stat-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: 24px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--brand-primary);">98%</div>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-secondary);">Plastic Free</p>
+                        </div>
+                        <div class="stat-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: 24px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--brand-primary);">100%</div>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-secondary);">Solar Powered</p>
+                        </div>
+                        <div class="stat-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: 24px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--brand-primary);">-12t</div>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-secondary);">CO2 Offset</p>
+                        </div>
+                        <div class="stat-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: 24px;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--brand-primary);">Zero</div>
+                            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-secondary);">Waste Goal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
+                    <p class="section-label">Sustainability</p>
+                    <h2 class="section-title">Brewing with a Negative Footprint</h2>
+                    <p style="margin-top: 1.5rem;">Our commitment to the planet is as strong as our commitment to flavor. Every bottle of Kombucha. is an investment in a circular economy and a cleaner future.</p>
+                    <a href="about.html" class="read-more" style="margin-top: 2rem;">Download Full 2026 Report</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Kombucha<span>.</span></div>
+                    <p class="footer-desc">Crafting the future of functional beverages through traditional fermentation and modern science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Journal</h4>
+                    <ul>
+                        <li><a href="blog.html">Latest Posts</a></li>
+                        <li><a href="blog.html">Fermentation Science</a></li>
+                        <li><a href="blog.html">Recipes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Kombucha Brewery. All rights reserved.</p>
+                <div style="display: flex; gap: 2rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

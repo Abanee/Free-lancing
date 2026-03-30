@@ -24,6 +24,7 @@
             <a href="index.html" class="logo">Kombucha<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/home2.html">Home 2</a></li>
                 <li><a href="pages/flavors.html">Flavors</a></li>
                 <li><a href="pages/about.html">Our Story</a></li>
                 <li><a href="pages/service.html">Services</a></li>
@@ -46,83 +47,88 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="glass-card hero-glass">
-            <p class="section-label" style="color: var(--brand-secondary);">🌿 100% Organic &amp; Raw</p>
-            <h1>Nature in Every Bubble.</h1>
-            <p>Experience the finest artisanal kombucha, brewed with organic ingredients and ancient fermentation traditions passed down through generations.</p>
-            <div class="flex-center" style="gap: 1.5rem; flex-wrap: wrap;">
-                <a href="pages/flavors.html" class="btn btn-primary">Discover Flavors</a>
-                <a href="pages/about.html" class="btn btn-outline">Our Process</a>
+    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assets/images/hero_macro_bg.png');">
+        <div class="container hero-split">
+            <div class="hero-split-content up-on-scroll">
+                <p class="section-label">Artisanal &amp; Pure</p>
+                <h1>Nature in <br>Every Bubble</h1>
+                <p>Experience the weightless effervescence of our small-batch, traditionally fermented kombucha. Crafted with organic botanicals and ancient traditions.</p>
+                <div class="hero-btns">
+                    <a href="pages/flavors.html" class="btn btn-primary">Discover Flavors</a>
+                    <a href="pages/about.html" class="btn btn-ghost">Our Process</a>
+                </div>
+            </div>
+            <div class="hero-visual up-on-scroll" style="transition-delay: 0.2s;">
+                <img src="assets/images/hero_macro_bg.png" alt="Premium Kombucha Macro" class="floating-image">
             </div>
         </div>
     </header>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
+    <!-- Stats Bar Refined -->
+    <section class="stats-bar-refined">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item up-on-scroll">
+            <div class="stats-grid-refined">
+                <div class="stat-item-refined up-on-scroll">
                     <div class="stat-number">12+</div>
                     <div class="stat-label">Signature Flavors</div>
                 </div>
-                <div class="stat-item up-on-scroll">
+                <div class="stat-item-refined up-on-scroll">
                     <div class="stat-number">50K+</div>
                     <div class="stat-label">Happy Customers</div>
                 </div>
-                <div class="stat-item up-on-scroll">
+                <div class="stat-item-refined up-on-scroll">
                     <div class="stat-number">100%</div>
-                    <div class="stat-label">Organic Ingredients</div>
+                    <div class="stat-label">Organic Pure</div>
                 </div>
-                <div class="stat-item up-on-scroll">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Years of Craft</div>
+                <div class="stat-item-refined up-on-scroll">
+                    <div class="stat-number">3yrs</div>
+                    <div class="stat-label">Master Craft</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Flavors -->
-    <main class="container section-padding" id="flavors">
-        <div class="up-on-scroll text-center" style="margin-bottom: 1rem;">
-            <p class="section-label">Signature Brews</p>
-            <h2 class="section-title">Crafted for Your Soul</h2>
-            <p style="max-width: 560px; margin: 1rem auto 0;">From earthy botanicals to bright tropical bursts — each bottle is a small act of artisanal love.</p>
+        <div class="up-on-scroll">
+            <!-- Feature 1: The Summer Collection -->
+            <div class="flavor-editorial">
+                <div class="flavor-editorial-img">
+                    <img src="assets/images/product_set.png" alt="Summer Collection Kombucha">
+                </div>
+                <div class="flavor-editorial-info">
+                    <p class="section-label">Limited Edition</p>
+                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">The Summer <br>Collection</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">A refreshing blend of seasonal fruits and botanicals — hibiscus, mango, and a hint of ginger. Perfectly balanced for the golden hours.</p>
+                    <a href="pages/flavors.html" class="read-more">Explore the Collection →</a>
+                </div>
+            </div>
+
+            <!-- Feature 2: Wellness Series -->
+            <div class="flavor-editorial">
+                <div class="flavor-editorial-img">
+                    <img src="assets/images/hero_bg.png" alt="Wellness Kombucha">
+                </div>
+                <div class="flavor-editorial-info">
+                    <p class="section-label">Adaptogenic</p>
+                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">The Wellness <br>Archive</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Turmeric, reishi mushroom, and ashwagandha — our adaptogenic brewery line designed for daily vitality and calm focus.</p>
+                    <a href="pages/flavors.html" class="read-more">View Wellness Blends →</a>
+                </div>
+            </div>
         </div>
 
-        <div class="product-grid up-on-scroll">
-            <div class="product-card">
-                <img src="assets/images/product_set.png" alt="Summer Collection Kombucha">
-                <h3>The Summer Collection</h3>
-                <p>A refreshing blend of seasonal fruits and botanicals — hibiscus, mango, and a hint of ginger.</p>
-                <a href="pages/flavors.html" style="color: var(--brand-secondary); font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--brand-secondary); padding-bottom: 2px; margin-top: 1rem; display: inline-block;">Explore All Flavors →</a>
-            </div>
-            <div class="product-card">
-                <img src="assets/images/about_brewery.png" alt="Classic Kombucha Brew">
-                <h3>The Classic Range</h3>
-                <p>Our timeless original brew — green tea base, perfectly balanced acidity, with a crisp effervescence.</p>
-                <a href="pages/flavors.html" style="color: var(--brand-secondary); font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--brand-secondary); padding-bottom: 2px; margin-top: 1rem; display: inline-block;">Explore All Flavors →</a>
-            </div>
-            <div class="product-card">
-                <img src="assets/images/hero_bg.png" alt="Wellness Kombucha">
-                <h3>Wellness Series</h3>
-                <p>Turmeric, reishi mushroom, and ashwagandha — our adaptogenic brewery line for daily vitality.</p>
-                <a href="pages/flavors.html" style="color: var(--brand-secondary); font-weight: 600; font-size: 0.9rem; border-bottom: 1px solid var(--brand-secondary); padding-bottom: 2px; margin-top: 1rem; display: inline-block;">Explore All Flavors →</a>
-            </div>
-        </div>
-
-        <!-- Process / Why Us Section -->
-        <div class="process-section up-on-scroll" style="margin-top: 8rem;">
+        <!-- Process / Why Us Section Overlap -->
+        <div class="process-section up-on-scroll" style="margin-top: 10rem; background: transparent; border-radius: 0;">
             <div class="process-image"></div>
             <div class="process-content">
-                <p class="section-label">Why Us?</p>
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Pure Ingredients.<br>Pure Energy.</h2>
-                <p style="margin-bottom: 1.5rem;">Our kombucha is raw, unfiltered, and packed with live cultures. We source only the highest quality organic tea and locally grown fruits to ensure every bottle is a masterpiece of health and flavor.</p>
-                <p style="margin-bottom: 2.5rem;">Every small-batch brew goes through a 30-day fermentation cycle — twice the industry standard — to achieve that perfect, complex probiotic profile.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="pages/about.html" class="btn btn-primary">Learn Our Secret</a>
-                    <a href="pages/service.html" class="btn btn-secondary">View Plans</a>
+                <p class="section-label">Our Philosophy</p>
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Pure Ingredients.<br>Unfiltered Energy.</h2>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <p>Our kombucha is raw, unfiltered, and packed with live cultures. We source only the highest quality organic tea and locally grown fruits to ensure every bottle is a masterpiece of health and flavor.</p>
+                    <p>Every small-batch brew goes through a 30-day fermentation cycle — twice the industry standard — to achieve that perfect, complex probiotic profile.</p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap;">
+                    <a href="pages/about.html" class="btn btn-primary">Our Full Journey</a>
+                    <a href="pages/service.html" class="btn btn-outline" style="border-color: var(--brand-secondary); color: var(--brand-secondary);">View Monthly Rituals</a>
                 </div>
             </div>
         </div>
@@ -133,34 +139,34 @@
                 <p class="section-label">What Customers Say</p>
                 <h2 class="section-title">Loved by Thousands</h2>
             </div>
-            <div class="testimonials-grid" style="margin-top: 3rem;">
+            <div class="testimonials-grid up-on-scroll">
                 <div class="testimonial-card">
-                    <p>"I've tried dozens of kombucha brands, but Kombucha Brewery is on a completely different level. The depth of flavor and the natural effervescence is unmatched."</p>
+                    <p>"The bubbles are so delicate and natural. It's the first kombucha I've had that feels truly premium and light. The Lavender Bloom is extraordinary."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
+                        <img src="assets/images/customer_1.png" alt="Sarah J." class="author-avatar" style="object-fit: cover;">
                         <div>
-                            <div class="author-name">Sarah Mitchell</div>
-                            <div class="author-title">Nutritionist, Portland</div>
+                            <div class="author-name">Sarah Jenkins</div>
+                            <div class="author-title">Yoga Instructor</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"The Brewmaster's subscription has been a game changer for my wellness routine. A new surprise every month and the quality is always impeccable."</p>
+                    <p>"As a chef, I appreciate the depth of flavor. You can tell they use superior tea leaf. It's not overly sweet, just perfectly balanced fermentation."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
+                        <img src="assets/images/customer_2.png" alt="Mark T." class="author-avatar" style="object-fit: cover;">
                         <div>
-                            <div class="author-name">James Kowalski</div>
-                            <div class="author-title">Yoga Instructor, Seattle</div>
+                            <div class="author-name">Marcus Thorne</div>
+                            <div class="author-title">Executive Chef</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"We stock their kombucha at our café and our customers absolutely love it. The packaging is beautiful and the product sells itself."</p>
+                    <p>"The subscription is so seamless. I love getting the Brewmaster's Choice every month — it's like a seasonal surprise for my gut health!"</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">L</div>
+                        <div class="author-avatar">EL</div>
                         <div>
-                            <div class="author-name">Luna Café</div>
-                            <div class="author-title">Wholesale Partner, Eugene</div>
+                            <div class="author-name">Elena Luna</div>
+                            <div class="author-title">Wellness Blogger</div>
                         </div>
                     </div>
                 </div>

@@ -4,12 +4,12 @@
    ============================================ */
 body.dark-mode {
     /* Core Colors */
-    --bg-primary: #111827;
-    --bg-secondary: #1F2937;
-    --bg-card: #1F2937;
-    --text-primary: #F3F4F6;
-    --text-secondary: #D1D5DB;
-    --text-muted: #9CA3AF;
+    --bg-primary: #121E18;      /* Even deeper forest */
+    --bg-secondary: #1A2E24;
+    --bg-card: #1E3127;
+    --text-primary: #F9F7F2;    /* Cream text */
+    --text-secondary: rgba(249, 247, 242, 0.8);
+    --text-muted: rgba(249, 247, 242, 0.5);
 
     /* Brand stays recognizable but lighter */
     --brand-primary: #6EAF8B;
@@ -17,13 +17,13 @@ body.dark-mode {
     --brand-accent: #FF9A7C;
 
     /* Nav */
-    --nav-bg: #0D1117;
-    --nav-text: #F3F4F6;
+    --nav-bg: rgba(18, 30, 24, 0.9);
+    --nav-text: #F9F7F2;
 
     /* Borders & Inputs */
-    --border-color: #374151;
-    --input-bg: #374151;
-    --input-border: #4B5563;
+    --border-color: rgba(233, 196, 106, 0.15); /* Subtle gold-tinted borders */
+    --input-bg: #1A2E24;
+    --input-border: rgba(233, 196, 106, 0.3);
 
     /* Glass */
     --glass: rgba(31, 41, 55, 0.85);
