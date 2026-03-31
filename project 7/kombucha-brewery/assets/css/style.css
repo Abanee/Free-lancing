@@ -77,6 +77,8 @@ h1, h2, h3, h4, .logo {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     line-height: 1.2;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 h2 { font-size: 2.8rem; letter-spacing: -0.01em; }
@@ -101,7 +103,18 @@ ul  { list-style: none; }
     padding: 0 2rem;
 }
 
-.section-padding { padding: 100px 0; }
+.section-padding { padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(4rem, 8vw, 6rem); }
+.responsive-box { padding: clamp(2.5rem, 5vw, 5rem); }
+
+.responsive-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .responsive-grid-2 { grid-template-columns: 1fr; gap: 2.5rem; }
+}
 
 .flex-center {
     display: flex;
@@ -146,7 +159,7 @@ ul  { list-style: none; }
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
-    padding: 2rem;
+    padding: clamp(1.5rem, 4vw, 2rem);
     box-shadow: var(--shadow);
 }
 
@@ -306,7 +319,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
     align-items: center;
     transition: var(--transition);
 }
@@ -441,6 +454,15 @@ nav {
     color: rgba(255,255,255,0.88);
 }
 
+.hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+}
+
 /* Split Hero */
 .hero-split {
     display: grid;
@@ -515,7 +537,7 @@ nav {
 }
 
 .stat-item-refined {
-    padding: 2.5rem 2rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
     text-align: center;
     position: relative;
     transition: var(--transition);
@@ -551,8 +573,8 @@ nav {
 
 /* Inner Page Hero */
 .page-hero {
-    height: 52vh;
-    min-height: 300px;
+    min-height: 400px;
+    padding: clamp(6rem, 15vh, 10rem) 1.5rem;
     background: var(--bg-dark);
     color: white;
     display: flex;
@@ -560,7 +582,7 @@ nav {
     justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden removed to prevent vertical clipping on mobile */
 }
 .page-hero::before {
     content: '';
@@ -779,7 +801,7 @@ nav {
 }
 .price-card {
     background: var(--bg-card);
-    padding: 3rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
     border-radius: var(--radius);
     text-align: center;
     box-shadow: var(--shadow-card);
@@ -998,9 +1020,17 @@ nav {
     gap: 5rem;
     align-items: start;
 }
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
 .contact-form {
     background: var(--bg-card);
-    padding: 3rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
     border-radius: var(--radius);
     box-shadow: var(--shadow-card);
     border: 1px solid var(--border-color);
@@ -1094,7 +1124,7 @@ nav {
     text-align: center;
     background: var(--bg-card);
     border-radius: var(--radius);
-    padding: 2.5rem 2rem;
+    padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem);
     box-shadow: var(--shadow-card);
     border: 1px solid var(--border-color);
     transition: var(--transition);
@@ -1140,7 +1170,7 @@ nav {
     margin-top: 4rem;
 }
 .value-card {
-    padding: 2.5rem 2rem;
+    padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 2rem);
     text-align: center;
     border-top: 3px solid var(--brand-primary);
     background: linear-gradient(160deg, var(--bg-secondary) 70%, rgba(200,134,10,0.05) 100%);
@@ -1382,7 +1412,7 @@ footer::before {
     [dir="rtl"] .nav-links.active { left: 0; }
     .nav-content { gap: 0.5rem; }
     .nav-actions { gap: 1rem; }
-    .nav-actions .btn-outline { padding: 8px 16px; font-size: 0.85rem; }
+    .nav-actions .btn-outline { display: none; }
     .nav-toggles { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); width: 100%; justify-content: center; }
     nav { padding: 0.75rem 0; }
 }
@@ -1414,7 +1444,7 @@ footer::before {
 
 @media (max-width: 480px) {
     .container { padding: 0 1.5rem; }
-    .section-padding { padding: 60px 0; }
+    /* .section-padding handled by clamp */
     .hero-split-content h1 { font-size: 2.4rem; }
     .stats-grid-refined { grid-template-columns: 1fr; }
     .newsletter-section { padding: 3rem 1.5rem; }
