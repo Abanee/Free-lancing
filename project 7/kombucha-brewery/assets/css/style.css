@@ -923,6 +923,9 @@ nav {
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
+.team-card img {
+    margin: 0 auto 1.5rem;
+}
 .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .team-avatar {
     width: 90px;
