@@ -24,13 +24,14 @@
                 <li><a href="blog.html" class="active">Journal</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="nav-toggles">
-                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
-                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
-                </li>
+                <li><a href="signin.html" class="mobile-only" style="font-weight: 700; color: var(--brand-primary); border-top: 1px solid var(--border-color); padding-top: 1.5rem; width: 100%; text-align: center;">Sign In</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <div class="nav-toggles-refined">
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </div>
+                <a href="signin.html" class="btn btn-outline desktop-only">Sign In</a>
                 <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -56,7 +57,7 @@
         </div>
 
         <!-- Featured Post -->
-        <div class="up-on-scroll" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; margin-bottom: 5rem; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-color);">
+        <div class="responsive-grid-2 up-on-scroll" style="margin-bottom: 5rem; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border-color); gap: 0;">
             <img src="../assets/images/journal_bubbles.png" alt="Featured blog post" style="width: 100%; height: 400px; object-fit: cover;">
             <div style="padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
                 <div class="blog-meta">March 24, 2026 • Fermentation Science</div>
@@ -156,7 +157,7 @@
  
         <!-- Journal Categories -->
         <div class="up-on-scroll" style="margin-bottom: 8rem;">
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <div class="responsive-categories" style="display: grid; gap: 1.5rem;">
                 <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); text-align: center; border: 1px solid var(--border-color);">
                     <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔬</div>
                     <div style="font-weight: 700; color: var(--brand-primary);">Science</div>

@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page Not Found — Kultür Brew</title>
-<meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="../assets/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Page Not Found — Kultür Brew</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/logo.png">
     <link rel="stylesheet" href="../assets/css/style.css">
-<link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <style>
+        .toggles-fixed {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 1000;
+        }
+        @keyframes jarFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
 </head>
-<body style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem">
-  <div style="max-width:480px">
-    <div style="font-size:6rem;animation:jarFloat 6s ease-in-out infinite;margin-bottom:1.5rem">🫙</div>
-    <div style="font-family:var(--font-serif);font-size:6rem;font-weight:900;color:var(--brand-primary);line-height:1;margin-bottom:.5rem">404</div>
-    <h1 style="font-size:1.8rem;margin-bottom:.75rem">This batch didn't ferment.</h1>
-    <p style="color:var(--text-muted);margin-bottom:2.5rem">The page you're looking for has gone somewhere we can't track. Maybe it's still brewing. Either way, let's get you back on the right path.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="index.html" class="btn btn-primary">← Back to Home</a>
-      <a href="services.html" class="btn btn-outline">Find Our Brew</a>
+<body style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; background-color: var(--bg-primary); color: var(--text-primary);">
+    
+    <div class="toggles-fixed">
+        <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+        <button id="rtl-toggle" class="toggle-btn">RTL</button>
     </div>
-    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
-      <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:.75rem">Or try one of these:</p>
-      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
-        <a href="about.html" class="btn btn-ghost btn-sm">About</a>
-        <a href="blog.html" class="btn btn-ghost btn-sm">Blog</a>
-        <a href="contact.html" class="btn btn-ghost btn-sm">Contact</a>
-      </div>
+
+    <div style="max-width:480px" class="up-on-scroll visible">
+        <div style="font-size:6rem; animation:jarFloat 6s ease-in-out infinite; margin-bottom:1.5rem">🫙</div>
+        <div style="font-family:'Cormorant Garamond', serif; font-size:6rem; font-weight:900; color:var(--brand-primary); line-height:1; margin-bottom:.5rem">404</div>
+        <h1 style="font-size:1.8rem; margin-bottom:0.75rem">This batch didn't ferment.</h1>
+        <p style="color:var(--text-muted); margin-bottom:2.5rem">The page you're looking for has gone somewhere we can't track. Maybe it's still brewing. Either way, let's get you back on the right path.</p>
+        
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap">
+            <a href="../index.html" class="btn btn-primary">← Back to Home</a>
+            <a href="service.html" class="btn btn-outline">Find Our Brew</a>
+        </div>
     </div>
-  </div>
-  <button class="theme-toggle" onclick="toggleTheme()" style="position:fixed;top:1.25rem;right:1.25rem" aria-label="Toggle dark mode">🌙</button>
-  <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

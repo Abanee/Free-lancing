@@ -23,13 +23,14 @@
                 <li><a href="blog.html">Journal</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="nav-toggles">
-                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
-                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
-                </li>
+                <li><a href="signin.html" class="mobile-only" style="font-weight: 700; color: var(--brand-primary); border-top: 1px solid var(--border-color); padding-top: 1.5rem; width: 100%; text-align: center;">Sign In</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <div class="nav-toggles-refined">
+                    <button id="theme-toggle" class="toggle-btn">🌙 Dark</button>
+                    <button id="rtl-toggle" class="toggle-btn">RTL</button>
+                </div>
+                <a href="signin.html" class="btn btn-outline desktop-only">Sign In</a>
                 <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -59,7 +60,7 @@
                 <h2 class="section-title">The Master Cultures</h2>
                 <p style="max-width: 600px; margin: 1.5rem auto 0;">Every bottle begins with our proprietary SCOBY strains, some of which have been nurtured for over a decade.</p>
             </div>
-            <div class="flex-center" style="margin-top: 5rem; gap: 4rem; flex-wrap: wrap;">
+            <div class="responsive-grid-2 up-on-scroll" style="margin-top: 5rem;">
                 <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
                     <div style="background: var(--bg-card); padding: 3rem; border-radius: 40px; box-shadow: var(--shadow);">
                         <h3 style="margin-bottom: 1rem;">Strain Alpha-7</h3>
@@ -77,8 +78,8 @@
         </section>
  
         <!-- Global Terroir Section -->
-        <section class="container" style="padding: 8rem 0;">
-            <div class="flex-center up-on-scroll" style="gap: 5rem; flex-wrap: row-reverse;">
+        <section class="container section-padding">
+            <div class="responsive-grid-2 up-on-scroll" style="gap: clamp(2rem, 5vw, 5rem);">
                 <div style="flex: 1; min-width: 300px;">
                     <img src="../assets/images/global_sourcing.png" alt="Sourcing Partners" style="width: 100%; border-radius: 40px; box-shadow: var(--shadow);">
                 </div>
@@ -137,24 +138,25 @@
                 <p style="max-width: 540px; margin: 1rem auto 0;">Time is our most important ingredient. Every batch follows a meticulous timeline to ensure optimal flavor and probiotic peak.</p>
             </div>
             
-            <div style="display: flex; flex-direction: column; gap: 4rem; max-width: 800px; margin: 0 auto; border-left: 2px solid var(--border-color); padding-left: 3rem; position: relative;">
+            
+            <div class="timeline-refined" style="display: flex; flex-direction: column; gap: 4rem; max-width: 800px; margin: 0 auto; border-left: 2px solid var(--border-color); padding-left: 3rem; position: relative;">
                 <div class="up-on-scroll" style="position: relative;">
-                    <div style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
+                    <div class="day-marker" style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
                     <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 0.5rem;">Day 1: The Infusion</div>
                     <p>Organic teas are steeped at precise temperatures to extract the perfect balance of polyphenols without bitterness.</p>
                 </div>
                 <div class="up-on-scroll" style="position: relative;">
-                    <div style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
+                    <div class="day-marker" style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
                     <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 0.5rem;">Day 14: The Living Phase</div>
                     <p>The SCOBY culture begins its transformative work, consuming organic cane sugar and creating a complex ecosystem of acids and probiotics.</p>
                 </div>
                 <div class="up-on-scroll" style="position: relative;">
-                    <div style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
+                    <div class="day-marker" style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-secondary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
                     <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 0.5rem;">Day 24: The Botanical Blend</div>
                     <p>Fresh-pressed fruits and cold-infused botanicals are added to create our unique signature flavor profiles.</p>
                 </div>
                 <div class="up-on-scroll" style="position: relative;">
-                    <div style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-primary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
+                    <div class="day-marker" style="position: absolute; left: -3.65rem; top: 0.5rem; width: 22px; height: 22px; background: var(--brand-primary); border: 4px solid var(--bg-primary); border-radius: 50%;"></div>
                     <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 0.5rem;">Day 30: The Awakening</div>
                     <p>The kombucha is bottled and naturally carbonated in the glass, and chilled to pause the fermentation at its absolute peak.</p>
                 </div>
@@ -163,8 +165,8 @@
 
 
         <!-- Impact Report -->
-        <section class="container" style="padding: 8rem 0;">
-            <div class="flex-center" style="gap: 5rem; flex-wrap: wrap-reverse;">
+        <section class="container section-padding">
+            <div class="responsive-grid-2 up-on-scroll" style="gap: clamp(2rem, 5vw, 5rem);">
                 <div class="up-on-scroll" style="flex: 1; min-width: 300px;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                         <div class="stat-card" style="padding: 2rem; border: 1px solid var(--border-color); border-radius: 24px;">

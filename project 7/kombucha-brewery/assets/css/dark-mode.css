@@ -303,3 +303,10 @@ body.dark-mode .footer-bottom a:hover { color: var(--brand-secondary); }
 body.dark-mode .footer-links ul li a { color: rgba(245,237,216,0.6); }
 body.dark-mode .footer-links ul li a:hover { color: var(--brand-secondary); }
 body.dark-mode .footer-desc { color: rgba(245,237,216,0.6); }
+
+/* Navigation Button Hover Accessibility in Dark Mode */
+body.dark-mode .btn-outline:hover {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--bg-primary); /* Espresso text for contrast */
+}
