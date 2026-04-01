@@ -143,15 +143,54 @@
         body.dark-mode .auth-card {
             background: var(--bg-card);
         }
+        
+        /* Light Mode Label Fix */
+        .form-group label {
+            color: var(--text-primary) !important;
+        }
+        
+        .auth-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        
+        .remember-me input {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--brand-primary);
+            cursor: pointer;
+        }
+        
+        .forgot-link {
+            color: var(--brand-secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
     <main style="padding: 2rem; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
         <div class="auth-card" id="auth-card">
-            <div class="auth-logo" style="padding: 0 3.5rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+            <a href="../index.html" class="auth-logo" style="padding: 0 3.5rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; text-decoration: none;">
                 <img src="../assets/logo.png" alt="Kombucha Brewery" style="height: 48px; width: auto;">
                 Kombucha<span>.</span>
-            </div>
+            </a>
             
             <div class="form-container">
                 <!-- Login Form -->
@@ -164,12 +203,17 @@
                             <label for="login-email">Email Address</label>
                             <input type="email" id="login-email" placeholder="you@example.com" autocomplete="email">
                         </div>
-                        <div class="form-group">
-                            <label for="login-password">
-                                Password
-                                <a href="#" class="forgot-link">Forgot Password?</a>
-                            </label>
+                        <div class="form-group" style="margin-bottom: 0.75rem;">
+                            <label for="login-password">Password</label>
                             <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password">
+                        </div>
+                        
+                        <div class="auth-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="remember">
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; font-size: 0.95rem; padding: 14px;">Sign In</button>
                     </form>
