@@ -1023,6 +1023,8 @@ nav {
     border: 1px solid var(--border-color);
     position: relative;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 .testimonial-card:hover {
     box-shadow: var(--shadow);
@@ -1042,7 +1044,7 @@ nav {
     pointer-events: none;
     text-shadow: 0 0 30px var(--brand-glow);
 }
-.testimonial-card p { font-style: italic; margin-bottom: 1.5rem; }
+.testimonial-card p { font-style: italic; margin-bottom: 1.5rem; flex: 1; }
 .testimonial-author { display: flex; align-items: center; gap: 1rem; }
 .author-avatar {
     width: 48px;
