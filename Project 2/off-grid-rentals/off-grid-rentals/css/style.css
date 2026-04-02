@@ -638,6 +638,24 @@ body.light-mode {
   color: #1c1917 !important;
 }
 
+/* Hero section text visibility in light mode */
+.light-mode .hero-content h1,
+.light-mode .hero-content p,
+.light-mode .hero-content a:not(.bg-amber-500) {
+  color: #ffffff !important;
+}
+
+.light-mode .hero-content a.bg-amber-500 {
+  color: #0c0a09 !important;
+}
+
+/* Secondary Button Hover Fix for Light Mode */
+.light-mode .btn-secondary:hover {
+  background-color: #f5f5f4 !important;
+  color: #171717 !important;
+  border-color: #d6d3d1 !important;
+}
+
 /* Force white text on region cards in light mode since they have dark overlays */
 .light-mode .region-card-text {
   color: #ffffff !important;
