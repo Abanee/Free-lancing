@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initSidebarToggle() {
     const toggleBtn = document.getElementById('sidebar-toggle');
-    const sidebar = document.querySelector('.sidebar');
+    const sidebar = document.querySelector('.dashboard-sidebar');
 
     // Create overlay if not present
     let overlay = document.querySelector('.sidebar-overlay');

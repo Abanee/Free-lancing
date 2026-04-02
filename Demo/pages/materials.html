@@ -61,9 +61,11 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero hero-centered" style="min-height: 45vh;">
+  <section class="hero hero-centered" style="min-height: 45vh; background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 70%), linear-gradient(180deg, var(--color-background) 0%, rgba(16, 185, 129, 0.05) 100%);">
     <div class="hero-background">
-      <div class="hero-grid-pattern"></div>
+      <div class="hero-grid-pattern" style="opacity: 0.15; background-image: radial-gradient(var(--color-accent) 0.5px, transparent 0.5px); background-size: 20px 20px;"></div>
+      <div style="position: absolute; top: 20%; left: 15%; width: 150px; height: 150px; background: var(--color-primary-glow); filter: blur(60px); opacity: 0.3; animation: pulse 8s infinite alternate;"></div>
+      <div style="position: absolute; bottom: 10%; right: 10%; width: 200px; height: 200px; background: var(--color-secondary-glow); filter: blur(80px); opacity: 0.2; animation: pulse 12s infinite alternate-reverse;"></div>
     </div>
     <div class="container">
       <div class="hero-content animate-on-scroll">
@@ -226,7 +228,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" style="margin-top: 2rem; padding-top: 4rem;">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
