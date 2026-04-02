@@ -1596,3 +1596,53 @@ p {
     stroke-dashoffset: 0;
   }
 }
+
+/* ============================================
+   AUTH INPUTS & TOGGLES
+   ============================================ */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-speed);
+  z-index: 10;
+}
+
+.password-toggle:hover {
+  color: var(--color-primary);
+}
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+[dir='rtl'] .password-toggle {
+  right: auto;
+  left: var(--spacing-sm);
+}
+
+.social-auth .btn-apple {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+.social-auth .btn-apple:hover {
+  background-color: #1a1a1a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
