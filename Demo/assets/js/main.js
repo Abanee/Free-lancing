@@ -4,7 +4,6 @@
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', function () {
-  // initPreloader(); // Disabled for snappier experience
   initThemeToggle();
   initDirToggle();
   initMobileMenu();
@@ -17,50 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initFooterYear();
   initPasswordToggle();
 });
-
-// ============================================
-// Preloader Handler
-// ============================================
-function initPreloader() {
-  // Create Preloader Element
-  const preloader = document.createElement('div');
-  preloader.className = 'preloader';
-  preloader.innerHTML = `
-    <div class="loader-content">
-      <svg class="loader-svg" viewBox="0 0 100 100">
-        <!-- Bed Background -->
-        <rect x="20" y="20" width="60" height="60" rx="4" fill="var(--color-border)" opacity="0.2"/>
-        
-        <!-- Thread being printed -->
-        <path class="printed-thread" d="M30 30 H70 V70 H30 V30" />
-        
-        <!-- Printer Nozzle (Dynamic Group) -->
-        <g class="printer-nozzle">
-          <rect x="25" y="10" width="10" height="20" rx="2" />
-          <path d="M25 30 L30 38 L35 30 Z" />
-          <circle cx="30" cy="38" r="1.5" fill="var(--color-secondary)" />
-        </g>
-      </svg>
-      <div class="loader-text">Initializing Lab...</div>
-    </div>
-  `;
-
-  document.body.prepend(preloader);
-
-  // Lock scroll during loading
-  document.body.style.overflow = 'hidden';
-
-  // Minimum duration of 1 second
-  setTimeout(() => {
-    preloader.classList.add('fade-out');
-    document.body.style.overflow = '';
-
-    // Remove from DOM after fade animation
-    setTimeout(() => {
-      preloader.remove();
-    }, 500);
-  }, 1000);
-}
 
 // ============================================
 // Theme Toggle
