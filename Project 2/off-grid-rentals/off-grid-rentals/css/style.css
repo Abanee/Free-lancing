@@ -666,9 +666,31 @@ body.light-mode {
 }
 
 /* Social Buttons Hover Fix for Light Mode */
+.light-mode .social-btn:hover {
+  background-color: #f5f5f4 !important; /* Very light gray */
+  border-color: #d6d3d1 !important;
+}
+
 .light-mode .social-btn:hover,
+.light-mode .social-btn:hover span,
 .light-mode .social-btn:hover svg {
-  color: #ffffff !important;
+  color: #171717 !important; /* Dark stone */
+}
+
+/* Primary Button Hover visibility in Light Mode */
+.light-mode button.bg-amber-500:hover,
+.light-mode a.bg-amber-500:hover {
+  background-color: #d97706 !important; /* Lighter/darker amber shift for visibility */
+}
+
+/* Fix for invisible text on amber link hovers in Light Mode */
+.light-mode a.text-amber-500:hover {
+  color: #92400e !important; /* Dark amber hover instead of white */
+}
+
+/* Global hover:text-stone-100 fix for Light Mode */
+.light-mode .hover\:text-stone-100:hover {
+  color: #1c1917 !important;
 }
 
 /* =====================
