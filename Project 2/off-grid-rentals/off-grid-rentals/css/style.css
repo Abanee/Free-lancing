@@ -500,8 +500,8 @@ body.light-mode {
 /* Light Mode Branding */
 .light-mode .logo span,
 .light-mode .text-amber-400 {
-  color: #f59e0b !important;
-  /* Restored original brand amber */
+  color: #b45309 !important;
+  /* Darker amber for better contrast in light mode */
 }
 
 .light-mode .logo span .text-stone-100,
