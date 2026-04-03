@@ -144,7 +144,8 @@
 
     @media (max-width: 900px) {
       .h2-feature-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -158,8 +159,7 @@
 
     @media (max-width: 900px) {
       .h2-feature-hero {
-        grid-column: 1;
-        min-height: 280px;
+        min-height: 300px;
       }
     }
 
@@ -179,8 +179,9 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
-      padding: 3rem 2rem 1.5rem;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+      padding: 3.5rem 2rem 2rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
     .h2-feature-aside {
@@ -194,7 +195,6 @@
 
     @media (max-width: 900px) {
       .h2-feature-aside {
-        grid-column: 1;
         border-left: none;
         border-top: 3px solid var(--brass);
       }
@@ -202,7 +202,7 @@
 
     .h2-aside-item {
       padding: 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid var(--card-border);
       display: flex;
       gap: 1rem;
       align-items: flex-start;
@@ -232,8 +232,8 @@
 
     @media (max-width: 900px) {
       .h2-feature-secondary-row {
-        grid-column: 1;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
       }
     }
 
@@ -258,11 +258,12 @@
     .h2-secondary-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(2, 44, 34, 0.93) 0%, rgba(0, 0, 0, 0.1) 100%);
+      background: linear-gradient(0deg, rgba(2, 44, 34, 1) 0%, rgba(0, 0, 0, 0.4) 100%);
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     }
 
     /* HORIZONTAL SCALE SELECTOR */
@@ -618,7 +619,7 @@
 
   <!-- ── HEADER (unchanged) ──────────────────────────────── -->
   <header class="site-header">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="nav-logo flex-shrink-0">
         <img src="assets/logo.png" alt="Iron Rail Logo" class="brand-img" />
         Iron<span>Rail</span>
@@ -632,8 +633,8 @@
         <a href="service.html" class="nav-link">Membership</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="auth.html" class="btn-primary nav-hub-btn">Sign In</a>
-        <a href="auth.html" class="btn-primary nav-hub-btn">
+        <a href="signin.html" class="btn-primary nav-hub-btn">Sign In</a>
+        <a href="signup.html" class="btn-primary nav-hub-btn">
           <i class="fa-solid fa-user-plus"></i> Sign Up
         </a>
       </nav>
@@ -659,7 +660,7 @@
       <a href="service.html">Membership</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="auth.html" class="mobile-auth-btn">Sign In / Join Now</a>
+      <a href="signin.html" class="mobile-auth-btn">Sign In / Join Now</a>
     </div>
   </header>
 
@@ -809,7 +810,7 @@
             <div>
               <span class="tag tag-green" style="margin-bottom:0.4rem; display:inline-block;">HO Scale</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Appalachian Mountain Line — Full Build Log</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">R. Kowalski · 2 days
                 ago</span>
@@ -821,7 +822,7 @@
             <div>
               <span class="tag tag-grey" style="margin-bottom:0.4rem; display:inline-block;">N Scale</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Kato Unitrack Oval to Mainline — a Beginner's Guide</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">MicroLayout_Hanna · 4 days
                 ago</span>
@@ -833,7 +834,7 @@
             <div>
               <span class="tag tag-brass" style="margin-bottom:0.4rem; display:inline-block;">O Scale</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Postwar Lionel 773 Hudson — Restoration Diary</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">IronMike_OGauge · 1 week
                 ago</span>
@@ -845,7 +846,7 @@
             <div>
               <span class="tag tag-green" style="margin-bottom:0.4rem; display:inline-block;">HO Scale</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Trestle Bridge Scratch-Build — Timber by Timber</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">D. Andersen · 1 week
                 ago</span>
@@ -858,7 +859,7 @@
             <div>
               <span class="tag tag-brass" style="margin-bottom:0.4rem; display:inline-block;">Gear Review</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Genesis 2.0 SD70ACe: Worth the Upgrade?</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">Tech_Reyes · 2 weeks
                 ago</span>
@@ -870,7 +871,7 @@
             <div>
               <span class="tag tag-grey" style="margin-bottom:0.4rem; display:inline-block;">Electronics</span>
               <p
-                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.25rem;">
+                style="font-family:var(--font-heading); font-size:0.85rem; font-weight:700; color:var(--card-text); line-height:1.3; margin-bottom:0.25rem;">
                 Bus Wire Routing for DCC Layouts</p>
               <span style="font-family:var(--font-mono); font-size:0.65rem; color:#64748b;">Kowalski_DCC · 3 weeks
                 ago</span>
@@ -1187,7 +1188,7 @@
               Z Scale Gallery Launching Soon</h3>
             <p style="color:#64748b; max-width:380px; margin:0 auto 1.5rem; font-size:0.875rem;">We're curating the
               finest micro-scale layouts. Be the first to know when it drops.</p>
-            <a href="auth.html" class="btn-primary">Notify Me</a>
+            <a href="signup.html" class="btn-primary">Notify Me</a>
           </div>
         </div>
 

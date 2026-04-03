@@ -3,7 +3,7 @@
    Theme: Industrial Nostalgic / Pullman Era
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
 
 /* ── CSS Variables ───────────────────────────────────────── */
 :root {
@@ -13,14 +13,12 @@
   --steam-mid:       #334155;
   --brass:           #f59e0b;
   --brass-light:     #fcd34d;
-  --rust:            #b45309;
   --off-white:       #f8f7f4;
-  --parchment:       #fef3c7;
   --ink:             #1c1917;
-  --rail-silver:     #94a3b8;
-  --font-heading:    'Source Sans 3', 'Merriweather', Georgia, serif;
+  --rail-silver:     #334155;
+  --font-heading:    'Merriweather', Georgia, serif;
   --font-body:       'Source Sans 3', sans-serif;
-  --font-mono:       'Courier Prime', monospace;
+  --font-mono:       'Source Sans 3', sans-serif;
 
   /* Light mode card / section colors */
   --card-bg:         #ffffff;
@@ -31,8 +29,8 @@
 
   /* Footer specific variables */
   --footer-bg:       #022c22;
-  --footer-text:     #94a3b8;
-  --footer-link:     #64748b;
+  --footer-text:     #cbd5e1;
+  --footer-link:     #94a3b8;
   --footer-link-hover: #f59e0b;
 }
 
@@ -59,23 +57,21 @@ body.theme-light {
   --pullman-green:   #065f46;
   --pullman-dark:    #022c22;
   --steam-grey:      #f1f5f9;
-  --steam-mid:       #475569;
-  --brass:           #d97706;
-  --brass-light:     #f59e0b;
-  --rust:            #b45309;
+  --steam-mid:       #1e293b;
+  --brass:           #b45309;
+  --brass-light:     #d97706;
   --off-white:       #ffffff;
-  --parchment:       #fef3c7;
   --ink:             #000000;
-  --rail-silver:     #475569;
+  --rail-silver:     #1e293b;
   --card-bg:         #ffffff;
-  --card-border:     #e2e8f0;
+  --card-border:     #cbd5e1;
   --card-text:       #000000;
-  --card-subtext:    #475569;
+  --card-subtext:    #1e293b;
   --section-bg:      #ffffff;
   --footer-bg:       #ffffff;
   --footer-text:     #000000;
-  --footer-link:     #374151;
-  --footer-link-hover: #d97706;
+  --footer-link:     #1e293b;
+  --footer-link-hover: #b45309;
 }
 
 /* ── DARK THEME ─────────────────────────────────────────── */
@@ -93,43 +89,30 @@ body.theme-light {
    Borders  → #2a4030  (always visible, never harsh)
 */
 body.theme-dark {
-  /* Brand greens — lightened for dark bg legibility */
   --pullman-green:   #10b981;
   --pullman-dark:    #065f46;
-
-  /* Surface system — replaces the flat #000000 problem */
-  --steam-grey:      #162418;   /* used as card-level surface in components */
-  --steam-mid:       #9ab8a8;   /* mid-tone text, borders */
-
-  /* Accent colors — same brass identity, slightly richer */
+  --steam-grey:      #121212;
+  --steam-mid:       #94a3b8;
   --brass:           #f59e0b;
   --brass-light:     #fcd34d;
-  --rust:            #fb923c;
-
-  /* Page & type */
-  --off-white:       #0d1a14;   /* THE FIX: deep forest, not pure black */
-  --parchment:       #1a1800;   /* warm amber-tinted dark for parchment areas */
-  --ink:             #eef2ee;   /* soft warm-white, easier on eyes than #fff */
-  --rail-silver:     #cbd5e1;
-
-  /* Card system — 4 distinct levels */
-  --card-bg:         #162418;   /* card surface (clearly above page bg) */
-  --card-border:     #2a4030;   /* always visible border */
-  --card-text:       #eef2ee;   /* same as --ink */
-  --card-subtext:    #8fada0;   /* muted secondary text */
-
-  /* Section & footer */
-  --section-bg:      #111f18;   /* alternate section bg */
-  --footer-bg:       #0a1510;   /* darkest — footer feels anchored */
-  --footer-text:     #c8ddd4;
-  --footer-link:     #7a9e90;
+  --off-white:       #0a0a0a;
+  --ink:             #f8f7f4;
+  --rail-silver:     #94a3b8;
+  --card-bg:         #121212;
+  --card-border:     #262626;
+  --card-text:       #f8f7f4;
+  --card-subtext:    #94a3b8;
+  --section-bg:      #0a0a0a;
+  --footer-bg:       #000000;
+  --footer-text:     #cbd5e1;
+  --footer-link:     #94a3b8;
   --footer-link-hover: #f59e0b;
 }
 
 /* ── Reset & Base ────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 18px; }
 
 body {
   font-family: var(--font-body);
@@ -822,7 +805,7 @@ body.theme-light .site-header { background: #1e293b; }
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(2,44,34,0.95), transparent);
+  background: linear-gradient(to top, rgba(2,44,34,1) 0%, rgba(0, 0, 0, 0.4) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -838,6 +821,7 @@ body.theme-light .site-header { background: #1e293b; }
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .gallery-overlay .badge-row { display: flex; gap: 6px; flex-wrap: wrap; }
