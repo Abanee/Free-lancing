@@ -72,4 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
     sw.addEventListener("click", handler);
     sw.addEventListener("keydown", e => { if(e.key==="Enter"||e.key===" "){e.preventDefault();handler();} });
   });
+
+  // Mobile Sidebar Toggle
+  const sidebar = document.getElementById("sidebar");
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const sidebarClose = document.getElementById("sidebar-close");
+  const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+  if (sidebar && sidebarToggle) {
+    const toggleSidebar = (show) => {
+      sidebar.classList.toggle("open", show);
+      if (sidebarOverlay) sidebarOverlay.classList.toggle("open", show);
+      document.body.classList.toggle("overflow-hidden", show);
+    };
+
+    sidebarToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleSidebar(true);
+    });
+
+    if (sidebarClose) sidebarClose.addEventListener("click", () => toggleSidebar(false));
+    if (sidebarOverlay) sidebarOverlay.addEventListener("click", () => toggleSidebar(false));
+
+    // Close sidebar when a link is clicked (on mobile)
+    sidebar.querySelectorAll(".sidebar-link, a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) toggleSidebar(false);
+      });
+    });
+  }
 });
+
