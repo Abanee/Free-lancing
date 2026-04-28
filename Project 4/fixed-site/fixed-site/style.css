@@ -817,10 +817,17 @@ body.theme-light .site-header { background: #1e293b; }
 .gallery-item:hover .gallery-overlay { opacity: 1; }
 
 .gallery-overlay h4 {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 800;
+  color: var(--brass) !important;
+  font-size: 1.2rem;
+  font-weight: 900;
   margin-bottom: 0.3rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.gallery-overlay p {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.9rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.9);
 }
 
@@ -1159,6 +1166,31 @@ body.theme-light .text-slate-600 {
 body.theme-dark .tag-green { color: #6ee7b7; border-color: #10b981; background: rgba(16,185,129,0.12); }
 body.theme-dark .tag-brass { color: #fbbf24; border-color: #fbbf24; background: rgba(251,191,36,0.12); }
 body.theme-dark .tag-grey  { color: #94a3b8; border-color: #475569; background: rgba(71,85,105,0.2); }
+
+/* Force light tags in dark image overlays */
+.gallery-overlay .tag-green,
+.h2-secondary-overlay .tag-green,
+.h2-feature-hero-caption .tag-green {
+  color: #6ee7b7 !important;
+  border-color: #10b981 !important;
+  background: rgba(16,185,129,0.25) !important;
+}
+
+.gallery-overlay .tag-brass,
+.h2-secondary-overlay .tag-brass,
+.h2-feature-hero-caption .tag-brass {
+  color: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  background: rgba(251,191,36,0.25) !important;
+}
+
+.gallery-overlay .tag-grey,
+.h2-secondary-overlay .tag-grey,
+.h2-feature-hero-caption .tag-grey {
+  color: #f8f7f4 !important;
+  border-color: #cbd5e1 !important;
+  background: rgba(255,255,255,0.2) !important;
+}
 
 /* ── Dark Section ────────────────────────────────────────── */
 .section-dark {
