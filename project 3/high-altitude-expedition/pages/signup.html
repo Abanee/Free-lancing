@@ -33,16 +33,18 @@
     style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;background:var(--bg);">
     <div style="width:100%;max-width:520px;">
       <div class="text-center mb-8">
-        <a href="../index.html" class="flex items-center justify-center gap-2 mb-6 no-underline">
+        <a href="../index.html" class="flex items-center justify-center gap-2 no-underline">
           <img src="../assets/images/logo.png" alt="Apex Ascent" class="h-10 w-auto">
           <span class="font-heading font-bold text-xl tracking-widest uppercase" style="color:var(--text)">Apex
             Ascent</span>
         </a>
-        <h1 class="font-heading font-bold text-3xl mb-2" style="color:var(--text)">Create Your Account</h1>
-        <p style="color:var(--text-sec)">Join the Apex Ascent community. Track expeditions, access resources, and manage
-          your application.</p>
       </div>
       <div class="p-8 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+        <div class="text-center mb-6">
+          <h1 class="font-heading font-bold text-3xl mb-2" style="color:var(--text)">Create Your Account</h1>
+          <p style="color:var(--text-sec)">Join the Apex Ascent community. Track expeditions, access resources, and manage
+            your application.</p>
+        </div>
         <form class="space-y-4"
           onsubmit="event.preventDefault(); this.style.display='none'; document.getElementById('signup-success').style.display='block';">
           <div class="grid grid-cols-2 gap-4">
