@@ -544,11 +544,13 @@ section { padding: 100px 0; }
   z-index: 2;
   padding: 100px 0 0;
   width: 100%;
+  text-align: center;
 }
 
 .hero-eyebrow {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 28px;
 }
@@ -594,6 +596,7 @@ section { padding: 100px 0; }
 
 .hero-desc {
   max-width: 480px;
+  margin-inline: auto;
   font-size: 1.05rem;
   line-height: 1.75;
   color: rgba(255,255,255,0.65);
@@ -603,6 +606,7 @@ section { padding: 100px 0; }
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
