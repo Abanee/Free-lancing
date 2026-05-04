@@ -93,7 +93,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
-  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 2;
 }
 
 .btn-primary::before {
@@ -105,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   opacity: 0;
-  z-index: -1;
+  z-index: 1;
   transition: opacity var(--transition-base);
 }
 
@@ -132,7 +139,14 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
-  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary > * {
+  position: relative;
+  z-index: 2;
 }
 
 .btn-secondary::before {
@@ -144,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   background: var(--color-primary);
   transition: left var(--transition-base);
-  z-index: -1;
+  z-index: 1;
 }
 
 .btn-secondary:hover::before {
