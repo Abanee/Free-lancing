@@ -43,6 +43,9 @@
     --shadow-card: 0 4px 24px rgba(28, 16, 7, 0.07);
     --shadow-glow: 0 0 28px rgba(200, 134, 10, 0.25);
 
+    /* Overlays */
+    --hero-overlay: rgba(0, 0, 0, 0.65);
+
     /* Radii */
     --radius:    20px;
     --radius-sm: 10px;
@@ -466,7 +469,7 @@ nav {
    ============================================ */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/hero_bg.png');
+    background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('../images/hero_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -491,7 +494,7 @@ nav {
     color: white;
     margin-bottom: 1.2rem;
     line-height: 1.05;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    text-shadow: 0 4px 30px rgba(0,0,0,0.6);
 }
 
 .hero p {
@@ -640,7 +643,8 @@ nav {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(28,20,16,0.97) 0%, rgba(90,30,10,0.65) 60%, rgba(28,20,16,0.97) 100%);
+    background: linear-gradient(135deg, rgba(28,20,16,0.98) 0%, rgba(20,10,5,0.75) 60%, rgba(28,20,16,0.98) 100%);
+    opacity: 0.85; /* Increased opacity for better contrast */
 }
 /* Ambient dot grid overlay */
 .page-hero::after {
@@ -1507,6 +1511,14 @@ footer::before {
     .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
     .product-grid, .flavor-grid, .pricing-grid, .features-grid, .team-grid, .values-grid, .blog-grid { grid-template-columns: 1fr; }
+
+    /* Timeline Tablet Fix */
+    .timeline-refined { 
+        padding-left: 3rem !important; 
+        margin-left: 1rem !important;
+        border-left: 2px solid rgba(200, 134, 10, 0.4) !important;
+    }
+    .timeline-refined .day-marker { left: -3.68rem !important; }
 }
 
 @media (max-width: 768px) {
@@ -1538,12 +1550,32 @@ footer::before {
     .stat-item-refined .stat-number { font-size: 2.2rem; }
 
     /* Timeline Mobile Fix */
-    .timeline-refined { padding-left: 2.8rem !important; }
-    .timeline-refined .day-marker { left: -2.65rem !important; }
+    .timeline-refined { 
+        padding-left: 2.5rem !important; 
+        margin-left: 0.8rem !important;
+        border-left: 2px solid rgba(200, 134, 10, 0.4) !important;
+    }
+    .timeline-refined .day-marker { left: -3.18rem !important; }
 
     /* Category Grid Mobile Fix */
     .responsive-categories {
         grid-template-columns: 1fr !important;
         gap: 1.25rem !important;
+    }
+
+    /* 360px Hero Specific Fix */
+    .hero-split-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    .hero-split-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero {
+        padding: 4rem 0;
+    }
+    .hero-glass {
+        padding: 2.5rem 1.5rem;
     }
 }
