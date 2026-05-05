@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initDocumentLibrary();
   initApprovalCards();
   initProgressBars();
+  initLogoutModal();
+  initMobileDashboardMenu();
   loadDashboardData();
 });
 
@@ -474,6 +476,104 @@ function handleApproval(approvalId, action) {
     card.style.transform = 'translateX(100%)';
     setTimeout(() => card.remove(), 300);
   }
+}
+
+// ============================================================================
+// LOGOUT MODAL
+// ============================================================================
+
+function initLogoutModal() {
+  const logoutLinks = document.querySelectorAll('#logout-link, .logout-trigger-btn');
+  const logoutModal = document.getElementById('logout-modal');
+  const logoutCancel = document.getElementById('logout-cancel');
+  const modalOverlay = document.getElementById('logout-modal-overlay');
+
+  if (!logoutModal) return;
+
+  const showModal = (e) => {
+    e.preventDefault();
+    logoutModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const hideModal = () => {
+    logoutModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  };
+
+  logoutLinks.forEach(link => link.addEventListener('click', showModal));
+  logoutCancel?.addEventListener('click', hideModal);
+  modalOverlay?.addEventListener('click', hideModal);
+}
+
+// ============================================================================
+// MOBILE DASHBOARD MENU
+// ============================================================================
+
+function initMobileDashboardMenu() {
+  const hamburger = document.getElementById('dashboard-hamburger');
+  const mobileMenu = document.getElementById('mobile-dashboard-menu');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const overlay = document.getElementById('mobile-menu-overlay');
+  const mobileLinks = document.querySelectorAll('.mobile-sidebar-link');
+  const contentSections = document.querySelectorAll('.content-section');
+  const desktopLinks = document.querySelectorAll('.sidebar-link');
+
+  if (!hamburger || !mobileMenu) return;
+
+  const toggleMenu = (show) => {
+    if (show) {
+      mobileMenu.classList.remove('translate-x-full');
+      overlay.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.classList.add('translate-x-full');
+      overlay.classList.remove('opacity-100');
+      document.body.style.overflow = '';
+    }
+  };
+
+  hamburger.addEventListener('click', () => toggleMenu(true));
+  closeBtn?.addEventListener('click', () => toggleMenu(false));
+  overlay?.addEventListener('click', () => toggleMenu(false));
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('data-section');
+      
+      // Update active state for both mobile and desktop links
+      [...mobileLinks, ...desktopLinks].forEach(l => {
+        l.classList.remove('active', 'bg-primary/10', 'text-primary', 'border-primary', 'border-primary/20');
+        if (l.classList.contains('mobile-sidebar-link')) {
+          l.classList.add('border-transparent');
+          l.classList.remove('border-primary/20');
+        }
+      });
+
+      // Find all links targeting this section and activate them
+      document.querySelectorAll(`[data-section="${targetId}"]`).forEach(l => {
+        l.classList.add('active', 'bg-primary/10', 'text-primary');
+        if (l.classList.contains('mobile-sidebar-link')) {
+          l.classList.add('border-primary/20');
+          l.classList.remove('border-transparent');
+        } else {
+          l.classList.add('border-primary');
+        }
+      });
+      
+      // Show target section
+      contentSections.forEach(section => {
+        if (section.id === targetId) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+
+      toggleMenu(false);
+    });
+  });
 }
 
 // Make functions globally available

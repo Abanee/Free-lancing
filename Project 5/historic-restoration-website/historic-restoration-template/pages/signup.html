@@ -57,9 +57,13 @@
   <div class="max-w-md w-full glass-box rounded-[2.5rem] p-8 sm:p-12 shadow-2xl animate-fade-in-up relative">
     <!-- Header with Centered Logo -->
     <div class="flex justify-center items-center mb-10">
-      <a href="../index.html" class="flex items-center gap-2 group">
+      <a href="../index.html" class="flex items-center gap-3 group">
         <div class="w-12 h-12 flex items-center justify-center transform group-hover:scale-105 transition-transform overflow-hidden">
           <img src="../assets/logo.png" alt="HeritageCraft Logo" class="w-full h-full object-contain">
+        </div>
+        <div class="text-left">
+          <h2 class="font-display font-bold text-lg leading-tight text-accent dark:text-white">Heritage<span class="text-primary">Craft</span></h2>
+          <p class="text-xs text-tertiary">Preservation & Restoration</p>
         </div>
       </a>
     </div>
@@ -121,7 +125,15 @@
         </div>
         <div>
           <label class="block text-xs font-black uppercase tracking-widest text-stone-500 mb-2" for="confirm-password">Confirm</label>
-          <input type="password" id="confirm-password" class="w-full px-5 py-4 rounded-xl bg-surface-elevated border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm" placeholder="••••••••">
+          <div class="relative group">
+            <input type="password" id="confirm-password" class="w-full px-5 py-4 rounded-xl bg-surface-elevated border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm pr-12" placeholder="••••••••">
+            <button type="button" class="toggle-password-btn absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 hover:text-primary transition-colors" data-target="confirm-password">
+              <svg class="eye-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
       <div class="flex items-start gap-3 pt-2">
@@ -138,25 +150,26 @@
 
   <script src="../assets/js/main.js"></script>
   <script>
-    const toggleBtn = document.getElementById('toggle-password');
-    const passwordInput = document.getElementById('password');
-    const eyeIcon = document.getElementById('eye-icon');
-
-    toggleBtn?.addEventListener('click', () => {
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type);
-      
-      // Update eye icon
-      if (type === 'text') {
-        eyeIcon.innerHTML = `
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a10.057 10.057 0 012.182-3.21m2.083-2.042A4.457 4.457 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.05 0 01-4.132 5.411m0 0L21 21m-2.101-2.101L3 3m9 9a3 3 0 105.197 2.197m-5.197-2.197l.88-.88" />
-        `;
-      } else {
-        eyeIcon.innerHTML = `
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        `;
-      }
+    document.querySelectorAll('.toggle-password-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        const eyeIcon = btn.querySelector('.eye-icon');
+        
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        
+        if (type === 'text') {
+          eyeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a10.057 10.057 0 012.182-3.21m2.083-2.042A4.457 4.457 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.05 0 01-4.132 5.411m0 0L21 21m-2.101-2.101L3 3m9 9a3 3 0 105.197 2.197m-5.197-2.197l.88-.88" />
+          `;
+        } else {
+          eyeIcon.innerHTML = `
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          `;
+        }
+      });
     });
   </script>
 </body>
