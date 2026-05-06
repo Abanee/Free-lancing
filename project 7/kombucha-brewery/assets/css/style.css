@@ -1595,3 +1595,17 @@ footer::before {
         padding: 2.5rem 1.5rem;
     }
 }
+
+/* Fix for very small screens (360px) */
+@media (max-width: 400px) {
+    .container { padding: 0 1rem; }
+    .nav-content { gap: 0.5rem; }
+    .nav-actions { gap: 0.6rem; }
+    .toggle-btn { padding: 6px 10px; font-size: 0.65rem; }
+    .logo { font-size: 1.35rem; gap: 0.35rem; }
+    .logo-img { height: 26px; }
+    .responsive-box { padding: 2.5rem 1.25rem; }
+    .responsive-grid-2 > div { min-width: 0 !important; flex: 1; }
+    .section-title { font-size: 1.8rem; }
+    .footer-bottom { padding-top: 1.5rem; }
+}
