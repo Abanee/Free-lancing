@@ -201,21 +201,39 @@ function initNavbar() {
 function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+  const mobileDirToggle = document.getElementById('mobile-dir-toggle');
   const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
   
   if (!hamburger || !mobileMenu) return;
   
   // Open mobile menu
-  hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    // document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
   });
   
-  // Close mobile menu
-  if (mobileMenuClose) {
-    mobileMenuClose.addEventListener('click', closeMobileMenu);
+  // Mobile Theme Toggle
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', () => {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) themeToggle.click();
+    });
+  }
+  
+  // Mobile Direction Toggle
+  if (mobileDirToggle) {
+    mobileDirToggle.addEventListener('click', () => {
+      const dirToggle = document.getElementById('dir-toggle');
+      if (dirToggle) dirToggle.click();
+      
+      // Update mobile button text
+      setTimeout(() => {
+        mobileDirToggle.textContent = document.documentElement.getAttribute('dir').toUpperCase();
+      }, 50);
+    });
   }
   
   // Close menu when clicking on links
