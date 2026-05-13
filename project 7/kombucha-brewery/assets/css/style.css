@@ -573,8 +573,8 @@ nav {
 /* Stats Bar Refined */
 .stats-bar-refined {
     background: transparent;
-    padding: 4rem 0;
-    margin-top: -5rem;
+    padding: 4rem 0 7rem 0; /* Increased bottom padding for better separation */
+    margin-top: -3.5rem;   /* Reduced negative margin for more breathing room from hero content */
     position: relative;
     z-index: 10;
 }
@@ -588,11 +588,11 @@ nav {
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
     overflow: hidden;
-    padding: 1rem 0; /* Added padding to the container */
+    padding: 0.5rem 0; /* Refined vertical padding */
 }
 
 .stat-item-refined {
-    padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem); /* Reduced vertical padding for better proportions */
     text-align: center;
     position: relative;
     transition: var(--transition);
